@@ -125,7 +125,7 @@ ard_incidence_rate <- function(data,
       stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name),
       context = "incidence_rate",
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

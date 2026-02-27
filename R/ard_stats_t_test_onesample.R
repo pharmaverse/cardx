@@ -35,7 +35,7 @@ ard_stats_t_test_onesample <- function(data, variables, by = dplyr::group_vars(d
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   cards::ard_summary(
@@ -66,7 +66,7 @@ ard_stats_t_test_onesample <- function(data, variables, by = dplyr::group_vars(d
       stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name),
       context = "stats_t_test_onesample",
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

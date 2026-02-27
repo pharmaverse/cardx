@@ -452,7 +452,7 @@ extract_strata <- function(x, df_stat) {
       warning = list(NULL),
       error = list(NULL)
     ) %>%
-    cards::as_card(check=FALSE) %>%
+    cards::as_card(check = FALSE) %>%
     cards::tidy_ard_column_order() %>%
     cards::tidy_ard_row_order()
 }

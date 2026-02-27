@@ -52,7 +52,7 @@ ard_categorical_ci.survey.design <- function(data,
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # calculate and return ARD of one sample CI ----------------------------------
@@ -144,7 +144,7 @@ ard_categorical_ci.survey.design <- function(data,
       stat_label = .data$stat_name,
       fmt_fun = map(.data$stat, ~ case_switch(is.numeric(.x) ~ 2L, .default = as.character))
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     .restore_original_column_types(data = data$variables)
 

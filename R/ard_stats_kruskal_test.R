@@ -35,7 +35,7 @@ ard_stats_kruskal_test <- function(data, by, variables) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # build ARD ------------------------------------------------------------------
@@ -64,5 +64,5 @@ ard_stats_kruskal_test <- function(data, by, variables) {
     }
   ) |>
     dplyr::bind_rows() |>
-    cards::as_card(check=FALSE)
+    cards::as_card(check = FALSE)
 }
