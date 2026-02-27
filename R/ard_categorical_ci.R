@@ -97,7 +97,7 @@ ard_categorical_ci.data.frame <- function(data,
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # calculate confidence intervals ---------------------------------------------
@@ -148,7 +148,7 @@ ard_categorical_ci.data.frame <- function(data,
     dplyr::mutate(
       context = "proportion_ci"
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

@@ -41,7 +41,7 @@ ard_survey_svychisq <- function(data, by, variables, statistic = "F", ...) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # build ARD ------------------------------------------------------------------
@@ -72,5 +72,5 @@ ard_survey_svychisq <- function(data, by, variables, statistic = "F", ...) {
     }
   ) |>
     dplyr::bind_rows() |>
-    cards::as_card(check=FALSE)
+    cards::as_card(check = FALSE)
 }

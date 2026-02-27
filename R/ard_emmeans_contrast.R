@@ -98,7 +98,7 @@ ard_emmeans_contrast <- function(data, formula, method,
       context = "emmeans_contrast",
     ) |>
     dplyr::filter(.data$stat_name != "variable_level") |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

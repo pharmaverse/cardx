@@ -100,7 +100,7 @@ ard_aod_wald_test <- function(x, tidy_fun = broom.helpers::tidy_with_broom_or_pa
       warning = wald_test["warning"],
       error = wald_test["error"]
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }
 

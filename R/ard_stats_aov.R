@@ -63,6 +63,6 @@ ard_stats_aov <- function(formula, data, ...) {
       warning = aov["warning"],
       error = aov["error"]
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }

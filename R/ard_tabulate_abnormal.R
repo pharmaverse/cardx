@@ -126,7 +126,7 @@ ard_tabulate_abnormal <- function(data,
       stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name),
       context = "categorical_abnormal",
     ) |>
-    cards::as_card(check=FALSE) |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

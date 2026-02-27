@@ -59,7 +59,7 @@ ard_tabulate_value.survey.design <- function(data,
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card(check=FALSE))
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # calculate summary statistics -----------------------------------------------
