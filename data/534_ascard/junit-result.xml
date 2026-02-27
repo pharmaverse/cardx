@@ -1,769 +1,692 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="ard_attributes.survey.design" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="1.613">
-    <testcase time="1.613" classname="character(0)" name="ard_attributes.survey.design_works">
-      <skipped message="Reason: On CRAN ('test-ard_attributes.survey.design.R:3:1')"/>
-    </testcase>
-  </testsuite>
-  <testsuite name="ard_aod_wald_test" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.13">
-    <testcase time="0.123" classname="character(0)" name="ard_aod_wald_test_works"/>
+  <testsuite name="ard_aod_wald_test" timestamp="2026-02-27T01:41:56Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="1.691">
+    <testcase time="1.661" classname="character(0)" name="ard_aod_wald_test_works"/>
+    <testcase time="0.02" classname="character(0)" name="ard_aod_wald_test_works"/>
+    <testcase time="0.00900000000000034" classname="character(0)" name="ard_aod_wald_test_works"/>
     <testcase time="0.00099999999999989" classname="character(0)" name="ard_aod_wald_test_works"/>
-    <testcase time="0.00600000000000023" classname="character(0)" name="ard_aod_wald_test_works"/>
-    <testcase time="0" classname="character(0)" name="ard_aod_wald_test_works">
-      <skipped message="Reason: On CRAN ('test-ard_aod_wald_test.R:3:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_aod_wald_test" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.034">
-    <testcase time="0.0339999999999998" classname="character(0)" name="ard_aod_wald_test_follows_ard_structure"/>
+  <testsuite name="ard_aod_wald_test" timestamp="2026-02-27T01:41:56Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_aod_wald_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.332">
-    <testcase time="0.332" classname="character(0)" name="ard_car_vif_works">
-      <skipped message="Reason: On CRAN ('test-ard_car_vif.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_attributes.survey.design" timestamp="2026-02-27T01:41:56Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.032">
+    <testcase time="0.032" classname="character(0)" name="ard_attributes.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.015">
-    <testcase time="0.0149999999999997" classname="character(0)" name="ard_car_vif_appropriate_errors_are_given_for_model_with_only_1_term"/>
+  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.579">
+    <testcase time="0.578" classname="character(0)" name="ard_car_vif_works"/>
+    <testcase time="0.00099999999999989" classname="character(0)" name="ard_car_vif_works"/>
   </testsuite>
-  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000022" classname="character(0)" name="ard_vif_issues_friendly_messaging_for_incorrect_object_passed_in_can_t_get_terms_of_model">
-      <skipped message="Reason: On CRAN ('test-ard_car_vif.R:28:1')"/>
-    </testcase>
+  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.00099999999999989" classname="character(0)" name="ard_car_vif_appropriate_errors_are_given_for_model_with_only_1_term"/>
   </testsuite>
-  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:48Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.021">
-    <testcase time="0.0209999999999999" classname="character(0)" name="ard_car_vif_follows_ard_structure"/>
+  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00499999999999989" classname="character(0)" name="ard_vif_issues_friendly_messaging_for_incorrect_object_passed_in_can_t_get_terms_of_model"/>
   </testsuite>
-  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:49Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.19">
-    <testcase time="0.188" classname="character(0)" name="ard_car_anova_works"/>
+  <testsuite name="ard_car_vif" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.00100000000000033" classname="character(0)" name="ard_car_vif_follows_ard_structure"/>
+  </testsuite>
+  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.741">
+    <testcase time="0.739" classname="character(0)" name="ard_car_anova_works"/>
     <testcase time="0.00099999999999989" classname="character(0)" name="ard_car_anova_works"/>
-    <testcase time="0.00099999999999989" classname="character(0)" name="ard_car_anova_works">
-      <skipped message="Reason: On CRAN ('test-ard_car_anova.R:3:1')"/>
-    </testcase>
+    <testcase time="0.00099999999999989" classname="character(0)" name="ard_car_anova_works"/>
   </testsuite>
-  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:49Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.015">
-    <testcase time="0.0150000000000001" classname="character(0)" name="ard_car_anova_messaging">
-      <skipped message="Reason: On CRAN ('test-ard_car_anova.R:15:1')"/>
-    </testcase>
+  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000022" classname="character(0)" name="ard_car_anova_messaging"/>
   </testsuite>
-  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:49Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000001" classname="character(0)" name="ard_car_anova_follows_ard_structure"/>
+  <testsuite name="ard_car_anova" timestamp="2026-02-27T01:41:57Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00299999999999967" classname="character(0)" name="ard_car_anova_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="2.079">
-    <testcase time="2.079" classname="character(0)" name="ard_categorical_ci_data_">
-      <skipped message="Reason: On CRAN ('test-ard_categorical_ci.survey.design.R:6:1')"/>
-    </testcase>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="2.366">
+    <testcase time="2.366" classname="character(0)" name="ard_categorical_ci_data_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="5" skipped="0" failures="0" errors="0" time="0.017">
-    <testcase time="0.0140000000000002" classname="character(0)" name="ard_categorical_ci_variables_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_variables_"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.004">
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_variables_"/>
-    <testcase time="0" classname="character(0)" name="ard_categorical_ci_variables_"/>
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_variables_"/>
+    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_variables_"/>
+    <testcase time="0" classname="character(0)" name="ard_categorical_ci_variables_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_variables_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.006">
-    <testcase time="0.00399999999999956" classname="character(0)" name="ard_categorical_ci_by_"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.003">
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_by_"/>
+    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_by_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_by_"/>
     <testcase time="0" classname="character(0)" name="ard_categorical_ci_by_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_by_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_conf.level_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_conf.level_"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci_conf.level_"/>
+    <testcase time="0" classname="character(0)" name="ard_categorical_ci_conf.level_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_method_"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci_method_"/>
     <testcase time="0" classname="character(0)" name="ard_categorical_ci_method_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_method_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_method_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_value_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_value_"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci_value_"/>
+    <testcase time="0" classname="character(0)" name="ard_categorical_ci_value_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.001">
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_categorical_ci.survey.design" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.578">
-    <testcase time="0.577999999999999" classname="character(0)" name="ard_continuous_ci.data.frame_method_t.test_"/>
+  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.563">
+    <testcase time="0.563" classname="character(0)" name="ard_continuous_ci.data.frame_method_t.test_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_method_wilcox.test_"/>
+  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_continuous_ci.data.frame_method_wilcox.test_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:41:51Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci.data.frame_follows_ard_structure"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="1.093">
-    <testcase time="1.093" classname="character(0)" name="ard_categorical_ci.data.frame_method_wald_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_categorical_ci.data.frame_method_waldcc_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_categorical_ci.data.frame_method_clopper_pearson_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00299999999999923" classname="character(0)" name="ard_categorical_ci.data.frame_method_wilson_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci.data.frame_method_wilsoncc_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
-    <testcase time="0" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilsoncc_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.data.frame_method_jeffreys_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.001">
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci.data.frame_method_agresti_coull_"/>
-  </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_continuous_ci.data.frame" timestamp="2026-02-27T01:42:00Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.004">
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.345">
+    <testcase time="0.345" classname="character(0)" name="ard_categorical_ci.data.frame_method_wald_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_categorical_ci.data.frame_method_waldcc_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_categorical_ci.data.frame_method_clopper_pearson_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.data.frame_method_wilson_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci.data.frame_method_wilsoncc_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
+    <testcase time="0" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
+    <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilson_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci.data.frame_method_strat_wilsoncc_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999978" classname="character(0)" name="ard_categorical_ci.data.frame_method_jeffreys_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci.data.frame_method_agresti_coull_"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_follows_ard_structure"/>
+  </testsuite>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.005">
     <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
-    <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.005">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
-    <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
+    <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_column_with_all_NA_column"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_column_with_all_NA_column"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
     <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_with_all_NA_column"/>
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_row_with_all_NA_column"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_with_all_NA_column"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_denominator_cell_with_all_NA_column"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci.data.frame_NA_handling"/>
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci.data.frame_NA_handling"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci.data.frame_NA_handling"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci.data.frame_NA_handling"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci.data.frame_NA_handling"/>
   </testsuite>
-  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:41:52Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.001">
+  <testsuite name="ard_categorical_ci.data.frame" timestamp="2026-02-27T01:42:01Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00100000000000033" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_NA_handling"/>
-    <testcase time="0" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_NA_handling"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_NA_handling"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.088">
-    <testcase time="0.0880000000000001" classname="character(0)" name="ard_continuous_ci_data_">
-      <skipped message="Reason: On CRAN ('test-ard_continuous_ci.survey.design.R:6:1')"/>
-    </testcase>
+  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.785">
+    <testcase time="0.783000000000001" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
+    <testcase time="0" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="5" skipped="0" failures="0" errors="0" time="0.018">
-    <testcase time="0.016" classname="character(0)" name="ard_continuous_ci_variables_"/>
-    <testcase time="0" classname="character(0)" name="ard_continuous_ci_variables_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_variables_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_variables_"/>
-    <testcase time="0" classname="character(0)" name="ard_continuous_ci_variables_"/>
+  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
+    <testcase time="0" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.005">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci_by_"/>
+  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
+    <testcase time="0" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
+  </testsuite>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.056">
+    <testcase time="0.0559999999999992" classname="character(0)" name="ard_continuous_ci_data_"/>
+  </testsuite>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.007">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_continuous_ci_variables_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_variables_"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_continuous_ci_variables_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_variables_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_variables_"/>
+  </testsuite>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_by_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_by_"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_continuous_ci_by_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci_by_"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_by_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_by_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci_by_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_by_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_conf.level_"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_conf.level_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_conf.level_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_continuous_ci_method_variables_"/>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_method_variables_"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_method_variables_"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci_method_variables_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_method_variables_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_method_by_"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_method_by_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_method_by_"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_method_by_"/>
+    <testcase time="0" classname="character(0)" name="ard_continuous_ci_method_by_"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.006">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_..._"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_..._"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_continuous_ci_..._"/>
     <testcase time="0" classname="character(0)" name="ard_continuous_ci_..._"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_..._"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_continuous_ci_..._"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_errors_are_captured">
-      <skipped message="Reason: On CRAN ('test-ard_continuous_ci.survey.design.R:193:1')"/>
-    </testcase>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_continuous_ci_errors_are_captured"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_continuous_ci_errors_are_captured"/>
   </testsuite>
-  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000001" classname="character(0)" name="ard_continuous_ci.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_continuous_ci.survey.design" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_continuous_ci.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.573">
-    <testcase time="0.571" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
-    <testcase time="0" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_hedges_g_works">
-      <skipped message="Reason: On CRAN ('test-ard_effectsize_hedges_g.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.508">
+    <testcase time="0.504999999999999" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_hedges_g_works"/>
   </testsuite>
-  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0110000000000001" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
-    <testcase time="0" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
+  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_effectsize_paired_hedges_g_works"/>
   </testsuite>
-  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:41:53Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999978" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
-    <testcase time="0.00100000000000033" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
+  <testsuite name="ard_effectsize_hedges_g" timestamp="2026-02-27T01:42:02Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:41:54Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.772">
-    <testcase time="0.768999999999999" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_cohens_d_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_cohens_d_works">
-      <skipped message="Reason: On CRAN ('test-ard_effectsize_cohens_d.R:3:1')"/>
-    </testcase>
-  </testsuite>
-  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:41:54Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.019">
-    <testcase time="0.0180000000000007" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
-    <testcase time="0" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_effectsize_paired_cohens_d_works"/>
-  </testsuite>
-  <testsuite name="ard_effectsize_cohens_d" timestamp="2026-02-27T01:41:54Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.005">
-    <testcase time="0.00399999999999956" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_effectsize_cohens_d_follows_ard_structure"/>
-  </testsuite>
-  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="10" skipped="1" failures="0" errors="0" time="0.597">
-    <testcase time="0.591999999999999" classname="character(0)" name="ard_emmeans_contrast_works"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_works"/>
+  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:42:03Z" hostname="f21e4774db01" tests="10" skipped="0" failures="0" errors="0" time="0.956">
+    <testcase time="0.946" classname="character(0)" name="ard_emmeans_contrast_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_emmeans_contrast_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_emmeans_contrast_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_emmeans_contrast_works"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works">
-      <skipped message="Reason: On CRAN ('test-ard_emmeans_contrast.R:3:1')"/>
-    </testcase>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_works"/>
   </testsuite>
-  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_emmeans_contrast_follows_ard_structure"/>
+  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:42:03Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_emmeans_contrast_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_emmeans_contrast" timestamp="2026-02-27T01:42:03Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.006">
     <testcase time="0.00200000000000067" classname="character(0)" name="ard_emmeans_contrast_errors_are_returned_correctly"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_contrast_errors_are_returned_correctly"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_errors_are_returned_correctly">
-      <skipped message="Reason: On CRAN ('test-ard_emmeans_contrast.R:100:1')"/>
-    </testcase>
+    <testcase time="0" classname="character(0)" name="ard_emmeans_contrast_errors_are_returned_correctly"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_emmeans_contrast_errors_are_returned_correctly"/>
   </testsuite>
-  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="7" skipped="1" failures="0" errors="0" time="0.741">
-    <testcase time="0.738000000000001" classname="character(0)" name="ard_incidence_rate_works"/>
+  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="10" skipped="0" failures="0" errors="0" time="0.746">
+    <testcase time="0.741" classname="character(0)" name="ard_incidence_rate_works"/>
     <testcase time="0" classname="character(0)" name="ard_incidence_rate_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_incidence_rate_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_incidence_rate_works"/>
+    <testcase time="0" classname="character(0)" name="ard_incidence_rate_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_incidence_rate_works"/>
     <testcase time="0" classname="character(0)" name="ard_incidence_rate_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_incidence_rate_works"/>
-    <testcase time="0" classname="character(0)" name="ard_incidence_rate_works">
-      <skipped message="Reason: On CRAN ('test-ard_incidence_rate.R:7:1')"/>
-    </testcase>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_incidence_rate_works"/>
+    <testcase time="0" classname="character(0)" name="ard_incidence_rate_works"/>
   </testsuite>
-  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.014">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
+  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.006">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
     <testcase time="0" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_incidence_rate_conf.type_works">
-      <skipped message="Reason: On CRAN ('test-ard_incidence_rate.R:43:1')"/>
-    </testcase>
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
+    <testcase time="0" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_incidence_rate_conf.type_works"/>
   </testsuite>
-  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:41:55Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_incidence_rate_errors_are_handled_correctly">
-      <skipped message="Reason: On CRAN ('test-ard_incidence_rate.R:66:1')"/>
-    </testcase>
+  <testsuite name="ard_incidence_rate" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_incidence_rate_errors_are_handled_correctly"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_incidence_rate_errors_are_handled_correctly"/>
+    <testcase time="0" classname="character(0)" name="ard_incidence_rate_errors_are_handled_correctly"/>
   </testsuite>
-  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:41:56Z" hostname="88a8c0c60655" tests="9" skipped="1" failures="0" errors="0" time="0.459">
-    <testcase time="0.452" classname="character(0)" name="ard_emmeans_emmeans_works"/>
+  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="9" skipped="0" failures="0" errors="0" time="0.068">
+    <testcase time="0.0599999999999987" classname="character(0)" name="ard_emmeans_emmeans_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_emmeans_emmeans_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_emmeans_emmeans_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_emmeans_emmeans_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_works"/>
-    <testcase time="0" classname="character(0)" name="ard_emmeans_emmeans_works">
-      <skipped message="Reason: On CRAN ('test-ard_emmeans_emmeans.R:3:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:41:56Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_emmeans_emmeans_follows_ard_structure"/>
+  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_emmeans_emmeans_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:41:56Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.003">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly"/>
+  <testsuite name="ard_emmeans_emmeans" timestamp="2026-02-27T01:42:04Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.025">
+    <testcase time="0.0230000000000015" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly"/>
     <testcase time="0" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly">
-      <skipped message="Reason: On CRAN ('test-ard_emmeans_emmeans.R:93:1')"/>
-    </testcase>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_emmeans_emmeans_errors_are_returned_correctly"/>
   </testsuite>
-  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:41:57Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="1.345">
-    <testcase time="1.342" classname="character(0)" name="ard_categorical_ci_works"/>
-    <testcase time="0" classname="character(0)" name="ard_categorical_ci_works"/>
+  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:42:05Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="1.419">
+    <testcase time="1.416" classname="character(0)" name="ard_categorical_ci_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_categorical_ci_works"/>
     <testcase time="0" classname="character(0)" name="ard_categorical_ci_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_works"/>
+    <testcase time="0" classname="character(0)" name="ard_categorical_ci_works"/>
   </testsuite>
-  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:41:57Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works"/>
+  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:42:05Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works"/>
     <testcase time="0" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works">
-      <skipped message="Reason: On CRAN ('test-ard_proportion_ci.R:62:1')"/>
-    </testcase>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_categorical_ci_method_strat_wilson_works"/>
   </testsuite>
-  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:41:57Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0119999999999987" classname="character(0)" name="ard_categorical_ci_messaging">
-      <skipped message="Reason: On CRAN ('test-ard_proportion_ci.R:112:1')"/>
-    </testcase>
+  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:42:05Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_categorical_ci_messaging"/>
   </testsuite>
-  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:41:57Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.011000000000001" classname="character(0)" name="ard_proportion_ci_follows_ard_structure"/>
+  <testsuite name="ard_proportion_ci" timestamp="2026-02-27T01:42:05Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_proportion_ci_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:41:58Z" hostname="88a8c0c60655" tests="19" skipped="0" failures="0" errors="0" time="0.669">
-    <testcase time="0.654999999999999" classname="character(0)" name="ard_missing.survey.design_works"/>
+  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:42:07Z" hostname="f21e4774db01" tests="19" skipped="0" failures="0" errors="0" time="1.247">
+    <testcase time="1.228" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.00200000000000067" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
+    <testcase time="0.00399999999999956" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_missing.survey.design_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_missing.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:41:58Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_missing.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:42:07Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000067" classname="character(0)" name="ard_missing.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:41:58Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_missing.survey.design" timestamp="2026-02-27T01:42:07Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00200000000000067" classname="character(0)" name="ard_missing.survey.design_works_on_design_columns"/>
   </testsuite>
-  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:41:59Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="1.217">
-    <testcase time="1.215" classname="character(0)" name="ard_regression_basic_works"/>
+  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="1.229">
+    <testcase time="1.227" classname="character(0)" name="ard_regression_basic_works"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_regression_basic_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_regression_basic_works">
-      <skipped message="Reason: On CRAN ('test-ard_regression_basic.R:3:1')"/>
-    </testcase>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_regression_basic_works"/>
   </testsuite>
-  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:41:59Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_regression_basic_does_not_produce_variable_level_column_where_not_applicable"/>
+  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_basic_does_not_produce_variable_level_column_where_not_applicable"/>
   </testsuite>
-  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:41:59Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_regression_basic_follows_ard_structure"/>
+  <testsuite name="ard_regression_basic" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_basic_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:00Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.615">
-    <testcase time="0.613999999999999" classname="character(0)" name="ard_smd_smd_works"/>
+  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.423">
+    <testcase time="0.420999999999999" classname="character(0)" name="ard_smd_smd_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_smd_smd_works"/>
-    <testcase time="0" classname="character(0)" name="ard_smd_smd_works"/>
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_smd_smd_works"/>
   </testsuite>
-  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:00Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_smd_works_with_survey_data"/>
+  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_smd_works_with_survey_data"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_smd_works_with_survey_data"/>
   </testsuite>
-  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:00Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.004">
     <testcase time="0.00199999999999889" classname="character(0)" name="ard_smd_smd_error_messaging"/>
     <testcase time="0" classname="character(0)" name="ard_smd_smd_error_messaging"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_smd_smd_error_messaging"/>
     <testcase time="0.000999999999999446" classname="character(0)" name="ard_smd_smd_error_messaging"/>
-    <testcase time="0" classname="character(0)" name="ard_smd_smd_error_messaging"/>
   </testsuite>
-  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:00Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_smd_smd_follows_ard_structure"/>
+  <testsuite name="ard_smd_smd" timestamp="2026-02-27T01:42:08Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.000999999999999446" classname="character(0)" name="ard_smd_smd_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="1.189">
-    <testcase time="1.185" classname="character(0)" name="ard_regression_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_regression_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_regression_works"/>
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_regression_works">
-      <skipped message="Reason: On CRAN ('test-ard_regression.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="1.282">
+    <testcase time="1.282" classname="character(0)" name="ard_stats_anova.anova_works"/>
   </testsuite>
-  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.013">
-    <testcase time="0.0129999999999999" classname="character(0)" name="ard_regression_works_specifying_custom_tidier">
-      <skipped message="Reason: On CRAN ('test-ard_regression.R:40:1')"/>
-    </testcase>
-  </testsuite>
-  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.014">
-    <testcase time="0.0139999999999993" classname="character(0)" name="ard_regression_does_not_produce_variable_level_column_where_not_applicable"/>
-  </testsuite>
-  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_regression_warnings_and_errors_return_correctly"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_regression_warnings_and_errors_return_correctly"/>
-  </testsuite>
-  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_regression_follows_ard_structure"/>
-  </testsuite>
-  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.062">
-    <testcase time="0.0619999999999994" classname="character(0)" name="ard_stats_anova.anova_works"/>
-  </testsuite>
-  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="7" skipped="0" failures="0" errors="0" time="0.006">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
+  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="7" skipped="0" failures="0" errors="0" time="0.006">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
     <testcase time="0" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
-    <testcase time="0.000999999999999446" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_anova.data.frame_works"/>
   </testsuite>
-  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000067" classname="character(0)" name="ard_stats_anova.data.frame_error_messaging"/>
+  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_anova.data.frame_error_messaging"/>
   </testsuite>
-  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_anova_follows_ard_structure"/>
+  <testsuite name="ard_stats_anova" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_anova_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_aov" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.18">
-    <testcase time="0.177" classname="character(0)" name="ard_aov_works"/>
+  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.014">
+    <testcase time="0.0109999999999992" classname="character(0)" name="ard_regression_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_regression_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_regression_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_regression_works"/>
+  </testsuite>
+  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_works_specifying_custom_tidier"/>
+  </testsuite>
+  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_does_not_produce_variable_level_column_where_not_applicable"/>
+  </testsuite>
+  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_warnings_and_errors_return_correctly"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_regression_warnings_and_errors_return_correctly"/>
+  </testsuite>
+  <testsuite name="ard_regression" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_regression_follows_ard_structure"/>
+  </testsuite>
+  <testsuite name="ard_stats_aov" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.225">
+    <testcase time="0.223000000000003" classname="character(0)" name="ard_aov_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_aov_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_aov_works"/>
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_aov_works">
-      <skipped message="Reason: On CRAN ('test-ard_stats_aov.R:3:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_stats_aov" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.019">
-    <testcase time="0.0190000000000001" classname="character(0)" name="ard_stats_aov_follows_ard_structure"/>
+  <testsuite name="ard_stats_aov" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_aov_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_chisq_test" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.036">
-    <testcase time="0.0350000000000001" classname="character(0)" name="ard_stats_chisq_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_chisq_test_works"/>
+  <testsuite name="ard_stats_chisq_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.008">
+    <testcase time="0.00700000000000145" classname="character(0)" name="ard_stats_chisq_test_works"/>
     <testcase time="0" classname="character(0)" name="ard_stats_chisq_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_chisq_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_chisq_test" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_chisq_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_chisq_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_chisq_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_fisher_test" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.195">
-    <testcase time="0.193000000000001" classname="character(0)" name="ard_stats_fisher_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_fisher_test_works"/>
+  <testsuite name="ard_stats_fisher_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.242">
+    <testcase time="0.239999999999998" classname="character(0)" name="ard_stats_fisher_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_fisher_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_fisher_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_fisher_test" timestamp="2026-02-27T01:42:01Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_fisher_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_fisher_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_fisher_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_kruskal_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.08">
-    <testcase time="0.0779999999999994" classname="character(0)" name="ard_stats_kruskal_test_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_kruskal_test_works"/>
+  <testsuite name="ard_stats_kruskal_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.066">
+    <testcase time="0.0629999999999988" classname="character(0)" name="ard_stats_kruskal_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_kruskal_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_kruskal_test_works">
-      <skipped message="Reason: On CRAN ('test-ard_stats_kruskal_test.R:3:1')"/>
-    </testcase>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_kruskal_test_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_kruskal_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_kruskal_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_stats_kruskal_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_kruskal_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_kruskal_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_mantelhaen_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.208">
-    <testcase time="0.205000000000002" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
+  <testsuite name="ard_stats_mantelhaen_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.252">
+    <testcase time="0.246000000000002" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
+    <testcase time="0.00399999999999778" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mantelhaen_test_works">
-      <skipped message="Reason: On CRAN ('test-ard_stats_mantelhaen_test.R:3:1')"/>
-    </testcase>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mantelhaen_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_mantelhaen_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.016">
-    <testcase time="0.0150000000000006" classname="character(0)" name="ard_stats_mantelhaen_test_displays_errors_correctly"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_mantelhaen_test_displays_errors_correctly"/>
+  <testsuite name="ard_stats_mantelhaen_test" timestamp="2026-02-27T01:42:10Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_mantelhaen_test_displays_errors_correctly"/>
     <testcase time="0" classname="character(0)" name="ard_stats_mantelhaen_test_displays_errors_correctly"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mantelhaen_test_displays_errors_correctly"/>
   </testsuite>
-  <testsuite name="ard_stats_mcnemar_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="7" skipped="0" failures="0" errors="0" time="0.214">
-    <testcase time="0.211000000000002" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
+  <testsuite name="ard_stats_mcnemar_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="7" skipped="0" failures="0" errors="0" time="0.19">
+    <testcase time="0.183999999999997" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_mcnemar_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_mcnemar_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.004">
+  <testsuite name="ard_stats_mcnemar_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.004">
     <testcase time="0.00400000000000134" classname="character(0)" name="ard_stats_mcnemar_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_mood_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="0.102">
-    <testcase time="0.0990000000000002" classname="character(0)" name="ard_stats_mood_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mood_test_works"/>
+  <testsuite name="ard_stats_mood_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.138">
+    <testcase time="0.137" classname="character(0)" name="ard_stats_mood_test_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_mood_test_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_mood_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_mood_test_works">
-      <skipped message="Reason: On CRAN ('test-ard_stats_mood_test.R:3:1')"/>
-    </testcase>
+    <testcase time="0" classname="character(0)" name="ard_stats_mood_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_mood_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.017">
-    <testcase time="0.0169999999999995" classname="character(0)" name="ard_stats_mood_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_mood_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_stats_mood_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_oneway_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.131">
-    <testcase time="0.129000000000001" classname="character(0)" name="ard_stats_oneway_test_works"/>
+  <testsuite name="ard_stats_oneway_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.125">
+    <testcase time="0.123000000000001" classname="character(0)" name="ard_stats_oneway_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_oneway_test_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_oneway_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_oneway_test_works">
-      <skipped message="Reason: On CRAN ('test-ard_stats_oneway_test.R:3:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_stats_oneway_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.017">
-    <testcase time="0.0169999999999995" classname="character(0)" name="ard_stats_oneway_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_oneway_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00400000000000134" classname="character(0)" name="ard_stats_oneway_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.181">
-    <testcase time="0.178999999999998" classname="character(0)" name="ard_stats_poisson_test_works_for_one_sample_tests"/>
+  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.202">
+    <testcase time="0.201000000000001" classname="character(0)" name="ard_stats_poisson_test_works_for_one_sample_tests"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_poisson_test_works_for_one_sample_tests"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_poisson_test_works_for_one_sample_tests"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_poisson_test_works_for_one_sample_tests"/>
   </testsuite>
-  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.004">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_poisson_test_works_for_two_sample_tests"/>
+  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_poisson_test_works_for_two_sample_tests"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_poisson_test_works_for_two_sample_tests"/>
   </testsuite>
-  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.008">
-    <testcase time="0.00800000000000267" classname="character(0)" name="ard_stats_poisson_test_errors_are_handled_correctly">
-      <skipped message="Reason: On CRAN ('test-ard_stats_poisson_test.R:73:1')"/>
-    </testcase>
+  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_stats_poisson_test_errors_are_handled_correctly"/>
   </testsuite>
-  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:02Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_stats_poisson_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_poisson_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_poisson_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.341">
-    <testcase time="0.338999999999999" classname="character(0)" name="ard_stats_prop_test_works"/>
+  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.327">
+    <testcase time="0.324999999999999" classname="character(0)" name="ard_stats_prop_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_prop_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="8" skipped="0" failures="0" errors="0" time="0.006">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
+  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:11Z" hostname="f21e4774db01" tests="8" skipped="0" failures="0" errors="0" time="0.009">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
     <testcase time="0" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_prop_test_error_messaging"/>
   </testsuite>
-  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_stats_prop_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_prop_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_prop_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.147">
-    <testcase time="0.137999999999998" classname="character(0)" name="ard_stats_t_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_t_test_works"/>
+  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.172">
+    <testcase time="0.166" classname="character(0)" name="ard_stats_t_test_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_t_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_t_test_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_t_test_works"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_t_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_t_test_works"/>
-    <testcase time="0.00499999999999901" classname="character(0)" name="ard_stats_t_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
     <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_paired_t_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_paired_t_test_works"/>
     <testcase time="0" classname="character(0)" name="ard_stats_paired_t_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_stats_t_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
     <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_t_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_t_test_onesample" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="5" skipped="0" failures="0" errors="0" time="0.264">
-    <testcase time="0.262" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
+  <testsuite name="ard_stats_t_test_onesample" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.237">
+    <testcase time="0.233000000000001" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_t_test_onesample_works"/>
   </testsuite>
-  <testsuite name="ard_stats_t_test_onesample" timestamp="2026-02-27T01:42:03Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_stats_t_test_onesample_follows_ard_structure"/>
+  <testsuite name="ard_stats_t_test_onesample" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00400000000000134" classname="character(0)" name="ard_stats_t_test_onesample_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.386">
-    <testcase time="0.381" classname="character(0)" name="ard_stats_wilcox_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_wilcox_test_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_works"/>
+  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.41">
+    <testcase time="0.407" classname="character(0)" name="ard_stats_wilcox_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_wilcox_test_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_wilcox_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_works"/>
+    <testcase time="0" classname="character(0)" name="ard_stats_wilcox_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.006">
-    <testcase time="0.00400000000000134" classname="character(0)" name="ard_stats_paired_wilcox_test_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_paired_wilcox_test_works"/>
+  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_paired_wilcox_test_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_paired_wilcox_test_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_paired_wilcox_test_works"/>
   </testsuite>
-  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_wilcox_test_follows_ard_structure"/>
+  <testsuite name="ard_stats_wilcox_test" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.001">
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_wilcox_test_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_stats_wilcox_test_onesample" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="5" skipped="0" failures="0" errors="0" time="0.109">
-    <testcase time="0.106000000000002" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
+  <testsuite name="ard_stats_wilcox_test_onesample" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.118">
+    <testcase time="0.114000000000001" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
-    <testcase time="0" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_stats_wilcox_test_onesample_works"/>
   </testsuite>
-  <testsuite name="ard_stats_wilcox_test_onesample" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_stats_wilcox_test_onesample_follows_ard_structure"/>
+  <testsuite name="ard_stats_wilcox_test_onesample" timestamp="2026-02-27T01:42:12Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_stats_wilcox_test_onesample_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survey_svychisq" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="5" skipped="1" failures="0" errors="0" time="0.54">
-    <testcase time="0.538" classname="character(0)" name="ard_survey_svychisq_works"/>
+  <testsuite name="ard_survey_svychisq" timestamp="2026-02-27T01:42:13Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.575">
+    <testcase time="0.573" classname="character(0)" name="ard_survey_svychisq_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survey_svychisq_works"/>
+    <testcase time="0" classname="character(0)" name="ard_survey_svychisq_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svychisq_works"/>
     <testcase time="0" classname="character(0)" name="ard_survey_svychisq_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survey_svychisq_works"/>
-    <testcase time="0" classname="character(0)" name="ard_survey_svychisq_works">
-      <skipped message="Reason: On CRAN ('test-ard_survey_svychisq.R:3:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_survey_svychisq" timestamp="2026-02-27T01:42:04Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_survey_svychisq_follows_ard_structure"/>
+  <testsuite name="ard_survey_svychisq" timestamp="2026-02-27T01:42:13Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survey_svychisq_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.533">
-    <testcase time="0.533000000000001" classname="character(0)" name="ard_survey_svyranktest_works">
-      <skipped message="Reason: On CRAN ('test-ard_survey_svyranktest.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.546">
+    <testcase time="0.544" classname="character(0)" name="ard_survey_svyranktest_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survey_svyranktest_works"/>
+    <testcase time="0" classname="character(0)" name="ard_survey_svyranktest_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyranktest_works"/>
   </testsuite>
-  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="exact_values_match_for_ard_svyranktest_works"/>
+  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.009">
+    <testcase time="0.00900000000000034" classname="character(0)" name="exact_values_match_for_ard_svyranktest_works"/>
   </testsuite>
-  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survey_svyranktest_follows_ard_structure"/>
+  <testsuite name="ard_survey_svyranktest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survey_svyranktest_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.46">
-    <testcase time="0.457999999999998" classname="character(0)" name="ard_survey_svyttest_works"/>
+  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.498">
+    <testcase time="0.495999999999999" classname="character(0)" name="ard_survey_svyttest_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyttest_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyttest_works"/>
     <testcase time="0" classname="character(0)" name="ard_survey_svyttest_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyttest_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyttest_works"/>
   </testsuite>
-  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
     <testcase time="0.00199999999999889" classname="character(0)" name="ard_survey_svyttest_messaging"/>
-    <testcase time="0" classname="character(0)" name="ard_survey_svyttest_messaging"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survey_svyttest_messaging"/>
   </testsuite>
-  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:05Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survey_svyttest_follows_ard_structure"/>
+  <testsuite name="ard_survey_svyttest" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survey_svyttest_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:06Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.282">
-    <testcase time="0.280000000000001" classname="character(0)" name="ard_survival_survdiff_works"/>
-    <testcase time="0" classname="character(0)" name="ard_survival_survdiff_works"/>
+  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.277">
+    <testcase time="0.274000000000001" classname="character(0)" name="ard_survival_survdiff_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survdiff_works"/>
     <testcase time="0" classname="character(0)" name="ard_survival_survdiff_works"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survdiff_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survdiff_works"/>
     <testcase time="0" classname="character(0)" name="ard_survival_survdiff_works"/>
   </testsuite>
-  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:06Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.004">
+  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.004">
     <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survdiff_error_messaging"/>
     <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survdiff_error_messaging"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survdiff_error_messaging"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survdiff_error_messaging"/>
     <testcase time="0" classname="character(0)" name="ard_survival_survdiff_error_messaging"/>
   </testsuite>
-  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:06Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survdiff_follows_ard_structure"/>
+  <testsuite name="ard_survival_survdiff" timestamp="2026-02-27T01:42:14Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survdiff_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="3.184">
-    <testcase time="3.184" classname="character(0)" name="ard_survival_survfit_works_with_times_provided">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="3.358">
+    <testcase time="3.358" classname="character(0)" name="ard_survival_survfit_works_with_times_provided"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_survival_survfit_works_with_different_type">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:16:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survfit_works_with_different_type"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0119999999999969" classname="character(0)" name="ard_survival_survfit_works_with_probs_provided">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:29:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_works_with_probs_provided"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.014">
-    <testcase time="0.0140000000000029" classname="character(0)" name="ard_survival_survfit_works_with_unstratified_model">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:42:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_works_with_unstratified_model"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_works_with_unstratified_model"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_survival_survfit_works_with_multiple_stratification_variables">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:64:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_works_with_multiple_stratification_variables"/>
+    <testcase time="0" classname="character(0)" name="ard_survival_survfit_works_with_multiple_stratification_variables"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_survival_survfit_works_with_competing_risks">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:90:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survfit_works_with_competing_risks"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit_works_with_competing_risks"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:120:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="8" skipped="0" failures="0" errors="0" time="0.009">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit_errors_are_properly_handled"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.014">
-    <testcase time="0.0139999999999993" classname="character(0)" name="ard_survival_survfit_works_with_non_syntactic_names"/>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_works_with_non_syntactic_names"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_errors_with_stratified_Cox_model">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:191:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survfit_errors_with_stratified_Cox_model"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000028" classname="character(0)" name="ard_survival_survfit_works_with_in_strata_variable_level_labels">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:201:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survival_survfit_works_with_in_strata_variable_level_labels"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_survival_survfit_follows_ard_structure"/>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_extends_to_times_outside_range">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:221:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_extends_to_times_outside_range"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="5" skipped="1" failures="0" errors="0" time="0.014">
-    <testcase time="0.0109999999999992" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="5" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
     <testcase time="0" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit.R:231:1')"/>
-    </testcase>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit.data.frame_works_as_expected"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:09Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.014">
-    <testcase time="0.0139999999999993" classname="character(0)" name="ard_survival_survfit.data.frame_variables_NULL_for_unstratified_model"/>
+  <testsuite name="ard_survival_survfit" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit.data.frame_variables_NULL_for_unstratified_model"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:10Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.593">
-    <testcase time="0.591000000000001" classname="character(0)" name="ard_survival_survfit_diff_works"/>
-    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_diff_works"/>
+  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.625">
+    <testcase time="0.623000000000001" classname="character(0)" name="ard_survival_survfit_diff_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_survival_survfit_diff_works"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_diff_works"/>
     <testcase time="0" classname="character(0)" name="ard_survival_survfit_diff_works"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:10Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survival_survfit_diff_messaging">
-      <skipped message="Reason: On CRAN ('test-ard_survival_survfit_diff.R:36:1')"/>
-    </testcase>
+  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_survival_survfit_diff_messaging"/>
+    <testcase time="0" classname="character(0)" name="ard_survival_survfit_diff_messaging"/>
+    <testcase time="0.00100000000000122" classname="character(0)" name="ard_survival_survfit_diff_messaging"/>
   </testsuite>
-  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:10Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_survival_survfit_diff_follows_ard_structure"/>
+  <testsuite name="ard_survival_survfit_diff" timestamp="2026-02-27T01:42:18Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999889" classname="character(0)" name="ard_survival_survfit_diff_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="54" skipped="0" failures="0" errors="0" time="23.127">
-    <testcase time="23.09" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="54" skipped="0" failures="0" errors="0" time="24.747">
+    <testcase time="24.71" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
@@ -777,6 +700,7 @@
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
@@ -784,43 +708,44 @@
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
-    <testcase time="0.00399999999999778" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_returns_an_error_when_variables_have_all_NAs">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate.survey.design.R:421:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_returns_an_error_when_variables_have_all_NAs"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_returns_an_error_when_variables_have_all_NAs"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_returns_an_error_when_variables_have_all_NAs"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="39" skipped="0" failures="0" errors="0" time="0.035">
-    <testcase time="0.0119999999999933" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="39" skipped="0" failures="0" errors="0" time="0.029">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
@@ -835,24 +760,37 @@
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_factor_levels"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="39" skipped="0" failures="0" errors="0" time="0.029">
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="39" skipped="0" failures="0" errors="0" time="0.027">
     <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
@@ -881,148 +819,134 @@
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_for_unobserved_logical_levels"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="18" skipped="0" failures="0" errors="0" time="0.013">
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="18" skipped="0" failures="0" errors="0" time="0.013">
     <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_with_variables_with_only_1_level"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="3" skipped="1" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.007">
+    <testcase time="0.00499999999999545" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate.survey.design.R:1176:1')"/>
-    </testcase>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_by_messages_about_protected_names"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="10" skipped="0" failures="0" errors="0" time="0.016">
-    <testcase time="0.0109999999999957" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="10" skipped="0" failures="0" errors="0" time="0.007">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_when_using_generic_names_"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.004">
-    <testcase time="0.00400000000000489" classname="character(0)" name="ard_tabulate.survey.design_statistic_properly_excluded_unweighted_stats_not_selected"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate.survey.design_statistic_properly_excluded_unweighted_stats_not_selected"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_follows_ard_structure"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="6" skipped="0" failures="0" errors="0" time="0.005">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_original_types_are_retained"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="3" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_works_with_all_NA_fct_variables"/>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate.survey.design_works_with_all_NA_fct_variables"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate.survey.design_works_with_all_NA_fct_variables"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate.survey.design_works_with_all_NA_fct_variables"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate.survey.design_works_with_all_NA_fct_variables"/>
   </testsuite>
-  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:33Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate.survey.design_messaging_with_all_NA_lgl_variables">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate.survey.design.R:1410:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate.survey.design_messaging_with_all_NA_lgl_variables"/>
   </testsuite>
-  <testsuite name="ard_tabulate_abnormal" timestamp="2026-02-27T01:42:34Z" hostname="88a8c0c60655" tests="4" skipped="1" failures="0" errors="0" time="1.064">
-    <testcase time="1.062" classname="character(0)" name="ard_tabulate_abnormal_works"/>
+  <testsuite name="ard_tabulate_abnormal" timestamp="2026-02-27T01:42:44Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="1.059">
+    <testcase time="1.056" classname="character(0)" name="ard_tabulate_abnormal_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_abnormal_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_abnormal_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_abnormal_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_abnormal_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_abnormal_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_abnormal_works">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_abnormal.R:5:1')"/>
-    </testcase>
   </testsuite>
-  <testsuite name="ard_tabulate_abnormal" timestamp="2026-02-27T01:42:34Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000028" classname="character(0)" name="ard_tabulate_abnormal_errors_are_handled_correctly">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_abnormal.R:41:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_abnormal" timestamp="2026-02-27T01:42:44Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate_abnormal_errors_are_handled_correctly"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_abnormal_errors_are_handled_correctly"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="7" skipped="1" failures="0" errors="0" time="2.831">
-    <testcase time="2.828" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="8" skipped="0" failures="0" errors="0" time="2.852">
+    <testcase time="2.849" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_default_settings">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:1:1')"/>
-    </testcase>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_default_settings"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.015">
-    <testcase time="0.0150000000000006" classname="character(0)" name="ard_tabulate_max_statistic_works">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:60:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_max_statistic_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_tabulate_max_denominator_works">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:75:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate_max_denominator_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_denominator_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000028" classname="character(0)" name="ard_tabulate_max_quiet_works"/>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_max_quiet_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="13" skipped="1" failures="0" errors="0" time="0.009">
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="13" skipped="0" failures="0" errors="0" time="0.009">
     <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:115:1')"/>
-    </testcase>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_works_with_pre_ordered_factor_variables"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.015">
-    <testcase time="0.0150000000000006" classname="character(0)" name="ard_tabulate_max_errors_with_incomplete_factor_columns">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:210:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_max_errors_with_incomplete_factor_columns"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_errors_with_incomplete_factor_columns"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0109999999999957" classname="character(0)" name="ard_tabulate_max_works_without_any_variables">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:236:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate_max_works_without_any_variables"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="ard_tabulate_max_follows_ard_structure"/>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.005">
+    <testcase time="0.00499999999999545" classname="character(0)" name="ard_tabulate_max_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:37Z" hostname="88a8c0c60655" tests="2" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000244" classname="character(0)" name="ard_tabulate_max_strata_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_max_strata_works">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_max.R:258:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_max" timestamp="2026-02-27T01:42:47Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_max_strata_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_max_strata_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="88a8c0c60655" tests="36" skipped="0" failures="0" errors="0" time="6.28">
-    <testcase time="6.254" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="36" skipped="0" failures="0" errors="0" time="6.577">
+    <testcase time="6.551" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
@@ -1039,6 +963,15 @@
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
@@ -1046,145 +979,164 @@
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.00399999999999778" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_tabulate_value.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="88a8c0c60655" tests="12" skipped="0" failures="0" errors="0" time="0.008">
+  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="12" skipped="0" failures="0" errors="0" time="0.007">
     <testcase time="0.00199999999999534" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
+    <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
+    <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
+    <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
     <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
-    <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
-    <testcase time="0" classname="character(0)" name="ard_dichotomous.survey.design_works_with_various_input_types"/>
   </testsuite>
-  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_value.survey.design_returns_an_error_with_erroneous_input">
-      <skipped message="Reason: On CRAN ('test-ard_tabulate_value.survey.design.R:736:1')"/>
-    </testcase>
+  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="3" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_tabulate_value.survey.design_returns_an_error_with_erroneous_input"/>
+    <testcase time="0" classname="character(0)" name="ard_tabulate_value.survey.design_returns_an_error_with_erroneous_input"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_tabulate_value.survey.design_returns_an_error_with_erroneous_input"/>
   </testsuite>
-  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:43Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000028" classname="character(0)" name="ard_tabulate_value.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_tabulate_value.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_tabulate_value.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:44Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.538">
-    <testcase time="0.538000000000004" classname="character(0)" name="ard_total_n.survey.design_works">
-      <skipped message="Reason: On CRAN ('test-ard_total_n.survey.design.R:3:1')"/>
-    </testcase>
+  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.559">
+    <testcase time="0.559000000000005" classname="character(0)" name="ard_total_n.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:44Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.019">
-    <testcase time="0.0189999999999984" classname="character(0)" name="ard_total_n.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_total_n.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:44Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00300000000000011" classname="character(0)" name="ard_total_n.survey.design_using_update_"/>
+  <testsuite name="ard_total_n.survey.design" timestamp="2026-02-27T01:42:54Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_total_n.survey.design_using_update_"/>
   </testsuite>
-  <testsuite name="construction_helpers" timestamp="2026-02-27T01:42:46Z" hostname="88a8c0c60655" tests="10" skipped="1" failures="0" errors="0" time="1.992">
-    <testcase time="1.983" classname="character(0)" name="construct_model_works"/>
+  <testsuite name="construction_helpers" timestamp="2026-02-27T01:42:56Z" hostname="f21e4774db01" tests="10" skipped="0" failures="0" errors="0" time="2.028">
+    <testcase time="2.023" classname="character(0)" name="construct_model_works"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.00200000000000244" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="construct_model_works"/>
     <testcase time="0" classname="character(0)" name="construct_model_works"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works">
-      <skipped message="Reason: On CRAN ('test-construction_helpers.R:3:1')"/>
-    </testcase>
+    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_works"/>
+    <testcase time="0" classname="character(0)" name="construct_model_works"/>
   </testsuite>
-  <testsuite name="construction_helpers" timestamp="2026-02-27T01:42:46Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="construct_model_messaging">
-      <skipped message="Reason: On CRAN ('test-construction_helpers.R:103:1')"/>
-    </testcase>
+  <testsuite name="construction_helpers" timestamp="2026-02-27T01:42:56Z" hostname="f21e4774db01" tests="6" skipped="0" failures="0" errors="0" time="0.006">
+    <testcase time="0.00300000000000011" classname="character(0)" name="construct_model_messaging"/>
+    <testcase time="0" classname="character(0)" name="construct_model_messaging"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="construct_model_messaging"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_messaging"/>
+    <testcase time="0" classname="character(0)" name="construct_model_messaging"/>
+    <testcase time="0.000999999999997669" classname="character(0)" name="construct_model_messaging"/>
   </testsuite>
-  <testsuite name="proportion_ci" timestamp="2026-02-27T01:42:47Z" hostname="88a8c0c60655" tests="6" skipped="1" failures="0" errors="0" time="0.917">
-    <testcase time="0.913000000000004" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+  <testsuite name="proportion_ci" timestamp="2026-02-27T01:42:57Z" hostname="f21e4774db01" tests="34" skipped="0" failures="0" errors="0" time="1.115">
+    <testcase time="1.08000000000001" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
     <testcase time="0.000999999999997669" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.0069999999999979" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00199999999999534" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
     <testcase time="0" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
-    <testcase time="0.000999999999997669" classname="character(0)" name="check_the_proportion_ci__functions_work">
-      <skipped message="Reason: On CRAN ('test-proportion_ci.R:3:1')"/>
-    </testcase>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci__functions_work"/>
   </testsuite>
-  <testsuite name="proportion_ci" timestamp="2026-02-27T01:42:47Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.012">
-    <testcase time="0.0120000000000005" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works">
-      <skipped message="Reason: On CRAN ('test-proportion_ci.R:122:1')"/>
-    </testcase>
+  <testsuite name="proportion_ci" timestamp="2026-02-27T01:42:58Z" hostname="f21e4774db01" tests="10" skipped="0" failures="0" errors="0" time="0.008">
+    <testcase time="0.00199999999999534" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.000999999999990564" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="check_the_proportion_ci_strat_wilson_function_works"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="12" skipped="1" failures="0" errors="0" time="25.715">
-    <testcase time="25.708" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="12" skipped="0" failures="0" errors="0" time="22.617">
+    <testcase time="22.61" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
-    <testcase time="0.000999999999990564" classname="character(0)" name="unstratified_ard_summary.survey.design_works">
-      <skipped message="Reason: On CRAN ('test-ard_summary.survey.design.R:3:1')"/>
-    </testcase>
+    <testcase time="0.00100000000000477" classname="character(0)" name="unstratified_ard_summary.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="11" skipped="0" failures="0" errors="0" time="0.017">
-    <testcase time="0.0109999999999957" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="11" skipped="0" failures="0" errors="0" time="0.016">
+    <testcase time="0.00199999999999534" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
+    <testcase time="0.00799999999999557" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
-    <testcase time="0" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="stratified_ard_summary.survey.design_works"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.004">
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.004">
     <testcase time="0.00200000000000955" classname="character(0)" name="ard_summary.survey.design_NA_handling"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_NA_handling"/>
-    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_NA_handling"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_NA_handling"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_NA_handling"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.003">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_error_handling"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_error_handling"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_summary.survey.design_error_handling"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_error_handling"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.002">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_fmt_fun_">
-      <skipped message="Reason: On CRAN ('test-ard_summary.survey.design.R:318:1')"/>
-    </testcase>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_fmt_fun_"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="1" skipped="1" failures="0" errors="0" time="0.011">
-    <testcase time="0.0110000000000099" classname="character(0)" name="ard_summary.survey.design_stat_label_">
-      <skipped message="Reason: On CRAN ('test-ard_summary.survey.design.R:334:1')"/>
-    </testcase>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.003">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_summary.survey.design_stat_label_"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="2" skipped="0" failures="0" errors="0" time="0.015">
-    <testcase time="0.0139999999999958" classname="character(0)" name="ard_summary.survey.design_by_unobserved_levels_combinations"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_by_unobserved_levels_combinations"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="2" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00200000000000955" classname="character(0)" name="ard_summary.survey.design_by_unobserved_levels_combinations"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_by_unobserved_levels_combinations"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="19" skipped="0" failures="0" errors="0" time="0.013">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="19" skipped="0" failures="0" errors="0" time="0.014">
+    <testcase time="0.00300000000000011" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
-    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
@@ -1193,17 +1145,18 @@
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
-    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_works_when_using_generic_names_"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="1" skipped="0" failures="0" errors="0" time="0.002">
-    <testcase time="0.00200000000000955" classname="character(0)" name="ard_summary.survey.design_follows_ard_structure"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="1" skipped="0" failures="0" errors="0" time="0.002">
+    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_follows_ard_structure"/>
   </testsuite>
-  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:12Z" hostname="88a8c0c60655" tests="4" skipped="0" failures="0" errors="0" time="0.004">
-    <testcase time="0.00199999999999534" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
-    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
-    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
+  <testsuite name="ard_summary.survey.design" timestamp="2026-02-27T01:43:20Z" hostname="f21e4774db01" tests="4" skipped="0" failures="0" errors="0" time="0.004">
+    <testcase time="0.00200000000000955" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
     <testcase time="0.000999999999990564" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
+    <testcase time="0" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
+    <testcase time="0.00100000000000477" classname="character(0)" name="ard_summary.survey.design_original_types_are_retained"/>
   </testsuite>
 </testsuites>
