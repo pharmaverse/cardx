@@ -42,7 +42,7 @@ ard_stats_mantelhaen_test <- function(data, by, variables, strata, ...) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   dots <- dots_list(...)
@@ -69,7 +69,7 @@ ard_stats_mantelhaen_test <- function(data, by, variables, strata, ...) {
       stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name),
       context = "stats_mantelhaen_test",
     ) |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

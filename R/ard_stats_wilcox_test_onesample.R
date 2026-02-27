@@ -35,7 +35,7 @@ ard_stats_wilcox_test_onesample <- function(data, variables, by = dplyr::group_v
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   cards::ard_summary(
@@ -67,7 +67,7 @@ ard_stats_wilcox_test_onesample <- function(data, variables, by = dplyr::group_v
       stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name),
       context = "stats_wilcox_test_onesample",
     ) |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
 }

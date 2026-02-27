@@ -101,6 +101,6 @@ ard_car_vif <- function(x, ...) {
 
   # Clean up return object
   vif_return |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }

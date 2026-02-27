@@ -36,7 +36,7 @@ ard_stats_chisq_test <- function(data, by, variables, ...) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # build ARD ------------------------------------------------------------------
@@ -69,5 +69,5 @@ ard_stats_chisq_test <- function(data, by, variables, ...) {
     }
   ) |>
     dplyr::bind_rows() |>
-    cards::as_card()
+    cards::as_card(check = FALSE)
 }

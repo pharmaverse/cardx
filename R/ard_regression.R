@@ -125,7 +125,7 @@ ard_regression.data.frame <- function(x, formula, method, method.args = list(), 
       by = "stat_name"
     ) |>
     dplyr::mutate(stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name)) |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }
 

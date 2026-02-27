@@ -58,6 +58,6 @@ ard_stats_oneway_test <- function(formula, data, ...) {
       dplyr::tibble(!!!map(as.list(attr(stats::terms(formula), "variables"))[-1], as_label)) %>%
         set_names(., c("variable", paste0("group", seq_len(length(.) - 1L))))
     ) |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }

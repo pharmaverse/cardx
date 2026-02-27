@@ -97,7 +97,7 @@ ard_summary.survey.design <- function(data, variables, by = NULL,
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # compute the weighted statistics --------------------------------------------
@@ -161,7 +161,7 @@ ard_summary.survey.design <- function(data, variables, by = NULL,
   # add class and return ARD object --------------------------------------------
   df_stats |>
     dplyr::mutate(context = "continuous") |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }
 
@@ -190,7 +190,6 @@ accepted_svy_stats <- function(expand_quantiles = TRUE) {
   }
   c(base_stats, "p##")
 }
-
 
 
 # this function calculates the summary for a single variable, single statistic
@@ -427,7 +426,7 @@ accepted_svy_stats <- function(expand_quantiles = TRUE) {
         tidyr::unnest(cols = "..ard_data...") |>
         dplyr::arrange(.data$...ard_id_for_sorting...) |>
         dplyr::select(-"...ard_id_for_sorting...") |>
-        cards::as_card()
+        cards::as_card(check = FALSE)
     )
   }
 

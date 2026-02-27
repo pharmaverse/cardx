@@ -39,7 +39,7 @@ ard_stats_fisher_test <- function(data, by, variables, conf.level = 0.95, ...) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # build ARD ------------------------------------------------------------------
@@ -74,5 +74,5 @@ ard_stats_fisher_test <- function(data, by, variables, conf.level = 0.95, ...) {
     }
   ) |>
     dplyr::bind_rows() |>
-    cards::as_card()
+    cards::as_card(check = FALSE)
 }

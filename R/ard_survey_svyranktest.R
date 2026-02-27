@@ -41,7 +41,7 @@ ard_survey_svyranktest <- function(data, by, variables, test, ...) {
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
-    return(dplyr::tibble() |> cards::as_card())
+    return(dplyr::tibble() |> cards::as_card(check = FALSE))
   }
 
   # build ARD ------------------------------------------------------------------
@@ -83,7 +83,7 @@ ard_survey_svyranktest <- function(data, by, variables, test, ...) {
       by = "stat_name"
     ) |>
     dplyr::mutate(stat_label = dplyr::coalesce(.data$stat_label, .data$stat_name)) |>
-    cards::as_card() |>
+    cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }
 
