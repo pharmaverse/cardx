@@ -31,6 +31,10 @@
 #'   [survival::survfit()]. Default is `NULL` for an unstratified model, e.g. `Surv() ~ 1`.
 #' @param method.args (named `list`)\cr
 #'   named list of arguments that will be passed to [survival::survfit()].
+#' @param summary.args (named `list`)\cr
+#'   named list of arguments to modify the output of [survival::summary.survfit()]. Default is
+#'   `list(extend = TRUE)`, which reports estimates even when no subjects are at risk. If set to
+#'   `list(extend = FALSE)`, those estimates are set to NA.
 #' @inheritParams rlang::args_dots_empty
 #'
 #' @section Formula Specification:
@@ -107,7 +111,8 @@ ard_survival_survfit <- function(x, ...) {
 
 #' @rdname ard_survival_survfit
 #' @export
-ard_survival_survfit.survfit <- function(x, times = NULL, probs = NULL, type = NULL, ...) {
+ard_survival_survfit.survfit <- function(x, times = NULL, probs = NULL, type = NULL,
+                                         summary.args = list(extend = TRUE),  ...) {
   set_cli_abort_call()
 
   # check installed packages ---------------------------------------------------
@@ -152,10 +157,13 @@ ard_survival_survfit.survfit <- function(x, times = NULL, probs = NULL, type = N
     )
   }
 
+  # summary.args should have extend argument
+  check_scalar_logical(summary.args$extend)
+
   # build ARD ------------------------------------------------------------------
   est_type <- ifelse(is.null(probs), "times", "probs")
   tidy_survfit <- switch(est_type,
-    "times" = .process_survfit_time(x, times, type %||% "survival"),
+    "times" = .process_survfit_time(x, times, type %||% "survival", summary.args),
     "probs" = .process_survfit_probs(x, probs)
   )
 
@@ -224,10 +232,16 @@ ard_survival_survfit.data.frame <- function(x, y,
 #'
 #' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survival", "broom")))
 #' survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-#'   cardx:::.process_survfit_time(times = c(60, 180), type = "risk")
+#'   cardx:::.process_survfit_time(times = c(60, 180), type = "risk",
+#'     summary.args = list(extend = TRUE))
+#'
+#' # don't evaluate values beyond last timepoint
+#' survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
+#'   cardx:::.process_survfit_time(times = c(60, 200), type = "risk",
+#'     summary.args = list(extend = FALSE))
 #'
 #' @keywords internal
-.process_survfit_time <- function(x, times, type, start.time = NULL) {
+.process_survfit_time <- function(x, times, type, summary.args, start.time = NULL) {
   # add start time
   min_time <- min(x$time)
   if (is.null(start.time) && min_time < 0) {
@@ -239,6 +253,7 @@ ard_survival_survfit.data.frame <- function(x, y,
   } else if (is.null(start.time)) {
     start.time <- 0
   }
+  # call with extend = TRUE to get placeholders even if extend = FALSE is intended
   x <- survival::survfit0(x, start.time) %>%
     summary(times, extend = TRUE)
 
@@ -269,10 +284,6 @@ ard_survival_survfit.data.frame <- function(x, y,
 
   # get requested estimates
   df_stat <- tidy_x %>%
-    # find max time
-    dplyr::group_by_at(., dplyr::vars(dplyr::any_of("strata"))) %>%
-    dplyr::mutate(time_max = max(.data$time)) %>%
-    dplyr::ungroup() %>%
     # add requested timepoints
     dplyr::full_join(
       tidy_x %>%
@@ -292,13 +303,13 @@ ard_survival_survfit.data.frame <- function(x, y,
 
   df_stat <- df_stat %>%
     dplyr::arrange(.data$time) %>%
-    # if user-specified time is after max time, make estimate NA
+    # if summary.args$extend = FALSE and n.risk = 0, make estimate NA
     dplyr::mutate_at(
-      dplyr::vars("estimate", "conf.high", "conf.low"),
-      ~ ifelse(.data$time > .data$time_max, NA_real_, .)
+      dplyr::vars("estimate", "std.error", "conf.high", "conf.low"),
+      ~ ifelse(.data$n.risk == 0L & !summary.args$extend, NA_real_, .)
     ) %>%
     dplyr::mutate(context = type) %>%
-    dplyr::select(!dplyr::any_of(c("time_max", "col_name")))
+    dplyr::select(!dplyr::any_of(c("col_name")))
 
   # convert estimates to requested type
   if (type != "survival") {

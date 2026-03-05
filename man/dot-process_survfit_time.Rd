@@ -4,7 +4,7 @@
 \alias{.process_survfit_time}
 \title{Process Survival Fit For Time Estimates}
 \usage{
-.process_survfit_time(x, times, type, start.time = NULL)
+.process_survfit_time(x, times, type, summary.args, start.time = NULL)
 }
 \arguments{
 \item{x}{(\code{survfit} or \code{data.frame})\cr
@@ -23,6 +23,11 @@ Must be one of the following:\tabular{ll}{
    \code{"cumhaz"} \tab \code{-log(x)} \cr
 }}
 
+\item{summary.args}{(named \code{list})\cr
+named list of arguments to modify the output of \code{\link[survival:summary.survfit]{survival::summary.survfit()}}. Default is
+\code{list(extend = TRUE)}, which reports estimates even when no subjects are at risk. If set to
+\code{list(extend = FALSE)}, those estimates are set to NA.}
+
 \item{start.time}{(\code{numeric})\cr
 default starting time. See \code{\link[survival:survfit0]{survival::survfit0()}} for more details.}
 }
@@ -35,7 +40,13 @@ Process Survival Fit For Time Estimates
 \examples{
 \dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survival", "broom")))) withAutoprint(\{ # examplesIf}
 survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-  cardx:::.process_survfit_time(times = c(60, 180), type = "risk")
+  cardx:::.process_survfit_time(times = c(60, 180), type = "risk",
+    summary.args = list(extend = TRUE))
+
+# don't evaluate values beyond last timepoint
+survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
+  cardx:::.process_survfit_time(times = c(60, 200), type = "risk",
+    summary.args = list(extend = FALSE))
 \dontshow{\}) # examplesIf}
 }
 \keyword{internal}
