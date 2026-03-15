@@ -235,17 +235,16 @@ test_that("ard_survival_survfit() extends to times outside range", {
   )
 
   expect_snapshot(
-    survival::survfit(survival::Surv(AVAL, 1-CNSR) ~ TRTA, cards::ADTTE) |>
+    survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE) |>
       ard_survival_survfit(times = 200) |>
       print(n = Inf)
   )
 
   expect_snapshot(
-    survival::survfit(survival::Surv(AVAL, 1-CNSR) ~ TRTA, cards::ADTTE) |>
+    survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE) |>
       ard_survival_survfit(times = 200, summary.args = list(extend = FALSE)) |>
       print(n = Inf)
   )
-
 })
 
 test_that("ard_survival_survfit.data.frame() works as expected", {
