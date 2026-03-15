@@ -40,13 +40,17 @@ Process Survival Fit For Time Estimates
 \examples{
 \dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survival", "broom")))) withAutoprint(\{ # examplesIf}
 survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-  cardx:::.process_survfit_time(times = c(60, 180), type = "risk",
-    summary.args = list(extend = TRUE))
+  cardx:::.process_survfit_time(
+    times = c(60, 180), type = "risk",
+    summary.args = list(extend = TRUE)
+  )
 
 # don't evaluate values beyond last timepoint
 survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-  cardx:::.process_survfit_time(times = c(60, 200), type = "risk",
-    summary.args = list(extend = FALSE))
+  cardx:::.process_survfit_time(
+    times = c(60, 200), type = "risk",
+    summary.args = list(extend = FALSE)
+  )
 \dontshow{\}) # examplesIf}
 }
 \keyword{internal}

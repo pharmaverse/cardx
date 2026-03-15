@@ -112,7 +112,7 @@ ard_survival_survfit <- function(x, ...) {
 #' @rdname ard_survival_survfit
 #' @export
 ard_survival_survfit.survfit <- function(x, times = NULL, probs = NULL, type = NULL,
-                                         summary.args = list(extend = TRUE),  ...) {
+                                         summary.args = list(extend = TRUE), ...) {
   set_cli_abort_call()
 
   # check installed packages ---------------------------------------------------
@@ -232,13 +232,17 @@ ard_survival_survfit.data.frame <- function(x, y,
 #'
 #' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survival", "broom")))
 #' survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-#'   cardx:::.process_survfit_time(times = c(60, 180), type = "risk",
-#'     summary.args = list(extend = TRUE))
+#'   cardx:::.process_survfit_time(
+#'     times = c(60, 180), type = "risk",
+#'     summary.args = list(extend = TRUE)
+#'   )
 #'
 #' # don't evaluate values beyond last timepoint
 #' survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
-#'   cardx:::.process_survfit_time(times = c(60, 200), type = "risk",
-#'     summary.args = list(extend = FALSE))
+#'   cardx:::.process_survfit_time(
+#'     times = c(60, 200), type = "risk",
+#'     summary.args = list(extend = FALSE)
+#'   )
 #'
 #' @keywords internal
 .process_survfit_time <- function(x, times, type, summary.args, start.time = NULL) {
