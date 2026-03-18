@@ -118,3 +118,59 @@ test_that("ard_effectsize_cohens_d() follows ard structure", {
       cards::check_ard_structure()
   )
 })
+
+test_that("ard_effectsize_cohens_d() conf.level argument works", {
+  expect_equal(
+    cards::ADSL |>
+      dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
+      ard_effectsize_cohens_d(by = ARM, variables = AGE, conf.level = 0.90) |>
+      cards::get_ard_statistics(stat_name %in% "conf.level"),
+    list(conf.level = 0.90)
+  )
+
+  # paired
+  ADSL_paired <-
+    cards::ADSL[c("ARM", "AGE")] |>
+    dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
+    dplyr::mutate(.by = ARM, USUBJID = dplyr::row_number()) |>
+    dplyr::group_by(USUBJID) |>
+    dplyr::filter(dplyr::n() > 1)
+
+  expect_equal(
+    ADSL_paired |>
+      ard_effectsize_paired_cohens_d(by = ARM, variable = AGE, id = USUBJID, conf.level = 0.90) |>
+      cards::get_ard_statistics(stat_name %in% "conf.level"),
+    list(conf.level = 0.90)
+  )
+})
+
+test_that("ard_effectsize_cohens_d() returns correct stat names and labels", {
+  result <-
+    cards::ADSL |>
+    dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
+    ard_effectsize_cohens_d(by = ARM, variables = AGE)
+
+  expect_true(all(c("estimate", "conf.low", "conf.high", "conf.level", "paired", "pooled_sd", "alternative") %in%
+    result$stat_name))
+
+  expect_equal(
+    result |>
+      dplyr::filter(stat_name == "estimate") |>
+      dplyr::pull(stat_label),
+    "Effect Size Estimate"
+  )
+
+  expect_equal(
+    result |>
+      dplyr::filter(stat_name == "conf.low") |>
+      dplyr::pull(stat_label),
+    "CI Lower Bound"
+  )
+
+  expect_equal(
+    result |>
+      dplyr::filter(stat_name == "conf.high") |>
+      dplyr::pull(stat_label),
+    "CI Upper Bound"
+  )
+})
