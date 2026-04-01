@@ -14,14 +14,14 @@
 #' @rdname ard_car_vif
 #' @export
 #'
-#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "car"))
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("car", "broom.helpers")))
 #' lm(AGE ~ ARM + SEX, data = cards::ADSL) |>
 #'   ard_car_vif()
 ard_car_vif <- function(x, ...) {
   set_cli_abort_call()
 
   # check installed packages ---------------------------------------------------
-  check_pkg_installed("car")
+  check_pkg_installed(c("car", "broom.helpers"))
 
   # check inputs ---------------------------------------------------------------
   check_not_missing(x)
@@ -67,6 +67,7 @@ ard_car_vif <- function(x, ...) {
   # Clean-up the result to fit the ard structure through pivot
   vif$result <-
     vif$result |>
+    dplyr::mutate(variable = broom.helpers::.clean_backticks(.data$variable)) |>
     tidyr::pivot_longer(
       cols = -c("variable"),
       names_to = "stat_name",

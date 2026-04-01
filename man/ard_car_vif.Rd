@@ -20,7 +20,7 @@ Function takes a regression model object and returns the variance inflation fact
 using \code{\link[car:vif]{car::vif()}} and converts it to a ARD structure
 }
 \examples{
-\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "car"))) withAutoprint(\{ # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("car", "broom.helpers")))) withAutoprint(\{ # examplesIf}
 lm(AGE ~ ARM + SEX, data = cards::ADSL) |>
   ard_car_vif()
 \dontshow{\}) # examplesIf}
