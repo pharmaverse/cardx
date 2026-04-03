@@ -67,7 +67,12 @@ ard_car_vif <- function(x, ...) {
   # Clean-up the result to fit the ard structure through pivot
   vif$result <-
     vif$result |>
-    dplyr::mutate(variable = broom.helpers::.clean_backticks(.data$variable)) |>
+    dplyr::mutate(
+      variable = broom.helpers::.clean_backticks(
+        .data$variable,
+        variable_names = broom.helpers::model_list_variables(x, only_variable = TRUE)
+      )
+    ) |>
     tidyr::pivot_longer(
       cols = -c("variable"),
       names_to = "stat_name",
