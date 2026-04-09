@@ -25,6 +25,17 @@ test_that("ard_car_vif() works with non-syntactic predictor names", {
   )
 })
 
+test_that("ard_car_vif() works with non-syntactic interaction-only terms", {
+  df <- cards::ADSL
+  names(df)[names(df) == "BMIBL"] <- "BMI Baseline"
+
+  expect_snapshot(
+    lm(AGE ~ ARM + `BMI Baseline`:SEX, data = df) |>
+      ard_car_vif() |>
+      as.data.frame()
+  )
+})
+
 test_that("ard_car_vif() appropriate errors are given for model with only 1 term", {
   expect_equal(
     lm(AGE ~ ARM, data = cards::ADSL) |>
