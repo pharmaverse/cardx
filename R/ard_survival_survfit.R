@@ -357,14 +357,22 @@ ard_survival_survfit.data.frame <- function(x, y,
 
 # process stratifying variables
 extract_strata <- function(x, df_stat) {
-  x_terms <- attr(stats::terms(stats::as.formula(x$call$formula)), "term.labels")
-  x_terms <- gsub(".*\\(", "", gsub("\\)", "", x_terms))
+  x_terms_raw <- attr(stats::terms(stats::as.formula(x$call$formula)), "term.labels")
+  # strip function wrappers like strata(), factor() from term labels,
+  # extracting only the first argument (the variable name)
+  x_terms <- sub("^\\w+\\(\\s*([^,)]+).*\\)$", "\\1", x_terms_raw)
   if (length(x_terms) > 0L) {
+    # build split pattern using the raw term labels (as they appear in strata strings)
+    # escape each term for regex, then join with | alternation
+    escaped_terms <- vapply(x_terms_raw, function(t) {
+      paste0("(^|, )", gsub("([()|.^$*+?{}\\[\\]\\\\])", "\\\\\\1", t, perl = TRUE), "=")
+    }, character(1), USE.NAMES = FALSE)
+    split_pattern <- paste(escaped_terms, collapse = "|")
+
     strata_lvls <- data.frame()
 
     for (i in df_stat[["strata"]]) {
-      i <- gsub(".*\\(", "", gsub("\\)", "", i))
-      terms_str <- strsplit(i, paste(c(paste0(x_terms, "="), paste0(", ", x_terms, "=")), collapse = "|"))[[1]]
+      terms_str <- strsplit(i, split_pattern)[[1]]
       s_lvl <- terms_str[nchar(terms_str) > 0]
       strata_lvls <- rbind(strata_lvls, s_lvl)
     }
