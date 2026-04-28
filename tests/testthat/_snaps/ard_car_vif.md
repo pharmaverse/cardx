@@ -20,6 +20,35 @@
       1    BMIBL car_vif       VIF        VIF 1.010522       1    NULL  NULL
       2  EDUCLVL car_vif       VIF        VIF 1.010522       1    NULL  NULL
 
+# ard_car_vif() works with non-syntactic predictor names
+
+    Code
+      as.data.frame(ard_car_vif(lm(AGE ~ `BMI Baseline` + EDUCLVL, data = df)))
+    Output
+            variable context stat_name stat_label     stat fmt_fun warning error
+      1 BMI Baseline car_vif       VIF        VIF 1.010522       1    NULL  NULL
+      2      EDUCLVL car_vif       VIF        VIF 1.010522       1    NULL  NULL
+
+# ard_car_vif() works with non-syntactic interaction-only terms
+
+    Code
+      as.data.frame(ard_car_vif(lm(AGE ~ ARM + `BMI Baseline`:SEX, data = df)))
+    Output
+                variable context stat_name    stat_label     stat fmt_fun warning
+      1              ARM car_vif      GVIF          GVIF 1.047141       1    NULL
+      2              ARM car_vif        df            df        2       1    NULL
+      3              ARM car_vif     aGVIF Adjusted GVIF 1.011582       1    NULL
+      4 BMI Baseline:SEX car_vif      GVIF          GVIF 1.047141       1    NULL
+      5 BMI Baseline:SEX car_vif        df            df        2       1    NULL
+      6 BMI Baseline:SEX car_vif     aGVIF Adjusted GVIF 1.011582       1    NULL
+        error
+      1  NULL
+      2  NULL
+      3  NULL
+      4  NULL
+      5  NULL
+      6  NULL
+
 # ard_vif() issues friendly messaging for incorrect object passed in/can't get terms of model
 
     Code

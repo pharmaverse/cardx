@@ -2,6 +2,8 @@
 
 * Added fix to ensure `as_card` does not error after update to `cards`
 
+* Bug fix in `ard_car_vif()` where non-syntactic variable names (e.g. those containing spaces) were returned with backticks in the `variable` column. Since `gtsummary::tbl_regression()` stores variable names without backticks, this mismatch resulted in empty VIF columns in `gtsummary::add_vif()`. (#335, @NourEdinDarwish)
+
 # cardx 0.3.2
 
 * Swapped internal use of `dplyr::case_when()` for `dplyr::recode_values()` as the former is now deprecated. (#327)
