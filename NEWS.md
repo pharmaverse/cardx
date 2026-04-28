@@ -1,4 +1,4 @@
-# cardx 0.3.2.9002
+# cardx 0.3.2.9003
 
 * Fixed bug in `extract_strata()` where parentheses in strata level labels were incorrectly stripped, e.g. `"Drug (B)"` was truncated to `"B"`. (#2388)
 
