@@ -1,4 +1,4 @@
-# cardx 0.3.2.9001
+# cardx 0.3.2.9002
 
 * Added fix to ensure `as_card` does not error after update to `cards`
 
