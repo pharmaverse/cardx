@@ -1,6 +1,7 @@
 skip_if_pkg_not_installed("broom")
 
 test_that("ard_stats_mood_test() works", {
+  withr::local_options(list(width = 150))
   expect_error(
     ard_moodtest <-
       cards::ADSL |>
@@ -20,7 +21,7 @@ test_that("ard_stats_mood_test() works", {
 
   # errors are properly handled
   expect_snapshot(
-    cards::ADSL |>
+    cards::ADSL[1:10, ] |>
       ard_stats_mood_test(by = SEX, variable = AGE) |>
       as.data.frame()
   )
