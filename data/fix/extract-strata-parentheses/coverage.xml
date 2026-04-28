@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.967122018985876" branch-rate="0" lines-covered="4177" lines-valid="4319" branches-covered="0" branches-valid="0" complexity="0" version="3.6.5" timestamp="2026-04-13 22:36:11.986776">
+<coverage line-rate="0.967122018985876" branch-rate="0" lines-covered="4177" lines-valid="4319" branches-covered="0" branches-valid="0" complexity="0" version="3.6.5" timestamp="2026-04-28 19:34:54.394891">
   <sources>
     <source>/__w/cardx/cardx/cardx</source>
   </sources>
