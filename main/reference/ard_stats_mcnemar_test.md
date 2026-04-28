@@ -20,17 +20,17 @@ ard_stats_mcnemar_test_long(data, by, variables, id, ...)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame. See below for details.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be computed for
   each variable.
 
@@ -40,7 +40,7 @@ ard_stats_mcnemar_test_long(data, by, variables, id, ...)
 
 - id:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of the subject or participant ID
 
 ## Value

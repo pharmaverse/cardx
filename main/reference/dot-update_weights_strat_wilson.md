@@ -22,39 +22,39 @@ weighted squared length of the confidence interval.
 
 - vars:
 
-  (`numeric`)  
+  (`numeric`)\
   normalized proportions for each strata.
 
 - strata_qnorm:
 
-  (`numeric`)  
+  (`numeric`)\
   initial estimation with identical weights of the quantiles.
 
 - initial_weights:
 
-  (`numeric`)  
+  (`numeric`)\
   initial weights used to calculate `strata_qnorm`. This can be
   optimized in the future if we need to estimate better initial weights.
 
 - n_per_strata:
 
-  (`numeric`)  
+  (`numeric`)\
   number of elements in each strata.
 
 - max.iterations:
 
-  (`count`)  
+  (`count`)\
   maximum number of iterations to be tried. Convergence is always
   checked.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   a scalar in `(0,1)` indicating the confidence level. Default is `0.95`
 
 - tol:
 
-  (`number`)  
+  (`number`)\
   tolerance threshold for convergence.
 
 ## Value

@@ -30,28 +30,28 @@ ard_tabulate_abnormal(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame.
 
 - postbaseline:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of post-baseline reference range indicator variable.
 
 - baseline:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of baseline reference range indicator variable.
 
 - id:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name used to identify unique participants in `data`. If `NULL`,
   each row in `data` is assumed to correspond to a unique participants.
 
 - by, strata:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to tabulate by/stratify by for summary statistic calculation.
   Arguments are similar, but with an important distinction:
 
@@ -66,7 +66,7 @@ ard_tabulate_abnormal(
 
 - abnormal:
 
-  (`list`)  
+  (`list`)\
   a named list of abnormalities to assess for. Each element should
   specify all levels of `postbaseline`/`baseline` that should be
   included when assessing for a given abnormality, with the name
@@ -75,13 +75,13 @@ ard_tabulate_abnormal(
 
 - excl_baseline_abn:
 
-  (`logical`)  
+  (`logical`)\
   whether participants with baseline abnormality should be excluded from
   calculations. Defaults to `TRUE`.
 
 - quiet:
 
-  (scalar `logical`)  
+  (scalar `logical`)\
   logical indicating whether to suppress additional messaging. Default
   is `FALSE`.
 

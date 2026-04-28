@@ -38,44 +38,44 @@ ard_tabulate(
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html).
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to include in summaries.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   results are calculated for **all combinations** of the column
   specified and the variables. A single column may be specified.
 
 - statistic:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a character vector of statistic names to include. See
   default value for options.
 
 - denominator:
 
-  (`string`)  
+  (`string`)\
   a string indicating the type proportions to calculate. Must be one of
   `"column"` (the default), `"row"`, and `"cell"`.
 
 - fmt_fun:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a named list of functions (or the RHS of a formula), e.g.
   `list(mpg = list(mean = \(x) round(x, digits = 2) |> as.character()))`.
 
 - stat_label:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is either a named list or a list of formulas defining the
   statistic labels, e.g. `everything() ~ list(mean = "Mean", sd = "SD")`

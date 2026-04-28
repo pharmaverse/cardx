@@ -26,25 +26,25 @@ ard_continuous_ci(
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html).
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to include in summaries.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   results are calculated for **all combinations** of the columns
   specified, including unobserved combinations and unobserved factor
   levels.
 
 - method:
 
-  (`string`)  
+  (`string`)\
   Method for confidence interval calculation. When `"svymean"`, the
   calculation is computed via
   [`survey::svymean()`](https://rdrr.io/pkg/survey/man/surveysummary.html).
@@ -53,12 +53,12 @@ ard_continuous_ci(
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - df:
 
-  (`numeric`)  
+  (`numeric`)\
   denominator degrees of freedom, passed to `survey::confint(df)`.
   Default is `survey::degf(data)`.
 

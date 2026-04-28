@@ -12,14 +12,14 @@ Process Survival Fit For Quantile Estimates
 
 - x:
 
-  (`survfit` or `data.frame`)  
+  (`survfit` or `data.frame`)\
   an object of class `survfit` created with
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html)
   or a data frame. See below for details.
 
 - probs:
 
-  (`numeric`)  
+  (`numeric`)\
   a vector of probabilities with values in (0,1) specifying the survival
   quantiles to return.
 

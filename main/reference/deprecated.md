@@ -1,6 +1,6 @@
 # Deprecated functions
 
-**\[deprecated\]**  
+**\[deprecated\]**\
 Some functions have been deprecated and are no longer being actively
 supported.
 

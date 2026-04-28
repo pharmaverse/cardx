@@ -45,7 +45,7 @@ ard_regression_basic(
 
 - x:
 
-  (regression model/`data.frame`)  
+  (regression model/`data.frame`)\
   regression model object or a data frame
 
 - ...:
@@ -55,31 +55,31 @@ ard_regression_basic(
 
 - tidy_fun:
 
-  (`function`)  
+  (`function`)\
   a tidier. Default is
   [`broom.helpers::tidy_with_broom_or_parameters`](https://larmarange.github.io/broom.helpers/reference/tidy_with_broom_or_parameters.html)
 
 - stats_to_remove:
 
-  (`character`)  
+  (`character`)\
   character vector of statistic names to remove. Default is
   `c("term", "var_type", "var_label", "var_class", "label", "contrasts_type", "contrasts", "var_nlevels")`.
 
 - formula:
 
-  (`formula`)  
+  (`formula`)\
   a formula
 
 - method:
 
-  (`string`)  
+  (`string`)\
   string of function naming the function to be called, e.g. `"glm"`. If
   function belongs to a library that is not attached, the package name
   must be specified in the `package` argument.
 
 - method.args:
 
-  (named `list`)  
+  (named `list`)\
   named list of arguments that will be passed to `method`.
 
   Note that this list may contain non-standard evaluation components. If
@@ -89,7 +89,7 @@ ard_regression_basic(
 
 - package:
 
-  (`string`)  
+  (`string`)\
   a package name that will be temporarily loaded when function specified
   in `method` is executed.
 

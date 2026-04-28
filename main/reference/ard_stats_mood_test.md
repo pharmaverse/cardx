@@ -13,17 +13,17 @@ ard_stats_mood_test(data, by, variables, ...)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame. See below for details.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to be compared. Independent tests will be run for each
   variable.
 

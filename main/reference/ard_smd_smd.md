@@ -17,32 +17,32 @@ ard_smd_smd(data, by, variables, std.error = TRUE, conf.level = 0.95, ...)
 
 - data:
 
-  (`data.frame`/`survey.design`)  
+  (`data.frame`/`survey.design`)\
   a data frame or object of class 'survey.design' (typically created
   with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html)).
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be computed for
   each variable.
 
 - std.error:
 
-  (scalar `logical`)  
+  (scalar `logical`)\
   Logical indicator for computing standard errors using
   [`smd::compute_smd_var()`](https://bsaul.github.io/smd/reference/compute_smd_var.html).
   Default is `TRUE`.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - ...:

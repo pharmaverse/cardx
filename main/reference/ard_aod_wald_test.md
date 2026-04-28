@@ -22,7 +22,7 @@ ard_aod_wald_test(
 
 - tidy_fun:
 
-  (`function`)  
+  (`function`)\
   a tidier. Default is
   [`broom.helpers::tidy_with_broom_or_parameters`](https://larmarange.github.io/broom.helpers/reference/tidy_with_broom_or_parameters.html)
 

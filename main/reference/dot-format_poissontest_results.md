@@ -12,17 +12,17 @@ Convert Poisson test to ARD
 
 - by:
 
-  (`string`)  
+  (`string`)\
   by column name
 
 - variables:
 
-  (`character`)  
+  (`character`)\
   names of the event and time variables
 
 - lst_tidy:
 
-  (named `list`)  
+  (named `list`)\
   list of tidied results constructed with
   [`eval_capture_conditions()`](https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
   e.g.

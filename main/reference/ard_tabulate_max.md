@@ -30,24 +30,24 @@ ard_tabulate_max(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   The categorical variables for which occurrence rates per unique ID (by
   maximum level) will be calculated.
 
 - id:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   Argument used to subset `data` to identify rows in `data` to calculate
   categorical variable level occurrence rates.
 
 - by, strata:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to use for grouping or stratifying the table output. Arguments
   are similar, but with an important distinction:
 
@@ -62,14 +62,14 @@ ard_tabulate_max(
 
 - statistic:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element one or more of `c("n", "N", "p", "n_cum", "p_cum")` (on the
   RHS of a formula).
 
 - denominator:
 
-  (`data.frame`, `integer`)  
+  (`data.frame`, `integer`)\
   An optional argument to change the denominator used for `"N"` and
   `"p"` statistic calculations. Defaults to `NULL`, in which case
   `dplyr::distinct(data, dplyr::pick(all_of(c(id, by))))` is used for
@@ -79,14 +79,14 @@ ard_tabulate_max(
 
 - fmt_fun:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a named list of functions (or the RHS of a formula), e.g.
   `list(mpg = list(mean = \(x) round(x, digits = 2) |> as.character()))`.
 
 - stat_label:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is either a named list or a list of formulas defining the
   statistic labels, e.g. `everything() ~ list(n = "n", p = "pct")` or
@@ -94,7 +94,7 @@ ard_tabulate_max(
 
 - quiet:
 
-  (scalar `logical`)  
+  (scalar `logical`)\
   Logical indicating whether to suppress additional messaging. Default
   is `FALSE`.
 

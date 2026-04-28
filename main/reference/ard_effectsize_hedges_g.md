@@ -16,24 +16,24 @@ ard_effectsize_paired_hedges_g(data, by, variables, id, conf.level = 0.95, ...)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame. See below for details.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by. Must be a categorical variable with exactly
   two levels.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Must be a continuous variable.
   Independent tests will be run for each variable
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - ...:
@@ -42,7 +42,7 @@ ard_effectsize_paired_hedges_g(data, by, variables, id, conf.level = 0.95, ...)
 
 - id:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of the subject or participant ID
 
 ## Value

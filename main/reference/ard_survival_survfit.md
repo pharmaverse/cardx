@@ -30,7 +30,7 @@ ard_survival_survfit(
 
 - x:
 
-  (`survfit` or `data.frame`)  
+  (`survfit` or `data.frame`)\
   an object of class `survfit` created with
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html)
   or a data frame. See below for details.
@@ -41,18 +41,18 @@ ard_survival_survfit(
 
 - times:
 
-  (`numeric`)  
+  (`numeric`)\
   a vector of times for which to return survival probabilities.
 
 - probs:
 
-  (`numeric`)  
+  (`numeric`)\
   a vector of probabilities with values in (0,1) specifying the survival
   quantiles to return.
 
 - type:
 
-  (`string` or `NULL`)  
+  (`string` or `NULL`)\
   type of statistic to report. Available for Kaplan-Meier time estimates
   only, otherwise `type` is ignored. Default is `NULL`. Must be one of
   the following:
@@ -66,7 +66,7 @@ ard_survival_survfit(
 
 - y:
 
-  (`Surv` or `string`)  
+  (`Surv` or `string`)\
   an object of class `Surv` created using
   [`survival::Surv()`](https://rdrr.io/pkg/survival/man/Surv.html). This
   object will be passed as the left-hand side of the formula constructed
@@ -76,7 +76,7 @@ ard_survival_survfit(
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   stratification variables to be passed as the right-hand side of the
   formula constructed and passed to
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html).
@@ -84,7 +84,7 @@ ard_survival_survfit(
 
 - method.args:
 
-  (named `list`)  
+  (named `list`)\
   named list of arguments that will be passed to
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html).
 

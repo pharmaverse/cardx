@@ -12,19 +12,19 @@ Process Survival Fit For Time Estimates
 
 - x:
 
-  (`survfit` or `data.frame`)  
+  (`survfit` or `data.frame`)\
   an object of class `survfit` created with
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html)
   or a data frame. See below for details.
 
 - times:
 
-  (`numeric`)  
+  (`numeric`)\
   a vector of times for which to return survival probabilities.
 
 - type:
 
-  (`string` or `NULL`)  
+  (`string` or `NULL`)\
   type of statistic to report. Available for Kaplan-Meier time estimates
   only, otherwise `type` is ignored. Default is `NULL`. Must be one of
   the following:
@@ -38,7 +38,7 @@ Process Survival Fit For Time Estimates
 
 - start.time:
 
-  (`numeric`)  
+  (`numeric`)\
   default starting time. See
   [`survival::survfit0()`](https://rdrr.io/pkg/survival/man/survfit0.html)
   for more details.

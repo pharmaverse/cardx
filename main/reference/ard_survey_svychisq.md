@@ -14,23 +14,23 @@ ard_survey_svychisq(data, by, variables, statistic = "F", ...)
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a survey design object often created with the {survey} package
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be computed for
   each variable.
 
 - statistic:
 
-  (`character`)  
+  (`character`)\
   statistic used to estimate Chisq p-value. Default is the Rao-Scott
   second-order correction ("F"). See
   [`survey::svychisq`](https://rdrr.io/pkg/survey/man/svychisq.html) for

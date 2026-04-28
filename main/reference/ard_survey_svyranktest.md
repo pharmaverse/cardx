@@ -13,24 +13,24 @@ ard_survey_svyranktest(data, by, variables, test, ...)
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a survey design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html)
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be run for each
   variable.
 
 - test:
 
-  (`string`)  
+  (`string`)\
   a string to denote which rank test to use: `"wilcoxon"`,
   `"vanderWaerden"`, `"median"`, `"KruskalWallis"`
 

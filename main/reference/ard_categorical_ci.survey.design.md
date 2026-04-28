@@ -23,35 +23,35 @@ ard_categorical_ci(
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html).
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to include in summaries.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   results are calculated for **all combinations** of the columns
   specified, including unobserved combinations and unobserved factor
   levels.
 
 - method:
 
-  (`string`)  
+  (`string`)\
   Method passed to `survey::svyciprop(method)`
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   a scalar in `(0,1)` indicating the confidence level. Default is `0.95`
 
 - value:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   function will calculate the CIs for all levels of the variables
   specified. Use this argument to instead request only a single level by
   summarized. Default is
@@ -61,7 +61,7 @@ ard_categorical_ci(
 
 - df:
 
-  (`numeric`)  
+  (`numeric`)\
   denominator degrees of freedom, passed to `survey::svyciprop(df)`.
   Default is `survey::degf(data)`.
 

@@ -23,18 +23,18 @@ ard_attributes(data, variables = everything(), label = NULL, ...)
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html).
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   variables to include
 
 - label:
 
-  (named `list`)  
+  (named `list`)\
   named list of variable labels, e.g. `list(cyl = "No. Cylinders")`.
   Default is `NULL`
 
