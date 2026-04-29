@@ -1,6 +1,11 @@
 # Changelog
 
-## cardx 0.3.2.9003
+## cardx 0.3.2.9004
+
+- Fixed bug in `extract_strata()` where parentheses in strata level
+  labels were incorrectly stripped, e.g. `"Drug (B)"` was truncated to
+  `"B"`.
+  ([\#2388](https://github.com/insightsengineering/cardx/issues/2388))
 
 - Added fix to ensure `as_card` does not error after update to `cards`
 
