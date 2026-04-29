@@ -210,6 +210,28 @@ test_that("ard_survival_survfit() works with '=' in strata variable level labels
   )
 })
 
+test_that("ard_survival_survfit() preserves parentheses in strata level labels", {
+  lung2 <- survival::lung %>%
+    dplyr::mutate(sex_lbl = factor(ifelse(sex == 1, "Male (M)", "Female (F)")))
+
+  res <- survival::survfit(survival::Surv(time, status) ~ sex_lbl, data = lung2) |>
+    ard_survival_survfit(times = 100)
+
+  levels <- unique(unlist(res$group1_level))
+  levels <- levels[!is.na(levels)]
+  expect_setequal(as.character(levels), c("Female (F)", "Male (M)"))
+})
+
+test_that("extract_strata() returns safely and warns on 0-row datasets", {
+  mock_fit <- list(call = list(formula = ~ strata(TRT01A)))
+  mock_df <- data.frame(time = numeric(0), strata = character(0))
+
+  expect_snapshot_warning(
+    res <- extract_strata(mock_fit, mock_df)
+  )
+  expect_equal(nrow(res), 0)
+})
+
 test_that("ard_survival_survfit() follows ard structure", {
   expect_silent(
     survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>

@@ -357,26 +357,49 @@ ard_survival_survfit.data.frame <- function(x, y,
 
 # process stratifying variables
 extract_strata <- function(x, df_stat) {
-  x_terms <- attr(stats::terms(stats::as.formula(x$call$formula)), "term.labels")
-  x_terms <- gsub(".*\\(", "", gsub("\\)", "", x_terms))
-  if (length(x_terms) > 0L) {
-    strata_lvls <- data.frame()
+  # Safe Subsetting: protect downstream engines from empty datasets
+  if (nrow(df_stat) == 0) {
+    cli::cli_warn("Dataset {.arg df_stat} is empty.")
+    return(df_stat)
+  }
 
-    for (i in df_stat[["strata"]]) {
-      i <- gsub(".*\\(", "", gsub("\\)", "", i))
-      terms_str <- strsplit(i, paste(c(paste0(x_terms, "="), paste0(", ", x_terms, "=")), collapse = "|"))[[1]]
-      s_lvl <- terms_str[nchar(terms_str) > 0]
-      strata_lvls <- rbind(strata_lvls, s_lvl)
-    }
+  x_terms_raw <- attr(stats::terms(stats::as.formula(x$call$formula)), "term.labels")
+  # strip function wrappers like strata(), factor() from term labels,
+  # extracting only the first argument (the variable name)
+  x_terms <- sub("^\\w+\\(\\s*([^,)]+).*\\)$", "\\1", x_terms_raw)
+
+  if (length(x_terms) > 0L) {
+    # build split pattern using the raw term labels (as they appear in strata strings)
+    # escape each term for regex, then join with | alternation
+    escaped_terms <- vapply(x_terms_raw, function(t) {
+      paste0("(^|, )", gsub("([()|.^$*+?{}\\[\\]\\\\])", "\\\\\\1", t, perl = TRUE), "=")
+    }, character(1), USE.NAMES = FALSE)
+    split_pattern <- paste(escaped_terms, collapse = "|")
+
+    # Factor Safety: explicit coercion prevents hidden evaluation overhead
+    strata_vec <- as.character(df_stat[["strata"]])
+
+    # Replace inefficient rbind() loop with vectorized lapply
+    strata_list <- lapply(strata_vec, function(i) {
+      terms_str <- strsplit(i, split_pattern)[[1]]
+      terms_str[nchar(terms_str) > 0]
+    })
+
+    # Efficiently construct the data frame in one go
+    strata_lvls <- as.data.frame(do.call(rbind, strata_list))
+
     if (nrow(strata_lvls) > 0) {
       strata_lvls <- cbind(strata_lvls, t(x_terms))
       names(strata_lvls) <- c(
         t(sapply(seq_along(x_terms), function(i) c(paste0("group", i, "_level"), paste0("group", i))))
       )
-      df_stat <- cbind(df_stat, strata_lvls) %>%
+
+      # Bind new columns and drop the old strata column
+      df_stat <- cbind(df_stat, strata_lvls) |>
         dplyr::select(-"strata")
     }
   }
+
   df_stat
 }
 
