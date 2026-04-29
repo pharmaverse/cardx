@@ -1,4 +1,4 @@
-skip_if_pkg_not_installed("car")
+skip_if_pkg_not_installed(c("car", "broom.helpers"))
 
 test_that("ard_car_vif() works", {
   expect_snapshot(
@@ -9,6 +9,28 @@ test_that("ard_car_vif() works", {
 
   expect_snapshot(
     lm(AGE ~ BMIBL + EDUCLVL, data = cards::ADSL) |>
+      ard_car_vif() |>
+      as.data.frame()
+  )
+})
+
+test_that("ard_car_vif() works with non-syntactic predictor names", {
+  df <- cards::ADSL
+  names(df)[names(df) == "BMIBL"] <- "BMI Baseline"
+
+  expect_snapshot(
+    lm(AGE ~ `BMI Baseline` + EDUCLVL, data = df) |>
+      ard_car_vif() |>
+      as.data.frame()
+  )
+})
+
+test_that("ard_car_vif() works with non-syntactic interaction-only terms", {
+  df <- cards::ADSL
+  names(df)[names(df) == "BMIBL"] <- "BMI Baseline"
+
+  expect_snapshot(
+    lm(AGE ~ ARM + `BMI Baseline`:SEX, data = df) |>
       ard_car_vif() |>
       as.data.frame()
   )

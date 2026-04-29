@@ -379,6 +379,10 @@
     Message
       i 4 more variables: context, fmt_fun, warning, error
 
+# extract_strata() returns safely and warns on 0-row datasets
+
+    Dataset `df_stat` is empty.
+
 # ard_survival_survfit() extends to times outside range
 
     Code
