@@ -227,7 +227,7 @@ test_that("extract_strata() returns safely and warns on 0-row datasets", {
   mock_df <- data.frame(time = numeric(0), strata = character(0))
 
   expect_snapshot_warning(
-    res <- extract_strata(mock_fit, mock_df) 
+    res <- extract_strata(mock_fit, mock_df)
   )
   expect_equal(nrow(res), 0)
 })

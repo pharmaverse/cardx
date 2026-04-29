@@ -396,7 +396,7 @@ extract_strata <- function(x, df_stat) {
 
       # Bind new columns and drop the old strata column
       df_stat <- cbind(df_stat, strata_lvls) |>
-	      dplyr::select(-"strata")
+        dplyr::select(-"strata")
     }
   }
 
