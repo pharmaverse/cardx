@@ -18,3 +18,4 @@ tests/testthat/_snaps/**/*.new.svg
 
 # reverse dep checks
 checked/
+.positai

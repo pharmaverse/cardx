@@ -190,7 +190,8 @@ test_that("ard_tabulate_max() works with pre-ordered factor variables", {
   ))
   expect_equal(
     res,
-    res3 |> dplyr::filter(variable == "AESEV")
+    res3 |> dplyr::filter(variable == "AESEV"),
+    ignore_attr = TRUE
   )
 
   # named vector
