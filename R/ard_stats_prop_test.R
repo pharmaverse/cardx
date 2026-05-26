@@ -98,7 +98,10 @@ ard_stats_prop_test <- function(data, by, variables, conf.level = 0.95, ...) {
 #' @param ... passed to `prop.test(...)`
 #'
 #' @return ARD data frame
-#' @noRd
+#' @examples
+#' NULL
+#'
+#' @keywords internal
 .format_proptest_results <- function(by, variable, lst_tidy, ...) {
   # build ARD ------------------------------------------------------------------
   ret <-

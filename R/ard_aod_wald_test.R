@@ -109,7 +109,10 @@ ard_aod_wald_test <- function(x, tidy_fun = broom.helpers::tidy_with_broom_or_pa
 #' @param wald_test (`data.frame`)\cr wald test object object from `aod::wald.test()`
 #'
 #' @return a data frame containing the wald test results.
-#' @noRd
+#' @examples
+#' NULL
+#'
+#' @keywords internal
 .extract_wald_results <- function(wald_test) {
   df <- wald_test$result$chi2[("df")]
   statistic <- wald_test$result$chi2[("chi2")]
