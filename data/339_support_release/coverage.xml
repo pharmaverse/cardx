@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.967197967197967" branch-rate="0" lines-covered="4187" lines-valid="4329" branches-covered="0" branches-valid="0" complexity="0" version="3.6.5" timestamp="2026-05-22 16:12:28.154857">
+<coverage line-rate="0.967197967197967" branch-rate="0" lines-covered="4187" lines-valid="4329" branches-covered="0" branches-valid="0" complexity="0" version="3.6.5" timestamp="2026-05-26 07:00:57.298727">
   <sources>
     <source>/__w/cardx/cardx/cardx</source>
   </sources>
@@ -118,10 +118,10 @@
             </method>
             <method name=".extract_wald_results" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="114" hits="4" branch="false"/>
-                <line number="115" hits="4" branch="false"/>
-                <line number="116" hits="4" branch="false"/>
                 <line number="117" hits="4" branch="false"/>
+                <line number="118" hits="4" branch="false"/>
+                <line number="119" hits="4" branch="false"/>
+                <line number="120" hits="4" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -199,10 +199,10 @@
             <line number="102" hits="2" branch="false"/>
             <line number="103" hits="2" branch="false"/>
             <line number="104" hits="2" branch="false"/>
-            <line number="114" hits="4" branch="false"/>
-            <line number="115" hits="4" branch="false"/>
-            <line number="116" hits="4" branch="false"/>
             <line number="117" hits="4" branch="false"/>
+            <line number="118" hits="4" branch="false"/>
+            <line number="119" hits="4" branch="false"/>
+            <line number="120" hits="4" branch="false"/>
           </lines>
         </class>
         <class name="ard_attributes.survey.design.R" filename="R/ard_attributes.survey.design.R" line-rate="1" branch-rate="0" complexity="0">
@@ -5444,9 +5444,6 @@
             </method>
             <method name=".format_proptest_results" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="104" hits="7" branch="false"/>
-                <line number="105" hits="7" branch="false"/>
-                <line number="106" hits="7" branch="false"/>
                 <line number="107" hits="7" branch="false"/>
                 <line number="108" hits="7" branch="false"/>
                 <line number="109" hits="7" branch="false"/>
@@ -5457,21 +5454,21 @@
                 <line number="114" hits="7" branch="false"/>
                 <line number="115" hits="7" branch="false"/>
                 <line number="116" hits="7" branch="false"/>
+                <line number="117" hits="7" branch="false"/>
+                <line number="118" hits="7" branch="false"/>
                 <line number="119" hits="7" branch="false"/>
-                <line number="120" hits="7" branch="false"/>
-                <line number="121" hits="7" branch="false"/>
                 <line number="122" hits="7" branch="false"/>
                 <line number="123" hits="7" branch="false"/>
                 <line number="124" hits="7" branch="false"/>
                 <line number="125" hits="7" branch="false"/>
                 <line number="126" hits="7" branch="false"/>
+                <line number="127" hits="7" branch="false"/>
+                <line number="128" hits="7" branch="false"/>
+                <line number="129" hits="7" branch="false"/>
               </lines>
             </method>
             <method name=".df_proptest_stat_labels" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="130" hits="7" branch="false"/>
-                <line number="131" hits="7" branch="false"/>
-                <line number="132" hits="7" branch="false"/>
                 <line number="133" hits="7" branch="false"/>
                 <line number="134" hits="7" branch="false"/>
                 <line number="135" hits="7" branch="false"/>
@@ -5482,6 +5479,9 @@
                 <line number="140" hits="7" branch="false"/>
                 <line number="141" hits="7" branch="false"/>
                 <line number="142" hits="7" branch="false"/>
+                <line number="143" hits="7" branch="false"/>
+                <line number="144" hits="7" branch="false"/>
+                <line number="145" hits="7" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -5537,9 +5537,6 @@
             <line number="87" hits="6" branch="false"/>
             <line number="88" hits="6" branch="false"/>
             <line number="89" hits="6" branch="false"/>
-            <line number="104" hits="7" branch="false"/>
-            <line number="105" hits="7" branch="false"/>
-            <line number="106" hits="7" branch="false"/>
             <line number="107" hits="7" branch="false"/>
             <line number="108" hits="7" branch="false"/>
             <line number="109" hits="7" branch="false"/>
@@ -5550,17 +5547,17 @@
             <line number="114" hits="7" branch="false"/>
             <line number="115" hits="7" branch="false"/>
             <line number="116" hits="7" branch="false"/>
+            <line number="117" hits="7" branch="false"/>
+            <line number="118" hits="7" branch="false"/>
             <line number="119" hits="7" branch="false"/>
-            <line number="120" hits="7" branch="false"/>
-            <line number="121" hits="7" branch="false"/>
             <line number="122" hits="7" branch="false"/>
             <line number="123" hits="7" branch="false"/>
             <line number="124" hits="7" branch="false"/>
             <line number="125" hits="7" branch="false"/>
             <line number="126" hits="7" branch="false"/>
-            <line number="130" hits="7" branch="false"/>
-            <line number="131" hits="7" branch="false"/>
-            <line number="132" hits="7" branch="false"/>
+            <line number="127" hits="7" branch="false"/>
+            <line number="128" hits="7" branch="false"/>
+            <line number="129" hits="7" branch="false"/>
             <line number="133" hits="7" branch="false"/>
             <line number="134" hits="7" branch="false"/>
             <line number="135" hits="7" branch="false"/>
@@ -5571,6 +5568,9 @@
             <line number="140" hits="7" branch="false"/>
             <line number="141" hits="7" branch="false"/>
             <line number="142" hits="7" branch="false"/>
+            <line number="143" hits="7" branch="false"/>
+            <line number="144" hits="7" branch="false"/>
+            <line number="145" hits="7" branch="false"/>
           </lines>
         </class>
         <class name="ard_stats_t_test_onesample.R" filename="R/ard_stats_t_test_onesample.R" line-rate="1" branch-rate="0" complexity="0">
