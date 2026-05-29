@@ -19,3 +19,10 @@ Extract data from wald.test object
 ## Value
 
 a data frame containing the wald test results.
+
+## Examples
+
+``` r
+NULL
+#> NULL
+```

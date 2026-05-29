@@ -35,3 +35,10 @@ Convert prop.test to ARD
 ## Value
 
 ARD data frame
+
+## Examples
+
+``` r
+NULL
+#> NULL
+```

@@ -20,3 +20,14 @@ ard_categorical_max(...)
 
 ard_emmeans_mean_difference(...)
 ```
+
+## Value
+
+See each individual function help page.
+
+## Examples
+
+``` r
+NULL
+#> NULL
+```
