@@ -24,6 +24,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Daniel D. Sjoberg \email{danield.sjoberg@gmail.com} (\href{https://orcid.org/0000-0003-0862-2018}{ORCID})
   \item Abinaya Yogasekaram \email{abinaya.yogasekaram@contractors.roche.com}
   \item Emily de la Rua \email{emily.de_la_rua@contractors.roche.com}
 }
