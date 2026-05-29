@@ -1,6 +1,6 @@
 Package: cardx
 Title: Extra Analysis Results Data Utilities
-Version: 0.3.2.9005
+Version: 0.3.2.9007
 Authors@R: c(
     person("Daniel D.", "Sjoberg", , "danield.sjoberg@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0862-2018")),
@@ -22,7 +22,7 @@ BugReports: https://github.com/insightsengineering/cardx/issues
 Depends:
     R (>= 4.2)
 Imports:
-    cards (>= 0.7.1.9008),
+    cards (>= 0.8.0),
     cli (>= 3.6.1),
     dplyr (>= 1.2.0),
     glue (>= 1.6.2),
@@ -46,8 +46,6 @@ Suggests:
     survival (>= 3.6-4),
     testthat (>= 3.2.0),
     withr (>= 2.5.0)
-Remotes:
-    insightsengineering/cards@main
 Config/Needs/website: insightsengineering/nesttemplate
 Config/roxygen2/version: 8.0.0
 Config/testthat/edition: 3
