@@ -27,30 +27,30 @@ ard_incidence_rate(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame.
 
 - time:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of time at risk variable.
 
 - count:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name of variable indicating count of events that occurred. If
   `NULL`, each row in `data` is assumed to correspond to a single event
   occurrence.
 
 - id:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name used to identify unique subjects in `data`. If `NULL`,
   each row in `data` is assumed to correspond to a unique subject.
 
 - by, strata:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to tabulate by/stratify by for summary statistic calculation.
   Arguments are similar, but with an important distinction:
 
@@ -65,12 +65,12 @@ ard_incidence_rate(
 
 - n_person_time:
 
-  (`numeric`)  
+  (`numeric`)\
   amount of person-time to estimate incidence rate for. Defaults to 100.
 
 - unit_label:
 
-  (`string`)  
+  (`string`)\
   label for the unit of values in `time` and estimated person-time
   output (e.g. `"years"` for person-years, `"days"` for person-days,
   etc.). If the desired person-time estimate unit does not match the
@@ -80,12 +80,12 @@ ard_incidence_rate(
 
 - conf.level:
 
-  (`numeric`)  
+  (`numeric`)\
   confidence level for the estimated incidence rate.
 
 - conf.type:
 
-  (`string`)  
+  (`string`)\
   confidence interval type for the estimated incidence rate.
 
   One of: `normal` (default), `normal-log`, `exact`, or `byar`.

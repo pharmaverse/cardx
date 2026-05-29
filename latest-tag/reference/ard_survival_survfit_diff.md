@@ -14,18 +14,18 @@ ard_survival_survfit_diff(x, times, conf.level = 0.95)
 
 - x:
 
-  (`survift`)  
+  (`survift`)\
   object of class `'survfit'` typically created with
   [`survival::survfit()`](https://rdrr.io/pkg/survival/man/survfit.html)
 
 - times:
 
-  (`numeric`)  
+  (`numeric`)\
   a vector of times for which to return survival probabilities.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 ## Value

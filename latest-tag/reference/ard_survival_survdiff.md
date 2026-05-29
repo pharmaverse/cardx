@@ -13,17 +13,17 @@ ard_survival_survdiff(formula, data, rho = 0, ...)
 
 - formula:
 
-  (`formula`)  
+  (`formula`)\
   a formula
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame
 
 - rho:
 
-  (`scalar numeric`)  
+  (`scalar numeric`)\
   numeric scalar passed to `survival::survdiff(rho)`. Default is
   `rho=0`.
 

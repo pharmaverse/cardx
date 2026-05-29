@@ -47,24 +47,24 @@ ard_emmeans_emmeans(
 
 - data:
 
-  (`data.frame`/`survey.design`)  
+  (`data.frame`/`survey.design`)\
   a data frame or survey design object
 
 - formula:
 
-  (`formula`)  
+  (`formula`)\
   a formula
 
 - method:
 
-  (`string`)  
+  (`string`)\
   string of function naming the function to be called, e.g. `"glm"`. If
   function belongs to a library that is not attached, the package name
   must be specified in the `package` argument.
 
 - method.args:
 
-  (named `list`)  
+  (named `list`)\
   named list of arguments that will be passed to `method`.
 
   Note that this list may contain non-standard evaluation components. If
@@ -74,7 +74,7 @@ ard_emmeans_emmeans(
 
 - package:
 
-  (`string`)  
+  (`string`)\
   a package name that will be temporarily loaded when function specified
   in `method` is executed.
 
@@ -87,12 +87,12 @@ ard_emmeans_emmeans(
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - primary_covariate:
 
-  (`string`)  
+  (`string`)\
   string indicating the primary covariate (typically the dichotomous
   treatment variable). Default is the first covariate listed in the
   formula.

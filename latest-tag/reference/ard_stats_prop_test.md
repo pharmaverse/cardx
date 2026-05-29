@@ -13,24 +13,24 @@ ard_stats_prop_test(data, by, variables, conf.level = 0.95, ...)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Must be a binary column coded as
   `TRUE`/`FALSE` or `1`/`0`. Independent tests will be computed for each
   variable.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - ...:

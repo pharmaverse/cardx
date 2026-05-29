@@ -14,7 +14,7 @@ ard_total_n(data, ...)
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html).
 

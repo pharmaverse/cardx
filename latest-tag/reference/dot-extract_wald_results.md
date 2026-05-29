@@ -12,10 +12,17 @@ Extract data from wald.test object
 
 - wald_test:
 
-  (`data.frame`)  
+  (`data.frame`)\
   wald test object object from
   [`aod::wald.test()`](https://rdrr.io/pkg/aod/man/wald.test.html)
 
 ## Value
 
 a data frame containing the wald test results.
+
+## Examples
+
+``` r
+NULL
+#> NULL
+```

@@ -21,29 +21,29 @@ ard_stats_poisson_test(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame. See below for details.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   names of the event and time variables (in that order) to be used in
   computations. Must be of length 2.
 
 - na.rm:
 
-  (scalar `logical`)  
+  (scalar `logical`)\
   whether missing values should be removed before computations. Default
   is `TRUE`.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   optional column name to compare by.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - ...:

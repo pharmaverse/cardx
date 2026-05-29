@@ -1,5 +1,27 @@
 # Changelog
 
+## cardx 0.3.3
+
+CRAN release: 2026-05-29
+
+- Fixed bug in `extract_strata()` where parentheses in strata level
+  labels were incorrectly stripped, e.g. `"Drug (B)"` was truncated to
+  `"B"`.
+  ([\#2388](https://github.com/insightsengineering/cardx/issues/2388))
+
+- Added fix to ensure `as_card` does not error after update to `cards`
+
+- Bug fix in
+  [`ard_car_vif()`](https://insightsengineering.github.io/cardx/reference/ard_car_vif.md)
+  where non-syntactic variable names (e.g. those containing spaces) were
+  returned with backticks in the `variable` column. Since
+  [`gtsummary::tbl_regression()`](https://www.danieldsjoberg.com/gtsummary/reference/tbl_regression.html)
+  stores variable names without backticks, this mismatch resulted in
+  empty VIF columns in
+  [`gtsummary::add_vif()`](https://www.danieldsjoberg.com/gtsummary/reference/add_vif.html).
+  ([\#335](https://github.com/insightsengineering/cardx/issues/335),
+  [@NourEdinDarwish](https://github.com/NourEdinDarwish))
+
 ## cardx 0.3.2
 
 CRAN release: 2026-02-05

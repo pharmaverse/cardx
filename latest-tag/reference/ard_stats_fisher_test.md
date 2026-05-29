@@ -13,23 +13,23 @@ ard_stats_fisher_test(data, by, variables, conf.level = 0.95, ...)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be computed for
   each variable.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - ...:

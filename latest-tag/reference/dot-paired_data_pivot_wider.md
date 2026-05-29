@@ -12,22 +12,22 @@ Convert long paired data to wide
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame that is one line per subject per group
 
 - by:
 
-  (`string`)  
+  (`string`)\
   by column name
 
 - variable:
 
-  (`string`)  
+  (`string`)\
   variable column name
 
 - id:
 
-  (`string`)  
+  (`string`)\
   subject id column name
 
 ## Value

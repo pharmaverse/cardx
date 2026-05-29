@@ -14,14 +14,14 @@ the case proportions for each strata are unequal.
 
 - weights:
 
-  (`numeric`)  
+  (`numeric`)\
   weights for each level of the strata. If `NULL`, they are estimated
   using the iterative algorithm that minimizes the weighted squared
   length of the confidence interval.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   a scalar in `(0,1)` indicating the confidence level. Default is `0.95`
 
 ## Value
@@ -46,5 +46,5 @@ vars <- ests * (1 - ests) / ns
 weights <- rep(1 / length(ns), length(ns))
 
 cardx:::.strata_normal_quantile(vars, weights, 0.95)
-#> [1] 1.137332
+#> [1] 1.134977
 ```

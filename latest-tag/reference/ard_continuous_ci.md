@@ -23,7 +23,7 @@ ard_continuous_ci(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame. See below for details.
 
 - ...:
@@ -33,23 +33,23 @@ ard_continuous_ci(
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent t-tests will be computed for
   each variable.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   optional column name to compare by.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   confidence level for confidence interval. Default is `0.95`.
 
 - method:
 
-  (`string`)  
+  (`string`)\
   a string indicating the method to use for the confidence interval
   calculation. Must be one of `"t.test"` or `"wilcox.test"`
 

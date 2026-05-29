@@ -32,37 +32,37 @@ is_binary(x)
 
 - x:
 
-  (binary `numeric`/`logical`)  
+  (binary `numeric`/`logical`)\
   vector of a binary values, i.e. a logical vector, or numeric with
   values `c(0, 1)`
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   a scalar in `(0,1)` indicating the confidence level. Default is `0.95`
 
 - correct:
 
-  (scalar `logical`)  
+  (scalar `logical`)\
   include the continuity correction. For further information, see for
   example
   [`stats::prop.test()`](https://rdrr.io/r/stats/prop.test.html).
 
 - strata:
 
-  (`factor`)  
+  (`factor`)\
   variable with one level per stratum and same length as `x`.
 
 - weights:
 
-  (`numeric`)  
+  (`numeric`)\
   weights for each level of the strata. If `NULL`, they are estimated
   using the iterative algorithm that minimizes the weighted squared
   length of the confidence interval.
 
 - max.iterations:
 
-  (positive `integer`)  
+  (positive `integer`)\
   maximum number of iterations for the iterative procedure used to find
   estimates of optimal weights.
 

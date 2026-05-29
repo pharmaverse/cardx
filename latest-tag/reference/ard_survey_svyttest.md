@@ -13,24 +13,24 @@ ard_survey_svyttest(data, by, variables, conf.level = 0.95, ...)
 
 - data:
 
-  (`survey.design`)  
+  (`survey.design`)\
   a survey design object often created with
   [`survey::svydesign()`](https://rdrr.io/pkg/survey/man/svydesign.html)
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be run for each
   variable.
 
 - conf.level:
 
-  (`double`)  
+  (`double`)\
   confidence level of the returned confidence interval. Must be between
   `c(0, 1)`. Default is `0.95`
 

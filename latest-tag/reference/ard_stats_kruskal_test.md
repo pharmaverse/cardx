@@ -14,17 +14,17 @@ ard_stats_kruskal_test(data, by, variables)
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column name to compare by.
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   column names to be compared. Independent tests will be computed for
   each variable.
 

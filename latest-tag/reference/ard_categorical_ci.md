@@ -28,7 +28,7 @@ ard_categorical_ci(
 
 - data:
 
-  (`data.frame`)  
+  (`data.frame`)\
   a data frame
 
 - ...:
@@ -37,18 +37,18 @@ ard_categorical_ci(
 
 - variables:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to include in summaries. Columns must be class `<logical>` or
   `<numeric>` values coded as `c(0,1)`.
 
 - by:
 
-  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))  
+  ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
   columns to stratify calculations by.
 
 - method:
 
-  (`string`)  
+  (`string`)\
   string indicating the type of confidence interval to calculate. Must
   be one of . See
   [`?proportion_ci`](https://insightsengineering.github.io/cardx/reference/proportion_ci.md)
@@ -56,19 +56,19 @@ ard_categorical_ci(
 
 - denominator:
 
-  (`string`)  
+  (`string`)\
   Must be one of `'column'` (default), `'row'`, and `'cell'`, which
   specifies the direction of the calculation/denominator. Argument is
   similar to `cards::ard_tabulate(denominator)`.
 
 - conf.level:
 
-  (scalar `numeric`)  
+  (scalar `numeric`)\
   a scalar in `(0,1)` indicating the confidence level. Default is `0.95`
 
 - value:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))  
+  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
   function will calculate the CIs for all levels of the variables
   specified. Use this argument to instead request only a single level by
   summarized. Default is

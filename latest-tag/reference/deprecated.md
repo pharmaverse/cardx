@@ -1,6 +1,6 @@
 # Deprecated functions
 
-**\[deprecated\]**  
+**\[deprecated\]**\
 Some functions have been deprecated and are no longer being actively
 supported.
 
@@ -19,4 +19,15 @@ ard_dichotomous(data, ...)
 ard_categorical_max(...)
 
 ard_emmeans_mean_difference(...)
+```
+
+## Value
+
+See each individual function help page.
+
+## Examples
+
+``` r
+NULL
+#> NULL
 ```

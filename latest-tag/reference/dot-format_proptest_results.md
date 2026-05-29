@@ -12,17 +12,17 @@ Convert prop.test to ARD
 
 - by:
 
-  (`string`)  
+  (`string`)\
   by column name
 
 - variable:
 
-  (`string`)  
+  (`string`)\
   variable column name
 
 - lst_tidy:
 
-  (named `list`)  
+  (named `list`)\
   list of tidied results constructed with
   [`eval_capture_conditions()`](https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
   e.g.
@@ -35,3 +35,10 @@ Convert prop.test to ARD
 ## Value
 
 ARD data frame
+
+## Examples
+
+``` r
+NULL
+#> NULL
+```
