@@ -23,4 +23,8 @@ ARD data frame
 \description{
 Convert prop.test to ARD
 }
+\examples{
+NULL
+
+}
 \keyword{internal}

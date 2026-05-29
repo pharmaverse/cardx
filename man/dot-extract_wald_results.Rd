@@ -15,4 +15,8 @@ a data frame containing the wald test results.
 \description{
 Extract data from wald.test object
 }
+\examples{
+NULL
+
+}
 \keyword{internal}
