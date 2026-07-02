@@ -1,5 +1,7 @@
 # cardx 0.3.3.9000
 
+* Added `summary.args` argument to `ard_survival_survfit()` to control whether survival estimates are reported beyond the last observed timepoint. The default `list(extend = TRUE)` reports estimates even when no subjects are at risk; `list(extend = FALSE)` sets those estimates (and their standard errors and confidence limits) to `NA`. (#224)
+
 # cardx 0.3.3
 
 * Fixed bug in `extract_strata()` where parentheses in strata level labels were incorrectly stripped, e.g. `"Drug (B)"` was truncated to `"B"`. (#2388)
