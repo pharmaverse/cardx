@@ -1,5 +1,7 @@
 # cardx 0.3.3.9000
 
+* Fixed bug in `ard_stats_mantelhaen_test()` where arguments were passed to `stats::mantelhaen.test()` positionally rather than by name, causing a test failure and incorrect results under R-devel. (#343)
+
 # cardx 0.3.3
 
 * Fixed bug in `extract_strata()` where parentheses in strata level labels were incorrectly stripped, e.g. `"Drug (B)"` was truncated to `"B"`. (#2388)
