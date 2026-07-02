@@ -77,11 +77,13 @@ ard_stats_mantelhaen_test <- function(data, by, variables, strata, ...) {
 .calc_mantelhaen_test <- function(data, by, variables, strata, mantelhaen.args) {
   cards::as_cards_fn(
     \(x, data, variables, ...) {
-      stats::mantelhaen.test(
-        x = x,
-        y = data[[by]],
-        z = data[[strata]],
-        mantelhaen.args
+      inject(
+        stats::mantelhaen.test(
+          x = x,
+          y = data[[by]],
+          z = data[[strata]],
+          !!!mantelhaen.args
+        )
       ) |>
         broom::tidy() |>
         dplyr::bind_cols(mantelhaen.args)
