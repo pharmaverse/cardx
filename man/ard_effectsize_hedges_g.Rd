@@ -33,7 +33,7 @@ ARD data frame
 }
 \description{
 Analysis results data for paired and non-paired Hedge's G Effect Size Test
-using \code{\link[effectsize:cohens_d]{effectsize::hedges_g()}}.
+using \code{\link[effectsize:hedges_g]{effectsize::hedges_g()}}.
 }
 \details{
 For the \code{ard_effectsize_hedges_g()} function, the data is expected to be one row per subject.

@@ -44,3 +44,5 @@ pkgdown
 
 # reverse dep cehcks
 ^checked$
+^\.positai$
+^\.claude$

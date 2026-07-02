@@ -7,6 +7,10 @@
 #'
 #' @name deprecated
 #' @keywords internal
+#' @examples
+#' NULL
+#' @returns See each individual function help page.
+#'
 NULL
 
 # v0.3.0 -----------------------------------------------------------------------

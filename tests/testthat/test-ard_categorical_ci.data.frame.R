@@ -198,7 +198,8 @@ test_that("ard_continuous_ci.data.frame(denominator='row')", {
       statistic = ~"p"
     ) |>
       dplyr::select(cards::all_ard_groups(), cards::all_ard_variables(), "stat") |>
-      dplyr::arrange(unlist(group1_level), unlist(variable_level))
+      dplyr::arrange(unlist(group1_level), unlist(variable_level)),
+    ignore_attr = TRUE
   )
 
   # check the estimates align with `cards::ard_tabulate(denominator='row)` for dichotomous variables
@@ -220,7 +221,8 @@ test_that("ard_continuous_ci.data.frame(denominator='row')", {
       statistic = ~"p"
     ) |>
       dplyr::select(cards::all_ard_groups(), cards::all_ard_variables(), "stat") |>
-      dplyr::arrange(unlist(group1_level), unlist(variable_level))
+      dplyr::arrange(unlist(group1_level), unlist(variable_level)),
+    ignore_attr = TRUE
   )
 
   # check the results work with multiple `by` variables
@@ -283,7 +285,8 @@ test_that("ard_continuous_ci.data.frame(denominator='cell')", {
       statistic = ~"p"
     ) |>
       dplyr::select(cards::all_ard_groups(), cards::all_ard_variables(), "stat") |>
-      dplyr::arrange(group1, variable, unlist(group1_level), unlist(variable_level))
+      dplyr::arrange(group1, variable, unlist(group1_level), unlist(variable_level)),
+    ignore_attr = TRUE
   )
 
   # check the estimates align with `cards::ard_tabulate(denominator='row)` for dichotomous variables
@@ -305,7 +308,8 @@ test_that("ard_continuous_ci.data.frame(denominator='cell')", {
       statistic = ~"p"
     ) |>
       dplyr::select(cards::all_ard_groups(), cards::all_ard_variables(), "stat") |>
-      dplyr::arrange(unlist(group1_level), unlist(variable_level))
+      dplyr::arrange(unlist(group1_level), unlist(variable_level)),
+    ignore_attr = TRUE
   )
 
   # check the results work with multiple `by` variables
