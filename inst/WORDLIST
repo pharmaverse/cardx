@@ -30,6 +30,7 @@ emmeans
 funder
 gtsummary
 mmrm
+positionally
 pre
 quosures
 renv
@@ -38,6 +39,7 @@ sd
 tidyselect
 unlist
 unnests
+unreduced
 unstratified
 vif
 wald
