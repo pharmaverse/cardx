@@ -1,6 +1,6 @@
 # Changelog
 
-## cardx 0.3.3.9001
+## cardx 0.3.3.9002
 
 - Fixed bug in
   [`ard_stats_mantelhaen_test()`](https://insightsengineering.github.io/cardx/reference/ard_stats_mantelhaen_test.md)
