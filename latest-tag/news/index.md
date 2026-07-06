@@ -1,5 +1,15 @@
 # Changelog
 
+## cardx 0.3.4
+
+- Fixed bug in
+  [`ard_stats_mantelhaen_test()`](https://insightsengineering.github.io/cardx/reference/ard_stats_mantelhaen_test.md)
+  where arguments were passed to
+  [`stats::mantelhaen.test()`](https://rdrr.io/r/stats/mantelhaen.test.html)
+  positionally rather than by name, causing a test failure and incorrect
+  results under R-devel.
+  ([\#343](https://github.com/insightsengineering/cardx/issues/343))
+
 ## cardx 0.3.3
 
 CRAN release: 2026-05-29

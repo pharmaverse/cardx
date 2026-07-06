@@ -35,7 +35,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,6 +51,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/v0.3.2">v0.3.2</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/cardx/v0.3.1">v0.3.1</a>
@@ -79,9 +80,16 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.3/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.3.4" id="cardx-034">cardx 0.3.4<a class="anchor" aria-label="anchor" href="#cardx-034"></a>
+</h2>
+<ul>
+<li>Fixed bug in <code><a href="../reference/ard_stats_mantelhaen_test.html">ard_stats_mantelhaen_test()</a></code> where arguments were passed to <code><a href="https://rdrr.io/r/stats/mantelhaen.test.html" class="external-link">stats::mantelhaen.test()</a></code> positionally rather than by name, causing a test failure and incorrect results under R-devel. (<a href="https://github.com/insightsengineering/cardx/issues/343" class="external-link">#343</a>)</li>
+</ul>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.3" id="cardx-033">cardx 0.3.3<a class="anchor" aria-label="anchor" href="#cardx-033"></a>
 </h2>
