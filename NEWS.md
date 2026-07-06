@@ -1,8 +1,6 @@
-# cardx 0.3.3.9003
+# cardx 0.3.4
 
 * Fixed bug in `ard_stats_mantelhaen_test()` where arguments were passed to `stats::mantelhaen.test()` positionally rather than by name, causing a test failure and incorrect results under R-devel. (#343)
-
-* Fixed bug in `ard_stats_mantelhaen_test()` where multi-value choice defaults harvested from `stats::mantelhaen.test()` (such as the `two.sided.method` argument added in R-devel) were passed through unreduced, producing `NULL` statistics under R-devel. Choice defaults are now reduced to their default value.
 
 # cardx 0.3.3
 
