@@ -1,4 +1,4 @@
-# cardx 0.3.3.9002
+# cardx 0.3.3.9003
 
 * Fixed bug in `ard_stats_mantelhaen_test()` where arguments were passed to `stats::mantelhaen.test()` positionally rather than by name, causing a test failure and incorrect results under R-devel. (#343)
 
