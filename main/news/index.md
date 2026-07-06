@@ -1,6 +1,6 @@
 # Changelog
 
-## cardx 0.3.3.9003
+## cardx 0.3.4
 
 - Fixed bug in
   [`ard_stats_mantelhaen_test()`](https://insightsengineering.github.io/cardx/reference/ard_stats_mantelhaen_test.md)
@@ -9,14 +9,6 @@
   positionally rather than by name, causing a test failure and incorrect
   results under R-devel.
   ([\#343](https://github.com/insightsengineering/cardx/issues/343))
-
-- Fixed bug in
-  [`ard_stats_mantelhaen_test()`](https://insightsengineering.github.io/cardx/reference/ard_stats_mantelhaen_test.md)
-  where multi-value choice defaults harvested from
-  [`stats::mantelhaen.test()`](https://rdrr.io/r/stats/mantelhaen.test.html)
-  (such as the `two.sided.method` argument added in R-devel) were passed
-  through unreduced, producing `NULL` statistics under R-devel. Choice
-  defaults are now reduced to their default value.
 
 ## cardx 0.3.3
 
