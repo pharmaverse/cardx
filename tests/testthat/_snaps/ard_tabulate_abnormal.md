@@ -2,28 +2,28 @@
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 18 x 11
     Output
-         group1 group1_level variable variable_level   context stat_name stat_label  stat fmt_fun warning error
-      1    TRTA      Placebo  LBNRIND            Low categori…         n          n     2       0              
-      2    TRTA      Placebo  LBNRIND            Low categori…         N          N     7       0              
-      3    TRTA      Placebo  LBNRIND            Low categori…         p          % 0.286    <fn>              
-      4    TRTA      Placebo  LBNRIND           High categori…         n          n     3       0              
-      5    TRTA      Placebo  LBNRIND           High categori…         N          N     7       0              
-      6    TRTA      Placebo  LBNRIND           High categori…         p          % 0.429    <fn>              
-      7    TRTA    Xanomeli…  LBNRIND            Low categori…         n          n     4       0              
-      8    TRTA    Xanomeli…  LBNRIND            Low categori…         N          N     7       0              
-      9    TRTA    Xanomeli…  LBNRIND            Low categori…         p          % 0.571    <fn>              
-      10   TRTA    Xanomeli…  LBNRIND           High categori…         n          n     3       0              
-      11   TRTA    Xanomeli…  LBNRIND           High categori…         N          N     7       0              
-      12   TRTA    Xanomeli…  LBNRIND           High categori…         p          % 0.429    <fn>              
-      13   TRTA    Xanomeli…  LBNRIND            Low categori…         n          n     4       0              
-      14   TRTA    Xanomeli…  LBNRIND            Low categori…         N          N     6       0              
-      15   TRTA    Xanomeli…  LBNRIND            Low categori…         p          % 0.667    <fn>              
-      16   TRTA    Xanomeli…  LBNRIND           High categori…         n          n     3       0              
-      17   TRTA    Xanomeli…  LBNRIND           High categori…         N          N     6       0              
-      18   TRTA    Xanomeli…  LBNRIND           High categori…         p          %   0.5    <fn>              
+      # An ARD data frame: 18 x 11
+         group1 group1_level         variable variable_level context              stat_name stat_label   stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>                <chr>     <chr>      <list> <list>  <list>  <list>
+       1 TRTA   Placebo              LBNRIND  Low            categorical_abnormal n         n           2     0       <NULL>  <NULL>
+       2 TRTA   Placebo              LBNRIND  Low            categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       3 TRTA   Placebo              LBNRIND  Low            categorical_abnormal p         %           0.286 <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+       5 TRTA   Placebo              LBNRIND  High           categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       6 TRTA   Placebo              LBNRIND  High           categorical_abnormal p         %           0.429 <fn>    <NULL>  <NULL>
+       7 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal n         n           4     0       <NULL>  <NULL>
+       8 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       9 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal p         %           0.571 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+      11 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal N         N           7     0       <NULL>  <NULL>
+      12 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal p         %           0.429 <fn>    <NULL>  <NULL>
+      13 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal n         n           4     0       <NULL>  <NULL>
+      14 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal N         N           6     0       <NULL>  <NULL>
+      15 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal p         %           0.667 <fn>    <NULL>  <NULL>
+      16 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+      17 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal N         N           6     0       <NULL>  <NULL>
+      18 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal p         %           0.5   <fn>    <NULL>  <NULL>
 
 ---
 
@@ -33,18 +33,19 @@
       Abnormality "low" created by merging levels: "LOW", "LOW LOW"
       Abnormality "high" created by merging levels: "HIGH", "HIGH HIGH"
       Abnormality "other" created from level: "OTHER"
-      {cards} data frame: 9 x 9
     Output
-        variable variable_level   context stat_name stat_label stat fmt_fun warning error
-      1  LBNRIND            low categori…         n          n   10       0              
-      2  LBNRIND            low categori…         N          N   20       0              
-      3  LBNRIND            low categori…         p          %  0.5    <fn>              
-      4  LBNRIND           high categori…         n          n    9       0              
-      5  LBNRIND           high categori…         N          N   20       0              
-      6  LBNRIND           high categori…         p          % 0.45    <fn>              
-      7  LBNRIND          other categori…         n          n    0       0              
-      8  LBNRIND          other categori…         N          N   20       0              
-      9  LBNRIND          other categori…         p          %    0    <fn>              
+      # An ARD data frame: 9 x 9
+        variable variable_level context              stat_name stat_label   stat fmt_fun warning error 
+        <chr>    <list>         <chr>                <chr>     <chr>      <list> <list>  <list>  <list>
+      1 LBNRIND  low            categorical_abnormal n         n           10    0       <NULL>  <NULL>
+      2 LBNRIND  low            categorical_abnormal N         N           20    0       <NULL>  <NULL>
+      3 LBNRIND  low            categorical_abnormal p         %            0.5  <fn>    <NULL>  <NULL>
+      4 LBNRIND  high           categorical_abnormal n         n            9    0       <NULL>  <NULL>
+      5 LBNRIND  high           categorical_abnormal N         N           20    0       <NULL>  <NULL>
+      6 LBNRIND  high           categorical_abnormal p         %            0.45 <fn>    <NULL>  <NULL>
+      7 LBNRIND  other          categorical_abnormal n         n            0    0       <NULL>  <NULL>
+      8 LBNRIND  other          categorical_abnormal N         N           20    0       <NULL>  <NULL>
+      9 LBNRIND  other          categorical_abnormal p         %            0    <fn>    <NULL>  <NULL>
 
 ---
 
@@ -53,27 +54,28 @@
     Message
       Abnormality "Low" created from level: "LOW"
       Abnormality "High" created from level: "HIGH"
-      {cards} data frame: 18 x 11
     Output
-         group1 group1_level variable variable_level   context stat_name stat_label  stat fmt_fun warning error
-      1    TRTA      Placebo  LBNRIND            Low categori…         n          n     2       0              
-      2    TRTA      Placebo  LBNRIND            Low categori…         N          N     7       0              
-      3    TRTA      Placebo  LBNRIND            Low categori…         p          % 0.286    <fn>              
-      4    TRTA      Placebo  LBNRIND           High categori…         n          n     3       0              
-      5    TRTA      Placebo  LBNRIND           High categori…         N          N     7       0              
-      6    TRTA      Placebo  LBNRIND           High categori…         p          % 0.429    <fn>              
-      7    TRTA    Xanomeli…  LBNRIND            Low categori…         n          n     4       0              
-      8    TRTA    Xanomeli…  LBNRIND            Low categori…         N          N     7       0              
-      9    TRTA    Xanomeli…  LBNRIND            Low categori…         p          % 0.571    <fn>              
-      10   TRTA    Xanomeli…  LBNRIND           High categori…         n          n     3       0              
-      11   TRTA    Xanomeli…  LBNRIND           High categori…         N          N     7       0              
-      12   TRTA    Xanomeli…  LBNRIND           High categori…         p          % 0.429    <fn>              
-      13   TRTA    Xanomeli…  LBNRIND            Low categori…         n          n     4       0              
-      14   TRTA    Xanomeli…  LBNRIND            Low categori…         N          N     6       0              
-      15   TRTA    Xanomeli…  LBNRIND            Low categori…         p          % 0.667    <fn>              
-      16   TRTA    Xanomeli…  LBNRIND           High categori…         n          n     3       0              
-      17   TRTA    Xanomeli…  LBNRIND           High categori…         N          N     6       0              
-      18   TRTA    Xanomeli…  LBNRIND           High categori…         p          %   0.5    <fn>              
+      # An ARD data frame: 18 x 11
+         group1 group1_level         variable variable_level context              stat_name stat_label   stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>                <chr>     <chr>      <list> <list>  <list>  <list>
+       1 TRTA   Placebo              LBNRIND  Low            categorical_abnormal n         n           2     0       <NULL>  <NULL>
+       2 TRTA   Placebo              LBNRIND  Low            categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       3 TRTA   Placebo              LBNRIND  Low            categorical_abnormal p         %           0.286 <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+       5 TRTA   Placebo              LBNRIND  High           categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       6 TRTA   Placebo              LBNRIND  High           categorical_abnormal p         %           0.429 <fn>    <NULL>  <NULL>
+       7 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal n         n           4     0       <NULL>  <NULL>
+       8 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal N         N           7     0       <NULL>  <NULL>
+       9 TRTA   Xanomeline High Dose LBNRIND  Low            categorical_abnormal p         %           0.571 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+      11 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal N         N           7     0       <NULL>  <NULL>
+      12 TRTA   Xanomeline High Dose LBNRIND  High           categorical_abnormal p         %           0.429 <fn>    <NULL>  <NULL>
+      13 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal n         n           4     0       <NULL>  <NULL>
+      14 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal N         N           6     0       <NULL>  <NULL>
+      15 TRTA   Xanomeline Low Dose  LBNRIND  Low            categorical_abnormal p         %           0.667 <fn>    <NULL>  <NULL>
+      16 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal n         n           3     0       <NULL>  <NULL>
+      17 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal N         N           6     0       <NULL>  <NULL>
+      18 TRTA   Xanomeline Low Dose  LBNRIND  High           categorical_abnormal p         %           0.5   <fn>    <NULL>  <NULL>
 
 # ard_tabulate_abnormal() errors are handled correctly
 

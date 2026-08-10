@@ -2,33 +2,31 @@
 
     Code
       print(res, n = 20, columns = "all")
-    Message
-      {cards} data frame: 27 x 11
     Output
-         group1 group1_level variable variable_level   context stat_name stat_label  stat fmt_fun warning error
-      1    TRTA      Placebo    AESEV           MILD categori…         n          n    36       0              
-      2    TRTA      Placebo    AESEV           MILD categori…         N          N    69       0              
-      3    TRTA      Placebo    AESEV           MILD categori…         p          % 0.522    <fn>              
-      4    TRTA      Placebo    AESEV       MODERATE categori…         n          n    26       0              
-      5    TRTA      Placebo    AESEV       MODERATE categori…         N          N    69       0              
-      6    TRTA      Placebo    AESEV       MODERATE categori…         p          % 0.377    <fn>              
-      7    TRTA      Placebo    AESEV         SEVERE categori…         n          n     7       0              
-      8    TRTA      Placebo    AESEV         SEVERE categori…         N          N    69       0              
-      9    TRTA      Placebo    AESEV         SEVERE categori…         p          % 0.101    <fn>              
-      10   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    22       0              
-      11   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    79       0              
-      12   TRTA    Xanomeli…    AESEV           MILD categori…         p          % 0.278    <fn>              
-      13   TRTA    Xanomeli…    AESEV       MODERATE categori…         n          n    49       0              
-      14   TRTA    Xanomeli…    AESEV       MODERATE categori…         N          N    79       0              
-      15   TRTA    Xanomeli…    AESEV       MODERATE categori…         p          %  0.62    <fn>              
-      16   TRTA    Xanomeli…    AESEV         SEVERE categori…         n          n     8       0              
-      17   TRTA    Xanomeli…    AESEV         SEVERE categori…         N          N    79       0              
-      18   TRTA    Xanomeli…    AESEV         SEVERE categori…         p          % 0.101    <fn>              
-      19   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    19       0              
-      20   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    77       0              
-    Message
-      i 7 more rows
-      i Use `print(n = ...)` to see more rows
+      # An ARD data frame: 27 x 11
+         group1 group1_level         variable variable_level context         stat_name stat_label   stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>      <list> <list>  <list>  <list>
+       1 TRTA   Placebo              AESEV    MILD           categorical_max n         n          36     0       <NULL>  <NULL>
+       2 TRTA   Placebo              AESEV    MILD           categorical_max N         N          69     0       <NULL>  <NULL>
+       3 TRTA   Placebo              AESEV    MILD           categorical_max p         %           0.522 <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n          26     0       <NULL>  <NULL>
+       5 TRTA   Placebo              AESEV    MODERATE       categorical_max N         N          69     0       <NULL>  <NULL>
+       6 TRTA   Placebo              AESEV    MODERATE       categorical_max p         %           0.377 <fn>    <NULL>  <NULL>
+       7 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n           7     0       <NULL>  <NULL>
+       8 TRTA   Placebo              AESEV    SEVERE         categorical_max N         N          69     0       <NULL>  <NULL>
+       9 TRTA   Placebo              AESEV    SEVERE         categorical_max p         %           0.101 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n          22     0       <NULL>  <NULL>
+      11 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max N         N          79     0       <NULL>  <NULL>
+      12 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max p         %           0.278 <fn>    <NULL>  <NULL>
+      13 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max n         n          49     0       <NULL>  <NULL>
+      14 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max N         N          79     0       <NULL>  <NULL>
+      15 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max p         %           0.620 <fn>    <NULL>  <NULL>
+      16 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max n         n           8     0       <NULL>  <NULL>
+      17 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max N         N          79     0       <NULL>  <NULL>
+      18 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max p         %           0.101 <fn>    <NULL>  <NULL>
+      19 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max n         n          19     0       <NULL>  <NULL>
+      20 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max N         N          77     0       <NULL>  <NULL>
+      # i 7 more rows
 
 ---
 
@@ -36,32 +34,31 @@
       print(ard_tabulate_max(dplyr::group_by(cards::ADAE, TRTA), variables = AESEV, id = USUBJID, denominator = cards::ADSL), n = 20, columns = "all")
     Message
       `AESEV`: "MILD" < "MODERATE" < "SEVERE"
-      {cards} data frame: 27 x 11
     Output
-         group1 group1_level variable variable_level   context stat_name stat_label  stat fmt_fun warning error
-      1    TRTA      Placebo    AESEV           MILD categori…         n          n    36       0              
-      2    TRTA      Placebo    AESEV           MILD categori…         N          N    86       0              
-      3    TRTA      Placebo    AESEV           MILD categori…         p          % 0.419    <fn>              
-      4    TRTA      Placebo    AESEV       MODERATE categori…         n          n    26       0              
-      5    TRTA      Placebo    AESEV       MODERATE categori…         N          N    86       0              
-      6    TRTA      Placebo    AESEV       MODERATE categori…         p          % 0.302    <fn>              
-      7    TRTA      Placebo    AESEV         SEVERE categori…         n          n     7       0              
-      8    TRTA      Placebo    AESEV         SEVERE categori…         N          N    86       0              
-      9    TRTA      Placebo    AESEV         SEVERE categori…         p          % 0.081    <fn>              
-      10   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    22       0              
-      11   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    84       0              
-      12   TRTA    Xanomeli…    AESEV           MILD categori…         p          % 0.262    <fn>              
-      13   TRTA    Xanomeli…    AESEV       MODERATE categori…         n          n    49       0              
-      14   TRTA    Xanomeli…    AESEV       MODERATE categori…         N          N    84       0              
-      15   TRTA    Xanomeli…    AESEV       MODERATE categori…         p          % 0.583    <fn>              
-      16   TRTA    Xanomeli…    AESEV         SEVERE categori…         n          n     8       0              
-      17   TRTA    Xanomeli…    AESEV         SEVERE categori…         N          N    84       0              
-      18   TRTA    Xanomeli…    AESEV         SEVERE categori…         p          % 0.095    <fn>              
-      19   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    19       0              
-      20   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    84       0              
-    Message
-      i 7 more rows
-      i Use `print(n = ...)` to see more rows
+      # An ARD data frame: 27 x 11
+         group1 group1_level         variable variable_level context         stat_name stat_label    stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>       <list> <list>  <list>  <list>
+       1 TRTA   Placebo              AESEV    MILD           categorical_max n         n          36      0       <NULL>  <NULL>
+       2 TRTA   Placebo              AESEV    MILD           categorical_max N         N          86      0       <NULL>  <NULL>
+       3 TRTA   Placebo              AESEV    MILD           categorical_max p         %           0.419  <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n          26      0       <NULL>  <NULL>
+       5 TRTA   Placebo              AESEV    MODERATE       categorical_max N         N          86      0       <NULL>  <NULL>
+       6 TRTA   Placebo              AESEV    MODERATE       categorical_max p         %           0.302  <fn>    <NULL>  <NULL>
+       7 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n           7      0       <NULL>  <NULL>
+       8 TRTA   Placebo              AESEV    SEVERE         categorical_max N         N          86      0       <NULL>  <NULL>
+       9 TRTA   Placebo              AESEV    SEVERE         categorical_max p         %           0.0814 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n          22      0       <NULL>  <NULL>
+      11 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max N         N          84      0       <NULL>  <NULL>
+      12 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max p         %           0.262  <fn>    <NULL>  <NULL>
+      13 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max n         n          49      0       <NULL>  <NULL>
+      14 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max N         N          84      0       <NULL>  <NULL>
+      15 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max p         %           0.583  <fn>    <NULL>  <NULL>
+      16 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max n         n           8      0       <NULL>  <NULL>
+      17 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max N         N          84      0       <NULL>  <NULL>
+      18 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max p         %           0.0952 <fn>    <NULL>  <NULL>
+      19 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max n         n          19      0       <NULL>  <NULL>
+      20 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max N         N          84      0       <NULL>  <NULL>
+      # i 7 more rows
 
 # ard_tabulate_max(statistic) works
 
@@ -69,20 +66,19 @@
       ard_tabulate_max(cards::ADAE, variables = AESEV, id = USUBJID, by = TRTA, denominator = cards::ADSL, statistic = ~"n")
     Message
       `AESEV`: "MILD" < "MODERATE" < "SEVERE"
-      {cards} data frame: 9 x 11
     Output
-        group1 group1_level variable variable_level stat_name stat_label stat
-      1   TRTA      Placebo    AESEV           MILD         n          n   36
-      2   TRTA      Placebo    AESEV       MODERATE         n          n   26
-      3   TRTA      Placebo    AESEV         SEVERE         n          n    7
-      4   TRTA    Xanomeli…    AESEV           MILD         n          n   22
-      5   TRTA    Xanomeli…    AESEV       MODERATE         n          n   49
-      6   TRTA    Xanomeli…    AESEV         SEVERE         n          n    8
-      7   TRTA    Xanomeli…    AESEV           MILD         n          n   19
-      8   TRTA    Xanomeli…    AESEV       MODERATE         n          n   42
-      9   TRTA    Xanomeli…    AESEV         SEVERE         n          n   16
-    Message
-      i 4 more variables: context, fmt_fun, warning, error
+      # An ARD data frame: 9 x 11
+        group1 group1_level         variable variable_level context         stat_name stat_label   stat fmt_fun warning error 
+        <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>      <list>  <list> <list>  <list>
+      1 TRTA   Placebo              AESEV    MILD           categorical_max n         n              36       0 <NULL>  <NULL>
+      2 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n              26       0 <NULL>  <NULL>
+      3 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n               7       0 <NULL>  <NULL>
+      4 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n              22       0 <NULL>  <NULL>
+      5 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max n         n              49       0 <NULL>  <NULL>
+      6 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max n         n               8       0 <NULL>  <NULL>
+      7 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max n         n              19       0 <NULL>  <NULL>
+      8 TRTA   Xanomeline Low Dose  AESEV    MODERATE       categorical_max n         n              42       0 <NULL>  <NULL>
+      9 TRTA   Xanomeline Low Dose  AESEV    SEVERE         categorical_max n         n              16       0 <NULL>  <NULL>
 
 # ard_tabulate_max(denominator) works
 
@@ -90,23 +86,21 @@
       ard_tabulate_max(cards::ADAE, variables = AESEV, id = USUBJID, by = TRTA)
     Message
       `AESEV`: "MILD" < "MODERATE" < "SEVERE"
-      {cards} data frame: 27 x 11
     Output
-         group1 group1_level variable variable_level stat_name stat_label  stat
-      1    TRTA      Placebo    AESEV           MILD         n          n    36
-      2    TRTA      Placebo    AESEV           MILD         N          N    69
-      3    TRTA      Placebo    AESEV           MILD         p          % 0.522
-      4    TRTA      Placebo    AESEV       MODERATE         n          n    26
-      5    TRTA      Placebo    AESEV       MODERATE         N          N    69
-      6    TRTA      Placebo    AESEV       MODERATE         p          % 0.377
-      7    TRTA      Placebo    AESEV         SEVERE         n          n     7
-      8    TRTA      Placebo    AESEV         SEVERE         N          N    69
-      9    TRTA      Placebo    AESEV         SEVERE         p          % 0.101
-      10   TRTA    Xanomeli…    AESEV           MILD         n          n    22
-    Message
-      i 17 more rows
-      i Use `print(n = ...)` to see more rows
-      i 4 more variables: context, fmt_fun, warning, error
+      # An ARD data frame: 27 x 11
+         group1 group1_level         variable variable_level context         stat_name stat_label   stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>      <list> <list>  <list>  <list>
+       1 TRTA   Placebo              AESEV    MILD           categorical_max n         n          36     0       <NULL>  <NULL>
+       2 TRTA   Placebo              AESEV    MILD           categorical_max N         N          69     0       <NULL>  <NULL>
+       3 TRTA   Placebo              AESEV    MILD           categorical_max p         %           0.522 <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n          26     0       <NULL>  <NULL>
+       5 TRTA   Placebo              AESEV    MODERATE       categorical_max N         N          69     0       <NULL>  <NULL>
+       6 TRTA   Placebo              AESEV    MODERATE       categorical_max p         %           0.377 <fn>    <NULL>  <NULL>
+       7 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n           7     0       <NULL>  <NULL>
+       8 TRTA   Placebo              AESEV    SEVERE         categorical_max N         N          69     0       <NULL>  <NULL>
+       9 TRTA   Placebo              AESEV    SEVERE         categorical_max p         %           0.101 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n          22     0       <NULL>  <NULL>
+      # i 17 more rows
 
 ---
 
@@ -114,55 +108,51 @@
       ard_tabulate_max(cards::ADAE, variables = AESEV, id = USUBJID, by = TRTA, denominator = 100)
     Message
       `AESEV`: "MILD" < "MODERATE" < "SEVERE"
-      {cards} data frame: 27 x 11
     Output
-         group1 group1_level variable variable_level stat_name stat_label stat
-      1    TRTA      Placebo    AESEV           MILD         n          n   36
-      2    TRTA      Placebo    AESEV           MILD         N          N  100
-      3    TRTA      Placebo    AESEV           MILD         p          % 0.36
-      4    TRTA      Placebo    AESEV       MODERATE         n          n   26
-      5    TRTA      Placebo    AESEV       MODERATE         N          N  100
-      6    TRTA      Placebo    AESEV       MODERATE         p          % 0.26
-      7    TRTA      Placebo    AESEV         SEVERE         n          n    7
-      8    TRTA      Placebo    AESEV         SEVERE         N          N  100
-      9    TRTA      Placebo    AESEV         SEVERE         p          % 0.07
-      10   TRTA    Xanomeli…    AESEV           MILD         n          n   22
-    Message
-      i 17 more rows
-      i Use `print(n = ...)` to see more rows
-      i 4 more variables: context, fmt_fun, warning, error
+      # An ARD data frame: 27 x 11
+         group1 group1_level         variable variable_level context         stat_name stat_label   stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>      <list> <list>  <list>  <list>
+       1 TRTA   Placebo              AESEV    MILD           categorical_max n         n           36    0       <NULL>  <NULL>
+       2 TRTA   Placebo              AESEV    MILD           categorical_max N         N          100    0       <NULL>  <NULL>
+       3 TRTA   Placebo              AESEV    MILD           categorical_max p         %            0.36 <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n           26    0       <NULL>  <NULL>
+       5 TRTA   Placebo              AESEV    MODERATE       categorical_max N         N          100    0       <NULL>  <NULL>
+       6 TRTA   Placebo              AESEV    MODERATE       categorical_max p         %            0.26 <fn>    <NULL>  <NULL>
+       7 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n            7    0       <NULL>  <NULL>
+       8 TRTA   Placebo              AESEV    SEVERE         categorical_max N         N          100    0       <NULL>  <NULL>
+       9 TRTA   Placebo              AESEV    SEVERE         categorical_max p         %            0.07 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n           22    0       <NULL>  <NULL>
+      # i 17 more rows
 
 # ard_tabulate_max() works with pre-ordered factor variables
 
     Code
       print(res, n = 20, columns = "all")
-    Message
-      {cards} data frame: 27 x 11
     Output
-         group1 group1_level variable variable_level   context stat_name stat_label  stat fmt_fun warning error
-      1    TRTA      Placebo    AESEV           MILD categori…         n          n    36       0              
-      2    TRTA      Placebo    AESEV           MILD categori…         N          N    86       0              
-      3    TRTA      Placebo    AESEV           MILD categori…         p          % 0.419    <fn>              
-      4    TRTA      Placebo    AESEV       MODERATE categori…         n          n    26       0              
-      5    TRTA      Placebo    AESEV       MODERATE categori…         N          N    86       0              
-      6    TRTA      Placebo    AESEV       MODERATE categori…         p          % 0.302    <fn>              
-      7    TRTA      Placebo    AESEV         SEVERE categori…         n          n     7       0              
-      8    TRTA      Placebo    AESEV         SEVERE categori…         N          N    86       0              
-      9    TRTA      Placebo    AESEV         SEVERE categori…         p          % 0.081    <fn>              
-      10   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    22       0              
-      11   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    84       0              
-      12   TRTA    Xanomeli…    AESEV           MILD categori…         p          % 0.262    <fn>              
-      13   TRTA    Xanomeli…    AESEV       MODERATE categori…         n          n    49       0              
-      14   TRTA    Xanomeli…    AESEV       MODERATE categori…         N          N    84       0              
-      15   TRTA    Xanomeli…    AESEV       MODERATE categori…         p          % 0.583    <fn>              
-      16   TRTA    Xanomeli…    AESEV         SEVERE categori…         n          n     8       0              
-      17   TRTA    Xanomeli…    AESEV         SEVERE categori…         N          N    84       0              
-      18   TRTA    Xanomeli…    AESEV         SEVERE categori…         p          % 0.095    <fn>              
-      19   TRTA    Xanomeli…    AESEV           MILD categori…         n          n    19       0              
-      20   TRTA    Xanomeli…    AESEV           MILD categori…         N          N    84       0              
-    Message
-      i 7 more rows
-      i Use `print(n = ...)` to see more rows
+      # An ARD data frame: 27 x 11
+         group1 group1_level         variable variable_level context         stat_name stat_label    stat fmt_fun warning error 
+         <chr>  <list>               <chr>    <list>         <chr>           <chr>     <chr>       <list> <list>  <list>  <list>
+       1 TRTA   Placebo              AESEV    MILD           categorical_max n         n          36      0       <NULL>  <NULL>
+       2 TRTA   Placebo              AESEV    MILD           categorical_max N         N          86      0       <NULL>  <NULL>
+       3 TRTA   Placebo              AESEV    MILD           categorical_max p         %           0.419  <fn>    <NULL>  <NULL>
+       4 TRTA   Placebo              AESEV    MODERATE       categorical_max n         n          26      0       <NULL>  <NULL>
+       5 TRTA   Placebo              AESEV    MODERATE       categorical_max N         N          86      0       <NULL>  <NULL>
+       6 TRTA   Placebo              AESEV    MODERATE       categorical_max p         %           0.302  <fn>    <NULL>  <NULL>
+       7 TRTA   Placebo              AESEV    SEVERE         categorical_max n         n           7      0       <NULL>  <NULL>
+       8 TRTA   Placebo              AESEV    SEVERE         categorical_max N         N          86      0       <NULL>  <NULL>
+       9 TRTA   Placebo              AESEV    SEVERE         categorical_max p         %           0.0814 <fn>    <NULL>  <NULL>
+      10 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max n         n          22      0       <NULL>  <NULL>
+      11 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max N         N          84      0       <NULL>  <NULL>
+      12 TRTA   Xanomeline High Dose AESEV    MILD           categorical_max p         %           0.262  <fn>    <NULL>  <NULL>
+      13 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max n         n          49      0       <NULL>  <NULL>
+      14 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max N         N          84      0       <NULL>  <NULL>
+      15 TRTA   Xanomeline High Dose AESEV    MODERATE       categorical_max p         %           0.583  <fn>    <NULL>  <NULL>
+      16 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max n         n           8      0       <NULL>  <NULL>
+      17 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max N         N          84      0       <NULL>  <NULL>
+      18 TRTA   Xanomeline High Dose AESEV    SEVERE         categorical_max p         %           0.0952 <fn>    <NULL>  <NULL>
+      19 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max n         n          19      0       <NULL>  <NULL>
+      20 TRTA   Xanomeline Low Dose  AESEV    MILD           categorical_max N         N          84      0       <NULL>  <NULL>
+      # i 7 more rows
 
 # ard_tabulate_max() errors with incomplete factor columns
 
@@ -187,37 +177,35 @@
     Code
       ard_tabulate_max(data = cards::ADAE, variables = starts_with("xxxx"), id = USUBJID,
       by = c(TRTA, AESEV))
-    Message
-      {cards} data frame: 0 x 0
     Output
-      data frame with 0 columns and 0 rows
+      # An ARD data frame: 0 x 0
 
 # ard_tabulate_max() strata works
 
     Code
       res
-    Message
-      {cards} data frame: 18 x 11
     Output
-         group1 group1_level variable variable_level stat_name stat_label  stat
-      1    TRTA    Xanomeli…    AESEV           MILD         n          n    22
-      2    TRTA    Xanomeli…    AESEV           MILD         N          N    79
-      3    TRTA    Xanomeli…    AESEV           MILD         p          % 0.278
-      4    TRTA    Xanomeli…    AESEV       MODERATE         n          n    49
-      5    TRTA    Xanomeli…    AESEV       MODERATE         N          N    79
-      6    TRTA    Xanomeli…    AESEV       MODERATE         p          %  0.62
-      7    TRTA    Xanomeli…    AESEV         SEVERE         n          n     8
-      8    TRTA    Xanomeli…    AESEV         SEVERE         N          N    79
-      9    TRTA    Xanomeli…    AESEV         SEVERE         p          % 0.101
-      10   TRTA    Xanomeli…    AESEV           MILD         n          n    19
-      11   TRTA    Xanomeli…    AESEV           MILD         N          N    77
-      12   TRTA    Xanomeli…    AESEV           MILD         p          % 0.247
-      13   TRTA    Xanomeli…    AESEV       MODERATE         n          n    42
-      14   TRTA    Xanomeli…    AESEV       MODERATE         N          N    77
-      15   TRTA    Xanomeli…    AESEV       MODERATE         p          % 0.545
-      16   TRTA    Xanomeli…    AESEV         SEVERE         n          n    16
-      17   TRTA    Xanomeli…    AESEV         SEVERE         N          N    77
-      18   TRTA    Xanomeli…    AESEV         SEVERE         p          % 0.208
-    Message
-      i 4 more variables: context, fmt_fun, warning, error
+      # An ARD data frame: 18 x 11
+         group1 group1_level         variable variable_level context  stat_name   stat
+         <chr>  <list>               <chr>    <list>         <chr>    <chr>     <list>
+       1 TRTA   Xanomeline High Dose AESEV    MILD           categor~ n         22    
+       2 TRTA   Xanomeline High Dose AESEV    MILD           categor~ N         79    
+       3 TRTA   Xanomeline High Dose AESEV    MILD           categor~ p          0.278
+       4 TRTA   Xanomeline High Dose AESEV    MODERATE       categor~ n         49    
+       5 TRTA   Xanomeline High Dose AESEV    MODERATE       categor~ N         79    
+       6 TRTA   Xanomeline High Dose AESEV    MODERATE       categor~ p          0.620
+       7 TRTA   Xanomeline High Dose AESEV    SEVERE         categor~ n          8    
+       8 TRTA   Xanomeline High Dose AESEV    SEVERE         categor~ N         79    
+       9 TRTA   Xanomeline High Dose AESEV    SEVERE         categor~ p          0.101
+      10 TRTA   Xanomeline Low Dose  AESEV    MILD           categor~ n         19    
+      11 TRTA   Xanomeline Low Dose  AESEV    MILD           categor~ N         77    
+      12 TRTA   Xanomeline Low Dose  AESEV    MILD           categor~ p          0.247
+      13 TRTA   Xanomeline Low Dose  AESEV    MODERATE       categor~ n         42    
+      14 TRTA   Xanomeline Low Dose  AESEV    MODERATE       categor~ N         77    
+      15 TRTA   Xanomeline Low Dose  AESEV    MODERATE       categor~ p          0.545
+      16 TRTA   Xanomeline Low Dose  AESEV    SEVERE         categor~ n         16    
+      17 TRTA   Xanomeline Low Dose  AESEV    SEVERE         categor~ N         77    
+      18 TRTA   Xanomeline Low Dose  AESEV    SEVERE         categor~ p          0.208
+      # i 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+      #   error <list>
 

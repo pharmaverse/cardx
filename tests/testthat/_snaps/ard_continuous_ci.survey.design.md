@@ -20,22 +20,20 @@
 
     Code
       ard_continuous_ci(dclus1, variables = c(api00, api99), df = letters)
-    Message
-      {cards} data frame: 10 x 8
     Output
-         variable   context  stat_name stat_label stat     error
-      1     api00 survey_c…   estimate   estimate      Non-nume…
-      2     api00 survey_c…  std.error  std.error      Non-nume…
-      3     api00 survey_c…   conf.low   conf.low      Non-nume…
-      4     api00 survey_c…  conf.high  conf.high      Non-nume…
-      5     api00 survey_c… conf.level  conf.lev… 0.95 Non-nume…
-      6     api99 survey_c…   estimate   estimate      Non-nume…
-      7     api99 survey_c…  std.error  std.error      Non-nume…
-      8     api99 survey_c…   conf.low   conf.low      Non-nume…
-      9     api99 survey_c…  conf.high  conf.high      Non-nume…
-      10    api99 survey_c… conf.level  conf.lev… 0.95 Non-nume…
-    Message
-      i 2 more variables: fmt_fun, warning
+      # An ARD data frame: 10 x 8
+         variable context            stat_name stat_label stat   fmt_fun warning error
+       * <chr>    <chr>              <chr>     <chr>      <list> <list>  <list>  <lis>
+       1 api00    survey_continuous~ estimate  estimate   <NULL> <fn>    <NULL>  Non-~
+       2 api00    survey_continuous~ std.error std.error  <NULL> <fn>    <NULL>  Non-~
+       3 api00    survey_continuous~ conf.low  conf.low   <NULL> <fn>    <NULL>  Non-~
+       4 api00    survey_continuous~ conf.high conf.high  <NULL> <fn>    <NULL>  Non-~
+       5 api00    survey_continuous~ conf.lev~ conf.level 0.95   2       <NULL>  Non-~
+       6 api99    survey_continuous~ estimate  estimate   <NULL> <fn>    <NULL>  Non-~
+       7 api99    survey_continuous~ std.error std.error  <NULL> <fn>    <NULL>  Non-~
+       8 api99    survey_continuous~ conf.low  conf.low   <NULL> <fn>    <NULL>  Non-~
+       9 api99    survey_continuous~ conf.high conf.high  <NULL> <fn>    <NULL>  Non-~
+      10 api99    survey_continuous~ conf.lev~ conf.level 0.95   2       <NULL>  Non-~
 
 ---
 
@@ -43,14 +41,13 @@
       ard_continuous_ci(dclus1, variables = sch.wide, method = "svymedian.beta")
     Message
       Column "sch.wide" is not <numeric> and results may be an unexpected format.
-      {cards} data frame: 5 x 8
     Output
-        variable  stat_name stat_label stat   warning     error
-      1 sch.wide   estimate   estimate      '<=' not… error in…
-      2 sch.wide  std.error  std.error      '<=' not… error in…
-      3 sch.wide   conf.low   conf.low      '<=' not… error in…
-      4 sch.wide  conf.high  conf.high      '<=' not… error in…
-      5 sch.wide conf.level  conf.lev… 0.95 '<=' not… error in…
-    Message
-      i 2 more variables: context, fmt_fun
+      # An ARD data frame: 5 x 8
+        variable context             stat_name stat_label stat   fmt_fun warning error
+      * <chr>    <chr>               <chr>     <chr>      <list> <list>  <list>  <lis>
+      1 sch.wide survey_continuous_~ estimate  estimate   <NULL> <fn>    '<=' n~ erro~
+      2 sch.wide survey_continuous_~ std.error std.error  <NULL> <fn>    '<=' n~ erro~
+      3 sch.wide survey_continuous_~ conf.low  conf.low   <NULL> <fn>    '<=' n~ erro~
+      4 sch.wide survey_continuous_~ conf.high conf.high  <NULL> <fn>    '<=' n~ erro~
+      5 sch.wide survey_continuous_~ conf.lev~ conf.level 0.95   2       '<=' n~ erro~
 

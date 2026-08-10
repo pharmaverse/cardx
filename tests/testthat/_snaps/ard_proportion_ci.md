@@ -2,37 +2,33 @@
 
     Code
       ard_categorical_ci_strat_wilson
-    Message
-      {cards} data frame: 7 x 9
     Output
-        variable variable_level   context  stat_name stat_label      stat
-      1      rsp           TRUE proporti…          N          N        80
-      2      rsp           TRUE proporti…          n          n        50
-      3      rsp           TRUE proporti…   estimate   estimate     0.625
-      4      rsp           TRUE proporti…   conf.low   conf.low     0.487
-      5      rsp           TRUE proporti…  conf.high  conf.high     0.719
-      6      rsp           TRUE proporti… conf.level  conf.lev…      0.95
-      7      rsp           TRUE proporti…     method     method Stratifi…
-    Message
-      i 3 more variables: fmt_fun, warning, error
+      # An ARD data frame: 7 x 9
+        variable variable_level context       stat_name  stat_label stat                                                                fmt_fun warning error 
+        <chr>    <list>         <chr>         <chr>      <chr>      <list>                                                              <list>  <list>  <list>
+      1 rsp      TRUE           proportion_ci N          N          80                                                                  0       <NULL>  <NULL>
+      2 rsp      TRUE           proportion_ci n          n          50                                                                  0       <NULL>  <NULL>
+      3 rsp      TRUE           proportion_ci estimate   estimate   0.625                                                               1       <NULL>  <NULL>
+      4 rsp      TRUE           proportion_ci conf.low   conf.low   0.4867191                                                           1       <NULL>  <NULL>
+      5 rsp      TRUE           proportion_ci conf.high  conf.high  0.7186381                                                           1       <NULL>  <NULL>
+      6 rsp      TRUE           proportion_ci conf.level conf.level 0.95                                                                1       <NULL>  <NULL>
+      7 rsp      TRUE           proportion_ci method     method     Stratified Wilson Confidence Interval without continuity correction <fn>    <NULL>  <NULL>
 
 ---
 
     Code
       ard_categorical_ci_strat_wilsoncc
-    Message
-      {cards} data frame: 7 x 9
     Output
-        variable variable_level   context  stat_name stat_label      stat
-      1      rsp           TRUE proporti…          N          N        80
-      2      rsp           TRUE proporti…          n          n        50
-      3      rsp           TRUE proporti…   estimate   estimate     0.625
-      4      rsp           TRUE proporti…   conf.low   conf.low     0.448
-      5      rsp           TRUE proporti…  conf.high  conf.high     0.753
-      6      rsp           TRUE proporti… conf.level  conf.lev…      0.95
-      7      rsp           TRUE proporti…     method     method Stratifi…
-    Message
-      i 3 more variables: fmt_fun, warning, error
+      # An ARD data frame: 7 x 9
+        variable variable_level context       stat_name  stat_label stat                                                             fmt_fun warning error 
+        <chr>    <list>         <chr>         <chr>      <chr>      <list>                                                           <list>  <list>  <list>
+      1 rsp      TRUE           proportion_ci N          N          80                                                               0       <NULL>  <NULL>
+      2 rsp      TRUE           proportion_ci n          n          50                                                               0       <NULL>  <NULL>
+      3 rsp      TRUE           proportion_ci estimate   estimate   0.625                                                            1       <NULL>  <NULL>
+      4 rsp      TRUE           proportion_ci conf.low   conf.low   0.4482566                                                        1       <NULL>  <NULL>
+      5 rsp      TRUE           proportion_ci conf.high  conf.high  0.7531474                                                        1       <NULL>  <NULL>
+      6 rsp      TRUE           proportion_ci conf.level conf.level 0.95                                                             1       <NULL>  <NULL>
+      7 rsp      TRUE           proportion_ci method     method     Stratified Wilson Confidence Interval with continuity correction <fn>    <NULL>  <NULL>
 
 # ard_categorical_ci() messaging
 
