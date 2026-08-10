@@ -46,11 +46,13 @@ row per subject. The data is passed as
 ``` r
 cards::ADSL |>
   ard_stats_mood_test(by = "SEX", variables = "AGE")
-#> {cards} data frame: 4 x 9
-#>   group1 variable   context   stat_name stat_label      stat
-#> 1    SEX      AGE stats_mo…   statistic  Z-Statis…     0.129
-#> 2    SEX      AGE stats_mo…     p.value    p-value     0.897
-#> 3    SEX      AGE stats_mo…      method     method Mood two…
-#> 4    SEX      AGE stats_mo… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 4 × 9
+#>   group1 variable context     stat_name stat_label stat                         
+#>   <chr>  <chr>    <chr>       <chr>     <chr>      <named list>                 
+#> 1 SEX    AGE      stats_mood… statistic Z-Statist… 0.1292194                    
+#> 2 SEX    AGE      stats_mood… p.value   p-value    0.8971841                    
+#> 3 SEX    AGE      stats_mood… method    method     Mood two-sample test of scale
+#> 4 SEX    AGE      stats_mood… alternat… Alternati… two.sided                    
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ```

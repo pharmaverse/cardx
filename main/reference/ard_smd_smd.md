@@ -58,23 +58,27 @@ ARD data frame
 
 ``` r
 ard_smd_smd(cards::ADSL, by = SEX, variables = AGE)
-#> {cards} data frame: 6 x 9
-#>   group1 variable context stat_name stat_label      stat
-#> 1    SEX      AGE smd_smd  estimate  Standard…     0.157
-#> 2    SEX      AGE smd_smd std.error  Standard…     0.127
-#> 3    SEX      AGE smd_smd  conf.low   conf.low    -0.091
-#> 4    SEX      AGE smd_smd conf.high  conf.high     0.405
-#> 5    SEX      AGE smd_smd    method     method Standard…
-#> 6    SEX      AGE smd_smd      gref  Integer …         1
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1 variable context stat_name stat_label      stat                        
+#>   <chr>  <chr>    <chr>   <chr>     <chr>           <named list>                
+#> 1 SEX    AGE      smd_smd estimate  Standardized M… 0.1571071                   
+#> 2 SEX    AGE      smd_smd std.error Standard Error  0.126691                    
+#> 3 SEX    AGE      smd_smd conf.low  conf.low        -0.09120262                 
+#> 4 SEX    AGE      smd_smd conf.high conf.high       0.4054169                   
+#> 5 SEX    AGE      smd_smd method    method          Standardized Mean Difference
+#> 6 SEX    AGE      smd_smd gref      Integer Refere… 1                           
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ard_smd_smd(cards::ADSL, by = SEX, variables = AGEGR1)
-#> {cards} data frame: 6 x 9
-#>   group1 variable context stat_name stat_label      stat
-#> 1    SEX   AGEGR1 smd_smd  estimate  Standard…     0.103
-#> 2    SEX   AGEGR1 smd_smd std.error  Standard…     0.127
-#> 3    SEX   AGEGR1 smd_smd  conf.low   conf.low    -0.145
-#> 4    SEX   AGEGR1 smd_smd conf.high  conf.high     0.351
-#> 5    SEX   AGEGR1 smd_smd    method     method Standard…
-#> 6    SEX   AGEGR1 smd_smd      gref  Integer …         1
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1 variable context stat_name stat_label      stat                        
+#>   <chr>  <chr>    <chr>   <chr>     <chr>           <named list>                
+#> 1 SEX    AGEGR1   smd_smd estimate  Standardized M… 0.1029458                   
+#> 2 SEX    AGEGR1   smd_smd std.error Standard Error  0.1265815                   
+#> 3 SEX    AGEGR1   smd_smd conf.low  conf.low        -0.1451494                  
+#> 4 SEX    AGEGR1   smd_smd conf.high conf.high       0.351041                    
+#> 5 SEX    AGEGR1   smd_smd method    method          Standardized Mean Difference
+#> 6 SEX    AGEGR1   smd_smd gref      Integer Refere… 1                           
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ```

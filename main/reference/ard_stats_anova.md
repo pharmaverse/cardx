@@ -107,20 +107,21 @@ anova(
   lm(mpg ~ am + hp, mtcars)
 ) |>
   ard_stats_anova()
-#> {cards} data frame: 11 x 8
-#>    variable   context   stat_name stat_label      stat fmt_fun
-#> 1   model_1 stats_an…        term       term  mpg ~ am    NULL
-#> 2   model_1 stats_an… df.residual  df for r…        30       1
-#> 3   model_1 stats_an…         rss  Residual…   720.897       1
-#> 4   model_2 stats_an…        term       term mpg ~ am…    NULL
-#> 5   model_2 stats_an… df.residual  df for r…        29       1
-#> 6   model_2 stats_an…         rss  Residual…   245.439       1
-#> 7   model_2 stats_an…          df  Degrees …         1       1
-#> 8   model_2 stats_an…       sumsq  Sum of S…   475.457       1
-#> 9   model_2 stats_an…   statistic  statistic    56.178       1
-#> 10  model_2 stats_an…     p.value    p-value         0       1
-#> 11  model_2 stats_an…      method     method ANOVA re…    NULL
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 11 × 8
+#>    variable context     stat_name stat_label stat                               
+#>    <chr>    <chr>       <chr>     <chr>      <list>                             
+#>  1 model_1  stats_anova term      term       mpg ~ am                           
+#>  2 model_1  stats_anova df.resid… df for re… 30                                 
+#>  3 model_1  stats_anova rss       Residual … 720.8966                           
+#>  4 model_2  stats_anova term      term       mpg ~ am + hp                      
+#>  5 model_2  stats_anova df.resid… df for re… 29                                 
+#>  6 model_2  stats_anova rss       Residual … 245.4393                           
+#>  7 model_2  stats_anova df        Degrees o… 1                                  
+#>  8 model_2  stats_anova sumsq     Sum of Sq… 475.4573                           
+#>  9 model_2  stats_anova statistic statistic  56.17789                           
+#> 10 model_2  stats_anova p.value   p-value    2.920375e-08                       
+#> 11 model_2  stats_anova method    method     ANOVA results from `stats::anova()`
+#> # ℹ 3 more variables: fmt_fun <list>, warning <named list>, error <named list>
 
 ard_stats_anova(
   x = mtcars,
@@ -128,19 +129,20 @@ ard_stats_anova(
   method = "glm",
   method.args = list(family = binomial)
 )
-#> {cards} data frame: 10 x 8
-#>    variable   context         stat_name stat_label      stat fmt_fun
-#> 1   model_1 stats_an…              term       term  am ~ mpg    NULL
-#> 2   model_1 stats_an…       df.residual  df for r…        30       1
-#> 3   model_1 stats_an… residual.deviance  residual…    29.675       1
-#> 4   model_2 stats_an…              term       term am ~ mpg…    NULL
-#> 5   model_2 stats_an…       df.residual  df for r…        29       1
-#> 6   model_2 stats_an… residual.deviance  residual…    19.233       1
-#> 7   model_2 stats_an…                df  Degrees …         1       1
-#> 8   model_2 stats_an…          deviance   deviance    10.443       1
-#> 9   model_2 stats_an…           p.value    p-value     0.001       1
-#> 10  model_2 stats_an…            method     method ANOVA re…    NULL
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 10 × 8
+#>    variable context     stat_name stat_label stat                               
+#>    <chr>    <chr>       <chr>     <chr>      <list>                             
+#>  1 model_1  stats_anova term      term       am ~ mpg                           
+#>  2 model_1  stats_anova df.resid… df for re… 30                                 
+#>  3 model_1  stats_anova residual… residual.… 29.67517                           
+#>  4 model_2  stats_anova term      term       am ~ mpg + hp                      
+#>  5 model_2  stats_anova df.resid… df for re… 29                                 
+#>  6 model_2  stats_anova residual… residual.… 19.23255                           
+#>  7 model_2  stats_anova df        Degrees o… 1                                  
+#>  8 model_2  stats_anova deviance  deviance   10.44261                           
+#>  9 model_2  stats_anova p.value   p-value    0.001231408                        
+#> 10 model_2  stats_anova method    method     ANOVA results from `stats::anova()`
+#> # ℹ 3 more variables: fmt_fun <list>, warning <named list>, error <named list>
 
 ard_stats_anova(
   x = mtcars,
@@ -149,23 +151,24 @@ ard_stats_anova(
   method.args = list(family = binomial),
   package = "lme4"
 )
-#> {cards} data frame: 16 x 8
-#>    variable   context  stat_name stat_label      stat   warning
-#> 1   model_1 stats_an…       term       term    MODEL1 failed t…
-#> 2   model_1 stats_an…       npar       npar         2 failed t…
-#> 3   model_1 stats_an…        AIC        AIC     47.23 failed t…
-#> 4   model_1 stats_an…        BIC        BIC    50.161 failed t…
-#> 5   model_1 stats_an…     logLik     logLik   -21.615 failed t…
-#> 6   model_1 stats_an… minus2logL  minus2lo…     43.23 failed t…
-#> 7   model_2 stats_an…       term       term    MODEL2 failed t…
-#> 8   model_2 stats_an…       npar       npar         3 failed t…
-#> 9   model_2 stats_an…        AIC        AIC     35.25 failed t…
-#> 10  model_2 stats_an…        BIC        BIC    39.647 failed t…
-#> 11  model_2 stats_an…     logLik     logLik   -14.625 failed t…
-#> 12  model_2 stats_an… minus2logL  minus2lo…     29.25 failed t…
-#> 13  model_2 stats_an…  statistic  statistic    13.979 failed t…
-#> 14  model_2 stats_an…         df  Degrees …         1 failed t…
-#> 15  model_2 stats_an…    p.value    p-value         0 failed t…
-#> 16  model_2 stats_an…     method     method ANOVA re… failed t…
-#> ℹ 2 more variables: fmt_fun, error
+#> # An ARD data frame: 16 × 8
+#>    variable context     stat_name  stat                                warning  
+#>    <chr>    <chr>       <chr>      <list>                              <named l>
+#>  1 model_1  stats_anova term       MODEL1                              failed t…
+#>  2 model_1  stats_anova npar       2                                   failed t…
+#>  3 model_1  stats_anova AIC        47.22973                            failed t…
+#>  4 model_1  stats_anova BIC        50.16121                            failed t…
+#>  5 model_1  stats_anova logLik     -21.61487                           failed t…
+#>  6 model_1  stats_anova minus2logL 43.22973                            failed t…
+#>  7 model_2  stats_anova term       MODEL2                              failed t…
+#>  8 model_2  stats_anova npar       3                                   failed t…
+#>  9 model_2  stats_anova AIC        35.25029                            failed t…
+#> 10 model_2  stats_anova BIC        39.6475                             failed t…
+#> 11 model_2  stats_anova logLik     -14.62514                           failed t…
+#> 12 model_2  stats_anova minus2logL 29.25029                            failed t…
+#> 13 model_2  stats_anova statistic  13.97945                            failed t…
+#> 14 model_2  stats_anova df         1                                   failed t…
+#> 15 model_2  stats_anova p.value    0.0001848201                        failed t…
+#> 16 model_2  stats_anova method     ANOVA results from `stats::anova()` failed t…
+#> # ℹ 3 more variables: stat_label <chr>, fmt_fun <list>, error <named list>
 ```

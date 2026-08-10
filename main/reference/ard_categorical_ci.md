@@ -51,7 +51,7 @@ ard_categorical_ci(
   (`string`)\
   string indicating the type of confidence interval to calculate. Must
   be one of . See
-  [`?proportion_ci`](https://insightsengineering.github.io/cardx/reference/proportion_ci.md)
+  [`?proportion_ci`](https://pharmaverse.github.io/cardx/reference/proportion_ci.md)
   for details.
 
 - denominator:
@@ -79,7 +79,7 @@ ard_categorical_ci(
 - strata, weights, max.iterations:
 
   arguments passed to
-  [`proportion_ci_strat_wilson()`](https://insightsengineering.github.io/cardx/reference/proportion_ci.md),
+  [`proportion_ci_strat_wilson()`](https://pharmaverse.github.io/cardx/reference/proportion_ci.md),
   when `method='strat_wilson'`
 
 ## Value
@@ -91,37 +91,38 @@ an ARD data frame
 ``` r
 # compute CI for binary variables
 ard_categorical_ci(mtcars, variables = c(vs, am), method = "wilson")
-#> {cards} data frame: 22 x 9
-#>    variable variable_level   context  stat_name stat_label      stat
-#> 1        vs              1 proporti…          N          N        32
-#> 2        vs              1 proporti…          n          n        14
-#> 3        vs              1 proporti… conf.level  conf.lev…      0.95
-#> 4        vs              1 proporti…   estimate   estimate     0.438
-#> 5        vs              1 proporti…  statistic  statistic       0.5
-#> 6        vs              1 proporti…    p.value    p.value      0.48
-#> 7        vs              1 proporti…  parameter  parameter         1
-#> 8        vs              1 proporti…   conf.low   conf.low     0.282
-#> 9        vs              1 proporti…  conf.high  conf.high     0.607
-#> 10       vs              1 proporti…     method     method Wilson C…
-#> ℹ 12 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 22 × 9
+#>    variable variable_level stat_name 
+#>    <chr>            <list> <chr>     
+#>  1 vs                    1 N         
+#>  2 vs                    1 n         
+#>  3 vs                    1 conf.level
+#>  4 vs                    1 estimate  
+#>  5 vs                    1 statistic 
+#>  6 vs                    1 p.value   
+#>  7 vs                    1 parameter 
+#>  8 vs                    1 conf.low  
+#>  9 vs                    1 conf.high 
+#> 10 vs                    1 method    
+#> # ℹ 12 more rows
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 
 # compute CIs for each level of a categorical variable
 ard_categorical_ci(mtcars, variables = cyl, method = "jeffreys")
-#> {cards} data frame: 21 x 9
-#>    variable variable_level   context  stat_name stat_label      stat
-#> 1       cyl              4 proporti…          N          N        32
-#> 2       cyl              4 proporti…          n          n        11
-#> 3       cyl              4 proporti…   estimate   estimate     0.344
-#> 4       cyl              4 proporti…   conf.low   conf.low     0.198
-#> 5       cyl              4 proporti…  conf.high  conf.high     0.516
-#> 6       cyl              4 proporti… conf.level  conf.lev…      0.95
-#> 7       cyl              4 proporti…     method     method Jeffreys…
-#> 8       cyl              6 proporti…          N          N        32
-#> 9       cyl              6 proporti…          n          n         7
-#> 10      cyl              6 proporti…   estimate   estimate     0.219
-#> ℹ 11 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 21 × 9
+#>    variable variable_level context       stat_name  stat_label stat             
+#>    <chr>            <list> <chr>         <chr>      <chr>      <list>           
+#>  1 cyl                   4 proportion_ci N          N          32               
+#>  2 cyl                   4 proportion_ci n          n          11               
+#>  3 cyl                   4 proportion_ci estimate   estimate   0.34375          
+#>  4 cyl                   4 proportion_ci conf.low   conf.low   0.1982694        
+#>  5 cyl                   4 proportion_ci conf.high  conf.high  0.5160952        
+#>  6 cyl                   4 proportion_ci conf.level conf.level 0.95             
+#>  7 cyl                   4 proportion_ci method     method     Jeffreys Interval
+#>  8 cyl                   6 proportion_ci N          N          32               
+#>  9 cyl                   6 proportion_ci n          n          7                
+#> 10 cyl                   6 proportion_ci estimate   estimate   0.21875          
+#> # ℹ 11 more rows
+#> # ℹ 3 more variables: fmt_fun <list>, warning <list>, error <list>
 ```

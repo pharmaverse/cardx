@@ -50,16 +50,17 @@ data(api, package = "survey")
 dclus2 <- survey::svydesign(id = ~ dnum + snum, fpc = ~ fpc1 + fpc2, data = apiclus2)
 
 ard_survey_svyttest(dclus2, variables = enroll, by = comp.imp, conf.level = 0.9)
-#> {cards} data frame: 9 x 9
-#>     group1 variable   context   stat_name stat_label      stat
-#> 1 comp.imp   enroll survey_s…    estimate       Mean  -225.737
-#> 2 comp.imp   enroll survey_s…   statistic  t Statis…    -2.888
-#> 3 comp.imp   enroll survey_s…     p.value    p-value     0.007
-#> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36
-#> 5 comp.imp   enroll survey_s…      method     method Design-b…
-#> 6 comp.imp   enroll survey_s… alternative  alternat… two.sided
-#> 7 comp.imp   enroll survey_s…    conf.low  CI Lower…   -357.69
-#> 8 comp.imp   enroll survey_s…   conf.high  CI Upper…   -93.784
-#> 9 comp.imp   enroll survey_s…  conf.level  CI Confi…       0.9
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 9 × 9
+#>   group1   variable context     stat_name stat_label stat                fmt_fun
+#>   <chr>    <chr>    <chr>       <chr>     <chr>      <named list>        <named>
+#> 1 comp.imp enroll   survey_svy… estimate  Mean       -225.7371           1      
+#> 2 comp.imp enroll   survey_svy… statistic t Statist… -2.888237           1      
+#> 3 comp.imp enroll   survey_svy… p.value   p-value    0.006518228         1      
+#> 4 comp.imp enroll   survey_svy… parameter Degrees o… 36                  1      
+#> 5 comp.imp enroll   survey_svy… method    method     Design-based t-test <NULL> 
+#> 6 comp.imp enroll   survey_svy… alternat… alternati… two.sided           <NULL> 
+#> 7 comp.imp enroll   survey_svy… conf.low  CI Lower … -357.69             1      
+#> 8 comp.imp enroll   survey_svy… conf.high CI Upper … -93.78413           1      
+#> 9 comp.imp enroll   survey_svy… conf.lev… CI Confid… 0.9                 1      
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ```

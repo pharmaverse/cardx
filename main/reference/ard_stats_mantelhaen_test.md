@@ -46,15 +46,17 @@ ARD data frame
 ``` r
 cards::ADSL |>
   ard_stats_mantelhaen_test(by = "ARM", variables = "AGEGR1", strata = "SEX")
-#> {cards} data frame: 8 x 10
-#>   group1 group2 variable   stat_name stat_label      stat
-#> 1    ARM    SEX   AGEGR1   statistic  Generali…     6.455
-#> 2    ARM    SEX   AGEGR1     p.value    p-value     0.168
-#> 3    ARM    SEX   AGEGR1   parameter  Degrees …         4
-#> 4    ARM    SEX   AGEGR1      method     method Cochran-…
-#> 5    ARM    SEX   AGEGR1 alternative  alternat… two.sided
-#> 6    ARM    SEX   AGEGR1     correct  Continui…      TRUE
-#> 7    ARM    SEX   AGEGR1       exact  Exact Co…     FALSE
-#> 8    ARM    SEX   AGEGR1  conf.level  CI Confi…      0.95
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 8 × 10
+#>   group1 group2 variable context          stat_name stat                        
+#>   <chr>  <chr>  <chr>    <chr>            <chr>     <list>                      
+#> 1 ARM    SEX    AGEGR1   stats_mantelhae… statistic 6.455033                    
+#> 2 ARM    SEX    AGEGR1   stats_mantelhae… p.value   0.1676458                   
+#> 3 ARM    SEX    AGEGR1   stats_mantelhae… parameter 4                           
+#> 4 ARM    SEX    AGEGR1   stats_mantelhae… method    Cochran-Mantel-Haenszel test
+#> 5 ARM    SEX    AGEGR1   stats_mantelhae… alternat… two.sided                   
+#> 6 ARM    SEX    AGEGR1   stats_mantelhae… correct   TRUE                        
+#> 7 ARM    SEX    AGEGR1   stats_mantelhae… exact     FALSE                       
+#> 8 ARM    SEX    AGEGR1   stats_mantelhae… conf.lev… 0.95                        
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

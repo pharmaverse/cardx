@@ -49,17 +49,18 @@ cardx:::.format_poissontest_results(
         broom::tidy()
     )
 )
-#> {cards} data frame: 10 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1     ARM     AVAL stats_po…    estimate  Estimate…     0.006
-#> 2     ARM     AVAL stats_po…   statistic  Number o…       102
-#> 3     ARM     AVAL stats_po…     p.value    p-value         0
-#> 4     ARM     AVAL stats_po…   parameter  Expected…     16853
-#> 5     ARM     AVAL stats_po…    conf.low  CI Lower…     0.005
-#> 6     ARM     AVAL stats_po…   conf.high  CI Upper…     0.007
-#> 7     ARM     AVAL stats_po…      method     method Exact Po…
-#> 8     ARM     AVAL stats_po… alternative  alternat… two.sided
-#> 9     ARM     AVAL stats_po…  conf.level  CI Confi…      0.95
-#> 10    ARM     AVAL stats_po…          mu    H0 Mean         1
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 10 × 9
+#>    group1 variable context       stat_name stat_label stat               fmt_fun
+#>    <chr>  <chr>    <chr>         <chr>     <chr>      <named list>       <named>
+#>  1 ARM    AVAL     stats_poisso… estimate  Estimated… 0.006052335        1      
+#>  2 ARM    AVAL     stats_poisso… statistic Number of… 102                1      
+#>  3 ARM    AVAL     stats_poisso… p.value   p-value    9.881313e-324      1      
+#>  4 ARM    AVAL     stats_poisso… parameter Expected … 16853              1      
+#>  5 ARM    AVAL     stats_poisso… conf.low  CI Lower … 0.004934956        1      
+#>  6 ARM    AVAL     stats_poisso… conf.high CI Upper … 0.007347122        1      
+#>  7 ARM    AVAL     stats_poisso… method    method     Exact Poisson test <NULL> 
+#>  8 ARM    AVAL     stats_poisso… alternat… alternati… two.sided          <NULL> 
+#>  9 ARM    AVAL     stats_poisso… conf.lev… CI Confid… 0.95               1      
+#> 10 ARM    AVAL     stats_poisso… mu        H0 Mean    1                  1      
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ```

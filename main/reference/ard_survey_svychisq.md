@@ -52,12 +52,14 @@ data(api, package = "survey")
 dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
 
 ard_survey_svychisq(dclus1, variables = sch.wide, by = comp.imp, statistic = "F")
-#> {cards} data frame: 5 x 9
-#>     group1 variable   context stat_name stat_label      stat
-#> 1 comp.imp sch.wide survey_s…       ndf  Nominato…         1
-#> 2 comp.imp sch.wide survey_s…       ddf  Denomina…        14
-#> 3 comp.imp sch.wide survey_s… statistic  Statistic   236.895
-#> 4 comp.imp sch.wide survey_s…   p.value    p-value         0
-#> 5 comp.imp sch.wide survey_s…    method     method Pearson'…
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 5 × 9
+#>   group1   variable context      stat_name stat                                 
+#>   <chr>    <chr>    <chr>        <chr>     <named list>                         
+#> 1 comp.imp sch.wide survey_svyc… ndf       1                                    
+#> 2 comp.imp sch.wide survey_svyc… ddf       14                                   
+#> 3 comp.imp sch.wide survey_svyc… statistic 236.8947                             
+#> 4 comp.imp sch.wide survey_svyc… p.value   3.617927e-10                         
+#> 5 comp.imp sch.wide survey_svyc… method    Pearson's X^2: Rao & Scott adjustment
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <named list>,
+#> #   warning <named list>, error <named list>
 ```

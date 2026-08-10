@@ -157,13 +157,13 @@ construct_model(
 ) |>
   ard_regression() |>
   dplyr::filter(stat_name %in% c("term", "estimate", "p.value"))
-#> {cards} data frame: 6 x 8
-#>   variable   context stat_name stat_label    stat fmt_fun
-#> 1    M P G regressi…      term       term `M P G`    NULL
-#> 2    M P G regressi…  estimate  Coeffici…  -2.775       1
-#> 3    M P G regressi…   p.value    p-value   0.213       1
-#> 4      cyl regressi…      term       term     cyl    NULL
-#> 5      cyl regressi…  estimate  Coeffici…  23.979       1
-#> 6      cyl regressi…   p.value    p-value   0.003       1
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 6 × 8
+#>   variable context    stat_name stat_label  stat         fmt_fun  warning error 
+#>   <chr>    <chr>      <chr>     <chr>       <named list> <named > <named> <name>
+#> 1 M P G    regression term      term        `M P G`      <NULL>   <NULL>  <NULL>
+#> 2 M P G    regression estimate  Coefficient -2.774769    1        <NULL>  <NULL>
+#> 3 M P G    regression p.value   p-value     0.2125285    1        <NULL>  <NULL>
+#> 4 cyl      regression term      term        cyl          <NULL>   <NULL>  <NULL>
+#> 5 cyl      regression estimate  Coefficient 23.97863     1        <NULL>  <NULL>
+#> 6 cyl      regression p.value   p-value     0.002814958  1        <NULL>  <NULL>
 ```

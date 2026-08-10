@@ -45,19 +45,21 @@ ARD data frame
 ``` r
 cards::ADSL[1:30, ] |>
   ard_stats_fisher_test(by = "ARM", variables = "AGEGR1")
-#> {cards} data frame: 12 x 9
-#>    group1 variable   context        stat_name stat_label        stat
-#> 1     ARM   AGEGR1 stats_fi…          p.value    p-value       0.089
-#> 2     ARM   AGEGR1 stats_fi…           method     method   Fisher's…
-#> 3     ARM   AGEGR1 stats_fi…      alternative  alternat…   two.sided
-#> 4     ARM   AGEGR1 stats_fi…        workspace  workspace       2e+05
-#> 5     ARM   AGEGR1 stats_fi…           hybrid     hybrid       FALSE
-#> 6     ARM   AGEGR1 stats_fi…       hybridPars  hybridPa… c, 5, 80, 1
-#> 7     ARM   AGEGR1 stats_fi…          control    control        list
-#> 8     ARM   AGEGR1 stats_fi…               or         or           1
-#> 9     ARM   AGEGR1 stats_fi…         conf.int   conf.int        TRUE
-#> 10    ARM   AGEGR1 stats_fi…       conf.level  conf.lev…        0.95
-#> 11    ARM   AGEGR1 stats_fi… simulate.p.value  simulate…       FALSE
-#> 12    ARM   AGEGR1 stats_fi…                B          B        2000
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    group1 variable context          stat_name stat                              
+#>    <chr>  <chr>    <chr>            <chr>     <named list>                      
+#>  1 ARM    AGEGR1   stats_fisher_te… p.value   0.08918073                        
+#>  2 ARM    AGEGR1   stats_fisher_te… method    Fisher's Exact Test for Count Data
+#>  3 ARM    AGEGR1   stats_fisher_te… alternat… two.sided                         
+#>  4 ARM    AGEGR1   stats_fisher_te… workspace 2e+05                             
+#>  5 ARM    AGEGR1   stats_fisher_te… hybrid    FALSE                             
+#>  6 ARM    AGEGR1   stats_fisher_te… hybridPa… <language>                        
+#>  7 ARM    AGEGR1   stats_fisher_te… control   <language>                        
+#>  8 ARM    AGEGR1   stats_fisher_te… or        1                                 
+#>  9 ARM    AGEGR1   stats_fisher_te… conf.int  TRUE                              
+#> 10 ARM    AGEGR1   stats_fisher_te… conf.lev… 0.95                              
+#> 11 ARM    AGEGR1   stats_fisher_te… simulate… FALSE                             
+#> 12 ARM    AGEGR1   stats_fisher_te… B         2000                              
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <named list>,
+#> #   warning <named list>, error <named list>
 ```

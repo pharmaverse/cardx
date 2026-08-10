@@ -39,13 +39,13 @@ data frame
 ``` r
 lm(AGE ~ ARM, data = cards::ADSL) |>
   ard_aod_wald_test()
-#> {cards} data frame: 6 x 8
-#>      variable   context stat_name stat_label     stat fmt_fun
-#> 1 (Intercept) aod_wald…        df  Degrees …        1       1
-#> 2 (Intercept) aod_wald… statistic  Statistic 7126.713       1
-#> 3 (Intercept) aod_wald…   p.value    p-value        0       1
-#> 4         ARM aod_wald…        df  Degrees …        2       1
-#> 5         ARM aod_wald… statistic  Statistic    1.046       1
-#> 6         ARM aod_wald…   p.value    p-value    0.593       1
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 6 × 8
+#>   variable    context       stat_name stat_label     stat fmt_fun warning error 
+#>   <chr>       <chr>         <chr>     <chr>        <list>  <list> <named> <name>
+#> 1 (Intercept) aod_wald_test df        Degrees of… 1   e+0       1 <NULL>  <NULL>
+#> 2 (Intercept) aod_wald_test statistic Statistic   7.13e+3       1 <NULL>  <NULL>
+#> 3 (Intercept) aod_wald_test p.value   p-value     0             1 <NULL>  <NULL>
+#> 4 ARM         aod_wald_test df        Degrees of… 2   e+0       1 <NULL>  <NULL>
+#> 5 ARM         aod_wald_test statistic Statistic   1.05e+0       1 <NULL>  <NULL>
+#> 6 ARM         aod_wald_test p.value   p-value     5.93e-1       1 <NULL>  <NULL>
 ```

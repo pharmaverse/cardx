@@ -94,19 +94,20 @@ an ARD data frame of class 'card'
 ``` r
 survey::svydesign(ids = ~1, data = mtcars, weights = ~1) |>
   ard_tabulate_value(by = vs, variables = c(cyl, am), value = list(cyl = 4))
-#> {cards} data frame: 28 x 11
-#>    group1 group1_level variable variable_level    stat_name stat_label  stat
-#> 1      vs            0      cyl              4            n          n     1
-#> 2      vs            0      cyl              4            N          N    18
-#> 3      vs            0      cyl              4            p          % 0.056
-#> 4      vs            0      cyl              4  p.std.error      SE(%) 0.055
-#> 5      vs            0       am              1            n          n     6
-#> 6      vs            0       am              1            N          N    18
-#> 7      vs            0       am              1            p          % 0.333
-#> 8      vs            0       am              1  p.std.error      SE(%) 0.113
-#> 9      vs            0      cyl              4 n_unweighted  Unweight…     1
-#> 10     vs            0      cyl              4 N_unweighted  Unweight…    18
-#> ℹ 18 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 28 × 11
+#>    group1 group1_level variable variable_level context     stat_name       stat
+#>    <chr>        <list> <chr>            <list> <chr>       <chr>         <list>
+#>  1 vs                0 cyl                   4 dichotomous n             1     
+#>  2 vs                0 cyl                   4 dichotomous N            18     
+#>  3 vs                0 cyl                   4 dichotomous p             0.0556
+#>  4 vs                0 cyl                   4 dichotomous p.std.error   0.0549
+#>  5 vs                0 am                    1 dichotomous n             6     
+#>  6 vs                0 am                    1 dichotomous N            18     
+#>  7 vs                0 am                    1 dichotomous p             0.333 
+#>  8 vs                0 am                    1 dichotomous p.std.error   0.113 
+#>  9 vs                0 cyl                   4 dichotomous n_unweighted  1     
+#> 10 vs                0 cyl                   4 dichotomous N_unweighted 18     
+#> # ℹ 18 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

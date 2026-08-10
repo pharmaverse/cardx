@@ -10,11 +10,11 @@ written reports.
 
 Useful links:
 
-- <https://github.com/insightsengineering/cardx>
+- <https://github.com/pharmaverse/cardx>
 
-- <https://insightsengineering.github.io/cardx/>
+- <https://pharmaverse.github.io/cardx/>
 
-- Report bugs at <https://github.com/insightsengineering/cardx/issues>
+- Report bugs at <https://github.com/pharmaverse/cardx/issues>
 
 ## Author
 

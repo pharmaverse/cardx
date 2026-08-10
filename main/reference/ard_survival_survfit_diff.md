@@ -40,30 +40,20 @@ library(survival)
 
 survfit(Surv_CNSR() ~ TRTA, data = cards::ADTTE) |>
   ard_survival_survfit_diff(times = c(25, 50))
-#> {cards} data frame: 32 x 11
-#>    group1 group1_level variable variable_level       stat_name stat_label
-#> 1    TRTA    Xanomeli…     time             25 reference_level  referenc…
-#> 2    TRTA    Xanomeli…     time             25          method     method
-#> 3    TRTA    Xanomeli…     time             25        estimate  Survival…
-#> 4    TRTA    Xanomeli…     time             25       std.error  Survival…
-#> 5    TRTA    Xanomeli…     time             25       statistic  z statis…
-#> 6    TRTA    Xanomeli…     time             25        conf.low  CI Lower…
-#> 7    TRTA    Xanomeli…     time             25       conf.high  CI Upper…
-#> 8    TRTA    Xanomeli…     time             25         p.value    p-value
-#> 9    TRTA    Xanomeli…     time             50 reference_level  referenc…
-#> 10   TRTA    Xanomeli…     time             50          method     method
-#>         stat
-#> 1    Placebo
-#> 2  Survival…
-#> 3      0.293
-#> 4      0.067
-#> 5      4.392
-#> 6      0.162
-#> 7      0.424
-#> 8          0
-#> 9    Placebo
-#> 10 Survival…
-#> ℹ 22 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 32 × 11
+#>    group1 group1_level         variable variable_level stat_name      
+#>    <chr>  <list>               <chr>            <list> <chr>          
+#>  1 TRTA   Xanomeline High Dose time                 25 reference_level
+#>  2 TRTA   Xanomeline High Dose time                 25 method         
+#>  3 TRTA   Xanomeline High Dose time                 25 estimate       
+#>  4 TRTA   Xanomeline High Dose time                 25 std.error      
+#>  5 TRTA   Xanomeline High Dose time                 25 statistic      
+#>  6 TRTA   Xanomeline High Dose time                 25 conf.low       
+#>  7 TRTA   Xanomeline High Dose time                 25 conf.high      
+#>  8 TRTA   Xanomeline High Dose time                 25 p.value        
+#>  9 TRTA   Xanomeline High Dose time                 50 reference_level
+#> 10 TRTA   Xanomeline High Dose time                 50 method         
+#> # ℹ 22 more rows
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 ```

@@ -28,24 +28,24 @@ data frame
 ``` r
 lm(AGE ~ ARM, data = cards::ADSL) |>
   ard_car_anova()
-#> {cards} data frame: 5 x 8
-#>   variable   context stat_name stat_label   stat fmt_fun
-#> 1      ARM car_anova     sumsq      sumsq 71.386       1
-#> 2      ARM car_anova        df  Degrees …      2       1
-#> 3      ARM car_anova    meansq     meansq 35.693       1
-#> 4      ARM car_anova statistic  Statistic  0.523       1
-#> 5      ARM car_anova   p.value    p-value  0.593       1
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 5 × 8
+#>   variable context   stat_name stat_label           stat fmt_fun warning  error 
+#>   <chr>    <chr>     <chr>     <chr>              <list>  <list> <named > <name>
+#> 1 ARM      car_anova sumsq     sumsq              71.4         1 <NULL>   <NULL>
+#> 2 ARM      car_anova df        Degrees of Freedom  2           1 <NULL>   <NULL>
+#> 3 ARM      car_anova meansq    meansq             35.7         1 <NULL>   <NULL>
+#> 4 ARM      car_anova statistic Statistic           0.523       1 <NULL>   <NULL>
+#> 5 ARM      car_anova p.value   p-value             0.593       1 <NULL>   <NULL>
 
 glm(vs ~ factor(cyl) + factor(am), data = mtcars, family = binomial) |>
   ard_car_anova(test.statistic = "Wald")
-#> {cards} data frame: 6 x 8
-#>      variable   context stat_name stat_label  stat   warning
-#> 1 factor(cyl) car_anova statistic  Statistic     0 glm.fit:…
-#> 2 factor(cyl) car_anova        df  Degrees …     2 glm.fit:…
-#> 3 factor(cyl) car_anova   p.value    p-value     1 glm.fit:…
-#> 4  factor(am) car_anova statistic  Statistic     0 glm.fit:…
-#> 5  factor(am) car_anova        df  Degrees …     1 glm.fit:…
-#> 6  factor(am) car_anova   p.value    p-value 0.998 glm.fit:…
-#> ℹ 2 more variables: fmt_fun, error
+#> # An ARD data frame: 6 × 8
+#>   variable    context   stat_name stat_label         stat fmt_fun warning error 
+#>   <chr>       <chr>     <chr>     <chr>            <list>  <list> <named> <name>
+#> 1 factor(cyl) car_anova statistic Statistic      9.59 e-6       1 glm.fi… <NULL>
+#> 2 factor(cyl) car_anova df        Degrees of Fr… 2    e+0       1 glm.fi… <NULL>
+#> 3 factor(cyl) car_anova p.value   p-value        1.000e+0       1 glm.fi… <NULL>
+#> 4 factor(am)  car_anova statistic Statistic      5.65 e-6       1 glm.fi… <NULL>
+#> 5 factor(am)  car_anova df        Degrees of Fr… 1    e+0       1 glm.fi… <NULL>
+#> 6 factor(am)  car_anova p.value   p-value        9.98 e-1       1 glm.fi… <NULL>
 ```

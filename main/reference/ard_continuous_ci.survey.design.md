@@ -77,21 +77,21 @@ data(api, package = "survey")
 dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
 
 ard_continuous_ci(dclus1, variables = api00)
-#> {cards} data frame: 5 x 8
-#>   variable   context  stat_name stat_label    stat fmt_fun
-#> 1    api00 survey_c…   estimate   estimate 644.169       2
-#> 2    api00 survey_c…  std.error  std.error  23.542       2
-#> 3    api00 survey_c…   conf.low   conf.low 593.676       2
-#> 4    api00 survey_c…  conf.high  conf.high 694.662       2
-#> 5    api00 survey_c… conf.level  conf.lev…    0.95       2
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 5 × 8
+#>   variable context            stat_name stat_label   stat fmt_fun warning error 
+#> * <chr>    <chr>              <chr>     <chr>      <list>  <list> <list>  <list>
+#> 1 api00    survey_continuous… estimate  estimate   644.         2 <NULL>  <NULL>
+#> 2 api00    survey_continuous… std.error std.error   23.5        2 <NULL>  <NULL>
+#> 3 api00    survey_continuous… conf.low  conf.low   594.         2 <NULL>  <NULL>
+#> 4 api00    survey_continuous… conf.high conf.high  695.         2 <NULL>  <NULL>
+#> 5 api00    survey_continuous… conf.lev… conf.level   0.95       2 <NULL>  <NULL>
 ard_continuous_ci(dclus1, variables = api00, method = "svymedian.xlogit")
-#> {cards} data frame: 5 x 8
-#>   variable   context  stat_name stat_label   stat fmt_fun
-#> 1    api00 survey_c…   estimate   estimate    652       2
-#> 2    api00 survey_c…  std.error  std.error 34.969       2
-#> 3    api00 survey_c…   conf.low   conf.low    564       2
-#> 4    api00 survey_c…  conf.high  conf.high    714       2
-#> 5    api00 survey_c… conf.level  conf.lev…   0.95       2
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 5 × 8
+#>   variable context            stat_name stat_label   stat fmt_fun warning error 
+#> * <chr>    <chr>              <chr>     <chr>      <list>  <list> <list>  <list>
+#> 1 api00    survey_continuous… estimate  estimate   652          2 <NULL>  <NULL>
+#> 2 api00    survey_continuous… std.error std.error   35.0        2 <NULL>  <NULL>
+#> 3 api00    survey_continuous… conf.low  conf.low   564          2 <NULL>  <NULL>
+#> 4 api00    survey_continuous… conf.high conf.high  714          2 <NULL>  <NULL>
+#> 5 api00    survey_continuous… conf.lev… conf.level   0.95       2 <NULL>  <NULL>
 ```

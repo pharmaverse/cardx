@@ -78,40 +78,42 @@ data frame
 ``` r
 lm(AGE ~ ARM, data = cards::ADSL) |>
   ard_regression(add_estimate_to_reference_rows = TRUE)
-#> {cards} data frame: 43 x 9
-#>    variable variable_level   context      stat_name stat_label      stat
-#> 1       ARM        Placebo regressi…           term       term ARMPlace…
-#> 2       ARM        Placebo regressi…      var_label      Label Descript…
-#> 3       ARM        Placebo regressi…      var_class      Class character
-#> 4       ARM        Placebo regressi…       var_type       Type categori…
-#> 5       ARM        Placebo regressi…    var_nlevels   N Levels         3
-#> 6       ARM        Placebo regressi…      contrasts  contrasts contr.tr…
-#> 7       ARM        Placebo regressi… contrasts_type  Contrast… treatment
-#> 8       ARM        Placebo regressi…  reference_row  referenc…      TRUE
-#> 9       ARM        Placebo regressi…          label  Level La…   Placebo
-#> 10      ARM        Placebo regressi…          n_obs     N Obs.        86
-#> ℹ 33 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 43 × 9
+#>    variable variable_level context    stat_name      stat                      
+#>    <chr>    <named list>   <chr>      <chr>          <named list>              
+#>  1 ARM      Placebo        regression term           ARMPlacebo                
+#>  2 ARM      Placebo        regression var_label      Description of Planned Arm
+#>  3 ARM      Placebo        regression var_class      character                 
+#>  4 ARM      Placebo        regression var_type       categorical               
+#>  5 ARM      Placebo        regression var_nlevels    3                         
+#>  6 ARM      Placebo        regression contrasts      contr.treatment           
+#>  7 ARM      Placebo        regression contrasts_type treatment                 
+#>  8 ARM      Placebo        regression reference_row  TRUE                      
+#>  9 ARM      Placebo        regression label          Placebo                   
+#> 10 ARM      Placebo        regression n_obs          86                        
+#> # ℹ 33 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <named list>,
+#> #   warning <named list>, error <named list>
 
 ard_regression(
   x = cards::ADSL,
   formula = AGE ~ ARM,
   method = "lm"
 )
-#> {cards} data frame: 43 x 9
-#>    variable variable_level   context      stat_name stat_label      stat
-#> 1       ARM        Placebo regressi…           term       term ARMPlace…
-#> 2       ARM        Placebo regressi…      var_label      Label Descript…
-#> 3       ARM        Placebo regressi…      var_class      Class character
-#> 4       ARM        Placebo regressi…       var_type       Type categori…
-#> 5       ARM        Placebo regressi…    var_nlevels   N Levels         3
-#> 6       ARM        Placebo regressi…      contrasts  contrasts contr.tr…
-#> 7       ARM        Placebo regressi… contrasts_type  Contrast… treatment
-#> 8       ARM        Placebo regressi…  reference_row  referenc…      TRUE
-#> 9       ARM        Placebo regressi…          label  Level La…   Placebo
-#> 10      ARM        Placebo regressi…          n_obs     N Obs.        86
-#> ℹ 33 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 43 × 9
+#>    variable variable_level context    stat_name      stat                      
+#>    <chr>    <named list>   <chr>      <chr>          <named list>              
+#>  1 ARM      Placebo        regression term           ARMPlacebo                
+#>  2 ARM      Placebo        regression var_label      Description of Planned Arm
+#>  3 ARM      Placebo        regression var_class      character                 
+#>  4 ARM      Placebo        regression var_type       categorical               
+#>  5 ARM      Placebo        regression var_nlevels    3                         
+#>  6 ARM      Placebo        regression contrasts      contr.treatment           
+#>  7 ARM      Placebo        regression contrasts_type treatment                 
+#>  8 ARM      Placebo        regression reference_row  TRUE                      
+#>  9 ARM      Placebo        regression label          Placebo                   
+#> 10 ARM      Placebo        regression n_obs          86                        
+#> # ℹ 33 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <named list>,
+#> #   warning <named list>, error <named list>
 ```

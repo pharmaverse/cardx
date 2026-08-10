@@ -92,16 +92,17 @@ ard_summary(
   variables = api00,
   by = stype
 )
-#> {cards} data frame: 9 x 10
-#>   group1 group1_level variable stat_name stat_label stat
-#> 1  stype            E    api00    median     Median  652
-#> 2  stype            H    api00    median     Median  608
-#> 3  stype            M    api00    median     Median  642
-#> 4  stype            E    api00       p25  25% Perc…  553
-#> 5  stype            H    api00       p25  25% Perc…  529
-#> 6  stype            M    api00       p25  25% Perc…  547
-#> 7  stype            E    api00       p75  75% Perc…  729
-#> 8  stype            H    api00       p75  75% Perc…  703
-#> 9  stype            M    api00       p75  75% Perc…  699
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 9 × 10
+#>   group1 group1_level variable context    stat_name stat_label      stat fmt_fun
+#>   <chr>  <list>       <chr>    <chr>      <chr>     <chr>          <lis>  <list>
+#> 1 stype  E            api00    continuous median    Median           652       1
+#> 2 stype  H            api00    continuous median    Median           608       1
+#> 3 stype  M            api00    continuous median    Median           642       1
+#> 4 stype  E            api00    continuous p25       25% Percentile   553       1
+#> 5 stype  H            api00    continuous p25       25% Percentile   529       1
+#> 6 stype  M            api00    continuous p25       25% Percentile   547       1
+#> 7 stype  E            api00    continuous p75       75% Percentile   729       1
+#> 8 stype  H            api00    continuous p75       75% Percentile   703       1
+#> 9 stype  M            api00    continuous p75       75% Percentile   699       1
+#> # ℹ 2 more variables: warning <list>, error <list>
 ```

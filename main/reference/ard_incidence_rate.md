@@ -135,19 +135,19 @@ data <- data.frame(
 
 data |>
   ard_incidence_rate(time = AETTE1, count = AETOT1, id = USUBJID, by = TRTA, unit_label = "years")
-#> {cards} data frame: 27 x 10
-#>    group1 group1_level variable       stat_name stat_label     stat
-#> 1    TRTA            A   AETTE1        estimate  Incidenc…  976.305
-#> 2    TRTA            A   AETTE1       std.error  Standard…    0.578
-#> 3    TRTA            A   AETTE1        conf.low  CI Lower…  862.958
-#> 4    TRTA            A   AETTE1       conf.high  CI Upper… 1089.653
-#> 5    TRTA            A   AETTE1       conf.type    CI Type   normal
-#> 6    TRTA            A   AETTE1      conf.level  CI Confi…     0.95
-#> 7    TRTA            A   AETTE1 tot_person_time  Person-Y…   29.192
-#> 8    TRTA            A   AETTE1        n_events  Number o…      285
-#> 9    TRTA            A   AETTE1               N  Number o…       33
-#> 10   TRTA            B   AETTE1        estimate  Incidenc… 1373.986
-#> ℹ 17 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 27 × 10
+#>    group1 group1_level variable context   stat_name stat_label stat      fmt_fun
+#>    <chr>  <list>       <chr>    <chr>     <chr>     <chr>      <list>    <list> 
+#>  1 TRTA   A            AETTE1   incidenc… estimate  Incidence… 976.3053  1      
+#>  2 TRTA   A            AETTE1   incidenc… std.error Standard … 0.5783134 1      
+#>  3 TRTA   A            AETTE1   incidenc… conf.low  CI Lower … 862.958   1      
+#>  4 TRTA   A            AETTE1   incidenc… conf.high CI Upper … 1089.653  1      
+#>  5 TRTA   A            AETTE1   incidenc… conf.type CI Type    normal    <fn>   
+#>  6 TRTA   A            AETTE1   incidenc… conf.lev… CI Confid… 0.95      1      
+#>  7 TRTA   A            AETTE1   incidenc… tot_pers… Person-Ye… 29.19169  1      
+#>  8 TRTA   A            AETTE1   incidenc… n_events  Number of… 285       0      
+#>  9 TRTA   A            AETTE1   incidenc… N         Number of… 33        0      
+#> 10 TRTA   B            AETTE1   incidenc… estimate  Incidence… 1373.986  1      
+#> # ℹ 17 more rows
+#> # ℹ 2 more variables: warning <list>, error <list>
 ```

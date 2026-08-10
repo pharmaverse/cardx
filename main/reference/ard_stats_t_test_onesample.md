@@ -51,19 +51,19 @@ ARD data frame
 ``` r
 cards::ADSL |>
   ard_stats_t_test_onesample(by = ARM, variables = AGE)
-#> {cards} data frame: 30 x 10
-#>    group1 group1_level variable   stat_name stat_label      stat
-#> 1     ARM      Placebo      AGE    estimate       Mean    75.209
-#> 2     ARM      Placebo      AGE   statistic  t Statis…    81.193
-#> 3     ARM      Placebo      AGE     p.value    p-value         0
-#> 4     ARM      Placebo      AGE   parameter  Degrees …        85
-#> 5     ARM      Placebo      AGE    conf.low  CI Lower…    73.368
-#> 6     ARM      Placebo      AGE   conf.high  CI Upper…    77.051
-#> 7     ARM      Placebo      AGE      method     method One Samp…
-#> 8     ARM      Placebo      AGE alternative  alternat… two.sided
-#> 9     ARM      Placebo      AGE          mu    H0 Mean         0
-#> 10    ARM      Placebo      AGE  conf.level  CI Confi…      0.95
-#> ℹ 20 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 30 × 10
+#>    group1 group1_level variable context   stat_name stat_label stat             
+#>    <chr>  <list>       <chr>    <chr>     <chr>     <chr>      <list>           
+#>  1 ARM    Placebo      AGE      stats_t_… estimate  Mean       75.2093          
+#>  2 ARM    Placebo      AGE      stats_t_… statistic t Statist… 81.19311         
+#>  3 ARM    Placebo      AGE      stats_t_… p.value   p-value    2.473885e-82     
+#>  4 ARM    Placebo      AGE      stats_t_… parameter Degrees o… 85               
+#>  5 ARM    Placebo      AGE      stats_t_… conf.low  CI Lower … 73.36757         
+#>  6 ARM    Placebo      AGE      stats_t_… conf.high CI Upper … 77.05104         
+#>  7 ARM    Placebo      AGE      stats_t_… method    method     One Sample t-test
+#>  8 ARM    Placebo      AGE      stats_t_… alternat… alternati… two.sided        
+#>  9 ARM    Placebo      AGE      stats_t_… mu        H0 Mean    0                
+#> 10 ARM    Placebo      AGE      stats_t_… conf.lev… CI Confid… 0.95             
+#> # ℹ 20 more rows
+#> # ℹ 3 more variables: fmt_fun <list>, warning <list>, error <list>
 ```

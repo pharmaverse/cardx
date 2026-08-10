@@ -81,26 +81,28 @@ data(api, package = "survey")
 dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
 
 ard_categorical_ci(dclus1, variables = sch.wide)
-#> {cards} data frame: 10 x 9
-#>    variable variable_level   context  stat_name stat_label  stat
-#> 1  sch.wide             No categori…   estimate   estimate 0.126
-#> 2  sch.wide             No categori…   conf.low   conf.low 0.088
-#> 3  sch.wide             No categori…  conf.high  conf.high 0.176
-#> 4  sch.wide             No categori…     method     method logit
-#> 5  sch.wide             No categori… conf.level  conf.lev…  0.95
-#> 6  sch.wide            Yes categori…   estimate   estimate 0.874
-#> 7  sch.wide            Yes categori…   conf.low   conf.low 0.824
-#> 8  sch.wide            Yes categori…  conf.high  conf.high 0.912
-#> 9  sch.wide            Yes categori…     method     method logit
-#> 10 sch.wide            Yes categori… conf.level  conf.lev…  0.95
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 10 × 9
+#>    variable variable_level context       stat_name stat_label stat       fmt_fun
+#>    <chr>    <list>         <chr>         <chr>     <chr>      <list>     <list> 
+#>  1 sch.wide No             categorical_… estimate  estimate   0.1256831  2      
+#>  2 sch.wide No             categorical_… conf.low  conf.low   0.08809992 2      
+#>  3 sch.wide No             categorical_… conf.high conf.high  0.1762011  2      
+#>  4 sch.wide No             categorical_… method    method     logit      <fn>   
+#>  5 sch.wide No             categorical_… conf.lev… conf.level 0.95       2      
+#>  6 sch.wide Yes            categorical_… estimate  estimate   0.8743169  2      
+#>  7 sch.wide Yes            categorical_… conf.low  conf.low   0.8237989  2      
+#>  8 sch.wide Yes            categorical_… conf.high conf.high  0.9119001  2      
+#>  9 sch.wide Yes            categorical_… method    method     logit      <fn>   
+#> 10 sch.wide Yes            categorical_… conf.lev… conf.level 0.95       2      
+#> # ℹ 2 more variables: warning <list>, error <list>
 ard_categorical_ci(dclus1, variables = sch.wide, value = sch.wide ~ "Yes", method = "xlogit")
-#> {cards} data frame: 5 x 9
-#>   variable variable_level   context  stat_name stat_label   stat
-#> 1 sch.wide            Yes categori…   estimate   estimate  0.874
-#> 2 sch.wide            Yes categori…   conf.low   conf.low  0.824
-#> 3 sch.wide            Yes categori…  conf.high  conf.high  0.912
-#> 4 sch.wide            Yes categori…     method     method xlogit
-#> 5 sch.wide            Yes categori… conf.level  conf.lev…   0.95
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 5 × 9
+#>   variable variable_level context        stat_name  stat_label stat      fmt_fun
+#>   <chr>    <list>         <chr>          <chr>      <chr>      <list>    <list> 
+#> 1 sch.wide Yes            categorical_ci estimate   estimate   0.8743169 2      
+#> 2 sch.wide Yes            categorical_ci conf.low   conf.low   0.8237989 2      
+#> 3 sch.wide Yes            categorical_ci conf.high  conf.high  0.9119001 2      
+#> 4 sch.wide Yes            categorical_ci method     method     xlogit    <fn>   
+#> 5 sch.wide Yes            categorical_ci conf.level conf.level 0.95      2      
+#> # ℹ 2 more variables: warning <list>, error <list>
 ```

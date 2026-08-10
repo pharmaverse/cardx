@@ -85,19 +85,19 @@ an ARD data frame of class 'card'
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_missing(svy_titanic, variables = c(Class, Age), by = Survived)
-#> {cards} data frame: 40 x 10
-#>      group1 group1_level variable stat_name stat_label stat
-#> 1  Survived           No    Class N_nonmiss  N not Mi… 1490
-#> 2  Survived           No    Class     N_obs    Total N 1490
-#> 3  Survived           No    Class p_nonmiss  % not Mi…    1
-#> 4  Survived           No    Class    N_miss  N Missing    0
-#> 5  Survived           No    Class    p_miss  % Missing    0
-#> 6  Survived           No      Age N_nonmiss  N not Mi… 1490
-#> 7  Survived           No      Age     N_obs    Total N 1490
-#> 8  Survived           No      Age p_nonmiss  % not Mi…    1
-#> 9  Survived           No      Age    N_miss  N Missing    0
-#> 10 Survived           No      Age    p_miss  % Missing    0
-#> ℹ 30 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 40 × 10
+#>    group1   group1_level variable context stat_name stat_label      stat fmt_fun
+#>    <chr>    <list>       <chr>    <chr>   <chr>     <chr>         <list> <list> 
+#>  1 Survived No           Class    missing N_nonmiss N not Missing   1490 <fn>   
+#>  2 Survived No           Class    missing N_obs     Total N         1490 <fn>   
+#>  3 Survived No           Class    missing p_nonmiss % not Missing      1 <fn>   
+#>  4 Survived No           Class    missing N_miss    N Missing          0 <fn>   
+#>  5 Survived No           Class    missing p_miss    % Missing          0 <fn>   
+#>  6 Survived No           Age      missing N_nonmiss N not Missing   1490 <fn>   
+#>  7 Survived No           Age      missing N_obs     Total N         1490 <fn>   
+#>  8 Survived No           Age      missing p_nonmiss % not Missing      1 <fn>   
+#>  9 Survived No           Age      missing N_miss    N Missing          0 <fn>   
+#> 10 Survived No           Age      missing p_miss    % Missing          0 <fn>   
+#> # ℹ 30 more rows
+#> # ℹ 2 more variables: warning <list>, error <list>
 ```

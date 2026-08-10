@@ -40,26 +40,18 @@ ARD data frame
 ``` r
 cards::ADSL |>
   ard_stats_chisq_test(by = "ARM", variables = "AGEGR1")
-#> {cards} data frame: 9 x 9
-#>   group1 variable   context        stat_name stat_label
-#> 1    ARM   AGEGR1 stats_ch…        statistic  X-square…
-#> 2    ARM   AGEGR1 stats_ch…          p.value    p-value
-#> 3    ARM   AGEGR1 stats_ch…        parameter  Degrees …
-#> 4    ARM   AGEGR1 stats_ch…           method     method
-#> 5    ARM   AGEGR1 stats_ch…          correct    correct
-#> 6    ARM   AGEGR1 stats_ch…                p          p
-#> 7    ARM   AGEGR1 stats_ch…        rescale.p  rescale.p
-#> 8    ARM   AGEGR1 stats_ch… simulate.p.value  simulate…
-#> 9    ARM   AGEGR1 stats_ch…                B          B
-#>                          stat
-#> 1                       6.852
-#> 2                       0.144
-#> 3                           4
-#> 4                   Pearson'…
-#> 5                        TRUE
-#> 6 rep, 1/length(x), length(x)
-#> 7                       FALSE
-#> 8                       FALSE
-#> 9                        2000
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 9 × 9
+#>   group1 variable context        stat_name stat_label stat                      
+#>   <chr>  <chr>    <chr>          <chr>     <chr>      <named list>              
+#> 1 ARM    AGEGR1   stats_chisq_t… statistic X-squared… 6.852038                  
+#> 2 ARM    AGEGR1   stats_chisq_t… p.value   p-value    0.143917                  
+#> 3 ARM    AGEGR1   stats_chisq_t… parameter Degrees o… 4                         
+#> 4 ARM    AGEGR1   stats_chisq_t… method    method     Pearson's Chi-squared test
+#> 5 ARM    AGEGR1   stats_chisq_t… correct   correct    TRUE                      
+#> 6 ARM    AGEGR1   stats_chisq_t… p         p          <language>                
+#> 7 ARM    AGEGR1   stats_chisq_t… rescale.p rescale.p  FALSE                     
+#> 8 ARM    AGEGR1   stats_chisq_t… simulate… simulate.… FALSE                     
+#> 9 ARM    AGEGR1   stats_chisq_t… B         B          2000                      
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ```

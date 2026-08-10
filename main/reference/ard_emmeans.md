@@ -15,7 +15,7 @@ using the 'emmeans' package using the following
 
 The arguments `data`, `formula`, `method`, `method.args`, `package` are
 used to construct the regression model via
-[`cardx::construct_model()`](https://insightsengineering.github.io/cardx/reference/construction_helpers.md).
+[`cardx::construct_model()`](https://pharmaverse.github.io/cardx/reference/construction_helpers.md).
 
 ## Usage
 
@@ -110,17 +110,19 @@ ard_emmeans_contrast(
   formula = mpg ~ am + cyl,
   method = "lm"
 )
-#> {cards} data frame: 8 x 10
-#>   group1 variable variable_level  stat_name stat_label      stat
-#> 1     am contrast      am0 - am1   estimate  Mean Dif…    -2.567
-#> 2     am contrast      am0 - am1  std.error  Standard…     1.291
-#> 3     am contrast      am0 - am1         df  Degrees …        29
-#> 4     am contrast      am0 - am1   conf.low  CI Lower…    -5.208
-#> 5     am contrast      am0 - am1  conf.high  CI Upper…     0.074
-#> 6     am contrast      am0 - am1    p.value    p-value     0.056
-#> 7     am contrast      am0 - am1 conf.level  CI Confi…      0.95
-#> 8     am contrast      am0 - am1     method     method Least-sq…
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 8 × 10
+#>   group1 variable variable_level stat_name 
+#>   <chr>  <chr>    <list>         <chr>     
+#> 1 am     contrast am0 - am1      estimate  
+#> 2 am     contrast am0 - am1      std.error 
+#> 3 am     contrast am0 - am1      df        
+#> 4 am     contrast am0 - am1      conf.low  
+#> 5 am     contrast am0 - am1      conf.high 
+#> 6 am     contrast am0 - am1      p.value   
+#> 7 am     contrast am0 - am1      conf.level
+#> 8 am     contrast am0 - am1      method    
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 
 ard_emmeans_contrast(
   data = mtcars,
@@ -129,42 +131,46 @@ ard_emmeans_contrast(
   method.args = list(family = binomial),
   response_type = "dichotomous"
 )
-#> {cards} data frame: 8 x 10
-#>   group1 variable variable_level  stat_name stat_label      stat
-#> 1     am contrast      am0 - am1   estimate  Mean Dif…      0.61
-#> 2     am contrast      am0 - am1  std.error  Standard…     0.229
-#> 3     am contrast      am0 - am1         df  Degrees …       Inf
-#> 4     am contrast      am0 - am1   conf.low  CI Lower…     0.162
-#> 5     am contrast      am0 - am1  conf.high  CI Upper…     1.059
-#> 6     am contrast      am0 - am1    p.value    p-value     0.008
-#> 7     am contrast      am0 - am1 conf.level  CI Confi…      0.95
-#> 8     am contrast      am0 - am1     method     method Least-sq…
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 8 × 10
+#>   group1 variable variable_level stat_name 
+#>   <chr>  <chr>    <list>         <chr>     
+#> 1 am     contrast am0 - am1      estimate  
+#> 2 am     contrast am0 - am1      std.error 
+#> 3 am     contrast am0 - am1      df        
+#> 4 am     contrast am0 - am1      conf.low  
+#> 5 am     contrast am0 - am1      conf.high 
+#> 6 am     contrast am0 - am1      p.value   
+#> 7 am     contrast am0 - am1      conf.level
+#> 8 am     contrast am0 - am1      method    
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 # LS Means
 ard_emmeans_emmeans(
   data = mtcars,
   formula = mpg ~ am + cyl,
   method = "lm"
 )
-#> {cards} data frame: 16 x 10
-#>    group1 variable variable_level  stat_name stat_label      stat
-#> 1      am contrast              0   estimate       Mean    19.048
-#> 2      am contrast              0  std.error  Standard…     0.753
-#> 3      am contrast              0         df  Degrees …        29
-#> 4      am contrast              0          n          n        19
-#> 5      am contrast              0   conf.low  CI Lower…    17.507
-#> 6      am contrast              0  conf.high  CI Upper…    20.589
-#> 7      am contrast              0 conf.level  CI Confi…      0.95
-#> 8      am contrast              0     method     method Least-sq…
-#> 9      am contrast              1   estimate       Mean    21.615
-#> 10     am contrast              1  std.error  Standard…     0.938
-#> 11     am contrast              1         df  Degrees …        29
-#> 12     am contrast              1          n          n        13
-#> 13     am contrast              1   conf.low  CI Lower…    19.696
-#> 14     am contrast              1  conf.high  CI Upper…    23.534
-#> 15     am contrast              1 conf.level  CI Confi…      0.95
-#> 16     am contrast              1     method     method Least-sq…
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 16 × 10
+#>    group1 variable variable_level context         stat_name  stat               
+#>    <chr>  <chr>    <list>         <chr>           <chr>      <list>             
+#>  1 am     contrast 0              emmeans_emmeans estimate   19.04777           
+#>  2 am     contrast 0              emmeans_emmeans std.error  0.7534361          
+#>  3 am     contrast 0              emmeans_emmeans df         29                 
+#>  4 am     contrast 0              emmeans_emmeans n          19                 
+#>  5 am     contrast 0              emmeans_emmeans conf.low   17.50682           
+#>  6 am     contrast 0              emmeans_emmeans conf.high  20.58872           
+#>  7 am     contrast 0              emmeans_emmeans conf.level 0.95               
+#>  8 am     contrast 0              emmeans_emmeans method     Least-squares means
+#>  9 am     contrast 1              emmeans_emmeans estimate   21.6148            
+#> 10 am     contrast 1              emmeans_emmeans std.error  0.9382835          
+#> 11 am     contrast 1              emmeans_emmeans df         29                 
+#> 12 am     contrast 1              emmeans_emmeans n          13                 
+#> 13 am     contrast 1              emmeans_emmeans conf.low   19.6958            
+#> 14 am     contrast 1              emmeans_emmeans conf.high  23.53381           
+#> 15 am     contrast 1              emmeans_emmeans conf.level 0.95               
+#> 16 am     contrast 1              emmeans_emmeans method     Least-squares means
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 
 ard_emmeans_emmeans(
   data = mtcars,
@@ -173,23 +179,25 @@ ard_emmeans_emmeans(
   method.args = list(family = binomial),
   response_type = "dichotomous"
 )
-#> {cards} data frame: 16 x 10
-#>    group1 variable variable_level  stat_name stat_label      stat
-#> 1      am contrast              0   estimate       Mean     0.726
-#> 2      am contrast              0  std.error  Standard…     0.165
-#> 3      am contrast              0         df  Degrees …       Inf
-#> 4      am contrast              0          n          n        19
-#> 5      am contrast              0   conf.low  CI Lower…     0.402
-#> 6      am contrast              0  conf.high  CI Upper…      1.05
-#> 7      am contrast              0 conf.level  CI Confi…      0.95
-#> 8      am contrast              0     method     method Least-sq…
-#> 9      am contrast              1   estimate       Mean     0.116
-#> 10     am contrast              1  std.error  Standard…     0.117
-#> 11     am contrast              1         df  Degrees …       Inf
-#> 12     am contrast              1          n          n        13
-#> 13     am contrast              1   conf.low  CI Lower…    -0.114
-#> 14     am contrast              1  conf.high  CI Upper…     0.346
-#> 15     am contrast              1 conf.level  CI Confi…      0.95
-#> 16     am contrast              1     method     method Least-sq…
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 16 × 10
+#>    group1 variable variable_level context         stat_name  stat               
+#>    <chr>  <chr>    <list>         <chr>           <chr>      <list>             
+#>  1 am     contrast 0              emmeans_emmeans estimate   0.7261156          
+#>  2 am     contrast 0              emmeans_emmeans std.error  0.1651809          
+#>  3 am     contrast 0              emmeans_emmeans df         Inf                
+#>  4 am     contrast 0              emmeans_emmeans n          19                 
+#>  5 am     contrast 0              emmeans_emmeans conf.low   0.402367           
+#>  6 am     contrast 0              emmeans_emmeans conf.high  1.049864           
+#>  7 am     contrast 0              emmeans_emmeans conf.level 0.95               
+#>  8 am     contrast 0              emmeans_emmeans method     Least-squares means
+#>  9 am     contrast 1              emmeans_emmeans estimate   0.1158561          
+#> 10 am     contrast 1              emmeans_emmeans std.error  0.1171975          
+#> 11 am     contrast 1              emmeans_emmeans df         Inf                
+#> 12 am     contrast 1              emmeans_emmeans n          13                 
+#> 13 am     contrast 1              emmeans_emmeans conf.low   -0.1138467         
+#> 14 am     contrast 1              emmeans_emmeans conf.high  0.345559           
+#> 15 am     contrast 1              emmeans_emmeans conf.level 0.95               
+#> 16 am     contrast 1              emmeans_emmeans method     Least-squares means
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

@@ -48,12 +48,14 @@ cardx:::.format_mcnemartest_results(
         broom::tidy()
     )
 )
-#> {cards} data frame: 5 x 9
-#>   group1 variable   context stat_name stat_label      stat
-#> 1    ARM      AGE stats_mc… statistic  X-square…    111.91
-#> 2    ARM      AGE stats_mc…   p.value    p-value         0
-#> 3    ARM      AGE stats_mc… parameter  Degrees …         1
-#> 4    ARM      AGE stats_mc…    method     method McNemar'…
-#> 5    ARM      AGE stats_mc…   correct    correct      TRUE
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 5 × 9
+#>   group1 variable stat_name
+#>   <chr>  <chr>    <chr>    
+#> 1 ARM    AGE      statistic
+#> 2 ARM    AGE      p.value  
+#> 3 ARM    AGE      parameter
+#> 4 ARM    AGE      method   
+#> 5 ARM    AGE      correct  
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <named list>,
+#> #   fmt_fun <named list>, warning <named list>, error <named list>
 ```

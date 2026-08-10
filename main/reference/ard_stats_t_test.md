@@ -64,21 +64,21 @@ are then passed as
 cards::ADSL |>
   dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
   ard_stats_t_test(by = ARM, variables = c(AGE, BMIBL))
-#> {cards} data frame: 28 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1     ARM      AGE stats_t_…    estimate  Mean Dif…     0.828
-#> 2     ARM      AGE stats_t_…   estimate1  Group 1 …    75.209
-#> 3     ARM      AGE stats_t_…   estimate2  Group 2 …    74.381
-#> 4     ARM      AGE stats_t_…   statistic  t Statis…     0.655
-#> 5     ARM      AGE stats_t_…     p.value    p-value     0.513
-#> 6     ARM      AGE stats_t_…   parameter  Degrees …   167.362
-#> 7     ARM      AGE stats_t_…    conf.low  CI Lower…    -1.668
-#> 8     ARM      AGE stats_t_…   conf.high  CI Upper…     3.324
-#> 9     ARM      AGE stats_t_…      method     method Welch Tw…
-#> 10    ARM      AGE stats_t_… alternative  alternat… two.sided
-#> ℹ 18 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 28 × 9
+#>    group1 variable context  stat_name stat_label stat                    fmt_fun
+#>    <chr>  <chr>    <chr>    <chr>     <chr>      <named list>            <named>
+#>  1 ARM    AGE      stats_t… estimate  Mean Diff… 0.8283499               1      
+#>  2 ARM    AGE      stats_t… estimate1 Group 1 M… 75.2093                 1      
+#>  3 ARM    AGE      stats_t… estimate2 Group 2 M… 74.38095                1      
+#>  4 ARM    AGE      stats_t… statistic t Statist… 0.6551964               1      
+#>  5 ARM    AGE      stats_t… p.value   p-value    0.5132409               1      
+#>  6 ARM    AGE      stats_t… parameter Degrees o… 167.3625                1      
+#>  7 ARM    AGE      stats_t… conf.low  CI Lower … -1.667637               1      
+#>  8 ARM    AGE      stats_t… conf.high CI Upper … 3.324337                1      
+#>  9 ARM    AGE      stats_t… method    method     Welch Two Sample t-test <NULL> 
+#> 10 ARM    AGE      stats_t… alternat… alternati… two.sided               <NULL> 
+#> # ℹ 18 more rows
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 
 # constructing a paired data set,
 # where patients receive both treatments
@@ -87,19 +87,20 @@ cards::ADSL[c("ARM", "AGE")] |>
   dplyr::mutate(.by = ARM, USUBJID = dplyr::row_number()) |>
   dplyr::arrange(USUBJID, ARM) |>
   ard_stats_paired_t_test(by = ARM, variables = AGE, id = USUBJID)
-#> {cards} data frame: 12 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1     ARM      AGE stats_t_…    estimate  Mean Dif…     0.798
-#> 2     ARM      AGE stats_t_…   statistic  t Statis…     0.628
-#> 3     ARM      AGE stats_t_…     p.value    p-value     0.531
-#> 4     ARM      AGE stats_t_…   parameter  Degrees …        83
-#> 5     ARM      AGE stats_t_…    conf.low  CI Lower…    -1.727
-#> 6     ARM      AGE stats_t_…   conf.high  CI Upper…     3.322
-#> 7     ARM      AGE stats_t_…      method     method Paired t…
-#> 8     ARM      AGE stats_t_… alternative  alternat… two.sided
-#> 9     ARM      AGE stats_t_…          mu    H0 Mean         0
-#> 10    ARM      AGE stats_t_…      paired  Paired t…      TRUE
-#> 11    ARM      AGE stats_t_…   var.equal  Equal Va…     FALSE
-#> 12    ARM      AGE stats_t_…  conf.level  CI Confi…      0.95
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    group1 variable context      stat_name   stat_label     stat          fmt_fun
+#>    <chr>  <chr>    <chr>        <chr>       <chr>          <named list>  <named>
+#>  1 ARM    AGE      stats_t_test estimate    Mean Differen… 0.797619      1      
+#>  2 ARM    AGE      stats_t_test statistic   t Statistic    0.628482      1      
+#>  3 ARM    AGE      stats_t_test p.value     p-value        0.5314139     1      
+#>  4 ARM    AGE      stats_t_test parameter   Degrees of Fr… 83            1      
+#>  5 ARM    AGE      stats_t_test conf.low    CI Lower Bound -1.726609     1      
+#>  6 ARM    AGE      stats_t_test conf.high   CI Upper Bound 3.321848      1      
+#>  7 ARM    AGE      stats_t_test method      method         Paired t-test <NULL> 
+#>  8 ARM    AGE      stats_t_test alternative alternative    two.sided     <NULL> 
+#>  9 ARM    AGE      stats_t_test mu          H0 Mean        0             1      
+#> 10 ARM    AGE      stats_t_test paired      Paired t-test  TRUE          <NULL> 
+#> 11 ARM    AGE      stats_t_test var.equal   Equal Varianc… FALSE         <NULL> 
+#> 12 ARM    AGE      stats_t_test conf.level  CI Confidence… 0.95          1      
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ```

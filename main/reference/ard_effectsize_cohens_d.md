@@ -67,18 +67,18 @@ subject. The data are then passed as
 cards::ADSL |>
   dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
   ard_effectsize_cohens_d(by = ARM, variables = AGE)
-#> {cards} data frame: 9 x 9
-#>   group1 variable   context   stat_name stat_label      stat
-#> 1    ARM      AGE effectsi…    estimate  Effect S…       0.1
-#> 2    ARM      AGE effectsi…  conf.level  CI Confi…      0.95
-#> 3    ARM      AGE effectsi…    conf.low  CI Lower…    -0.201
-#> 4    ARM      AGE effectsi…   conf.high  CI Upper…     0.401
-#> 5    ARM      AGE effectsi…      method     method Cohen's D
-#> 6    ARM      AGE effectsi…          mu    H0 Mean         0
-#> 7    ARM      AGE effectsi…      paired  Paired t…     FALSE
-#> 8    ARM      AGE effectsi…   pooled_sd  Pooled S…      TRUE
-#> 9    ARM      AGE effectsi… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 9 × 9
+#>   group1 variable context stat_name stat_label stat       fmt_fun warning error 
+#>   <chr>  <chr>    <chr>   <chr>     <chr>      <named li> <named> <named> <name>
+#> 1 ARM    AGE      effect… estimate  Effect Si… 0.1004081  1       <NULL>  <NULL>
+#> 2 ARM    AGE      effect… conf.lev… CI Confid… 0.95       1       <NULL>  <NULL>
+#> 3 ARM    AGE      effect… conf.low  CI Lower … -0.2005979 1       <NULL>  <NULL>
+#> 4 ARM    AGE      effect… conf.high CI Upper … 0.4011158  1       <NULL>  <NULL>
+#> 5 ARM    AGE      effect… method    method     Cohen's D  <NULL>  <NULL>  <NULL>
+#> 6 ARM    AGE      effect… mu        H0 Mean    0          1       <NULL>  <NULL>
+#> 7 ARM    AGE      effect… paired    Paired te… FALSE      <NULL>  <NULL>  <NULL>
+#> 8 ARM    AGE      effect… pooled_sd Pooled St… TRUE       <NULL>  <NULL>  <NULL>
+#> 9 ARM    AGE      effect… alternat… Alternati… two.sided  <NULL>  <NULL>  <NULL>
 
 # constructing a paired data set,
 # where patients receive both treatments
@@ -89,16 +89,17 @@ cards::ADSL[c("ARM", "AGE")] |>
   dplyr::group_by(USUBJID) |>
   dplyr::filter(dplyr::n() > 1) |>
   ard_effectsize_paired_cohens_d(by = ARM, variables = AGE, id = USUBJID)
-#> {cards} data frame: 9 x 9
-#>   group1 variable   context   stat_name stat_label      stat
-#> 1    ARM      AGE effectsi…    estimate  Effect S…     0.069
-#> 2    ARM      AGE effectsi…  conf.level  CI Confi…      0.95
-#> 3    ARM      AGE effectsi…    conf.low  CI Lower…    -0.146
-#> 4    ARM      AGE effectsi…   conf.high  CI Upper…     0.282
-#> 5    ARM      AGE effectsi…      method     method Paired C…
-#> 6    ARM      AGE effectsi…          mu    H0 Mean         0
-#> 7    ARM      AGE effectsi…      paired  Paired t…      TRUE
-#> 8    ARM      AGE effectsi…   pooled_sd  Pooled S…      TRUE
-#> 9    ARM      AGE effectsi… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 9 × 9
+#>   group1 variable context          stat_name stat_label stat             fmt_fun
+#>   <chr>  <chr>    <chr>            <chr>     <chr>      <named list>     <named>
+#> 1 ARM    AGE      effectsize_cohe… estimate  Effect Si… 0.06857301       1      
+#> 2 ARM    AGE      effectsize_cohe… conf.lev… CI Confid… 0.95             1      
+#> 3 ARM    AGE      effectsize_cohe… conf.low  CI Lower … -0.1457359       1      
+#> 4 ARM    AGE      effectsize_cohe… conf.high CI Upper … 0.2824702        1      
+#> 5 ARM    AGE      effectsize_cohe… method    method     Paired Cohen's D <NULL> 
+#> 6 ARM    AGE      effectsize_cohe… mu        H0 Mean    0                1      
+#> 7 ARM    AGE      effectsize_cohe… paired    Paired te… TRUE             <NULL> 
+#> 8 ARM    AGE      effectsize_cohe… pooled_sd Pooled St… TRUE             <NULL> 
+#> 9 ARM    AGE      effectsize_cohe… alternat… Alternati… two.sided        <NULL> 
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ```

@@ -123,19 +123,20 @@ ard_tabulate_max(
 )
 #> `AESER`: "N" < "Y"
 #> `AESEV`: "MILD" < "MODERATE" < "SEVERE"
-#> {cards} data frame: 45 x 11
-#>    group1 group1_level variable variable_level stat_name stat_label  stat
-#> 1    TRTA      Placebo    AESER              N         n          n    69
-#> 2    TRTA      Placebo    AESER              N         N          N    86
-#> 3    TRTA      Placebo    AESER              N         p          % 0.802
-#> 4    TRTA      Placebo    AESER              Y         n          n     0
-#> 5    TRTA      Placebo    AESER              Y         N          N    86
-#> 6    TRTA      Placebo    AESER              Y         p          %     0
-#> 7    TRTA      Placebo    AESEV           MILD         n          n    36
-#> 8    TRTA      Placebo    AESEV           MILD         N          N    86
-#> 9    TRTA      Placebo    AESEV           MILD         p          % 0.419
-#> 10   TRTA      Placebo    AESEV       MODERATE         n          n    26
-#> ℹ 35 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 45 × 11
+#>    group1 group1_level variable variable_level context         stat_name   stat
+#>    <chr>  <list>       <chr>    <list>         <chr>           <chr>     <list>
+#>  1 TRTA   Placebo      AESER    N              categorical_max n         69    
+#>  2 TRTA   Placebo      AESER    N              categorical_max N         86    
+#>  3 TRTA   Placebo      AESER    N              categorical_max p          0.802
+#>  4 TRTA   Placebo      AESER    Y              categorical_max n          0    
+#>  5 TRTA   Placebo      AESER    Y              categorical_max N         86    
+#>  6 TRTA   Placebo      AESER    Y              categorical_max p          0    
+#>  7 TRTA   Placebo      AESEV    MILD           categorical_max n         36    
+#>  8 TRTA   Placebo      AESEV    MILD           categorical_max N         86    
+#>  9 TRTA   Placebo      AESEV    MILD           categorical_max p          0.419
+#> 10 TRTA   Placebo      AESEV    MODERATE       categorical_max n         26    
+#> # ℹ 35 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```
