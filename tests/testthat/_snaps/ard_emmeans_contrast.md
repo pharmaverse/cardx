@@ -2,35 +2,35 @@
 
     Code
       print(ard_emmeans_contrast, columns = "all")
-    Message
-      {cards} data frame: 8 x 10
     Output
-        group1 variable variable_level   context  stat_name stat_label      stat fmt_fun warning error
-      1     am contrast      am0 - am1 emmeans_…   estimate  Mean Dif…      0.61       1              
-      2     am contrast      am0 - am1 emmeans_…  std.error  Standard…     0.229       1              
-      3     am contrast      am0 - am1 emmeans_…         df  Degrees …       Inf       1              
-      4     am contrast      am0 - am1 emmeans_…   conf.low  CI Lower…     0.162       1              
-      5     am contrast      am0 - am1 emmeans_…  conf.high  CI Upper…     1.059       1              
-      6     am contrast      am0 - am1 emmeans_…    p.value    p-value     0.008       1              
-      7     am contrast      am0 - am1 emmeans_… conf.level  CI Confi…      0.95       1              
-      8     am contrast      am0 - am1 emmeans_…     method     method Least-sq…    <fn>              
+      # An ARD data frame: 8 x 10
+        group1 variable variable_level context          stat_name  stat_label          stat                                   fmt_fun warning error 
+        <chr>  <chr>    <list>         <chr>            <chr>      <chr>               <list>                                 <list>  <list>  <list>
+      1 am     contrast am0 - am1      emmeans_contrast estimate   Mean Difference     0.6102595                              1       <NULL>  <NULL>
+      2 am     contrast am0 - am1      emmeans_contrast std.error  Standard Error      0.2289453                              1       <NULL>  <NULL>
+      3 am     contrast am0 - am1      emmeans_contrast df         Degrees of Freedom  Inf                                    1       <NULL>  <NULL>
+      4 am     contrast am0 - am1      emmeans_contrast conf.low   CI Lower Bound      0.161535                               1       <NULL>  <NULL>
+      5 am     contrast am0 - am1      emmeans_contrast conf.high  CI Upper Bound      1.058984                               1       <NULL>  <NULL>
+      6 am     contrast am0 - am1      emmeans_contrast p.value    p-value             0.007686806                            1       <NULL>  <NULL>
+      7 am     contrast am0 - am1      emmeans_contrast conf.level CI Confidence Level 0.95                                   1       <NULL>  <NULL>
+      8 am     contrast am0 - am1      emmeans_contrast method     method              Least-squares adjusted mean difference <fn>    <NULL>  <NULL>
 
 # ard_emmeans_contrast() errors are returned correctly
 
     Code
       print(ard, columns = "all")
-    Message
-      {cards} data frame: 8 x 10
     Output
-        group1 variable variable_level   context  stat_name stat_label stat fmt_fun warning     error
-      1     am contrast                emmeans_…   estimate  Mean Dif…         <fn>         There wa…
-      2     am contrast                emmeans_…  std.error  Standard…         <fn>         There wa…
-      3     am contrast                emmeans_…         df  Degrees …         <fn>         There wa…
-      4     am contrast                emmeans_…   conf.low  CI Lower…         <fn>         There wa…
-      5     am contrast                emmeans_…  conf.high  CI Upper…         <fn>         There wa…
-      6     am contrast                emmeans_…    p.value    p-value         <fn>         There wa…
-      7     am contrast                emmeans_… conf.level  CI Confi…         <fn>         There wa…
-      8     am contrast                emmeans_…     method     method         <fn>         There wa…
+      # An ARD data frame: 8 x 10
+        group1 variable variable_level context          stat_name  stat_label          stat   fmt_fun warning error                                                                                                                                             
+        <chr>  <chr>    <list>         <chr>            <chr>      <chr>               <list> <list>  <list>  <list>                                                                                                                                            
+      1 am     contrast <NULL>         emmeans_contrast estimate   Mean Difference     <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      2 am     contrast <NULL>         emmeans_contrast std.error  Standard Error      <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      3 am     contrast <NULL>         emmeans_contrast df         Degrees of Freedom  <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      4 am     contrast <NULL>         emmeans_contrast conf.low   CI Lower Bound      <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      5 am     contrast <NULL>         emmeans_contrast conf.high  CI Upper Bound      <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      6 am     contrast <NULL>         emmeans_contrast p.value    p-value             <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      7 am     contrast <NULL>         emmeans_contrast conf.level CI Confidence Level <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
+      8 am     contrast <NULL>         emmeans_contrast method     method              <NULL> <fn>    <NULL>  "There was an error evaluating the model `glm(formula = vs ~ am + mpg, data = ., family = nothing)`\nCaused by error:\n! object 'nothing' not fou~
 
 ---
 

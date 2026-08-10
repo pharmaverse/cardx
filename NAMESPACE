@@ -99,26 +99,30 @@ export(reformulate2)
 export(starts_with)
 export(where)
 import(rlang)
-importFrom(cards,ard_attributes)
-importFrom(cards,ard_categorical)
-importFrom(cards,ard_continuous)
-importFrom(cards,ard_dichotomous)
-importFrom(cards,ard_missing)
-importFrom(cards,ard_summary)
-importFrom(cards,ard_tabulate)
-importFrom(cards,ard_tabulate_value)
-importFrom(cards,ard_total_n)
-importFrom(dplyr,"%>%")
-importFrom(dplyr,across)
-importFrom(dplyr,all_of)
-importFrom(dplyr,any_of)
-importFrom(dplyr,contains)
-importFrom(dplyr,ends_with)
-importFrom(dplyr,everything)
-importFrom(dplyr,last_col)
-importFrom(dplyr,matches)
-importFrom(dplyr,num_range)
-importFrom(dplyr,one_of)
-importFrom(dplyr,starts_with)
-importFrom(dplyr,where)
+importFrom(cards,
+  ard_attributes,
+  ard_categorical,
+  ard_continuous,
+  ard_dichotomous,
+  ard_missing,
+  ard_summary,
+  ard_tabulate,
+  ard_tabulate_value,
+  ard_total_n
+)
+importFrom(dplyr,
+  "%>%",
+  across,
+  all_of,
+  any_of,
+  contains,
+  ends_with,
+  everything,
+  last_col,
+  matches,
+  num_range,
+  one_of,
+  starts_with,
+  where
+)
 importFrom(lifecycle,deprecated)

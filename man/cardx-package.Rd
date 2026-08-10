@@ -13,9 +13,9 @@ Create extra Analysis Results Data (ARD) summary objects. The package supplement
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/insightsengineering/cardx}
-  \item \url{https://insightsengineering.github.io/cardx/}
-  \item Report bugs at \url{https://github.com/insightsengineering/cardx/issues}
+  \item \url{https://github.com/pharmaverse/cardx}
+  \item \url{https://pharmaverse.github.io/cardx/}
+  \item Report bugs at \url{https://github.com/pharmaverse/cardx/issues}
 }
 
 }

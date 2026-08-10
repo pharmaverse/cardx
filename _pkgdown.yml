@@ -1,5 +1,5 @@
 ---
-url: https://insightsengineering.github.io/cardx
+url: https://pharmaverse.github.io/cardx
 
 template:
   math-rendering: mathjax
@@ -11,7 +11,7 @@ template:
 #     right: [search, github]
 #     github:
 #       icon: fa-github
-#       href: https://github.com/insightsengineering/cardx
+#       href: https://github.com/pharmaverse/cardx
 #
 # development:
 #   mode: auto

@@ -47,7 +47,15 @@ ard_stats_mantelhaen_test <- function(data, by, variables, strata, ...) {
 
   dots <- dots_list(...)
   formals_cmh <- formals(asNamespace("stats")[["mantelhaen.test"]])[-c(1:3)]
-  if (!"alternative" %in% names(dots)) formals_cmh$alternative <- "two.sided"
+  # drop arguments that have no default (symbols), then evaluate each default and
+  # reduce multi-value choice defaults (e.g. `alternative`, and `two.sided.method`
+  # added in R-devel) to their default (first) element. This keeps the assembled
+  # arguments scalar and resilient to future additions to the signature.
+  formals_cmh <- formals_cmh[!vapply(formals_cmh, is.symbol, logical(1))]
+  formals_cmh <- lapply(formals_cmh, function(x) {
+    value <- eval(x)
+    if (length(value) > 1L) value[[1L]] else value
+  })
   mantelhaen.args <- c(dots, formals_cmh[setdiff(names(formals_cmh), names(dots))])
 
   # build ARD ------------------------------------------------------------------
