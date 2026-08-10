@@ -433,7 +433,7 @@ accepted_svy_stats <- function(expand_quantiles = TRUE) {
   # I hope this message is never triggered!
   cli::cli_inform(c(
     "If you see this message, variable levels have been coerced to character, which could cause downstream issues.",
-    "*" = "Please post a reproducible example to {.url https://github.com/insightsengineering/cardx/issues/new}, so we can address in the next release.",
+    "*" = "Please post a reproducible example to {.url https://github.com/pharmaverse/cardx/issues/new}, so we can address in the next release.",
     "i" = "You can create a minimal reproducible example with {.fun reprex::reprex}."
   ))
 

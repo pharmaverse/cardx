@@ -130,7 +130,7 @@ The package maintainer also reserves the right to adjust the criteria to recogni
 If you have further questions regarding the contribution guidelines, please contact the package/repository maintainer.
 
 <!-- urls -->
-[docs]: https://insightsengineering.github.io/cardx/index.html
-[articles]: https://insightsengineering.github.io/cardx/main/articles/index.html
-[license]: https://insightsengineering.github.io/cardx/main/LICENSE-text.html
-[insights]: https://github.com/insightsengineering/cardx/pulse
+[docs]: https://pharmaverse.github.io/cardx/index.html
+[articles]: https://pharmaverse.github.io/cardx/main/articles/index.html
+[license]: https://pharmaverse.github.io/cardx/main/LICENSE-text.html
+[insights]: https://github.com/pharmaverse/cardx/pulse

@@ -2,127 +2,127 @@
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label   stat fmt_fun warning error
-      1     AVAL incidenc…        estimate  Incidenc…  0.605       1              
-      2     AVAL incidenc…       std.error  Standard…  0.001       1              
-      3     AVAL incidenc…        conf.low  CI Lower…  0.488       1              
-      4     AVAL incidenc…       conf.high  CI Upper…  0.723       1              
-      5     AVAL incidenc…       conf.type    CI Type normal    <fn>              
-      6     AVAL incidenc…      conf.level  CI Confi…   0.95       1              
-      7     AVAL incidenc… tot_person_time  Person-Y…  16853       1              
-      8     AVAL incidenc…        n_events  Number o…    102       1              
-      9     AVAL incidenc…               N  Number o…    254       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 AVAL     incidence_r~ estimate  Incidence~ 0.6052335    1       <NULL>  <NULL>
+      2 AVAL     incidence_r~ std.error Standard ~ 0.0005992705 1       <NULL>  <NULL>
+      3 AVAL     incidence_r~ conf.low  CI Lower ~ 0.4877786    1       <NULL>  <NULL>
+      4 AVAL     incidence_r~ conf.high CI Upper ~ 0.7226883    1       <NULL>  <NULL>
+      5 AVAL     incidence_r~ conf.type CI Type    normal       <fn>    <NULL>  <NULL>
+      6 AVAL     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 AVAL     incidence_r~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
+      8 AVAL     incidence_r~ n_events  Number of~ 102          1       <NULL>  <NULL>
+      9 AVAL     incidence_r~ N         Number of~ 254          0       <NULL>  <NULL>
 
 ---
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label   stat fmt_fun warning error
-      1     time incidenc…        estimate  Incidenc…  2.187       1              
-      2     time incidenc…       std.error  Standard…  0.001       1              
-      3     time incidenc…        conf.low  CI Lower…   2.06       1              
-      4     time incidenc…       conf.high  CI Upper…  2.314       1              
-      5     time incidenc…       conf.type    CI Type normal    <fn>              
-      6     time incidenc…      conf.level  CI Confi…   0.95       1              
-      7     time incidenc… tot_person_time  Person-D…  51895       1              
-      8     time incidenc…        n_events  Number o…   1135       0              
-      9     time incidenc…               N  Number o…    217       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 time     incidence_r~ estimate  Incidence~ 2.187109     1       <NULL>  <NULL>
+      2 time     incidence_r~ std.error Standard ~ 0.0006491909 1       <NULL>  <NULL>
+      3 time     incidence_r~ conf.low  CI Lower ~ 2.05987      1       <NULL>  <NULL>
+      4 time     incidence_r~ conf.high CI Upper ~ 2.314348     1       <NULL>  <NULL>
+      5 time     incidence_r~ conf.type CI Type    normal       <fn>    <NULL>  <NULL>
+      6 time     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 time     incidence_r~ tot_pers~ Person-Da~ 51895        1       <NULL>  <NULL>
+      8 time     incidence_r~ n_events  Number of~ 1135         0       <NULL>  <NULL>
+      9 time     incidence_r~ N         Number of~ 217          0       <NULL>  <NULL>
 
 ---
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label   stat fmt_fun warning error
-      1     time incidenc…        estimate  Incidenc…  2.154       1              
-      2     time incidenc…       std.error  Standard…  0.001       1              
-      3     time incidenc…        conf.low  CI Lower…  2.031       1              
-      4     time incidenc…       conf.high  CI Upper…  2.277       1              
-      5     time incidenc…       conf.type    CI Type normal    <fn>              
-      6     time incidenc…      conf.level  CI Confi…   0.95       1              
-      7     time incidenc… tot_person_time  Person-D…  54773       1              
-      8     time incidenc…        n_events  Number o…   1180       0              
-      9     time incidenc…               N  Number o…   1180       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 time     incidence_r~ estimate  Incidence~ 2.154346     1       <NULL>  <NULL>
+      2 time     incidence_r~ std.error Standard ~ 0.0006271544 1       <NULL>  <NULL>
+      3 time     incidence_r~ conf.low  CI Lower ~ 2.031426     1       <NULL>  <NULL>
+      4 time     incidence_r~ conf.high CI Upper ~ 2.277266     1       <NULL>  <NULL>
+      5 time     incidence_r~ conf.type CI Type    normal       <fn>    <NULL>  <NULL>
+      6 time     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 time     incidence_r~ tot_pers~ Person-Da~ 54773        1       <NULL>  <NULL>
+      8 time     incidence_r~ n_events  Number of~ 1180         0       <NULL>  <NULL>
+      9 time     incidence_r~ N         Number of~ 1180         0       <NULL>  <NULL>
 
 ---
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label   stat fmt_fun warning error
-      1     time incidenc…        estimate  Incidenc…  1.077       1              
-      2     time incidenc…       std.error  Standard…  0.001       1              
-      3     time incidenc…        conf.low  CI Lower…  1.016       1              
-      4     time incidenc…       conf.high  CI Upper…  1.139       1              
-      5     time incidenc…       conf.type    CI Type normal    <fn>              
-      6     time incidenc…      conf.level  CI Confi…   0.95       1              
-      7     time incidenc… tot_person_time  Person-D…  54773       1              
-      8     time incidenc…        n_events  Number o…   1180       0              
-      9     time incidenc…               N  Number o…    224       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 time     incidence_r~ estimate  Incidence~ 1.077173     1       <NULL>  <NULL>
+      2 time     incidence_r~ std.error Standard ~ 0.0006271544 1       <NULL>  <NULL>
+      3 time     incidence_r~ conf.low  CI Lower ~ 1.015713     1       <NULL>  <NULL>
+      4 time     incidence_r~ conf.high CI Upper ~ 1.138633     1       <NULL>  <NULL>
+      5 time     incidence_r~ conf.type CI Type    normal       <fn>    <NULL>  <NULL>
+      6 time     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 time     incidence_r~ tot_pers~ Person-Da~ 54773        1       <NULL>  <NULL>
+      8 time     incidence_r~ n_events  Number of~ 1180         0       <NULL>  <NULL>
+      9 time     incidence_r~ N         Number of~ 224          0       <NULL>  <NULL>
 
 # ard_incidence_rate(conf.type) works
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label      stat fmt_fun warning error
-      1     AVAL incidenc…        estimate  Incidenc…     0.605       1              
-      2     AVAL incidenc…       std.error  Standard…     0.001       1              
-      3     AVAL incidenc…        conf.low  CI Lower…     0.498       1              
-      4     AVAL incidenc…       conf.high  CI Upper…     0.735       1              
-      5     AVAL incidenc…       conf.type    CI Type normal-l…    <fn>              
-      6     AVAL incidenc…      conf.level  CI Confi…      0.95       1              
-      7     AVAL incidenc… tot_person_time  Person-Y…     16853       1              
-      8     AVAL incidenc…        n_events  Number o…       102       1              
-      9     AVAL incidenc…               N  Number o…       254       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 AVAL     incidence_r~ estimate  Incidence~ 0.6052335    1       <NULL>  <NULL>
+      2 AVAL     incidence_r~ std.error Standard ~ 0.0005992705 1       <NULL>  <NULL>
+      3 AVAL     incidence_r~ conf.low  CI Lower ~ 0.4984728    1       <NULL>  <NULL>
+      4 AVAL     incidence_r~ conf.high CI Upper ~ 0.7348598    1       <NULL>  <NULL>
+      5 AVAL     incidence_r~ conf.type CI Type    normal-log   <fn>    <NULL>  <NULL>
+      6 AVAL     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 AVAL     incidence_r~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
+      8 AVAL     incidence_r~ n_events  Number of~ 102          1       <NULL>  <NULL>
+      9 AVAL     incidence_r~ N         Number of~ 254          0       <NULL>  <NULL>
 
 ---
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label  stat fmt_fun warning error
-      1     AVAL incidenc…        estimate  Incidenc… 0.605       1              
-      2     AVAL incidenc…       std.error  Standard… 0.001       1              
-      3     AVAL incidenc…        conf.low  CI Lower… 0.493       1              
-      4     AVAL incidenc…       conf.high  CI Upper… 0.735       1              
-      5     AVAL incidenc…       conf.type    CI Type exact    <fn>              
-      6     AVAL incidenc…      conf.level  CI Confi…  0.95       1              
-      7     AVAL incidenc… tot_person_time  Person-Y… 16853       1              
-      8     AVAL incidenc…        n_events  Number o…   102       1              
-      9     AVAL incidenc…               N  Number o…   254       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 AVAL     incidence_r~ estimate  Incidence~ 0.6052335    1       <NULL>  <NULL>
+      2 AVAL     incidence_r~ std.error Standard ~ 0.0005992705 1       <NULL>  <NULL>
+      3 AVAL     incidence_r~ conf.low  CI Lower ~ 0.4934956    1       <NULL>  <NULL>
+      4 AVAL     incidence_r~ conf.high CI Upper ~ 0.7347122    1       <NULL>  <NULL>
+      5 AVAL     incidence_r~ conf.type CI Type    exact        <fn>    <NULL>  <NULL>
+      6 AVAL     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 AVAL     incidence_r~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
+      8 AVAL     incidence_r~ n_events  Number of~ 102          1       <NULL>  <NULL>
+      9 AVAL     incidence_r~ N         Number of~ 254          0       <NULL>  <NULL>
 
 ---
 
     Code
       print(res, columns = "all")
-    Message
-      {cards} data frame: 9 x 8
     Output
-        variable   context       stat_name stat_label  stat fmt_fun warning error
-      1     AVAL incidenc…        estimate  Incidenc… 0.605       1              
-      2     AVAL incidenc…       std.error  Standard… 0.001       1              
-      3     AVAL incidenc…        conf.low  CI Lower… 0.496       1              
-      4     AVAL incidenc…       conf.high  CI Upper… 0.731       1              
-      5     AVAL incidenc…       conf.type    CI Type  byar    <fn>              
-      6     AVAL incidenc…      conf.level  CI Confi…  0.95       1              
-      7     AVAL incidenc… tot_person_time  Person-Y… 16853       1              
-      8     AVAL incidenc…        n_events  Number o…   102       1              
-      9     AVAL incidenc…               N  Number o…   254       0              
+      # An ARD data frame: 9 x 8
+        variable context      stat_name stat_label stat         fmt_fun warning error 
+        <chr>    <chr>        <chr>     <chr>      <list>       <list>  <list>  <list>
+      1 AVAL     incidence_r~ estimate  Incidence~ 0.6052335    1       <NULL>  <NULL>
+      2 AVAL     incidence_r~ std.error Standard ~ 0.0005992705 1       <NULL>  <NULL>
+      3 AVAL     incidence_r~ conf.low  CI Lower ~ 0.4961636    1       <NULL>  <NULL>
+      4 AVAL     incidence_r~ conf.high CI Upper ~ 0.731465     1       <NULL>  <NULL>
+      5 AVAL     incidence_r~ conf.type CI Type    byar         <fn>    <NULL>  <NULL>
+      6 AVAL     incidence_r~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
+      7 AVAL     incidence_r~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
+      8 AVAL     incidence_r~ n_events  Number of~ 102          1       <NULL>  <NULL>
+      9 AVAL     incidence_r~ N         Number of~ 254          0       <NULL>  <NULL>
 
 # ard_incidence_rate() errors are handled correctly
 

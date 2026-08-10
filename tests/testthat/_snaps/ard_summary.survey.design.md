@@ -2,22 +2,20 @@
 
     Code
       ard_uni_svy_cont
-    Message
-      {cards} data frame: 10 x 8
     Output
-         variable   context      stat_name stat_label     stat fmt_fun
-      1     api00 continuo…           mean       Mean  644.169       1
-      2     api00 continuo…         median     Median      652       1
-      3     api00 continuo…            min    Minimum      411       1
-      4     api00 continuo…            max    Maximum      905       1
-      5     api00 continuo…            sum        Sum  3989985       1
-      6     api00 continuo…            var   Variance 11182.82       1
-      7     api00 continuo…             sd  Standard…  105.749       1
-      8     api00 continuo… mean.std.error   SE(Mean)   23.542       1
-      9     api00 continuo…           deff  Design E…    9.346       1
-      10    api00 continuo…            p75  75% Perc…      719       1
-    Message
-      i 2 more variables: warning, error
+      # An ARD data frame: 10 x 8
+         variable context    stat_name      stat_label     stat fmt_fun warning error 
+         <chr>    <chr>      <chr>          <chr>        <list>  <list> <list>  <list>
+       1 api00    continuous mean           Mean         6.44e2       1 <NULL>  <NULL>
+       2 api00    continuous median         Median       6.52e2       1 <NULL>  <NULL>
+       3 api00    continuous min            Minimum      4.11e2       1 <NULL>  <NULL>
+       4 api00    continuous max            Maximum      9.05e2       1 <NULL>  <NULL>
+       5 api00    continuous sum            Sum          3.99e6       1 <NULL>  <NULL>
+       6 api00    continuous var            Variance     1.12e4       1 <NULL>  <NULL>
+       7 api00    continuous sd             Standard De~ 1.06e2       1 <NULL>  <NULL>
+       8 api00    continuous mean.std.error SE(Mean)     2.35e1       1 <NULL>  <NULL>
+       9 api00    continuous deff           Design Effe~ 9.35e0       1 <NULL>  <NULL>
+      10 api00    continuous p75            75% Percent~ 7.19e2       1 <NULL>  <NULL>
 
 # ard_summary.survey.design(fmt_fun)
 

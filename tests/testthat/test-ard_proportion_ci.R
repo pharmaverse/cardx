@@ -61,6 +61,7 @@ test_that("ard_categorical_ci() works", {
 
 test_that("ard_categorical_ci(method='strat_wilson') works", {
   withr::local_seed(1)
+  withr::local_options(width = 200)
   rsp <- c(
     sample(c(TRUE, FALSE), size = 40, prob = c(3 / 4, 1 / 4), replace = TRUE),
     sample(c(TRUE, FALSE), size = 40, prob = c(1 / 2, 1 / 2), replace = TRUE)
