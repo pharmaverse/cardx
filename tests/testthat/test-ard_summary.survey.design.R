@@ -545,3 +545,24 @@ test_that("ard_summary.survey.design() original types are retained", {
   expect_true(unlist(ard$group2_level) |> is.integer())
   expect_true(unlist(ard$group3_level) |> is.numeric())
 })
+
+test_that("min/max do not include zero-weight rows (#352)", {
+  # A zero-weight observation contributes to no point estimate; the
+  # extremes must not come from it either.
+  df <- data.frame(
+    x = c(1, 2, 3, 4, 5, 7, 9, 999),
+    w = c(0.5, 1, 1.5, 2, 1, 0.5, 2, 0)
+  )
+  des <- survey::svydesign(ids = ~1, weights = ~w, data = df)
+  ard <- ard_summary(des, variables = x, statistic = ~ c("min", "max"))
+  expect_equal(
+    cards::get_ard_statistics(ard, stat_name %in% "min") |> unlist(),
+    1,
+    ignore_attr = TRUE
+  )
+  expect_equal(
+    cards::get_ard_statistics(ard, stat_name %in% "max") |> unlist(),
+    9,
+    ignore_attr = TRUE
+  )
+})
