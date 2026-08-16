@@ -551,13 +551,13 @@ test_that("min/max do not include zero-weight rows (#352)", {
   # extremes must not come from it either.
   df <- data.frame(
     x = c(1, 2, 3, 4, 5, 7, 9, 999),
-    w = c(0.5, 1, 1.5, 2, 1, 0.5, 2, 0)
+    w = c(0, 1, 1.5, 2, 1, 0.5, 2, 0)
   )
   des <- survey::svydesign(ids = ~1, weights = ~w, data = df)
   ard <- ard_summary(des, variables = x, statistic = ~ c("min", "max"))
   expect_equal(
     cards::get_ard_statistics(ard, stat_name %in% "min") |> unlist(),
-    1,
+    2,
     ignore_attr = TRUE
   )
   expect_equal(
