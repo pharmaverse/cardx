@@ -2,6 +2,15 @@
 
 ## cardx (development version)
 
+- Fixed bug in
+  [`ard_summary.survey.design()`](https://pharmaverse.github.io/cardx/reference/ard_summary.survey.design.md)
+  for survey designs where the `min` and `max` statistics were computed
+  on the raw data column, bypassing the design: an observation with
+  weight 0—which enters no point estimate—could set the reported
+  extremes. The extremes are now computed over rows with positive
+  weight. ([\#352](https://github.com/pharmaverse/cardx/issues/352),
+  [@amaltawfik](https://github.com/amaltawfik))
+
 ## cardx 0.3.4
 
 CRAN release: 2026-07-06

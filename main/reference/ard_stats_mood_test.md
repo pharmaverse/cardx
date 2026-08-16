@@ -49,8 +49,8 @@ cards::ADSL |>
 #> # An ARD data frame: 4 × 9
 #>   group1 variable context     stat_name stat_label stat                         
 #>   <chr>  <chr>    <chr>       <chr>     <chr>      <named list>                 
-#> 1 SEX    AGE      stats_mood… statistic Z-Statist… 0.1292194                    
-#> 2 SEX    AGE      stats_mood… p.value   p-value    0.8971841                    
+#> 1 SEX    AGE      stats_mood… statistic Z-Statist… 0.1279807                    
+#> 2 SEX    AGE      stats_mood… p.value   p-value    0.8981643                    
 #> 3 SEX    AGE      stats_mood… method    method     Mood two-sample test of scale
 #> 4 SEX    AGE      stats_mood… alternat… Alternati… two.sided                    
 #> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,

@@ -62,21 +62,20 @@ ARD data frame
 ``` r
 ard_continuous_ci(mtcars, variables = c(mpg, hp), method = "wilcox.test")
 #> # An ARD data frame: 24 × 8
-#>    variable stat_name   stat                                                
-#>    <chr>    <chr>       <list>                                              
-#>  1 mpg      estimate    19.59998                                            
-#>  2 mpg      statistic   528                                                 
-#>  3 mpg      p.value     8.31077e-07                                         
-#>  4 mpg      conf.low    17.50004                                            
-#>  5 mpg      conf.high   22.10001                                            
-#>  6 mpg      method      Wilcoxon signed rank test with continuity correction
-#>  7 mpg      alternative two.sided                                           
-#>  8 hp       estimate    142.5001                                            
-#>  9 hp       statistic   528                                                 
-#> 10 hp       p.value     8.269629e-07                                        
+#>    variable context stat_name stat_label stat                            fmt_fun
+#>    <chr>    <chr>   <chr>     <chr>      <list>                          <list> 
+#>  1 mpg      contin… estimate  Mean       19.6                            1      
+#>  2 mpg      contin… statistic t Statist… 528                             1      
+#>  3 mpg      contin… p.value   p-value    4.656613e-10                    1      
+#>  4 mpg      contin… conf.low  CI Lower … 17.55                           1      
+#>  5 mpg      contin… conf.high CI Upper … 22.1                            1      
+#>  6 mpg      contin… method    method     Wilcoxon signed rank exact test <fn>   
+#>  7 mpg      contin… alternat… alternati… two.sided                       <fn>   
+#>  8 hp       contin… estimate  Mean       142.5                           1      
+#>  9 hp       contin… statistic t Statist… 528                             1      
+#> 10 hp       contin… p.value   p-value    4.656613e-10                    1      
 #> # ℹ 14 more rows
-#> # ℹ 5 more variables: context <chr>, stat_label <chr>, fmt_fun <list>,
-#> #   warning <list>, error <list>
+#> # ℹ 2 more variables: warning <list>, error <list>
 ard_continuous_ci(mtcars, variables = mpg, by = am, method = "t.test")
 #> # An ARD data frame: 20 × 10
 #>    group1 group1_level variable context   stat_name stat_label stat             
