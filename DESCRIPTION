@@ -1,6 +1,6 @@
 Package: cardx
 Title: Extra Analysis Results Data Utilities
-Version: 0.3.4.9000
+Version: 0.3.4.9001
 Authors@R: c(
     person("Daniel D.", "Sjoberg", , "danield.sjoberg@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0862-2018")),
@@ -21,7 +21,6 @@ URL: https://github.com/pharmaverse/cardx,
 BugReports: https://github.com/pharmaverse/cardx/issues
 Depends:
     R (>= 4.2)
-Remotes: pharmaverse/cards
 Imports:
     cards (>= 0.8.0.9000),
     cli (>= 3.6.1),
@@ -47,6 +46,8 @@ Suggests:
     survival (>= 3.6-4),
     testthat (>= 3.2.0),
     withr (>= 2.5.0)
+Remotes: 
+    pharmaverse/cards
 Config/Needs/website: insightsengineering/nesttemplate
 Config/roxygen2/version: 8.1.0
 Config/testthat/edition: 3
