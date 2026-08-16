@@ -1,6 +1,6 @@
 # cardx (development version)
 
-* Fixed bug in `ard_summary()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0 -- which enters no point estimate -- could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
+* Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4
 
