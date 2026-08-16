@@ -207,8 +207,8 @@ accepted_svy_stats <- function(expand_quantiles = TRUE) {
   else if (stat_name %in% "sd") args <- list(FUN = \(...) survey::svyvar(...) |> sqrt())
   else if (stat_name %in% "mean.std.error") args <- list(FUN = \(...) survey::svymean(...) |> survey::SE())
   else if (stat_name %in% "deff") args <- list(FUN = \(...) survey::svymean(..., deff = TRUE) |> survey::deff())
-  else if (stat_name %in% "min") args <- list(FUN = \(x, design, na.rm, ...) min(design$variables[[all.vars(x)]], na.rm = na.rm))
-  else if (stat_name %in% "max") args <- list(FUN = \(x, design, na.rm, ...) max(design$variables[[all.vars(x)]], na.rm = na.rm))
+  else if (stat_name %in% "min") args <- list(FUN = \(x, design, na.rm, ...) min(design$variables[[all.vars(x)]][stats::weights(design) > 0], na.rm = na.rm))
+  else if (stat_name %in% "max") args <- list(FUN = \(x, design, na.rm, ...) max(design$variables[[all.vars(x)]][stats::weights(design) > 0], na.rm = na.rm))
   # define functions for the quantiles
   else if (stat_name %in% c("median", paste0("p", 0:100))) {
     quantile <- ifelse(stat_name %in% "median", 0.5, as.numeric(substr(stat_name, 2, nchar(stat_name))) / 100)
