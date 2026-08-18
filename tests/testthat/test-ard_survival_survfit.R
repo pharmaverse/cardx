@@ -154,6 +154,13 @@ test_that("ard_survival_survfit() errors are properly handled", {
   )
 
   expect_snapshot(
+    survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
+      ard_survival_survfit(times = 100, summary.args = list(extend = "notatype")),
+    error = TRUE
+  )
+
+
+  expect_snapshot(
     ard_survival_survfit(
       x = cards::ADTTE,
       formula = survival::Surv(ttdeath, death) ~ trt,
@@ -246,6 +253,18 @@ test_that("ard_survival_survfit() extends to times outside range", {
   expect_snapshot(
     survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA, cards::ADTTE) |>
       ard_survival_survfit(times = 200) |>
+      print(n = Inf)
+  )
+
+  expect_snapshot(
+    survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE) |>
+      ard_survival_survfit(times = 200) |>
+      print(n = Inf)
+  )
+
+  expect_snapshot(
+    survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE) |>
+      ard_survival_survfit(times = 200, summary.args = list(extend = FALSE)) |>
       print(n = Inf)
   )
 })

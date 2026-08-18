@@ -8,7 +8,14 @@
 \usage{
 ard_survival_survfit(x, ...)
 
-\method{ard_survival_survfit}{survfit}(x, times = NULL, probs = NULL, type = NULL, ...)
+\method{ard_survival_survfit}{survfit}(
+  x,
+  times = NULL,
+  probs = NULL,
+  type = NULL,
+  summary.args = list(extend = TRUE),
+  ...
+)
 
 \method{ard_survival_survfit}{data.frame}(
   x,
@@ -42,6 +49,11 @@ Must be one of the following:\tabular{ll}{
    \code{"risk"} \tab \code{1 - x} \cr
    \code{"cumhaz"} \tab \code{-log(x)} \cr
 }}
+
+\item{summary.args}{(named \code{list})\cr
+named list of arguments to modify the output of \code{\link[survival:summary.survfit]{survival::summary.survfit()}}. Default is
+\code{list(extend = TRUE)}, which reports estimates even when no subjects are at risk. If set to
+\code{list(extend = FALSE)}, those estimates are set to NA.}
 
 \item{y}{(\code{Surv} or \code{string})\cr
 an object of class \code{Surv} created using \code{\link[survival:Surv]{survival::Surv()}}. This object will be passed as the left-hand side of

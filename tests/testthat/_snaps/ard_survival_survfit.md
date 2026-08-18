@@ -312,6 +312,15 @@
 ---
 
     Code
+      ard_survival_survfit(survival::survfit(survival::Surv(AVAL, CNSR) ~ TRTA,
+      cards::ADTTE), times = 100, summary.args = list(extend = "notatype"))
+    Condition
+      Error in `ard_survival_survfit()`:
+      ! The `summary.args$extend` argument must be a scalar with class <logical>, not a string.
+
+---
+
+    Code
       ard_survival_survfit(x = cards::ADTTE, formula = survival::Surv(ttdeath, death) ~
         trt, variables = "trt", probs = c(0.25, 0.5, 0.75))
     Condition
@@ -386,6 +395,62 @@
       15 TRTA   Xanomeline Low Dose  time                     200            survival conf.low   CI Lower Bound                 NA     1       <NULL>  <NULL>
       16 <NA>   <NA>                 ..ard_survival_survfit.. <NULL>         survival conf.level CI Confidence Level            0.95   1       <NULL>  <NULL>
       17 <NA>   <NA>                 ..ard_survival_survfit.. <NULL>         survival conf.type  CI Type                        log    <NULL>  <NULL>  <NULL>
+
+---
+
+    Code
+      print(ard_survival_survfit(survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE), times = 200), n = Inf)
+    Message
+      {cards} data frame: 17 x 11
+    Output
+         group1 group1_level                 variable variable_level  stat_name stat_label  stat
+      1    TRTA      Placebo                     time            200     n.risk  Number o…     0
+      2    TRTA      Placebo                     time            200   estimate  Survival… 0.626
+      3    TRTA      Placebo                     time            200  std.error  Standard… 0.056
+      4    TRTA      Placebo                     time            200  conf.high  CI Upper… 0.746
+      5    TRTA      Placebo                     time            200   conf.low  CI Lower… 0.526
+      6    TRTA    Xanomeli…                     time            200     n.risk  Number o…     0
+      7    TRTA    Xanomeli…                     time            200   estimate  Survival… 0.092
+      8    TRTA    Xanomeli…                     time            200  std.error  Standard… 0.041
+      9    TRTA    Xanomeli…                     time            200  conf.high  CI Upper… 0.221
+      10   TRTA    Xanomeli…                     time            200   conf.low  CI Lower… 0.038
+      11   TRTA    Xanomeli…                     time            200     n.risk  Number o…     0
+      12   TRTA    Xanomeli…                     time            200   estimate  Survival… 0.126
+      13   TRTA    Xanomeli…                     time            200  std.error  Standard… 0.044
+      14   TRTA    Xanomeli…                     time            200  conf.high  CI Upper… 0.249
+      15   TRTA    Xanomeli…                     time            200   conf.low  CI Lower… 0.064
+      16   <NA>           NA ..ard_survival_survfit..                conf.level  CI Confi…  0.95
+      17   <NA>           NA ..ard_survival_survfit..                 conf.type    CI Type   log
+    Message
+      i 4 more variables: context, fmt_fun, warning, error
+
+---
+
+    Code
+      print(ard_survival_survfit(survival::survfit(survival::Surv(AVAL, 1 - CNSR) ~ TRTA, cards::ADTTE), times = 200, summary.args = list(extend = FALSE)), n = Inf)
+    Message
+      {cards} data frame: 17 x 11
+    Output
+         group1 group1_level                 variable variable_level  stat_name stat_label stat
+      1    TRTA      Placebo                     time            200     n.risk  Number o…    0
+      2    TRTA      Placebo                     time            200   estimate  Survival…   NA
+      3    TRTA      Placebo                     time            200  std.error  Standard…   NA
+      4    TRTA      Placebo                     time            200  conf.high  CI Upper…   NA
+      5    TRTA      Placebo                     time            200   conf.low  CI Lower…   NA
+      6    TRTA    Xanomeli…                     time            200     n.risk  Number o…    0
+      7    TRTA    Xanomeli…                     time            200   estimate  Survival…   NA
+      8    TRTA    Xanomeli…                     time            200  std.error  Standard…   NA
+      9    TRTA    Xanomeli…                     time            200  conf.high  CI Upper…   NA
+      10   TRTA    Xanomeli…                     time            200   conf.low  CI Lower…   NA
+      11   TRTA    Xanomeli…                     time            200     n.risk  Number o…    0
+      12   TRTA    Xanomeli…                     time            200   estimate  Survival…   NA
+      13   TRTA    Xanomeli…                     time            200  std.error  Standard…   NA
+      14   TRTA    Xanomeli…                     time            200  conf.high  CI Upper…   NA
+      15   TRTA    Xanomeli…                     time            200   conf.low  CI Lower…   NA
+      16   <NA>           NA ..ard_survival_survfit..                conf.level  CI Confi… 0.95
+      17   <NA>           NA ..ard_survival_survfit..                 conf.type    CI Type  log
+    Message
+      i 4 more variables: context, fmt_fun, warning, error
 
 # ard_survival_survfit.data.frame() works as expected
 
