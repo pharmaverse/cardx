@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* `ard_emmeans_emmeans()` and `ard_emmeans_contrast()` now accept replicate-weight survey designs (`svyrep.design`), and `construct_model()` gained a `svyrep.design` method. Alongside the class check, both functions selected the data with `dplyr::last(class(data)) == "survey.design"`, which does not identify a `svyrep.design`; the test is now `inherits(data, c("survey.design", "svyrep.design"))`. (#355, @szimmer)
+
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4

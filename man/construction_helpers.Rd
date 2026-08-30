@@ -5,6 +5,7 @@
 \alias{construct_model}
 \alias{construct_model.data.frame}
 \alias{construct_model.survey.design}
+\alias{construct_model.svyrep.design}
 \alias{reformulate2}
 \alias{bt}
 \alias{bt_strip}
@@ -31,6 +32,8 @@ construct_model(data, ...)
   env = caller_env(),
   ...
 )
+
+\method{construct_model}{svyrep.design}(data, ...)
 
 reformulate2(
   termlabels,

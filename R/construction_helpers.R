@@ -151,6 +151,16 @@ construct_model.survey.design <- function(data, formula, method, method.args = l
   )
 }
 
+# `svyrep.design` is a sibling class of `survey.design`, not a subclass, so it
+# needs its own method. The model is fit by `survey::svyglm()`, which already
+# handles replicate designs. See #355.
+
+#' @rdname construction_helpers
+#' @export
+construct_model.svyrep.design <- function(data, ...) {
+  construct_model.survey.design(data = data, ...)
+}
+
 .as_list_of_exprs <- function(x, arg_name = "method.args") {
   x_enexpr <- enexpr(x)
   if (is_call_simple(x_enexpr)) {

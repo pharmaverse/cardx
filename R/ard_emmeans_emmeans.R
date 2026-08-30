@@ -46,7 +46,7 @@ ard_emmeans_emmeans <- function(data,
   check_not_missing(data)
   check_not_missing(formula)
   check_not_missing(method)
-  check_class(data, c("data.frame", "survey.design"))
+  check_class(data, c("data.frame", "survey.design", "svyrep.design"))
   check_class(formula, cls = "formula")
   check_string(package)
   check_string(primary_covariate)
@@ -54,7 +54,9 @@ ard_emmeans_emmeans <- function(data,
   check_range(conf.level, range = c(0, 1))
   response_type <- arg_match(response_type, error_call = get_cli_abort_call())
 
-  data_in <- if (dplyr::last(class(data)) == "survey.design") data$variables else data
+  # `svyrep.design` does not inherit from `survey.design`, and testing only the
+  # last class element missed it entirely. See #355.
+  data_in <- if (inherits(data, c("survey.design", "svyrep.design"))) data$variables else data
 
   # build ARD ------------------------------------------------------------------
   result <- cards::ard_mvsummary(
