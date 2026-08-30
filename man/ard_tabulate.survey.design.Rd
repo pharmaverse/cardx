@@ -21,20 +21,7 @@
   ...
 )
 
-\method{ard_tabulate}{svyrep.design}(
-  data,
-  variables,
-  by = NULL,
-  statistic = everything() ~ c("n", "N", "p", "p.std.error", "n_unweighted",
-    "N_unweighted", "p_unweighted"),
-  denominator = c("column", "row", "cell"),
-  fmt_fun = NULL,
-  stat_label = everything() ~ list(p = "\%", p.std.error = "SE(\%)", deff =
-    "Design Effect", n_unweighted = "Unweighted n", N_unweighted = "Unweighted N",
-    p_unweighted = "Unweighted \%"),
-  fmt_fn = deprecated(),
-  ...
-)
+\method{ard_tabulate}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -91,5 +78,15 @@ The unweighted statistics are calculated with \code{cards::ard_tabulate.data.fra
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_tabulate(svy_titanic, variables = c(Class, Age), by = Survived)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported: the standard errors are
+# computed from the replicate weights rather than by linearization
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_tabulate(rclus1, variables = stype, by = both)
 \dontshow{\}) # examplesIf}
 }

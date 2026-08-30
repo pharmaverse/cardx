@@ -28,4 +28,13 @@ svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~F
 
 ard_total_n(svy_titanic)
 \dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_total_n(rclus1)
+\dontshow{\}) # examplesIf}
 }

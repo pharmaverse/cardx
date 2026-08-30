@@ -16,16 +16,7 @@
   ...
 )
 
-\method{ard_summary}{svyrep.design}(
-  data,
-  variables,
-  by = NULL,
-  statistic = everything() ~ c("median", "p25", "p75"),
-  fmt_fun = NULL,
-  stat_label = NULL,
-  fmt_fn = deprecated(),
-  ...
-)
+\method{ard_summary}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -82,6 +73,19 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_summary(
   data = dclus1,
+  variables = api00,
+  by = stype
+)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_summary(
+  data = rclus1,
   variables = api00,
   by = stype
 )

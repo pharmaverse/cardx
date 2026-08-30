@@ -22,21 +22,7 @@
   ...
 )
 
-\method{ard_tabulate_value}{svyrep.design}(
-  data,
-  variables,
-  by = NULL,
-  value = cards::maximum_variable_value(data$variables[variables]),
-  statistic = everything() ~ c("n", "N", "p", "p.std.error", "n_unweighted",
-    "N_unweighted", "p_unweighted"),
-  denominator = c("column", "row", "cell"),
-  fmt_fun = NULL,
-  stat_label = everything() ~ list(p = "\%", p.std.error = "SE(\%)", deff =
-    "Design Effect", n_unweighted = "Unweighted n", N_unweighted = "Unweighted N",
-    p_unweighted = "Unweighted \%"),
-  fmt_fn = deprecated(),
-  ...
-)
+\method{ard_tabulate_value}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -89,5 +75,14 @@ Compute Analysis Results Data (ARD) for dichotomous summary statistics.
 \dontshow{if (cardx:::is_pkg_installed("survey")) withAutoprint(\{ # examplesIf}
 survey::svydesign(ids = ~1, data = mtcars, weights = ~1) |>
   ard_tabulate_value(by = vs, variables = c(cyl, am), value = list(cyl = 4))
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_tabulate_value(rclus1, variables = stype, value = list(stype = "E"))
 \dontshow{\}) # examplesIf}
 }

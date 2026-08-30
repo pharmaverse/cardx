@@ -4,8 +4,11 @@ skip_if_pkg_not_installed("survey")
 # these methods must be registered separately. See #355.
 
 make_designs <- function() {
-  data(api, package = "survey")
-  des <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+  e <- new.env()
+  utils::data("api", package = "survey", envir = e)
+  des <- survey::svydesign(
+    id = ~dnum, weights = ~pw, data = e$apiclus1, fpc = ~fpc
+  )
   list(des = des, rep = survey::as.svrepdesign(des))
 }
 
@@ -98,12 +101,12 @@ test_that("all replicate types are supported", {
 
   # BRR built directly with svrepdesign(), per gtsummary#1441
   data(scd, package = "survey")
-  BRRrep <- 2 * cbind(
+  brr_rep <- 2 * cbind(
     c(1, 0, 1, 0, 1, 0), c(1, 0, 0, 1, 0, 1),
     c(0, 1, 1, 0, 0, 1), c(0, 1, 0, 1, 1, 0)
   )
   scdrep <- suppressWarnings(survey::svrepdesign(
-    data = scd, type = "BRR", repweights = BRRrep, combined.weights = FALSE
+    data = scd, type = "BRR", repweights = brr_rep, combined.weights = FALSE
   ))
   expect_error(ard_summary(scdrep, variables = arrests), NA)
 })

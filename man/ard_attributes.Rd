@@ -8,7 +8,7 @@
 \usage{
 \method{ard_attributes}{survey.design}(data, variables = everything(), label = NULL, ...)
 
-\method{ard_attributes}{svyrep.design}(data, variables = everything(), label = NULL, ...)
+\method{ard_attributes}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -43,6 +43,19 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_attributes(
   data = dclus1,
+  variables = c(sname, dname),
+  label = list(sname = "School Name", dname = "District Name")
+)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_attributes(
+  data = rclus1,
   variables = c(sname, dname),
   label = list(sname = "School Name", dname = "District Name")
 )

@@ -23,23 +23,7 @@
   ...
 )
 
-\method{ard_missing}{svyrep.design}(
-  data,
-  variables,
-  by = NULL,
-  statistic = everything() ~ c("N_obs", "N_miss", "N_nonmiss", "p_miss", "p_nonmiss",
-    "N_obs_unweighted", "N_miss_unweighted", "N_nonmiss_unweighted", "p_miss_unweighted",
-    "p_nonmiss_unweighted"),
-  fmt_fun = NULL,
-  stat_label = everything() ~ list(N_obs = "Total N", N_miss = "N Missing", N_nonmiss =
-    "N not Missing", p_miss = "\% Missing", p_nonmiss = "\% not Missing",
-    N_obs_unweighted = "Total N (unweighted)", N_miss_unweighted =
-    "N Missing (unweighted)", N_nonmiss_unweighted = "N not Missing (unweighted)",
-    p_miss_unweighted = "\% Missing (unweighted)", p_nonmiss_unweighted =
-    "\% not Missing (unweighted)"),
-  fmt_fn = deprecated(),
-  ...
-)
+\method{ard_missing}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -84,5 +68,14 @@ Compute Analysis Results Data (ARD) for statistics related to data missingness f
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_missing(svy_titanic, variables = c(Class, Age), by = Survived)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_missing(rclus1, variables = api00, by = stype)
 \dontshow{\}) # examplesIf}
 }
