@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* Added support for replicate-weight survey designs (`svyrep.design`, created with `survey::svrepdesign()` or `survey::as.svrepdesign()`) by registering `svyrep.design` methods for `ard_attributes()`, `ard_total_n()`, `ard_missing()`, `ard_tabulate()`, `ard_tabulate_value()` and `ard_summary()`. Because `svyrep.design` is a sibling class of `survey.design` rather than a subclass, these designs previously failed S3 dispatch. The statistics are computed by the same `survey` functions, which already support replicate designs, so variance estimates correctly reflect the replicate weights. (#355, @szimmer)
+
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4
