@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* `ard_survey_svychisq()`, `ard_survey_svyttest()`, `ard_survey_svyranktest()`, `ard_categorical_ci()` and `ard_continuous_ci()` now accept replicate-weight survey designs (`svyrep.design`). These functions previously rejected such designs with a class check, although the `survey` functions they wrap already support them. This is what `gtsummary::add_p()` and `gtsummary::add_ci()` require: because `add_p()` traps errors per variable, the rejection surfaced to users as a silently empty p-value column rather than an error. (#355, @szimmer)
+
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4

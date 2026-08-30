@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_continuous_ci.survey.design.R
 \name{ard_continuous_ci.survey.design}
 \alias{ard_continuous_ci.survey.design}
+\alias{ard_continuous_ci.svyrep.design}
 \title{ARD survey continuous CIs}
 \usage{
 \method{ard_continuous_ci}{survey.design}(
@@ -14,6 +15,8 @@
   df = survey::degf(data),
   ...
 )
+
+\method{ard_continuous_ci}{svyrep.design}(data, ...)
 }
 \arguments{
 \item{data}{(\code{survey.design})\cr
@@ -54,5 +57,11 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_continuous_ci(dclus1, variables = api00)
 ard_continuous_ci(dclus1, variables = api00, method = "svymedian.xlogit")
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+rclus1 <- survey::as.svrepdesign(dclus1)
+
+ard_continuous_ci(rclus1, variables = api00)
 \dontshow{\}) # examplesIf}
 }
