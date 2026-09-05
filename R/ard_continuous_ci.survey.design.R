@@ -36,7 +36,7 @@ ard_continuous_ci.survey.design <- function(data,
 
   # check inputs ---------------------------------------------------------------
   check_not_missing(data)
-  check_class(data, "survey.design")
+  check_class(data, c("survey.design", "svyrep.design"))
   check_not_missing(variables)
 
   cards::process_selectors(
@@ -76,6 +76,22 @@ ard_continuous_ci.survey.design <- function(data,
     ...
   ) |>
     .restore_original_column_types(data = data$variables)
+}
+
+# `svyrep.design` is a sibling class of `survey.design`, not a subclass, so it
+# needs its own method. The confidence intervals are computed by
+# `survey::svymean()` and `survey::svyquantile()`, both of which already handle
+# replicate designs. See #355.
+
+#' @rdname ard_continuous_ci.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' rclus1 <- survey::as.svrepdesign(dclus1)
+#'
+#' ard_continuous_ci(rclus1, variables = api00)
+ard_continuous_ci.svyrep.design <- function(data, ...) {
+  ard_continuous_ci.survey.design(data = data, ...)
 }
 
 .calculate_ard_continuous_survey_ci <- function(FUN, data, variables, by, conf.level, ...) {

@@ -35,7 +35,7 @@ ard_survey_svyranktest <- function(data, by, variables, test, ...) {
   check_not_missing(data)
   check_not_missing(variables)
   check_not_missing(by)
-  check_class(data, cls = "survey.design")
+  check_class(data, cls = c("survey.design", "svyrep.design"))
   cards::process_selectors(data[["variables"]], by = {{ by }}, variables = {{ variables }})
   check_scalar(by)
 
