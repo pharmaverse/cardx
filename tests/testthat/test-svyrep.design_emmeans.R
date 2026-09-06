@@ -13,11 +13,10 @@ test_that("ard_emmeans_emmeans() accepts a svyrep.design", {
     survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
   )
 
-  expect_error(
+  expect_no_error(
     ard_rep <- ard_emmeans_emmeans(
       rep_des, api00 ~ sch.wide, method = "svyglm", package = "survey"
-    ),
-    NA
+    )
   )
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
   expect_true(all(vapply(ard_rep$error, is.null, logical(1))))
@@ -29,11 +28,10 @@ test_that("ard_emmeans_contrast() accepts a svyrep.design", {
     survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
   )
 
-  expect_error(
+  expect_no_error(
     ard_rep <- ard_emmeans_contrast(
       rep_des, api00 ~ sch.wide, method = "svyglm", package = "survey"
-    ),
-    NA
+    )
   )
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
   expect_true(all(vapply(ard_rep$error, is.null, logical(1))))
@@ -57,8 +55,7 @@ test_that("emmeans results use replicate variance, not linearization", {
   # the sampling weights are identical, so the point estimates must agree
   expect_equal(get_stat(ard_lin, "estimate"), get_stat(ard_rep, "estimate"))
 
-  # the standard errors must not, or we have silently fallen back to
-  # linearization rather than using the replicate weights
+  # the standard errors should not be equal
   expect_false(
     isTRUE(all.equal(get_stat(ard_lin, "std.error"), get_stat(ard_rep, "std.error")))
   )
@@ -70,23 +67,22 @@ test_that("construct_model() dispatches on svyrep.design", {
     survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
   )
 
-  expect_error(
+  expect_no_error(
     mod <- construct_model(
       rep_des, api00 ~ sch.wide, method = "svyglm", package = "survey"
-    ),
-    NA
+    )
   )
   expect_s3_class(mod, "svyglm")
+  expect_s3_class(mod, "svrepglm")
 })
 
 test_that("data.frame input is unaffected by the class-test change", {
   data(api, package = "survey")
 
-  expect_error(
+  expect_no_error(
     ard_df <- ard_emmeans_emmeans(
       apiclus1, api00 ~ sch.wide, method = "lm", package = "stats"
-    ),
-    NA
+    )
   )
   expect_invisible(cards::check_ard_structure(ard_df, method = FALSE))
   expect_true(all(vapply(ard_df$error, is.null, logical(1))))

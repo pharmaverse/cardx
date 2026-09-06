@@ -19,13 +19,12 @@ test_that("ard_survey_svychisq() accepts a svyrep.design", {
   skip_if_pkg_not_installed("broom")
   d <- make_designs()
 
-  expect_error(
-    ard_rep <- ard_survey_svychisq(d$rep, variables = stype, by = both),
-    NA
+  expect_no_error(
+    ard_rep <- ard_survey_svychisq(d$rep, variables = stype, by = both)
   )
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
 
-  # the p-value must come from the replicate design, not the linearized one
+  # the p-values from replicate and linear methods should be different
   ard_lin <- ard_survey_svychisq(d$des, variables = stype, by = both)
   expect_false(
     isTRUE(all.equal(get_stat(ard_lin, "p.value"), get_stat(ard_rep, "p.value")))
@@ -43,9 +42,8 @@ test_that("ard_survey_svyttest() accepts a svyrep.design", {
   skip_if_pkg_not_installed("broom")
   d <- make_designs()
 
-  expect_error(
-    ard_rep <- ard_survey_svyttest(d$rep, variable = api00, by = sch.wide, conf.level = 0.95),
-    NA
+  expect_no_error(
+    ard_rep <- ard_survey_svyttest(d$rep, variable = api00, by = sch.wide, conf.level = 0.95)
   )
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
 
@@ -54,6 +52,14 @@ test_that("ard_survey_svyttest() accepts a svyrep.design", {
     as.numeric(survey::svyttest(api00 ~ sch.wide, d$rep)$estimate),
     ignore_attr = TRUE
   )
+
+  ard_lin <- ard_survey_svyttest(d$des, variable = api00, by = sch.wide, conf.level = 0.95)
+
+  # Point estimate should match
+  expect_equal(
+    get_stat(ard_rep, "estimate"),
+    get_stat(ard_lin, "estimate")
+  )
 })
 
 test_that("ard_survey_svyranktest() accepts a svyrep.design", {
@@ -61,11 +67,10 @@ test_that("ard_survey_svyranktest() accepts a svyrep.design", {
   d <- make_designs()
 
   # `test` is a required argument of ard_survey_svyranktest()
-  expect_error(
+  expect_no_error(
     ard_rep <- ard_survey_svyranktest(
       d$rep, variable = api00, by = sch.wide, test = "wilcoxon"
-    ),
-    NA
+    )
   )
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
 
@@ -76,36 +81,73 @@ test_that("ard_survey_svyranktest() accepts a svyrep.design", {
     ),
     ignore_attr = TRUE
   )
+
+  ard_lin <- ard_survey_svyranktest(
+      d$des, variable = api00, by = sch.wide, test = "wilcoxon"
+    )
+  
+  # Point estimate should match
+  expect_equal(
+      get_stat(ard_lin, "estimate"),
+      get_stat(ard_rep, "estimate")
+  )
 })
 
 test_that("ard_continuous_ci() dispatches on svyrep.design", {
   d <- make_designs()
 
-  expect_error(ard_rep <- ard_continuous_ci(d$rep, variables = api00), NA)
+  expect_no_error(ard_rep <- ard_continuous_ci(d$rep, variables = api00))
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
 
-  # the interval must be the replicate one, and must match survey directly
+  # the confidence intervals should be different between linear and replicate methods
   ard_lin <- ard_continuous_ci(d$des, variables = api00)
   expect_false(
     isTRUE(all.equal(get_stat(ard_lin, "conf.low"), get_stat(ard_rep, "conf.low")))
   )
+
+  # Matches survey output
   expect_equal(
     c(get_stat(ard_rep, "conf.low"), get_stat(ard_rep, "conf.high")),
     as.numeric(confint(survey::svymean(~api00, d$rep), df = survey::degf(d$rep))),
     ignore_attr = TRUE
+  )
+
+  # Point estimates match between two methods
+  expect_equal(
+    get_stat(ard_rep, "estimate"),
+    get_stat(ard_lin, "estimate")
   )
 })
 
 test_that("ard_categorical_ci() dispatches on svyrep.design", {
   d <- make_designs()
 
-  expect_error(ard_rep <- ard_categorical_ci(d$rep, variables = sch.wide), NA)
+  expect_no_error(ard_rep <- ard_categorical_ci(d$rep, variables = sch.wide, method = "xlogit"))
   expect_invisible(cards::check_ard_structure(ard_rep, method = FALSE))
 
   ard_lin <- ard_categorical_ci(d$des, variables = sch.wide)
   expect_false(
     isTRUE(all.equal(get_stat(ard_lin, "conf.low"), get_stat(ard_rep, "conf.low")))
   )
+
+  ard_rep_ci_no <- 
+    ard_rep |>
+    dplyr::filter(stat_name %in% c("conf.low", "conf.high")) |>
+    tidyr::unnest(variable_level) |>
+    dplyr::filter(variable_level=="No")
+  
+  # Matches survey output
+  expect_equal(
+    c(get_stat(ard_rep_ci_no, "conf.low"), get_stat(ard_rep_ci_no, "conf.high")),
+    survey::svyciprop(~I(sch.wide=="No"), d$rep, df = survey::degf(d$rep), method = "xlogit") |> confint() |> as.numeric(),
+    ignore_attr = TRUE
+  )
+  
+  # Point estimates match between two methods
+  expect_equal(
+    get_stat(ard_rep, "estimate"),
+    get_stat(ard_lin, "estimate")
+  )  
 })
 
 test_that("the class guards still reject non-survey input", {

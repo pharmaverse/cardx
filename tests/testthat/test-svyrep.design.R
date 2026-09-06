@@ -15,12 +15,12 @@ make_designs <- function() {
 test_that("the ard_* generics dispatch on svyrep.design", {
   d <- make_designs()
 
-  expect_error(ard_attributes(d$rep, variables = c(sname, dname)), NA)
-  expect_error(ard_total_n(d$rep), NA)
-  expect_error(ard_missing(d$rep, variables = api00), NA)
-  expect_error(ard_tabulate(d$rep, variables = stype), NA)
-  expect_error(ard_tabulate_value(d$rep, variables = stype, value = list(stype = "E")), NA)
-  expect_error(ard_summary(d$rep, variables = api00), NA)
+  expect_no_error(ard_attributes(d$rep, variables = c(sname, dname)))
+  expect_no_error(ard_total_n(d$rep))
+  expect_no_error(ard_missing(d$rep, variables = api00))
+  expect_no_error(ard_tabulate(d$rep, variables = stype))
+  expect_no_error(ard_tabulate_value(d$rep, variables = stype, value = list(stype = "E")))
+  expect_no_error(ard_summary(d$rep, variables = api00))
 })
 
 test_that("svyrep.design results follow the ard structure", {
@@ -60,14 +60,14 @@ test_that("svyrep.design gives the same weighted point estimates as survey.desig
   )
 })
 
-test_that("svyrep.design uses replicate variance, not linearization", {
+test_that("svyrep.design uses replicate variance", {
   d <- make_designs()
   get_stat <- function(x, nm) unlist(x$stat[x$stat_name == nm])
 
   lin_se <- get_stat(ard_tabulate(d$des, variables = stype), "p.std.error")
   rep_se <- get_stat(ard_tabulate(d$rep, variables = stype), "p.std.error")
 
-  # not a silent fallback: the replicate SEs must differ from the linearized ones
+  # expect the SE to be different between linear and replicate methods
   expect_false(isTRUE(all.equal(lin_se, rep_se)))
 
   # and they must match what survey itself reports for the same design
@@ -95,8 +95,8 @@ test_that("all replicate types are supported", {
   ))
 
   for (nm in names(designs)) {
-    expect_error(ard_tabulate(designs[[nm]], variables = stype), NA, label = nm)
-    expect_error(ard_summary(designs[[nm]], variables = api00), NA, label = nm)
+    expect_no_error(ard_tabulate(designs[[nm]], variables = stype))
+    expect_no_error(ard_summary(designs[[nm]], variables = api00))
   }
 
   # BRR built directly with svrepdesign(), per gtsummary#1441
@@ -108,12 +108,12 @@ test_that("all replicate types are supported", {
   scdrep <- suppressWarnings(survey::svrepdesign(
     data = scd, type = "BRR", repweights = brr_rep, combined.weights = FALSE
   ))
-  expect_error(ard_summary(scdrep, variables = arrests), NA)
+  expect_no_error(ard_summary(scdrep, variables = arrests))
 })
 
 test_that("ard_tabulate.svyrep.design() works with by", {
   d <- make_designs()
 
-  expect_error(ard_by <- ard_tabulate(d$rep, variables = stype, by = both), NA)
+  expect_no_error(ard_by <- ard_tabulate(d$rep, variables = stype, by = both))
   expect_invisible(cards::check_ard_structure(ard_by, method = FALSE))
 })
