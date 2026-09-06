@@ -4,8 +4,10 @@
 #' Analysis results data for survey Chi-Square test using [`survey::svychisq()`].
 #' Only two-way comparisons are supported.
 #'
-#' @param data (`survey.design`)\cr
-#'   a survey design object often created with the \{survey\} package
+#' @param data (`survey.design`) or (`svyrep.design`)\cr
+#'   a survey design object or survey replicate object often created with
+#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or 
+#'   [`survey::svrepdesign()`]
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name to compare by.
 #' @param variables ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
@@ -23,8 +25,10 @@
 #' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survey", "broom")))
 #' data(api, package = "survey")
 #' dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+#' drep <- survey::as.svrepdesign(dclus1)
 #'
 #' ard_survey_svychisq(dclus1, variables = sch.wide, by = comp.imp, statistic = "F")
+#' ard_survey_svychisq(drep, variables = sch.wide, by = comp.imp, statistic = "F")
 ard_survey_svychisq <- function(data, by, variables, statistic = "F", ...) {
   set_cli_abort_call()
 

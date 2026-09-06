@@ -3,8 +3,10 @@
 #' @description
 #' Analysis results data for survey wilcox test using [`survey::svyranktest()`].
 #'
-#' @param data (`survey.design`)\cr
-#'   a survey design object often created with [`survey::svydesign()`]
+#' @param data (`survey.design`) or (`svyrep.design`)\cr
+#'   a survey design object or survey replicate object often created with
+#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or 
+#'   [`survey::svrepdesign()`]
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name to compare by
 #' @param variables ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
@@ -20,8 +22,10 @@
 #' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survey", "broom")))
 #' data(api, package = "survey")
 #' dclus2 <- survey::svydesign(id = ~ dnum + snum, fpc = ~ fpc1 + fpc2, data = apiclus2)
+#' drep <- survey::as.svrepdesign(dclus2)
 #'
 #' ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "wilcoxon")
+#' ard_survey_svyranktest(drep, variables = enroll, by = comp.imp, test = "wilcoxon")
 #' ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "vanderWaerden")
 #' ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "median")
 #' ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "KruskalWallis")

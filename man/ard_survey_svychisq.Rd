@@ -7,8 +7,10 @@
 ard_survey_svychisq(data, by, variables, statistic = "F", ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a survey design object often created with the \{survey\} package}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{by}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 column name to compare by.}
@@ -35,7 +37,9 @@ Only two-way comparisons are supported.
 \dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = c("survey", "broom")))) withAutoprint(\{ # examplesIf}
 data(api, package = "survey")
 dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+drep <- survey::as.svrepdesign(dclus1)
 
 ard_survey_svychisq(dclus1, variables = sch.wide, by = comp.imp, statistic = "F")
+ard_survey_svychisq(drep, variables = sch.wide, by = comp.imp, statistic = "F")
 \dontshow{\}) # examplesIf}
 }
