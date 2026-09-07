@@ -7,9 +7,10 @@
 ard_smd_smd(data, by, variables, std.error = TRUE, conf.level = 0.95, ...)
 }
 \arguments{
-\item{data}{(\code{data.frame}/\code{survey.design})\cr
-a data frame or object of class 'survey.design'
-(typically created with \code{\link[survey:svydesign]{survey::svydesign()}}).}
+\item{data}{(\code{data.frame}/\code{survey.design}/\code{svyrep.design})\cr
+a data frame, a survey design object, or a survey replicate object
+(the latter two typically created with \code{\link[survey:svydesign]{survey::svydesign()}},
+\code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or \code{\link[survey:svrepdesign]{survey::svrepdesign()}}).}
 
 \item{by}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 column name to compare by.}

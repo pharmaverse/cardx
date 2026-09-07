@@ -6,7 +6,7 @@
 #'
 #' @param data (`survey.design`) or (`svyrep.design`)\cr
 #'   a survey design object or survey replicate object often created with
-#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or 
+#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or
 #'   [`survey::svrepdesign()`]
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name to compare by.

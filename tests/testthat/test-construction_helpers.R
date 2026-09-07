@@ -97,6 +97,24 @@ test_that("construct_model() works", {
       getElement(2L) |>
       list(estimate = _)
   )
+
+  expect_equal({
+    data(api, package = "survey")
+    # stratified sample
+    survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc) |>
+      survey::as.svrepdesign() |>
+      construct_model(formula = api00 ~ api99, method = "svyglm") |>
+      ard_regression() |>
+      cards::get_ard_statistics(stat_name %in% "estimate")},
+    survey::svyglm(
+      api00 ~ api99,
+      design = survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc)
+    ) |>
+      coef() |>
+      getElement(2L) |>
+      list(estimate = _)
+  )
+
   # styler: on
 })
 
@@ -158,6 +176,22 @@ test_that("construct_model() messaging", {
     error = TRUE,
     {
       data(api, package = "survey")
+      design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat) |>
+        survey::as.svrepdesign()
+      construct_model(
+        data = design,
+        formula = api00 ~ api99,
+        method = "svyglm",
+        method.args = list(iamnotavalidparameter = stats::gaussian()),
+        package = "survey"
+      )
+    }
+  )
+
+  expect_snapshot(
+    error = TRUE,
+    {
+      data(api, package = "survey")
       design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
       construct_model(
         data = design,
@@ -167,4 +201,20 @@ test_that("construct_model() messaging", {
       )
     }
   )
+
+  expect_snapshot(
+    error = TRUE,
+    {
+      data(api, package = "survey")
+      design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat) |>
+        survey::as.svrepdesign()
+      construct_model(
+        data = design,
+        formula = api00 ~ api99,
+        method = "svyglm",
+        method.args = list(iamnotavalidparameter = stats::gaussian())
+      )
+    }
+  )
+
 })

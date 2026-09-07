@@ -56,11 +56,13 @@ test_that("ard_emmeans_contrast() works", {
       getElement("estimate")
   )
 
+  data(api, package = "survey")
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+
   #styler: off
-  expect_silent({
-    data(api, package = "survey")
+  expect_silent({  
     ard_emmeans_contrast_svy <-
-      survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+      dclus1 |>
       ard_emmeans_contrast(
         formula = api00 ~ sch.wide,
         method = "svyglm",
@@ -76,8 +78,39 @@ test_that("ard_emmeans_contrast() works", {
     cards::get_ard_statistics(ard_emmeans_contrast_svy, stat_name %in% "estimate") |>
       unlist() |>
       unname(),
-    survey::svyglm(api00 ~ sch.wide, design = survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)) |>
+    survey::svyglm(api00 ~ sch.wide, design = dclus1) |>
       emmeans::emmeans(specs = ~sch.wide, regrid = "response") |>
+      emmeans::contrast(method = "pairwise") |>
+      summary(infer = TRUE) |>
+      getElement("estimate")
+  )
+
+  rclus1 <- survey::as.svrepdesign(dclus1)
+  #styler: off
+  expect_silent({  
+    ard_emmeans_contrast_svy <-
+      rclus1 |>
+      ard_emmeans_contrast(
+        formula = api00 ~ sch.wide,
+        method = "svyglm",
+        package = "survey"
+      )}
+  )
+  # styler: on
+  expect_equal(
+    cards::get_ard_statistics(ard_emmeans_contrast_svy, stat_name %in% "method")[1],
+    list(method = "Least-squares mean difference")
+  )
+  expect_equal(
+    cards::get_ard_statistics(ard_emmeans_contrast_svy, stat_name %in% "estimate") |>
+      unlist() |>
+      unname(),
+    # `data` is passed explicitly here: a `svyglm()` fit on a replicate design is
+    # of class 'svrepglm' and is built inside survey, so the environment on its
+    # terms is a survey frame. `emmeans:::recover_data.svyglm()` re-evaluates
+    # `object$call$design` in that environment, where `rclus1` is not visible.
+    survey::svyglm(api00 ~ sch.wide, design = rclus1) |>
+      emmeans::emmeans(specs = ~sch.wide, regrid = "response", data = apiclus1) |>
       emmeans::contrast(method = "pairwise") |>
       summary(infer = TRUE) |>
       getElement("estimate")

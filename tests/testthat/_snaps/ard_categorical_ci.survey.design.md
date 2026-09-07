@@ -1,4 +1,4 @@
-# ard_categorical_ci(data)
+# ard_categorical_ci.survey.design(data)
 
     Code
       dplyr::select(ard_categorical_ci(dclus1, variables = c(both, awards)), -warning,
@@ -25,6 +25,36 @@
       16 awards   Yes            estimate   estimate   0.7103825
       17 awards   Yes            conf.low   conf.low   0.6348392
       18 awards   Yes            conf.high  conf.high  0.7758165
+      19 awards   Yes            method     method     logit    
+      20 awards   Yes            conf.level conf.level 0.95     
+
+# ard_categorical_ci.svyrep.design(data)
+
+    Code
+      dplyr::select(ard_categorical_ci(rclus1, variables = c(both, awards)), -warning,
+      -error, -fmt_fun, -context)
+    Output
+      # An ARD data frame: 20 x 5
+         variable variable_level stat_name  stat_label stat     
+         <chr>    <list>         <chr>      <chr>      <list>   
+       1 both     No             estimate   estimate   0.273224 
+       2 both     No             conf.low   conf.low   0.2129832
+       3 both     No             conf.high  conf.high  0.3430761
+       4 both     No             method     method     logit    
+       5 both     No             conf.level conf.level 0.95     
+       6 both     Yes            estimate   estimate   0.726776 
+       7 both     Yes            conf.low   conf.low   0.6569239
+       8 both     Yes            conf.high  conf.high  0.7870168
+       9 both     Yes            method     method     logit    
+      10 both     Yes            conf.level conf.level 0.95     
+      11 awards   No             estimate   estimate   0.2896175
+      12 awards   No             conf.low   conf.low   0.2220883
+      13 awards   No             conf.high  conf.high  0.3679673
+      14 awards   No             method     method     logit    
+      15 awards   No             conf.level conf.level 0.95     
+      16 awards   Yes            estimate   estimate   0.7103825
+      17 awards   Yes            conf.low   conf.low   0.6320327
+      18 awards   Yes            conf.high  conf.high  0.7779117
       19 awards   Yes            method     method     logit    
       20 awards   Yes            conf.level conf.level 0.95     
 

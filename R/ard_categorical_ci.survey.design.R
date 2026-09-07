@@ -175,6 +175,7 @@ ard_categorical_ci.svyrep.design <- function(data, ...) {
 
 
 .svyciprop_wrapper <- function(data, variable, variable_level, conf.level, method, df, ...) {
+  # For replicate based designs, NA will fail so safeguard by specifying `na.rm = TRUE`
   lst_results <-
     cards::eval_capture_conditions(
       survey::svyciprop(
@@ -183,6 +184,7 @@ ard_categorical_ci.svyrep.design <- function(data, ...) {
         method = method,
         level = conf.level,
         df = df,
+        na.rm = TRUE,
         ...
       ) %>%
         {list(.[[1]], attr(., "ci"))} |> # styler: off

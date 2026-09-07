@@ -33,7 +33,7 @@ construct_model(data, ...)
   ...
 )
 
-\method{construct_model}{svyrep.design}(data, ...)
+\method{construct_model}{svyrep.design}(data, ..., env = caller_env())
 
 reformulate2(
   termlabels,

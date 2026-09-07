@@ -157,8 +157,8 @@ construct_model.survey.design <- function(data, formula, method, method.args = l
 
 #' @rdname construction_helpers
 #' @export
-construct_model.svyrep.design <- function(data, ...) {
-  construct_model.survey.design(data = data, ...)
+construct_model.svyrep.design <- function(data, ..., env = caller_env()) {
+  construct_model.survey.design(data = data, ..., env = env)
 }
 
 .as_list_of_exprs <- function(x, arg_name = "method.args") {
