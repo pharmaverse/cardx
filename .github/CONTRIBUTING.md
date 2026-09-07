@@ -32,7 +32,7 @@ Your input is deeply valued, whether an issue, a pull request, or even feedback,
 
 Please refer to the project [documentation][docs] for a brief introduction.
 
-`cardx` extends the [`cards`](https://github.com/insightsengineering/cards) package.
+`cardx` extends the [`cards`](https://github.com/pharmaverse/cards) package.
 `cards` provides the core Analysis Results Data (ARD) framework — the `card` class, the
 tidiers, and the structural checks. `cardx` provides the *extra* ARD functions: thin,
 consistent wrappers that run a statistical method from another package (`stats`,

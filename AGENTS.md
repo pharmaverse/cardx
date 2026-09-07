@@ -9,7 +9,7 @@ change both.
 
 ## What this package is
 
-`cardx` extends [`cards`](https://github.com/insightsengineering/cards) with *extra*
+`cardx` extends [`cards`](https://github.com/pharmaverse/cards) with *extra*
 Analysis Results Data (ARD) functions. `cards` owns the framework: the `card` class,
 the tidiers, the structural checks, and the example datasets. `cardx` owns the wrappers:
 each exported function runs one statistical method from another package (`stats`,
