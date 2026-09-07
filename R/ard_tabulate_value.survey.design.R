@@ -84,6 +84,20 @@ ard_tabulate_value.survey.design <- function(data,
     dplyr::mutate(context = "dichotomous")
 }
 
+#' @rdname ard_tabulate_value.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_tabulate_value(rclus1, variables = stype, value = list(stype = "E"))
+ard_tabulate_value.svyrep.design <- function(data, ...) {
+  ard_tabulate_value.survey.design(data = data, ...)
+}
+
 #' Perform Value Checks
 #'
 #' Check the validity of the values passed in `ard_tabulate_value(value)`.

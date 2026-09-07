@@ -29,3 +29,17 @@ ard_total_n.survey.design <- function(data, ...) {
     dplyr::mutate(context = "total_n") |>
     dplyr::select(-cards::all_ard_variables("levels"))
 }
+
+#' @rdname ard_total_n.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_total_n(rclus1)
+ard_total_n.svyrep.design <- function(data, ...) {
+  ard_total_n.survey.design(data = data, ...)
+}

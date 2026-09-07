@@ -236,6 +236,21 @@ ard_tabulate.survey.design <- function(data,
     cards::tidy_ard_row_order()
 }
 
+#' @rdname ard_tabulate.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported: the standard errors are
+#' # computed from the replicate weights rather than by linearization
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_tabulate(rclus1, variables = stype, by = both)
+ard_tabulate.svyrep.design <- function(data, ...) {
+  ard_tabulate.survey.design(data = data, ...)
+}
+
 # check for functions with NA factor levels (these are not allowed)
 check_na_factor_levels <- function(data, variables) {
   walk(

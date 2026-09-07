@@ -37,3 +37,22 @@ ard_attributes.survey.design <- function(data, variables = everything(), label =
 
   cards::ard_attributes(data = data[["variables"]], variables = {{ variables }}, label = label, ...)
 }
+
+#' @rdname ard_attributes
+#' @inheritParams ard_attributes.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_attributes(
+#'   data = rclus1,
+#'   variables = c(sname, dname),
+#'   label = list(sname = "School Name", dname = "District Name")
+#' )
+ard_attributes.svyrep.design <- function(data, ...) {
+  ard_attributes.survey.design(data = data, ...)
+}

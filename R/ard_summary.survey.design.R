@@ -167,6 +167,24 @@ ard_summary.survey.design <- function(data, variables, by = NULL,
     cards::tidy_ard_column_order()
 }
 
+#' @rdname ard_summary.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_summary(
+#'   data = rclus1,
+#'   variables = api00,
+#'   by = stype
+#' )
+ard_summary.svyrep.design <- function(data, ...) {
+  ard_summary.survey.design(data = data, ...)
+}
+
 .default_svy_stat_labels <- function(stat_label = NULL) {
   dplyr::tribble(
     ~stat_name, ~stat_label,
