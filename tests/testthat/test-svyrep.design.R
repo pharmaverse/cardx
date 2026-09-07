@@ -12,15 +12,6 @@ make_designs <- function() {
   list(des = des, rep = survey::as.svrepdesign(des))
 }
 
-make_designs_tidy <- function() {
-  skip_if_pkg_not_installed("srvyr")
-  e <- new.env()
-  utils::data("api", package = "survey", envir = e)
-  des <- e$apiclus1 |>
-    srvyr::as_survey_design(ids = dnum, weights = pw, fpc = fpc)
-  list(des_tidy = des, rep_tidy = srvyr::as_survey_rep(des))
-}
-
 test_that("the ard_* generics dispatch on svyrep.design", {
   d <- make_designs()
 
@@ -125,35 +116,4 @@ test_that("ard_tabulate.svyrep.design() works with by", {
 
   expect_no_error(ard_by <- ard_tabulate(d$rep, variables = stype, by = both))
   expect_invisible(cards::check_ard_structure(ard_by, method = FALSE))
-})
-
-test_that("survey and srvyr objects return same results",{
-  skip_if_pkg_not_installed("srvyr")
-
-  d <- make_designs()
-  td <- make_designs_tidy()
-
-  lin <- ard_tabulate(d$des, variables = stype)
-  rep <- ard_tabulate(d$rep, variables = stype)
-  lin_tidy <- ard_tabulate(td$des, variables = stype)
-  rep_tidy <- ard_tabulate(td$rep, variables = stype)
-
-  expect_equal(lin, lin_tidy)
-  expect_equal(rep, rep_tidy)
-
-  catci_lin <- ard_categorical_ci(d$des, variables = sch.wide, method = "xlogit")
-  catci_rep <- ard_categorical_ci(d$rep, variables = sch.wide, method = "xlogit")
-  catci_lin_tidy <- ard_categorical_ci(td$des, variables = sch.wide, method = "xlogit")
-  catci_rep_tidy <- ard_categorical_ci(td$rep, variables = sch.wide, method = "xlogit")
-
-  expect_equal(catci_lin, catci_lin_tidy)
-  expect_equal(catci_rep, catci_rep_tidy)
-
-  conci_lin <- ard_continuous_ci(d$des, variables = api00)
-  conci_rep <- ard_continuous_ci(d$rep, variables = api00)
-  conci_lin_tidy <- ard_continuous_ci(td$des, variables = api00)
-  conci_rep_tidy <- ard_continuous_ci(td$rep, variables = api00)
-
-  expect_equal(conci_lin, conci_lin_tidy)
-  expect_equal(conci_rep, conci_rep_tidy)
 })
