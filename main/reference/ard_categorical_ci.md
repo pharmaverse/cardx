@@ -68,7 +68,7 @@ ard_categorical_ci(
 
 - value:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   function will calculate the CIs for all levels of the variables
   specified. Use this argument to instead request only a single level by
   summarized. Default is

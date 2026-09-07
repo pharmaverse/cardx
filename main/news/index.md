@@ -96,15 +96,15 @@ CRAN release: 2025-08-27
 
 - The following functions have been renamed.
 
-  - [`ard_continuous()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html)
+  - [`ard_continuous()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html)
     to
-    [`ard_summary()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_summary.html)
-  - [`ard_categorical()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html)
+    [`ard_summary()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_summary.html)
+  - [`ard_categorical()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html)
     to
-    [`ard_tabulate()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate.html)
-  - [`ard_dichotomous()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html)
+    [`ard_tabulate()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate.html)
+  - [`ard_dichotomous()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html)
     to
-    [`ard_tabulate_value()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate_value.html)
+    [`ard_tabulate_value()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate_value.html)
   - [`ard_categorical_max()`](https://pharmaverse.github.io/cardx/reference/deprecated.md)
     to
     [`ard_tabulate_max()`](https://pharmaverse.github.io/cardx/reference/ard_tabulate_max.md)
@@ -119,7 +119,7 @@ CRAN release: 2025-08-27
     `"fmt_fun"`. This change cannot be formally deprecated. For users
     who were accessing the ARD object directly to modify this column
     instead of using functions like
-    [`cards::update_ard_fmt_fun()`](https://insightsengineering.github.io/cards/latest-tag/reference/update_ard.html),
+    [`cards::update_ard_fmt_fun()`](https://pharmaverse.github.io/cards/latest-tag/reference/update_ard.html),
     this will be a breaking change.
 
 ### Bug Fixes
@@ -266,7 +266,7 @@ CRAN release: 2024-09-03
   output. ([\#148](https://github.com/pharmaverse/cardx/issues/148))
 
 - Implemented
-  [`cards::as_card()`](https://insightsengineering.github.io/cards/latest-tag/reference/as_card.html)
+  [`cards::as_card()`](https://pharmaverse.github.io/cards/latest-tag/reference/as_card.html)
   where needed in the package to convert data frames to class ‘card’.
   ([\#200](https://github.com/pharmaverse/cardx/issues/200))
 
@@ -297,18 +297,7 @@ CRAN release: 2024-07-20
   functions names have *not* been deprecated.
   ([\#106](https://github.com/pharmaverse/cardx/issues/106))
 
-``` r
-
-ard_ttest()             -> ard_stats_t_test()
-ard_paired_ttest()      -> ard_stats_paired_t_test()
-ard_wilcoxtest()        -> ard_stats_wilcox_test()
-ard_paired_wilcoxtest() -> ard_stats_paired_wilcox_test()
-ard_chisqtest()         -> ard_stats_chisq_test()
-ard_fishertest()        -> ard_stats_fisher_test()
-ard_kruskaltest()       -> ard_stats_kruskal_test()
-ard_mcnemartest()       -> ard_stats_mcnemar_test()
-ard_moodtest()          -> ard_stats_mood_test()
-```
+`ard_ttest``(``)`` ``->`` `[`ard_stats_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`` ``ard_paired_ttest``(``)`` ``->`` `[`ard_stats_paired_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`` ``ard_wilcoxtest``(``)`` ``->`` `[`ard_stats_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`` ``ard_paired_wilcoxtest``(``)`` ``->`` `[`ard_stats_paired_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`` ``ard_chisqtest``(``)`` ``->`` `[`ard_stats_chisq_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_chisq_test.md)`(``)`` ``ard_fishertest``(``)`` ``->`` `[`ard_stats_fisher_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_fisher_test.md)`(``)`` ``ard_kruskaltest``(``)`` ``->`` `[`ard_stats_kruskal_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_kruskal_test.md)`(``)`` ``ard_mcnemartest``(``)`` ``->`` `[`ard_stats_mcnemar_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mcnemar_test.md)`(``)`` ``ard_moodtest``(``)`` ``->`` `[`ard_stats_mood_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mood_test.md)`(``)`
 
 #### New Features
 

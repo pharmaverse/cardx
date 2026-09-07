@@ -40,21 +40,21 @@ ard_summary(
 
 - statistic:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a character vector of statistic names to include. See below
   for options.
 
 - fmt_fun:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a named list of functions (or the RHS of a formula), e.g.
   `list(mpg = list(mean = \(x) round(x, digits = 2) |> as.character))`.
 
 - stat_label:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is either a named list or a list of formulas defining the
   statistic labels, e.g. `everything() ~ list(mean = "Mean", sd = "SD")`

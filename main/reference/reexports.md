@@ -5,15 +5,15 @@ to see their documentation.
 
 - cards:
 
-  [`ard_attributes()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_attributes.html),
-  [`ard_categorical()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html),
-  [`ard_continuous()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html),
-  [`ard_dichotomous()`](https://insightsengineering.github.io/cards/latest-tag/reference/deprecated.html),
-  [`ard_missing()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_missing.html),
-  [`ard_summary()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_summary.html),
-  [`ard_tabulate()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate.html),
-  [`ard_tabulate_value()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate_value.html),
-  [`ard_total_n()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_total_n.html)
+  [`ard_attributes()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_attributes.html),
+  [`ard_categorical()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html),
+  [`ard_continuous()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html),
+  [`ard_dichotomous()`](https://pharmaverse.github.io/cards/latest-tag/reference/deprecated.html),
+  [`ard_missing()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_missing.html),
+  [`ard_summary()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_summary.html),
+  [`ard_tabulate()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate.html),
+  [`ard_tabulate_value()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate_value.html),
+  [`ard_total_n()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_total_n.html)
 
 - dplyr:
 

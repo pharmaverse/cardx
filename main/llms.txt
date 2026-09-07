@@ -21,19 +21,12 @@ Summary objects can be used to:
 
 Install cards from CRAN with:
 
-``` r
-
-install.packages("cardx")
-```
+[`install.packages`](https://rdrr.io/r/utils/install.packages.html)`(``"cardx"``)`
 
 You can install the development version of cards from
 [GitHub](https://github.com/) with:
 
-``` r
-
-# install.packages("pak")
-pak::pak("pharmaverse/cardx")
-```
+`# install.packages("pak")`` ``pak``::`[`pak`](https://pak.r-lib.org/reference/pak.html)`(``"pharmaverse/cardx"``)`
 
 ## Examples
 
@@ -41,15 +34,7 @@ pak::pak("pharmaverse/cardx")
 
 Example t-test:
 
-``` r
-
-library(cardx)
-
-cards::ADSL |>
-  # keep two treatment arms for the t-test calculation
-  dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
-  cardx::ard_stats_t_test(by = ARM, variable = AGE)
-```
+[`library`](https://rdrr.io/r/base/library.html)`(`[`cardx`](https://github.com/pharmaverse/cardx)`)`` `` ``cards``::`[`ADSL`](https://pharmaverse.github.io/cards/latest-tag/reference/adam.html)` ``|>`` `` ``# keep two treatment arms for the t-test calculation`` `` ``dplyr``::`[`filter`](https://dplyr.tidyverse.org/reference/filter.html)`(``ARM`` `[`%in%`](https://rdrr.io/r/base/match.html)` `[`c`](https://rdrr.io/r/base/c.html)`(``"Placebo"``, ``"Xanomeline High Dose"``)``)`` ``|>`` `` ``cardx``::`[`ard_stats_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``by ``=`` ``ARM``, variable ``=`` ``AGE``)`
 
 ``` R
 ## # An ARD data frame: 14 × 9
@@ -80,26 +65,14 @@ reproducible future analyses and further customization.
 
 Some {cardx} functions accept regression model objects as input:
 
-``` r
-
-lm(AGE ~ ARM, data = cards::ADSL) |>
-  ard_aod_wald_test()
-```
+[`lm`](https://rdrr.io/r/stats/lm.html)`(``AGE`` ``~`` ``ARM``, data ``=`` ``cards``::`[`ADSL`](https://pharmaverse.github.io/cards/latest-tag/reference/adam.html)`)`` ``|>`` `` `[`ard_aod_wald_test`](https://pharmaverse.github.io/cardx/reference/ard_aod_wald_test.md)`(``)`
 
 Note that the [Analysis Results
 Standard](https://www.cdisc.org/standards/foundational/analysis-results-standard)
 should begin with a data set rather than a model object. To accomplish
 this we include model construction helpers.
 
-``` r
-
-construct_model(
-  data = cards::ADSL,
-  formula = reformulate2("ARM", response = "AGE"),
-  method = "lm"
-) |>
-  ard_aod_wald_test()
-```
+[`construct_model`](https://pharmaverse.github.io/cardx/reference/construction_helpers.md)`(`` `` data ``=`` ``cards``::`[`ADSL`](https://pharmaverse.github.io/cards/latest-tag/reference/adam.html)`,`` `` formula ``=`` `[`reformulate2`](https://pharmaverse.github.io/cardx/reference/construction_helpers.md)`(``"ARM"``, response ``=`` ``"AGE"``)``,`` `` method ``=`` ``"lm"`` ``)`` ``|>`` `` `[`ard_aod_wald_test`](https://pharmaverse.github.io/cardx/reference/ard_aod_wald_test.md)`(``)`
 
 ``` R
 ## # An ARD data frame: 6 × 8
@@ -139,20 +112,14 @@ there is no direct reference to the {emmeans} package in your script and
 One can circumvent this issue by including some kind of reference to the
 package in your code. Below are are couple of common ways to do so.
 
-``` r
-
-library(emmeans)
-```
+[`library`](https://rdrr.io/r/base/library.html)`(`[`emmeans`](https://rvlenth.github.io/emmeans/)`)`
 
 Attaching a package with
 [`library()`](https://rdrr.io/r/base/library.html) is great for its
 simplicity, but you may not want to attach a package if it’s not
 necessary.
 
-``` r
-
-invisible(emmeans::emmeans)
-```
+[`invisible`](https://rdrr.io/r/base/invisible.html)`(``emmeans``::`[`emmeans`](https://rvlenth.github.io/emmeans/reference/emmeans.html)`)`
 
 You can invisibly print a function from the package. Printing a function
 does not have an effect on your environment (which is great), but it is

@@ -24,7 +24,7 @@ Convert Cohen's D Test to ARD
 
   (named `list`)\
   list of tidied results constructed with
-  [`eval_capture_conditions()`](https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
+  [`eval_capture_conditions()`](https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
   e.g.
   `eval_capture_conditions(t.test(mtcars$mpg ~ mtcars$am) |> broom::tidy())`.
 
