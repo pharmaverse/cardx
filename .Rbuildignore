@@ -5,6 +5,7 @@
 ^data-raw$
 
 # doc
+^AGENTS\.md$
 ^CODE_OF_CONDUCT\.md$
 ^docs$
 LICENSE
