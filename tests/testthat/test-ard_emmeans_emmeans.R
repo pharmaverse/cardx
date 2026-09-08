@@ -54,11 +54,12 @@ test_that("ard_emmeans_emmeans() works", {
       getElement("prob")
   )
 
-  #styler: off
+  # styler: off
+  data(api, package = "survey")
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
   expect_silent({
-    data(api, package = "survey")
     ard_emmeans_emmeans_svy <-
-      survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+      dclus1 |>
       ard_emmeans_emmeans(
         formula = api00 ~ sch.wide,
         method = "svyglm",
@@ -70,8 +71,34 @@ test_that("ard_emmeans_emmeans() works", {
     cards::get_ard_statistics(ard_emmeans_emmeans_svy, stat_name %in% "estimate") |>
       unlist() |>
       unname(),
-    survey::svyglm(api00 ~ sch.wide, design = survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)) |>
+    survey::svyglm(api00 ~ sch.wide, design = dclus1) |>
       emmeans::emmeans(specs = ~sch.wide, regrid = "response") |>
+      summary(infer = TRUE) |>
+      getElement("emmean")
+  )
+
+  # styler: off
+  rclus1 <- survey::as.svrepdesign(dclus1)
+  expect_silent({
+    ard_emmeans_emmeans_svy <-
+      rclus1 |>
+      ard_emmeans_emmeans(
+        formula = api00 ~ sch.wide,
+        method = "svyglm",
+        package = "survey"
+      )
+  })
+  # styler: on
+  expect_equal(
+    cards::get_ard_statistics(ard_emmeans_emmeans_svy, stat_name %in% "estimate") |>
+      unlist() |>
+      unname(),
+    # `data` is passed explicitly here: a `svyglm()` fit on a replicate design is
+    # of class 'svrepglm' and is built inside survey, so the environment on its
+    # terms is a survey frame. `emmeans:::recover_data.svyglm()` re-evaluates
+    # `object$call$design` in that environment, where `rclus1` is not visible.
+    survey::svyglm(api00 ~ sch.wide, design = rclus1) |>
+      emmeans::emmeans(specs = ~sch.wide, regrid = "response", data = apiclus1) |>
       summary(infer = TRUE) |>
       getElement("emmean")
   )

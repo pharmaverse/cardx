@@ -1,5 +1,8 @@
 skip_if_pkg_not_installed(c("broom.helpers", "withr", "survey", "survival"))
 
+data(api, package = "survey")
+apistrat <- apistrat |> dplyr::slice(1:50)
+
 test_that("construct_model() works", {
   expect_snapshot(
     construct_model(
@@ -83,7 +86,7 @@ test_that("construct_model() works", {
   # now the survey method -------
   # styler: off
   expect_equal({
-    data(api, package = "survey")
+
     # stratified sample
     survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc) |>
       construct_model(formula = api00 ~ api99, method = "svyglm") |>
@@ -97,6 +100,23 @@ test_that("construct_model() works", {
       getElement(2L) |>
       list(estimate = _)
   )
+
+  expect_equal({
+    # stratified sample
+    survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc) |>
+      survey::as.svrepdesign() |>
+      construct_model(formula = api00 ~ api99, method = "svyglm") |>
+      ard_regression() |>
+      cards::get_ard_statistics(stat_name %in% "estimate")},
+    survey::svyglm(
+      api00 ~ api99,
+      design = survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc)
+    ) |>
+      coef() |>
+      getElement(2L) |>
+      list(estimate = _)
+  )
+
   # styler: on
 })
 
@@ -142,7 +162,6 @@ test_that("construct_model() messaging", {
   expect_snapshot(
     error = TRUE,
     {
-      data(api, package = "survey")
       design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
       construct_model(
         data = design,
@@ -157,8 +176,36 @@ test_that("construct_model() messaging", {
   expect_snapshot(
     error = TRUE,
     {
-      data(api, package = "survey")
+      design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat) |>
+        survey::as.svrepdesign()
+      construct_model(
+        data = design,
+        formula = api00 ~ api99,
+        method = "svyglm",
+        method.args = list(iamnotavalidparameter = stats::gaussian()),
+        package = "survey"
+      )
+    }
+  )
+
+  expect_snapshot(
+    error = TRUE,
+    {
       design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
+      construct_model(
+        data = design,
+        formula = api00 ~ api99,
+        method = "svyglm",
+        method.args = list(iamnotavalidparameter = stats::gaussian())
+      )
+    }
+  )
+
+  expect_snapshot(
+    error = TRUE,
+    {
+      design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat) |>
+        survey::as.svrepdesign()
       construct_model(
         data = design,
         formula = api00 ~ api99,

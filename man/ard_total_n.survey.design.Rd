@@ -2,13 +2,18 @@
 % Please edit documentation in R/add_total_n.survey.design.R
 \name{ard_total_n.survey.design}
 \alias{ard_total_n.survey.design}
+\alias{ard_total_n.svyrep.design}
 \title{ARD Total N}
 \usage{
 \method{ard_total_n}{survey.design}(data, ...)
+
+\method{ard_total_n}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{...}{These dots are for future extensions and must be empty.}
 }
@@ -24,5 +29,14 @@ The placeholder variable name returned in the object is \code{"..ard_total_n.."}
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_total_n(svy_titanic)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_total_n(rclus1)
 \dontshow{\}) # examplesIf}
 }

@@ -11,8 +11,10 @@
 #'
 #' The unweighted statistics are calculated with `cards::ard_tabulate.data.frame()`.
 #'
-#' @param data (`survey.design`)\cr
-#'   a design object often created with [`survey::svydesign()`].
+#' @param data (`survey.design`) or (`svyrep.design`)\cr
+#'   a survey design object or survey replicate object often created with
+#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or
+#'   [`survey::svrepdesign()`]
 #' @param variables ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   columns to include in summaries.
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
@@ -146,7 +148,6 @@ ard_tabulate.survey.design <- function(data,
     )
   }
 
-
   # calculate counts -----------------------------------------------------------
   # this tabulation accounts for unobserved combinations
   svytable_counts <- .svytable_counts(data, variables, by, denominator)
@@ -232,6 +233,24 @@ ard_tabulate.survey.design <- function(data,
     cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order() |>
     cards::tidy_ard_row_order()
+}
+
+#' @rdname ard_tabulate.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported: the standard errors are
+#' # computed from the replicate weights rather than by linearization
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_tabulate(rclus1, variables = stype, by = both)
+ard_tabulate.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
+  ard_tabulate.survey.design(data = data, ...)
 }
 
 # check for functions with NA factor levels (these are not allowed)
@@ -370,6 +389,10 @@ check_na_factor_levels <- function(data, variables) {
 }
 
 .one_svytable_rates_by_row <- function(data, variable, by, deff) {
+  bylevs <- levels(data$variables[[by]])
+  senum <- paste0("se", seq_along(bylevs))
+  senm <- paste0("se.", by, bylevs)
+
   survey::svyby(
     formula = reformulate2(by),
     by = reformulate2(variable),
@@ -381,6 +404,7 @@ check_na_factor_levels <- function(data, variables) {
     dplyr::as_tibble() |>
     tidyr::pivot_longer(-all_of(variable)) |>
     dplyr::mutate(
+      name = dplyr::replace_values(.data$name, from = senum, to = senm),
       stat =
         dplyr::case_when(
           startsWith(.data$name, paste0("se.", by)) | startsWith(.data$name, paste0("se.`", by, "`")) ~ "p.std.error",
@@ -403,6 +427,10 @@ check_na_factor_levels <- function(data, variables) {
 }
 
 .one_svytable_rates_by_column <- function(data, variable, by, deff) {
+  varlevs <- levels(data$variables[[variable]])
+  senum <- paste0("se", seq_along(varlevs))
+  senm <- paste0("se.", variable, varlevs)
+
   survey::svyby(
     formula = reformulate2(variable),
     by = reformulate2(by),
@@ -414,6 +442,7 @@ check_na_factor_levels <- function(data, variables) {
     dplyr::as_tibble() |>
     tidyr::pivot_longer(-all_of(by)) |>
     dplyr::mutate(
+      name = dplyr::replace_values(.data$name, from = senum, to = senm),
       stat =
         dplyr::case_when(
           startsWith(.data$name, paste0("se.", variable)) | startsWith(.data$name, paste0("se.`", variable, "`")) ~ "p.std.error",

@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_summary.survey.design.R
 \name{ard_summary.survey.design}
 \alias{ard_summary.survey.design}
+\alias{ard_summary.svyrep.design}
 \title{ARD Continuous Survey Statistics}
 \usage{
 \method{ard_summary}{survey.design}(
@@ -14,10 +15,14 @@
   fmt_fn = deprecated(),
   ...
 )
+
+\method{ard_summary}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 columns to include in summaries.}
@@ -70,6 +75,19 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_summary(
   data = dclus1,
+  variables = api00,
+  by = stype
+)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_summary(
+  data = rclus1,
   variables = api00,
   by = stype
 )

@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* Added `svyrep.design` support across survey, statistical test, CI, and emmeans methods, allowing these functions to work with replicate-weight designs created by `survey::svrepdesign()` or `survey::as.svrepdesign()`. Statistics continue to use the same `survey` implementations, so variance estimates correctly account for replicate weights. `construct_model()` also now supports `svyrep.design`, and emmeans methods use `inherits(data, c("survey.design", "svyrep.design"))` to correctly identify both survey design classes. `ard_smd_smd()` now emits a message when passed a `survey.design` or `svyrep.design` with `std.error = TRUE`, cautioning that the confidence interval and standard error are calculated from the weights alone and do not account for the survey design. (#355, @szimmer)
+
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4

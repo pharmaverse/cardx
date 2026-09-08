@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_missing.survey.design.R
 \name{ard_missing.survey.design}
 \alias{ard_missing.survey.design}
+\alias{ard_missing.svyrep.design}
 \title{ARD Missing Survey Statistics}
 \usage{
 \method{ard_missing}{survey.design}(
@@ -21,10 +22,14 @@
   fmt_fn = deprecated(),
   ...
 )
+
+\method{ard_missing}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 columns to include in summaries.}
@@ -65,5 +70,14 @@ Compute Analysis Results Data (ARD) for statistics related to data missingness f
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_missing(svy_titanic, variables = c(Class, Age), by = Survived)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_missing(rclus1, variables = api00, by = stype)
 \dontshow{\}) # examplesIf}
 }

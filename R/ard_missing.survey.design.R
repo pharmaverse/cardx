@@ -148,3 +148,20 @@ ard_missing.survey.design <- function(data,
     cards::as_card(check = FALSE) |>
     cards::tidy_ard_column_order()
 }
+
+#' @rdname ard_missing.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_missing(rclus1, variables = api00, by = stype)
+ard_missing.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
+  ard_missing.survey.design(data = data, ...)
+}
