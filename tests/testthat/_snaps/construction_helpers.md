@@ -54,7 +54,6 @@
 ---
 
     Code
-      data(api, package = "survey")
       design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",
       method.args = list(iamnotavalidparameter = stats::gaussian()), package = "survey")
@@ -82,7 +81,6 @@
 ---
 
     Code
-      data(api, package = "survey")
       design <- survey::as.svrepdesign(survey::svydesign(id = ~1, weights = ~pw,
         data = apistrat))
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",
@@ -111,7 +109,6 @@
 ---
 
     Code
-      data(api, package = "survey")
       design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",
       method.args = list(iamnotavalidparameter = stats::gaussian()))
@@ -139,7 +136,6 @@
 ---
 
     Code
-      data(api, package = "survey")
       design <- survey::as.svrepdesign(survey::svydesign(id = ~1, weights = ~pw,
         data = apistrat))
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",

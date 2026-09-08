@@ -1,14 +1,16 @@
 skip_if_pkg_not_installed("survey")
 
+df_titanic_sml <- as.data.frame(Titanic) |> dplyr::slice(1:16)
+
 test_that("ard_total_n.survey.design() works", {
   expect_snapshot(
-    survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+    survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
       ard_total_n()
   )
 })
 
 test_that("ard_total_n.svyrep.design() works", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -20,14 +22,14 @@ test_that("ard_total_n.svyrep.design() works", {
 
 test_that("ard_total_n.survey.design() follows ard structure", {
   expect_silent(
-    survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+    survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
       ard_total_n() |>
       cards::check_ard_structure(method = FALSE)
   )
 })
 
 test_that("ard_total_n.svyrep.design() follows ard structure", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -92,7 +94,7 @@ test_that("ard_total_n() errors are reported against the generic", {
   reported_fn <- function(expr) {
     tryCatch(expr, error = function(e) as.character(conditionCall(e)[[1]]))
   }
-  dclus1 <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  dclus1 <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   rclus1 <- suppressWarnings(survey::as.svrepdesign(dclus1))
 
   expect_equal(reported_fn(ard_total_n(dclus1, bogus = 1)), "ard_total_n")

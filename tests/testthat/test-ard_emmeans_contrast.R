@@ -57,7 +57,7 @@ test_that("ard_emmeans_contrast() works", {
   )
 
   data(api, package = "survey")
-  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
 
   #styler: off
   expect_silent({

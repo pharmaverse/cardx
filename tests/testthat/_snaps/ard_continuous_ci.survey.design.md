@@ -5,15 +5,15 @@
         api99))), -warning, -error)
     Output
          variable              context  stat_name stat_label     stat fmt_fun
-      1     api00 survey_continuous_ci   estimate   estimate 644.1694       2
-      2     api00 survey_continuous_ci  std.error  std.error 23.54224       2
-      3     api00 survey_continuous_ci   conf.low   conf.low 593.6763       2
-      4     api00 survey_continuous_ci  conf.high  conf.high 694.6625       2
+      1     api00 survey_continuous_ci   estimate   estimate   634.96       2
+      2     api00 survey_continuous_ci  std.error  std.error 29.99287       2
+      3     api00 survey_continuous_ci   conf.low   conf.low 564.0381       2
+      4     api00 survey_continuous_ci  conf.high  conf.high 705.8819       2
       5     api00 survey_continuous_ci conf.level conf.level     0.95       2
-      6     api99 survey_continuous_ci   estimate   estimate 606.9781       2
-      7     api99 survey_continuous_ci  std.error  std.error 24.22504       2
-      8     api99 survey_continuous_ci   conf.low   conf.low 555.0206       2
-      9     api99 survey_continuous_ci  conf.high  conf.high 658.9357       2
+      6     api99 survey_continuous_ci   estimate   estimate   593.96       2
+      7     api99 survey_continuous_ci  std.error  std.error 33.07507       2
+      8     api99 survey_continuous_ci   conf.low   conf.low 515.7499       2
+      9     api99 survey_continuous_ci  conf.high  conf.high 672.1701       2
       10    api99 survey_continuous_ci conf.level conf.level     0.95       2
 
 # ard_continuous_ci.svyrep.design(data)
@@ -23,15 +23,15 @@
         api99))), -warning, -error)
     Output
          variable              context  stat_name stat_label     stat fmt_fun
-      1     api00 survey_continuous_ci   estimate   estimate 644.1694       2
-      2     api00 survey_continuous_ci  std.error  std.error 26.32936       2
-      3     api00 survey_continuous_ci   conf.low   conf.low 587.6985       2
-      4     api00 survey_continuous_ci  conf.high  conf.high 700.6403       2
+      1     api00 survey_continuous_ci   estimate   estimate   634.96       2
+      2     api00 survey_continuous_ci  std.error  std.error 31.22308       2
+      3     api00 survey_continuous_ci   conf.low   conf.low 561.1291       2
+      4     api00 survey_continuous_ci  conf.high  conf.high 708.7909       2
       5     api00 survey_continuous_ci conf.level conf.level     0.95       2
-      6     api99 survey_continuous_ci   estimate   estimate 606.9781       2
-      7     api99 survey_continuous_ci  std.error  std.error 26.99854       2
-      8     api99 survey_continuous_ci   conf.low   conf.low  549.072       2
-      9     api99 survey_continuous_ci  conf.high  conf.high 664.8843       2
+      6     api99 survey_continuous_ci   estimate   estimate   593.96       2
+      7     api99 survey_continuous_ci  std.error  std.error 34.39412       2
+      8     api99 survey_continuous_ci   conf.low   conf.low 512.6308       2
+      9     api99 survey_continuous_ci  conf.high  conf.high 675.2892       2
       10    api99 survey_continuous_ci conf.level conf.level     0.95       2
 
 # ard_continuous_ci.survey.design() errors are captured

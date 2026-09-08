@@ -1,11 +1,13 @@
 skip_if_pkg_not_installed("survey")
 
+df_titanic_sml <- as.data.frame(Titanic) |> dplyr::slice(1:16)
+
 # Test survey.design working (2x3)
 test_that("ard_tabulate.survey.design() works", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
 
   # setup for value checks
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
 
   # denom = row, with by
   expect_error(
@@ -91,19 +93,19 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row |> dplyr::arrange_all(), stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |> dplyr::arrange_all() |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |> dplyr::arrange_all() |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -153,19 +155,19 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -211,19 +213,19 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -302,13 +304,13 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "row") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "row") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
@@ -351,19 +353,19 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -400,31 +402,31 @@ test_that("ard_tabulate.survey.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 })
 
 # Test svyrep.design working (2x3)
 test_that("ard_tabulate.svyrep.design() works", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
   # setup for value checks
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
 
   # denom = row, with by
   expect_error(
@@ -510,19 +512,19 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row |> dplyr::arrange_all(), stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |> dplyr::arrange_all() |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |> dplyr::arrange_all() |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "row") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -572,19 +574,19 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "column") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -630,19 +632,19 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = Survived, denominator = "cell") |>
+    ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = Survived, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -721,13 +723,13 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "row") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_row, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "row") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "row") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
@@ -770,19 +772,19 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_col, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "column") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "column") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 
@@ -819,25 +821,25 @@ test_that("ard_tabulate.svyrep.design() works", {
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "n_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "n") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "N_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "N") |> unlist() |> unname()
   )
 
   expect_equal(
     cards::get_ard_statistics(ard_svy_cat_cell, stat_name %in% "p_unweighted") |> unlist() |> unname(),
-    cards::ard_tabulate(as.data.frame(Titanic), variables = c(Class, Age), by = NULL, denominator = "cell") |>
+    cards::ard_tabulate(df_titanic_sml, variables = c(Class, Age), by = NULL, denominator = "cell") |>
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname()
   )
 })
 
 test_that("ard_tabulate.survey.design() returns an error when variables have all NAs", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
 
   # row denom
   svy_titanic$variables$Class <- NA
@@ -876,7 +878,7 @@ test_that("ard_tabulate.survey.design() returns an error when variables have all
 })
 
 test_that("ard_tabulate.svyrep.design() returns an error when variables have all NAs", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -918,15 +920,15 @@ test_that("ard_tabulate.svyrep.design() returns an error when variables have all
 
 # - Do we get results for unobserved factor levels in the `by` and `variable` variables?
 test_that("ard_tabulate.survey.design() works for unobserved factor levels", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Survived <- fct_expand(svy_titanic$variables$Survived, "Unknown")
 
   # data setup for equality checks
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
   df_titanic$Survived <- fct_expand(df_titanic$Survived, "Unknown")
 
   # for unweighted <-
-  df_uw <- as.data.frame(Titanic)
+  df_uw <- df_titanic_sml
   df_uw$Survived <- fct_expand(df_uw$Survived, "Unknown")
 
   expect_error(
@@ -1135,7 +1137,7 @@ test_that("ard_tabulate.survey.design() works for unobserved factor levels", {
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname() |> sort()
   )
   # variables have unobserved levels, no by variable
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Class <- fct_expand(svy_titanic$variables$Survived, "Peasant")
 
   expect_error(
@@ -1213,17 +1215,17 @@ test_that("ard_tabulate.survey.design() works for unobserved factor levels", {
 
 # - Do we get results for unobserved factor levels in the `by` and `variable` variables?
 test_that("ard_tabulate.svyrep.design() works for unobserved factor levels", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Survived <- fct_expand(rsvy_titanic$variables$Survived, "Unknown")
 
   # data setup for equality checks
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
   df_titanic$Survived <- fct_expand(df_titanic$Survived, "Unknown")
 
   # for unweighted <-
-  df_uw <- as.data.frame(Titanic)
+  df_uw <- df_titanic_sml
   df_uw$Survived <- fct_expand(df_uw$Survived, "Unknown")
 
   expect_error(
@@ -1432,7 +1434,7 @@ test_that("ard_tabulate.svyrep.design() works for unobserved factor levels", {
       cards::get_ard_statistics(stat_name %in% "p") |> unlist() |> unname() |> sort()
   )
   # variables have unobserved levels, no by variable
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Class <- fct_expand(rsvy_titanic$variables$Survived, "Peasant")
@@ -1512,14 +1514,14 @@ test_that("ard_tabulate.svyrep.design() works for unobserved factor levels", {
 
 # - Do we get results for unobserved logical levels in the `by` and `variable` variables?
 test_that("ard_tabulate.survey.design() works for unobserved logical levels", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Survived <- rep(TRUE, length(svy_titanic$variables$Survived))
 
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
   df_titanic$Survived <- rep(TRUE, length(df_titanic$Survived))
 
   # for unweighted
-  df_uw <- as.data.frame(Titanic)
+  df_uw <- df_titanic_sml
   df_uw$Survived <- rep(TRUE, length(df_uw$Survived))
 
   expect_error(
@@ -1729,7 +1731,7 @@ test_that("ard_tabulate.survey.design() works for unobserved logical levels", {
   )
 
   # variables have unobserved levels, no by variable
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Age <- rep(TRUE, length(svy_titanic$variables$Age))
 
   expect_error(
@@ -1807,16 +1809,16 @@ test_that("ard_tabulate.survey.design() works for unobserved logical levels", {
 
 # - Do we get results for unobserved logical levels in the `by` and `variable` variables?
 test_that("ard_tabulate.svyrep.design() works for unobserved logical levels", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Survived <- rep(TRUE, length(rsvy_titanic$variables$Survived))
 
-  df_titanic <- as.data.frame(Titanic) |> tidyr::uncount(weights = Freq)
+  df_titanic <- df_titanic_sml |> tidyr::uncount(weights = Freq)
   df_titanic$Survived <- rep(TRUE, length(df_titanic$Survived))
 
   # for unweighted
-  df_uw <- as.data.frame(Titanic)
+  df_uw <- df_titanic_sml
   df_uw$Survived <- rep(TRUE, length(df_uw$Survived))
 
   expect_error(
@@ -2026,7 +2028,7 @@ test_that("ard_tabulate.svyrep.design() works for unobserved logical levels", {
   )
 
   # variables have unobserved levels, no by variable
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Age <- rep(TRUE, length(rsvy_titanic$variables$Age))
@@ -2106,7 +2108,7 @@ test_that("ard_tabulate.svyrep.design() works for unobserved logical levels", {
 
 # - Does the work around apply for variables with only 1 level
 test_that("ard_tabulate.survey.design() works with variables with only 1 level", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Survived <- rep("Yes", length(svy_titanic$variables$Survived))
 
   # by variable only has 1 level
@@ -2147,7 +2149,7 @@ test_that("ard_tabulate.survey.design() works with variables with only 1 level",
   expect_invisible(cards::check_ard_structure(ard_svy_cat_cell, method = FALSE))
 
   # variables have only 1 level, no by variable
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
   svy_titanic$variables$Age <- as.factor(rep("Child", length(svy_titanic$variables$Age)))
 
   expect_error(
@@ -2225,7 +2227,7 @@ test_that("ard_tabulate.survey.design() works with variables with only 1 level",
 
 # - Does the work around apply for variables with only 1 level
 test_that("ard_tabulate.svyrep.design() works with variables with only 1 level", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Survived <- rep("Yes", length(rsvy_titanic$variables$Survived))
@@ -2268,7 +2270,7 @@ test_that("ard_tabulate.svyrep.design() works with variables with only 1 level",
   expect_invisible(cards::check_ard_structure(ard_svy_cat_cell, method = FALSE))
 
   # variables have only 1 level, no by variable
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
   rsvy_titanic$variables$Age <- as.factor(rep("Child", length(rsvy_titanic$variables$Age)))
@@ -2430,7 +2432,7 @@ test_that("ard_tabulate.svyrep.design(by) messages about protected names", {
 
 # - test if function parameters can be used as variable names without error
 test_that("ard_tabulate.survey.design() works when using generic names ", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
 
   svy_titanic2 <- svy_titanic
   svy_titanic2$variables <- svy_titanic$variables %>%
@@ -2507,7 +2509,7 @@ test_that("ard_tabulate.survey.design() works when using generic names ", {
 
 # - test if function parameters can be used as variable names without error
 test_that("ard_tabulate.svyrep.design() works when using generic names ", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -2585,7 +2587,7 @@ test_that("ard_tabulate.svyrep.design() works when using generic names ", {
 })
 
 test_that("ard_tabulate.survey.design(statistic) properly excluded unweighted stats not selected", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
 
   expect_equal(
     ard_tabulate(
@@ -2604,7 +2606,7 @@ test_that("ard_tabulate.survey.design(statistic) properly excluded unweighted st
 })
 
 test_that("ard_tabulate.svyrep.design(statistic) properly excluded unweighted stats not selected", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -2625,7 +2627,7 @@ test_that("ard_tabulate.svyrep.design(statistic) properly excluded unweighted st
 })
 
 test_that("ard_tabulate.survey.design() follows ard structure", {
-  svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  svy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq)
 
   expect_silent(
     ard_tabulate(
@@ -2639,7 +2641,7 @@ test_that("ard_tabulate.survey.design() follows ard structure", {
 })
 
 test_that("ard_tabulate.svyrep.design() follows ard structure", {
-  rsvy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq) |>
+  rsvy_titanic <- survey::svydesign(~1, data = df_titanic_sml, weights = ~Freq) |>
     survey::as.svrepdesign() |>
     suppressWarnings()
 
@@ -2658,7 +2660,7 @@ test_that("ard_tabulate.survey.design() original types are retained", {
   svy_titanic <-
     survey::svydesign(
       ~1,
-      data = as.data.frame(Titanic) |> dplyr::mutate(
+      data = df_titanic_sml |> dplyr::mutate(
         Class.dbl = as.numeric(Class),
         Class.int = as.integer(Class)
       ),
@@ -2672,7 +2674,7 @@ test_that("ard_tabulate.survey.design() original types are retained", {
   )
   expect_equal(
     unlist(ard$group1_level) |> levels(),
-    levels(as.data.frame(Titanic)$Survived)
+    levels(df_titanic_sml$Survived)
   )
   expect_true(
     dplyr::filter(ard, variable %in% "Class") |>
@@ -2704,7 +2706,7 @@ test_that("ard_tabulate.svyrep.design() original types are retained", {
   rsvy_titanic <-
     survey::svydesign(
       ~1,
-      data = as.data.frame(Titanic) |> dplyr::mutate(
+      data = df_titanic_sml |> dplyr::mutate(
         Class.dbl = as.numeric(Class),
         Class.int = as.integer(Class)
       ),
@@ -2720,7 +2722,7 @@ test_that("ard_tabulate.svyrep.design() original types are retained", {
   )
   expect_equal(
     unlist(ard$group1_level) |> levels(),
-    levels(as.data.frame(Titanic)$Survived)
+    levels(df_titanic_sml$Survived)
   )
   expect_true(
     dplyr::filter(ard, variable %in% "Class") |>

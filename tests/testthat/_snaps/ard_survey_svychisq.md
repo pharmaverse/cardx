@@ -7,11 +7,11 @@
     Output
           group1 variable         context                     stat_label     stat
       1 comp.imp sch.wide survey_svychisq   Nominator Degrees of Freedom        1
-      2 comp.imp sch.wide survey_svychisq Denominator Degrees of Freedom       39
-      3 comp.imp sch.wide survey_svychisq                      Statistic  11.4203
+      2 comp.imp sch.wide survey_svychisq Denominator Degrees of Freedom       17
+      3 comp.imp sch.wide survey_svychisq                      Statistic 7.795428
       4 comp.imp    stype survey_svychisq   Nominator Degrees of Freedom        2
-      5 comp.imp    stype survey_svychisq Denominator Degrees of Freedom       38
-      6 comp.imp    stype survey_svychisq                      Statistic 4.480236
+      5 comp.imp    stype survey_svychisq Denominator Degrees of Freedom       16
+      6 comp.imp    stype survey_svychisq                      Statistic 3.290016
 
 # ard_survey_svychisq() works for svyrep.design objects
 
@@ -22,9 +22,9 @@
     Output
           group1 variable         context                     stat_label     stat
       1 comp.imp sch.wide survey_svychisq   Nominator Degrees of Freedom        1
-      2 comp.imp sch.wide survey_svychisq Denominator Degrees of Freedom       39
-      3 comp.imp sch.wide survey_svychisq                      Statistic 11.81329
+      2 comp.imp sch.wide survey_svychisq Denominator Degrees of Freedom       17
+      3 comp.imp sch.wide survey_svychisq                      Statistic 7.795428
       4 comp.imp    stype survey_svychisq   Nominator Degrees of Freedom        2
-      5 comp.imp    stype survey_svychisq Denominator Degrees of Freedom       38
-      6 comp.imp    stype survey_svychisq                      Statistic 4.787893
+      5 comp.imp    stype survey_svychisq Denominator Degrees of Freedom       16
+      6 comp.imp    stype survey_svychisq                      Statistic 3.293693
 

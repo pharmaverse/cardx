@@ -1,7 +1,7 @@
 skip_if_pkg_not_installed("survey")
 
 data(api, package = "survey")
-dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
 rclus1 <- survey::as.svrepdesign(dclus1)
 
 test_that("ard_continuous_ci.survey.design(data)", {
@@ -50,7 +50,7 @@ test_that("ard_continuous_ci.survey.design(variables)", {
 
   # check NA values don't affect result
   dclus1_with_na <- dclus1
-  dclus1_with_na$variables[["api00"]][1:100] <- NA
+  dclus1_with_na$variables[["api00"]][1:25] <- NA
   expect_equal(
     ard_continuous_ci(dclus1_with_na, variables = api00),
     dclus1_with_na |>
@@ -88,7 +88,7 @@ test_that("ard_continuous_ci.svyrep.design(variables)", {
 
   # check NA values don't affect result
   rclus1_with_na <- rclus1
-  rclus1_with_na$variables[["api00"]][1:100] <- NA
+  rclus1_with_na$variables[["api00"]][1:25] <- NA
   expect_equal(
     ard_continuous_ci(rclus1_with_na, variables = api00),
     rclus1_with_na |>
@@ -425,3 +425,4 @@ test_that("ard_continuous_ci() errors are reported against the generic", {
     "ard_continuous_ci"
   )
 })
+

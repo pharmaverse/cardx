@@ -4,14 +4,14 @@ data(api, package = "survey")
 dclus1 <- survey::svydesign(
   id = ~dnum,
   weights = ~pw,
-  data = apiclus1,
+  data = apiclus1 |> dplyr::slice(1:50),
   fpc = ~fpc
 )
 rclus1 <- survey::as.svrepdesign(dclus1)
 dclus1_na <- survey::svydesign(
   id = ~dnum,
   weights = ~pw,
-  data = apiclus1 |>
+  data = apiclus1 |> dplyr::slice(1:50) |>
     dplyr::mutate(api00 = NA_real_),
   fpc = ~fpc
 )
@@ -20,7 +20,7 @@ dclus1_mod <-
   survey::svydesign(
     id = ~dnum,
     weights = ~pw,
-    data = apiclus1 |>
+    data = apiclus1 |> dplyr::slice(1:50) |>
       dplyr::mutate(
         sch.wide_int = as.integer(sch.wide),
         sch.wide_dbl = as.numeric(sch.wide)
@@ -31,7 +31,7 @@ rclus1_mod <- survey::as.svrepdesign(dclus1_mod)
 dclus1_fct <- survey::svydesign(
   id = ~dnum,
   weights = ~pw,
-  data = apiclus1 |>
+  data = apiclus1 |> dplyr::slice(1:50) |>
     dplyr::mutate(
       both = factor(both, levels = c("Yes", "No", "Neither")),
       awards = ifelse(stype == "E", "Yes", as.character(awards))

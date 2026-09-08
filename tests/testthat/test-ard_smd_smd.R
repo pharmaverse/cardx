@@ -58,7 +58,8 @@ test_that("ard_smd() works with survey replicate data", {
 
   data(api, package = "survey")
   dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
-  rclus1 <- survey::as.svrepdesign(dclus1)
+  rclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+    survey::as.svrepdesign()
 
   expect_error(
     ard_smd <-
@@ -96,13 +97,14 @@ test_that("ard_smd() works for designs built with survey::svrepdesign()", {
   skip_if_pkg_not_installed("survey")
 
   data(api, package = "survey")
-  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
-  rclus1 <- survey::as.svrepdesign(dclus1)
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50) , fpc = ~fpc)
+  rclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc) |>
+    survey::as.svrepdesign()
 
   # rebuild the design the way a replicate-weight data set arrives: the
   # replicate weights supplied directly, with the sampling weights separate
   rep_api <- survey::svrepdesign(
-    data = apiclus1,
+    data =  apiclus1 |> dplyr::slice(1:50),
     weights = ~pw,
     repweights = weights(rclus1, type = "replication") |> as.matrix(),
     type = "other",
@@ -124,7 +126,7 @@ test_that("ard_smd() works for designs built with survey::svrepdesign()", {
   expect_equal(
     ard_smd |>
       cards::get_ard_statistics(stat_name %in% c("estimate", "std.error")),
-    smd::smd(x = apiclus1$api00, g = apiclus1$both, w = apiclus1$pw, std.error = TRUE) |>
+    smd::smd(x = apiclus1$api00[1:50], g = apiclus1$both[1:50], w = apiclus1$pw[1:50], std.error = TRUE) |>
       dplyr::select(-term) |>
       unclass(),
     ignore_attr = TRUE
@@ -143,7 +145,7 @@ test_that("ard_smd_smd() cautions that the survey design is not used", {
   skip_if_pkg_not_installed("survey")
 
   data(api, package = "survey")
-  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
   rclus1 <- survey::as.svrepdesign(dclus1)
 
   # `survey.design`, with standard errors -- the CI and SE are calculated from

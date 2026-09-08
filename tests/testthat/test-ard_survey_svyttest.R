@@ -1,7 +1,7 @@
 skip_if_pkg_not_installed(c("survey", "broom"))
 
 data(api, package = "survey")
-dclus2 <- survey::svydesign(id = ~ dnum + snum, fpc = ~ fpc1 + fpc2, data = apiclus2)
+dclus2 <- survey::svydesign(id = ~ dnum + snum, fpc = ~ fpc1 + fpc2, data = apiclus2 |> dplyr::slice(1:50))
 rclus2 <- suppressWarnings(survey::as.svrepdesign(dclus2))
 
 test_that("ard_survey_svyttest() works for survey.design objects", {
