@@ -158,6 +158,9 @@ construct_model.survey.design <- function(data, formula, method, method.args = l
 #' @rdname construction_helpers
 #' @export
 construct_model.svyrep.design <- function(data, ..., env = caller_env()) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
   construct_model.survey.design(data = data, ..., env = env)
 }
 

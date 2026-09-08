@@ -247,6 +247,9 @@ ard_tabulate.survey.design <- function(data,
 #'
 #' ard_tabulate(rclus1, variables = stype, by = both)
 ard_tabulate.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
   ard_tabulate.survey.design(data = data, ...)
 }
 

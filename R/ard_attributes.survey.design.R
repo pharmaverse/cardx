@@ -54,5 +54,8 @@ ard_attributes.survey.design <- function(data, variables = everything(), label =
 #'   label = list(sname = "School Name", dname = "District Name")
 #' )
 ard_attributes.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
   ard_attributes.survey.design(data = data, ...)
 }

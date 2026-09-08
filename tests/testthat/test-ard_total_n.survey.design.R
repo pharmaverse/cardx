@@ -85,3 +85,16 @@ test_that("ard_total_n.svyrep.design() using `update()`", {
       ard_total_n()
   )
 })
+
+test_that("ard_total_n() errors are reported against the generic", {
+  # the `svyrep.design` method delegates to the `survey.design` method; the
+  # error must still name the generic, not the method delegated to
+  reported_fn <- function(expr) {
+    tryCatch(expr, error = function(e) as.character(conditionCall(e)[[1]]))
+  }
+  dclus1 <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
+  rclus1 <- suppressWarnings(survey::as.svrepdesign(dclus1))
+
+  expect_equal(reported_fn(ard_total_n(dclus1, bogus = 1)), "ard_total_n")
+  expect_equal(reported_fn(ard_total_n(rclus1, bogus = 1)), "ard_total_n")
+})

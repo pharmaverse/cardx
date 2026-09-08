@@ -408,3 +408,20 @@ test_that("ard_continuous_ci.svyrep.design() follows ard structure", {
       cards::check_ard_structure(method = FALSE)
   )
 })
+
+test_that("ard_continuous_ci() errors are reported against the generic", {
+  # the `svyrep.design` method delegates to the `survey.design` method; the
+  # error must still name the generic, not the method delegated to
+  reported_fn <- function(expr) {
+    tryCatch(expr, error = function(e) as.character(conditionCall(e)[[1]]))
+  }
+
+  expect_equal(
+    reported_fn(ard_continuous_ci(dclus1, variables = api00, method = "not_a_method")),
+    "ard_continuous_ci"
+  )
+  expect_equal(
+    reported_fn(ard_continuous_ci(rclus1, variables = api00, method = "not_a_method")),
+    "ard_continuous_ci"
+  )
+})

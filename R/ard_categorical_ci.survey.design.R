@@ -30,7 +30,7 @@ ard_categorical_ci.survey.design <- function(data,
                                              df = survey::degf(data),
                                              ...) {
   set_cli_abort_call()
-  check_dots_empty()
+  check_dots_empty(call = get_cli_abort_call())
 
   # check inputs ---------------------------------------------------------------
   check_not_missing(data)
@@ -48,7 +48,7 @@ ard_categorical_ci.survey.design <- function(data,
   )
   check_scalar(by, allow_empty = TRUE)
   check_scalar_range(conf.level, range = c(0, 1))
-  method <- arg_match(method)
+  method <- arg_match(method, error_call = get_cli_abort_call())
 
   # return empty ARD if no variables selected ----------------------------------
   if (is_empty(variables)) {
@@ -82,6 +82,9 @@ ard_categorical_ci.survey.design <- function(data,
 #'
 #' ard_categorical_ci(rclus1, variables = sch.wide)
 ard_categorical_ci.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
   ard_categorical_ci.survey.design(data = data, ...)
 }
 

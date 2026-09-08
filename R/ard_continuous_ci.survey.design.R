@@ -46,7 +46,7 @@ ard_continuous_ci.survey.design <- function(data,
   )
   check_scalar(by, allow_empty = TRUE)
   check_scalar_range(conf.level, range = c(0, 1))
-  method <- arg_match(method)
+  method <- arg_match(method, error_call = get_cli_abort_call())
 
   walk(
     variables,
@@ -91,6 +91,9 @@ ard_continuous_ci.survey.design <- function(data,
 #'
 #' ard_continuous_ci(rclus1, variables = api00)
 ard_continuous_ci.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
   ard_continuous_ci.survey.design(data = data, ...)
 }
 

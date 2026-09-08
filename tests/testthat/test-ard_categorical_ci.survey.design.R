@@ -266,3 +266,24 @@ test_that("ard_categorical_ci.svyrep.design() follows ard structure", {
       cards::check_ard_structure(method = TRUE)
   )
 })
+
+test_that("ard_categorical_ci() errors are reported against the generic", {
+  # the `svyrep.design` method delegates to the `survey.design` method; the
+  # error must still name the generic, not the method delegated to
+  reported_fn <- function(expr) {
+    tryCatch(expr, error = function(e) as.character(conditionCall(e)[[1]]))
+  }
+
+  # `arg_match()` and `check_dots_empty()` default their error call to the
+  # calling frame, so both need the abort call passed explicitly
+  expect_equal(
+    reported_fn(ard_categorical_ci(dclus1, variables = both, method = "not_a_method")),
+    "ard_categorical_ci"
+  )
+  expect_equal(
+    reported_fn(ard_categorical_ci(rclus1, variables = both, method = "not_a_method")),
+    "ard_categorical_ci"
+  )
+  expect_equal(reported_fn(ard_categorical_ci(dclus1, variables = both, bogus = 1)), "ard_categorical_ci")
+  expect_equal(reported_fn(ard_categorical_ci(rclus1, variables = both, bogus = 1)), "ard_categorical_ci")
+})

@@ -38,7 +38,8 @@ test_that("ard_smd() works with survey data", {
   expect_error(
     ard_smd <-
       dclus1 |>
-      ard_smd_smd(by = both, variable = api00, std.error = TRUE),
+      ard_smd_smd(by = both, variable = api00, std.error = TRUE) |>
+      suppressMessages(),
     NA
   )
 
@@ -62,7 +63,8 @@ test_that("ard_smd() works with survey replicate data", {
   expect_error(
     ard_smd <-
       rclus1 |>
-      ard_smd_smd(by = both, variable = api00, std.error = TRUE),
+      ard_smd_smd(by = both, variable = api00, std.error = TRUE) |>
+      suppressMessages(),
     NA
   )
 
@@ -85,7 +87,8 @@ test_that("ard_smd() works with survey replicate data", {
   expect_equal(
     ard_smd,
     dclus1 |>
-      ard_smd_smd(by = both, variable = api00, std.error = TRUE)
+      ard_smd_smd(by = both, variable = api00, std.error = TRUE) |>
+      suppressMessages()
   )
 })
 
@@ -111,7 +114,8 @@ test_that("ard_smd() works for designs built with survey::svrepdesign()", {
   expect_error(
     ard_smd <-
       rep_api |>
-      ard_smd_smd(by = both, variable = api00, std.error = TRUE),
+      ard_smd_smd(by = both, variable = api00, std.error = TRUE) |>
+      suppressMessages(),
     NA
   )
 
@@ -130,7 +134,8 @@ test_that("ard_smd() works for designs built with survey::svrepdesign()", {
   expect_equal(
     ard_smd,
     dclus1 |>
-      ard_smd_smd(by = both, variable = api00, std.error = TRUE)
+      ard_smd_smd(by = both, variable = api00, std.error = TRUE) |>
+      suppressMessages()
   )
 })
 

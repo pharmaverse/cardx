@@ -1159,3 +1159,20 @@ test_that("ard_summary() works for designs built with survey::svrepdesign()", {
     ignore_attr = TRUE
   )
 })
+
+test_that("ard_summary() errors are reported against the generic", {
+  # the `svyrep.design` method delegates to the `survey.design` method; the
+  # error must still name the generic, not the method delegated to
+  reported_fn <- function(expr) {
+    tryCatch(expr, error = function(e) as.character(conditionCall(e)[[1]]))
+  }
+
+  expect_equal(
+    reported_fn(ard_summary(dclus1, variables = api00, statistic = ~"not_a_stat")),
+    "ard_summary"
+  )
+  expect_equal(
+    reported_fn(ard_summary(rclus1, variables = api00, statistic = ~"not_a_stat")),
+    "ard_summary"
+  )
+})

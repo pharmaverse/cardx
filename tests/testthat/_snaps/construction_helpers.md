@@ -83,9 +83,10 @@
 
     Code
       data(api, package = "survey")
-      design <- survey::svydesign(id = ~1, weights = ~pw, data = apistrat)
+      design <- survey::as.svrepdesign(survey::svydesign(id = ~1, weights = ~pw,
+        data = apistrat))
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",
-      method.args = list(iamnotavalidparameter = stats::gaussian()))
+      method.args = list(iamnotavalidparameter = stats::gaussian()), package = "survey")
     Condition
       Error in `construct_model()`:
       ! There was an error evaluating the model `svyglm(formula = api00 ~ api99, design = ., iamnotavalidparameter = stats::gaussian())`
@@ -144,7 +145,7 @@
       construct_model(data = design, formula = api00 ~ api99, method = "svyglm",
       method.args = list(iamnotavalidparameter = stats::gaussian()))
     Condition
-      Error in `construct_model.survey.design()`:
+      Error in `construct_model()`:
       ! There was an error evaluating the model `svyglm(formula = api00 ~ api99, design = ., iamnotavalidparameter = stats::gaussian())`
       Caused by error in `glm.control()`:
       ! unused argument (iamnotavalidparameter = list("gaussian", "identity", function (mu) 
