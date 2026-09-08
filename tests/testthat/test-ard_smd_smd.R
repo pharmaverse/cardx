@@ -97,14 +97,14 @@ test_that("ard_smd() works for designs built with survey::svrepdesign()", {
   skip_if_pkg_not_installed("survey")
 
   data(api, package = "survey")
-  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50) , fpc = ~fpc)
+  dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
   rclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc) |>
     survey::as.svrepdesign()
 
   # rebuild the design the way a replicate-weight data set arrives: the
   # replicate weights supplied directly, with the sampling weights separate
   rep_api <- survey::svrepdesign(
-    data =  apiclus1 |> dplyr::slice(1:50),
+    data = apiclus1 |> dplyr::slice(1:50),
     weights = ~pw,
     repweights = weights(rclus1, type = "replication") |> as.matrix(),
     type = "other",

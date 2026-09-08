@@ -425,4 +425,3 @@ test_that("ard_continuous_ci() errors are reported against the generic", {
     "ard_continuous_ci"
   )
 })
-

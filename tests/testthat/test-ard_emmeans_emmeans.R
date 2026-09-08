@@ -54,7 +54,7 @@ test_that("ard_emmeans_emmeans() works", {
       getElement("prob")
   )
 
-  #styler: off
+  # styler: off
   data(api, package = "survey")
   dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1 |> dplyr::slice(1:50), fpc = ~fpc)
   expect_silent({
@@ -77,6 +77,7 @@ test_that("ard_emmeans_emmeans() works", {
       getElement("emmean")
   )
 
+  # styler: off
   rclus1 <- survey::as.svrepdesign(dclus1)
   expect_silent({
     ard_emmeans_emmeans_svy <-

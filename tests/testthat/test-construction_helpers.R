@@ -86,7 +86,7 @@ test_that("construct_model() works", {
   # now the survey method -------
   # styler: off
   expect_equal({
-    
+
     # stratified sample
     survey::svydesign(id = ~1, strata = ~stype, weights = ~pw, data = apistrat, fpc = ~fpc) |>
       construct_model(formula = api00 ~ api99, method = "svyglm") |>
