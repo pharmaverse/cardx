@@ -2875,4 +2875,3 @@ test_that("ard_tabulate.svyrep.design() messaging with all NA lgl variables", {
       ard_tabulate(variables = lgl)
   )
 })
-

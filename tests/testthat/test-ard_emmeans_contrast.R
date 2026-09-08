@@ -60,7 +60,7 @@ test_that("ard_emmeans_contrast() works", {
   dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc)
 
   #styler: off
-  expect_silent({  
+  expect_silent({
     ard_emmeans_contrast_svy <-
       dclus1 |>
       ard_emmeans_contrast(
@@ -87,7 +87,7 @@ test_that("ard_emmeans_contrast() works", {
 
   rclus1 <- survey::as.svrepdesign(dclus1)
   #styler: off
-  expect_silent({  
+  expect_silent({
     ard_emmeans_contrast_svy <-
       rclus1 |>
       ard_emmeans_contrast(

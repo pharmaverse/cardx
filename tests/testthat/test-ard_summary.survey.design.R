@@ -2,46 +2,45 @@ skip_if_pkg_not_installed("survey")
 
 data(api, package = "survey")
 dclus1 <- survey::svydesign(
-    id = ~dnum,
-    weights = ~pw,
-    data = apiclus1,
-    fpc = ~fpc
+  id = ~dnum,
+  weights = ~pw,
+  data = apiclus1,
+  fpc = ~fpc
 )
 rclus1 <- survey::as.svrepdesign(dclus1)
 dclus1_na <- survey::svydesign(
-    id = ~dnum,
-    weights = ~pw,
-    data = apiclus1 |>
-        dplyr::mutate(api00 = NA_real_),
-    fpc = ~fpc
+  id = ~dnum,
+  weights = ~pw,
+  data = apiclus1 |>
+    dplyr::mutate(api00 = NA_real_),
+  fpc = ~fpc
 )
 rclus1_na <- survey::as.svrepdesign(dclus1_na)
 dclus1_mod <-
-    survey::svydesign(
-        id = ~dnum,
-        weights = ~pw,
-        data = apiclus1 |>
-            dplyr::mutate(
-                sch.wide_int = as.integer(sch.wide),
-                sch.wide_dbl = as.numeric(sch.wide)
-            ),
-        fpc = ~fpc
-    )
-rclus1_mod <- survey::as.svrepdesign(dclus1_mod)
-dclus1_fct <- survey::svydesign(
+  survey::svydesign(
     id = ~dnum,
     weights = ~pw,
     data = apiclus1 |>
-        dplyr::mutate(
-            both = factor(both, levels = c("Yes", "No", "Neither")),
-            awards = ifelse(stype == "E", "Yes", as.character(awards))
-        ),
+      dplyr::mutate(
+        sch.wide_int = as.integer(sch.wide),
+        sch.wide_dbl = as.numeric(sch.wide)
+      ),
     fpc = ~fpc
+  )
+rclus1_mod <- survey::as.svrepdesign(dclus1_mod)
+dclus1_fct <- survey::svydesign(
+  id = ~dnum,
+  weights = ~pw,
+  data = apiclus1 |>
+    dplyr::mutate(
+      both = factor(both, levels = c("Yes", "No", "Neither")),
+      awards = ifelse(stype == "E", "Yes", as.character(awards))
+    ),
+  fpc = ~fpc
 )
 rclus1_fct <- survey::as.svrepdesign(dclus1_fct)
 
 test_that("unstratified ard_summary.survey.design() works", {
-
   expect_error(
     ard_uni_svy_cont <-
       ard_summary(
@@ -109,7 +108,6 @@ test_that("unstratified ard_summary.survey.design() works", {
 })
 
 test_that("unstratified ard_summary.svyrep.design() works", {
-
   expect_error(
     ard_uni_svy_cont <-
       ard_summary(
@@ -1004,7 +1002,6 @@ test_that("ard_summary.svyrep.design() follows ard structure", {
 })
 
 test_that("ard_summary.survey.design() original types are retained", {
-
   # factors and integer check
   expect_silent(
     ard <-
@@ -1023,7 +1020,6 @@ test_that("ard_summary.survey.design() original types are retained", {
 })
 
 test_that("ard_summary.svyrep.design() original types are retained", {
-
   # factors and integer check
   expect_silent(
     ard <-

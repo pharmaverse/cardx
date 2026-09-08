@@ -216,5 +216,4 @@ test_that("construct_model() messaging", {
       )
     }
   )
-
 })

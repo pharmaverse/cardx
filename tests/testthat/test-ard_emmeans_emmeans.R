@@ -85,8 +85,8 @@ test_that("ard_emmeans_emmeans() works", {
         formula = api00 ~ sch.wide,
         method = "svyglm",
         package = "survey"
-      )}
-  )
+      )
+  })
   # styler: on
   expect_equal(
     cards::get_ard_statistics(ard_emmeans_emmeans_svy, stat_name %in% "estimate") |>

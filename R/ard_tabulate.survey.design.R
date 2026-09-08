@@ -404,7 +404,7 @@ check_na_factor_levels <- function(data, variables) {
     dplyr::as_tibble() |>
     tidyr::pivot_longer(-all_of(variable)) |>
     dplyr::mutate(
-      name = dplyr::replace_values(.data$name, from=senum, to=senm),
+      name = dplyr::replace_values(.data$name, from = senum, to = senm),
       stat =
         dplyr::case_when(
           startsWith(.data$name, paste0("se.", by)) | startsWith(.data$name, paste0("se.`", by, "`")) ~ "p.std.error",
@@ -442,7 +442,7 @@ check_na_factor_levels <- function(data, variables) {
     dplyr::as_tibble() |>
     tidyr::pivot_longer(-all_of(by)) |>
     dplyr::mutate(
-      name = dplyr::replace_values(.data$name, from=senum, to=senm),
+      name = dplyr::replace_values(.data$name, from = senum, to = senm),
       stat =
         dplyr::case_when(
           startsWith(.data$name, paste0("se.", variable)) | startsWith(.data$name, paste0("se.`", variable, "`")) ~ "p.std.error",
