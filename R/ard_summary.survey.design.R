@@ -2,8 +2,10 @@
 #'
 #' Returns an ARD of weighted statistics using the `{survey}` package.
 #'
-#' @param data (`survey.design`)\cr
-#'   a design object often created with [`survey::svydesign()`].
+#' @param data (`survey.design`) or (`svyrep.design`)\cr
+#'   a survey design object or survey replicate object often created with
+#'   [`survey::svydesign()`], [`survey::as.svrepdesign()`], or
+#'   [`survey::svrepdesign()`]
 #' @param variables ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   columns to include in summaries.
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
@@ -165,6 +167,27 @@ ard_summary.survey.design <- function(data, variables, by = NULL,
     cards::tidy_ard_column_order()
 }
 
+#' @rdname ard_summary.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_summary(
+#'   data = rclus1,
+#'   variables = api00,
+#'   by = stype
+#' )
+ard_summary.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
+  ard_summary.survey.design(data = data, ...)
+}
+
 .default_svy_stat_labels <- function(stat_label = NULL) {
   dplyr::tribble(
     ~stat_name, ~stat_label,
@@ -207,8 +230,8 @@ accepted_svy_stats <- function(expand_quantiles = TRUE) {
   else if (stat_name %in% "sd") args <- list(FUN = \(...) survey::svyvar(...) |> sqrt())
   else if (stat_name %in% "mean.std.error") args <- list(FUN = \(...) survey::svymean(...) |> survey::SE())
   else if (stat_name %in% "deff") args <- list(FUN = \(...) survey::svymean(..., deff = TRUE) |> survey::deff())
-  else if (stat_name %in% "min") args <- list(FUN = \(x, design, na.rm, ...) min(design$variables[[all.vars(x)]][stats::weights(design) > 0], na.rm = na.rm))
-  else if (stat_name %in% "max") args <- list(FUN = \(x, design, na.rm, ...) max(design$variables[[all.vars(x)]][stats::weights(design) > 0], na.rm = na.rm))
+  else if (stat_name %in% "min") args <- list(FUN = \(x, design, na.rm, ...) min(design$variables[[all.vars(x)]][stats::weights(design, type = "sampling") > 0], na.rm = na.rm))
+  else if (stat_name %in% "max") args <- list(FUN = \(x, design, na.rm, ...) max(design$variables[[all.vars(x)]][stats::weights(design, type = "sampling") > 0], na.rm = na.rm))
   # define functions for the quantiles
   else if (stat_name %in% c("median", paste0("p", 0:100))) {
     quantile <- ifelse(stat_name %in% "median", 0.5, as.numeric(substr(stat_name, 2, nchar(stat_name))) / 100)

@@ -5,9 +5,10 @@
 #' Additionally, this function add a confidence interval to the SMD when
 #' `std.error=TRUE`, which the original `smd::smd()` does not include.
 #'
-#' @param data (`data.frame`/`survey.design`)\cr
-#'   a data frame or object of class 'survey.design'
-#'   (typically created with [`survey::svydesign()`]).
+#' @param data (`data.frame`/`survey.design`/`svyrep.design`)\cr
+#'   a data frame, a survey design object, or a survey replicate object
+#'   (the latter two typically created with [`survey::svydesign()`],
+#'   [`survey::as.svrepdesign()`], or [`survey::svrepdesign()`]).
 #' @param by ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name to compare by.
 #' @param variables ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
@@ -38,10 +39,16 @@ ard_smd_smd <- function(data, by, variables, std.error = TRUE, conf.level = 0.95
   check_not_missing(by)
 
   # grab design object if from `survey` ----------------------------------------
-  is_survey <- inherits(data, "survey.design")
+  is_survey <- inherits(data, c("survey.design", "svyrep.design"))
   if (is_survey) {
     design <- data
     data <- design$variables
+    # the estimate itself is properly weighted; it is only the variance-based
+    # results that disregard the design, so there is nothing to caution about
+    # when they are not requested
+    if (isTRUE(std.error)) {
+      message("Caution: the confidence interval and standard error calculation do not take into account the survey design, only the weights.")
+    }
   }
 
   # continue check/process inputs ----------------------------------------------
@@ -67,7 +74,7 @@ ard_smd_smd <- function(data, by, variables, std.error = TRUE, conf.level = 0.95
         lst_tidy =
           cards::eval_capture_conditions(
             switch(as.character(is_survey),
-              "TRUE" = smd::smd(x = data[[variable]], g = data[[by]], w = stats::weights(design), na.rm = TRUE, std.error = std.error, ...),
+              "TRUE" = smd::smd(x = data[[variable]], g = data[[by]], w = stats::weights(design, type = "sampling"), na.rm = TRUE, std.error = std.error, ...),
               "FALSE" = smd::smd(x = data[[variable]], g = data[[by]], na.rm = TRUE, std.error = std.error, ...)
             ) |>
               dplyr::select(-any_of("term")) %>%

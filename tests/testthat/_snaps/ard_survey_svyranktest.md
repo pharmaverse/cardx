@@ -1,4 +1,4 @@
-# ard_survey_svyranktest() works
+# ard_survey_svyranktest() works for survey.design objects
 
     Code
       dplyr::select(as.data.frame(svyranktest[[1]]), stat_label, stat)
@@ -46,6 +46,58 @@
       1 Median of the Difference                      -0.1060602
       2                Statistic                       -1.718689
       3                  p-value                      0.09426084
+      4       Degrees of Freedom                              36
+      5                   method Design-based KruskalWallis test
+      6   Alternative Hypothesis                       two.sided
+
+# ard_survey_svyranktest() works for svyrep.design objects
+
+    Code
+      dplyr::select(as.data.frame(svyranktest[[1]]), stat_label, stat)
+    Output
+                      stat_label                            stat
+      1 Median of the Difference                      -0.1060602
+      2                Statistic                       -1.935203
+      3                  p-value                      0.06085137
+      4       Degrees of Freedom                              36
+      5                   method Design-based KruskalWallis test
+      6   Alternative Hypothesis                       two.sided
+
+---
+
+    Code
+      dplyr::select(as.data.frame(svyranktest[[2]]), stat_label, stat)
+    Output
+                      stat_label                            stat
+      1 Median of the Difference                      -0.3791163
+      2                Statistic                       -1.730362
+      3                  p-value                      0.09213095
+      4       Degrees of Freedom                              36
+      5                   method Design-based vanderWaerden test
+      6   Alternative Hypothesis                       two.sided
+
+---
+
+    Code
+      dplyr::select(as.data.frame(svyranktest[[3]]), stat_label, stat)
+    Output
+                      stat_label                     stat
+      1 Median of the Difference               -0.1240709
+      2                Statistic               -0.9514032
+      3                  p-value                 0.347744
+      4       Degrees of Freedom                       36
+      5                   method Design-based median test
+      6   Alternative Hypothesis                two.sided
+
+---
+
+    Code
+      dplyr::select(as.data.frame(svyranktest[[4]]), stat_label, stat)
+    Output
+                      stat_label                            stat
+      1 Median of the Difference                      -0.1060602
+      2                Statistic                       -1.935203
+      3                  p-value                      0.06085137
       4       Degrees of Freedom                              36
       5                   method Design-based KruskalWallis test
       6   Alternative Hypothesis                       two.sided

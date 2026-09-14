@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_categorical_ci.survey.design.R
 \name{ard_categorical_ci.survey.design}
 \alias{ard_categorical_ci.survey.design}
+\alias{ard_categorical_ci.svyrep.design}
 \title{ARD survey categorical CIs}
 \usage{
 \method{ard_categorical_ci}{survey.design}(
@@ -14,10 +15,14 @@
   df = survey::degf(data),
   ...
 )
+
+\method{ard_categorical_ci}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 columns to include in summaries.}
@@ -59,5 +64,11 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_categorical_ci(dclus1, variables = sch.wide)
 ard_categorical_ci(dclus1, variables = sch.wide, value = sch.wide ~ "Yes", method = "xlogit")
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+rclus1 <- survey::as.svrepdesign(dclus1)
+
+ard_categorical_ci(rclus1, variables = sch.wide)
 \dontshow{\}) # examplesIf}
 }

@@ -2,13 +2,18 @@
 % Please edit documentation in R/ard_attributes.survey.design.R
 \name{ard_attributes.survey.design}
 \alias{ard_attributes.survey.design}
+\alias{ard_attributes.svyrep.design}
 \title{ARD Attributes}
 \usage{
 \method{ard_attributes}{survey.design}(data, variables = everything(), label = NULL, ...)
+
+\method{ard_attributes}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 variables to include}
@@ -39,6 +44,19 @@ dclus1 <- survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~f
 
 ard_attributes(
   data = dclus1,
+  variables = c(sname, dname),
+  label = list(sname = "School Name", dname = "District Name")
+)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_attributes(
+  data = rclus1,
   variables = c(sname, dname),
   label = list(sname = "School Name", dname = "District Name")
 )

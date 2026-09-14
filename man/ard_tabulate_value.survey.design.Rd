@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_tabulate_value.survey.design.R
 \name{ard_tabulate_value.survey.design}
 \alias{ard_tabulate_value.survey.design}
+\alias{ard_tabulate_value.svyrep.design}
 \title{ARD Dichotomous Survey Statistics}
 \usage{
 \method{ard_tabulate_value}{survey.design}(
@@ -19,10 +20,14 @@
   fmt_fn = deprecated(),
   ...
 )
+
+\method{ard_tabulate_value}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 columns to include in summaries.}
@@ -71,5 +76,14 @@ Compute Analysis Results Data (ARD) for dichotomous summary statistics.
 \dontshow{if (cardx:::is_pkg_installed("survey")) withAutoprint(\{ # examplesIf}
 survey::svydesign(ids = ~1, data = mtcars, weights = ~1) |>
   ard_tabulate_value(by = vs, variables = c(cyl, am), value = list(cyl = 4))
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_tabulate_value(rclus1, variables = stype, value = list(stype = "E"))
 \dontshow{\}) # examplesIf}
 }

@@ -2,6 +2,7 @@
 % Please edit documentation in R/ard_tabulate.survey.design.R
 \name{ard_tabulate.survey.design}
 \alias{ard_tabulate.survey.design}
+\alias{ard_tabulate.svyrep.design}
 \title{ARD Categorical Survey Statistics}
 \usage{
 \method{ard_tabulate}{survey.design}(
@@ -18,10 +19,14 @@
   fmt_fn = deprecated(),
   ...
 )
+
+\method{ard_tabulate}{svyrep.design}(data, ...)
 }
 \arguments{
-\item{data}{(\code{survey.design})\cr
-a design object often created with \code{\link[survey:svydesign]{survey::svydesign()}}.}
+\item{data}{(\code{survey.design}) or (\code{svyrep.design})\cr
+a survey design object or survey replicate object often created with
+\code{\link[survey:svydesign]{survey::svydesign()}}, \code{\link[survey:as.svrepdesign]{survey::as.svrepdesign()}}, or
+\code{\link[survey:svrepdesign]{survey::svrepdesign()}}}
 
 \item{variables}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 columns to include in summaries.}
@@ -74,5 +79,15 @@ The unweighted statistics are calculated with \code{cards::ard_tabulate.data.fra
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_tabulate(svy_titanic, variables = c(Class, Age), by = Survived)
+\dontshow{\}) # examplesIf}
+\dontshow{if (do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))) withAutoprint(\{ # examplesIf}
+# replicate-weight designs are also supported: the standard errors are
+# computed from the replicate weights rather than by linearization
+data(api, package = "survey")
+rclus1 <-
+  survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+  survey::as.svrepdesign()
+
+ard_tabulate(rclus1, variables = stype, by = both)
 \dontshow{\}) # examplesIf}
 }

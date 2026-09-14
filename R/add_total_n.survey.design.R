@@ -16,7 +16,7 @@
 ard_total_n.survey.design <- function(data, ...) {
   # process inputs -------------------------------------------------------------
   set_cli_abort_call()
-  check_dots_empty()
+  check_dots_empty(call = get_cli_abort_call())
 
   # calculate total N ----------------------------------------------------------
   data <- stats::update(data, ..ard_total_n.. = TRUE)
@@ -28,4 +28,21 @@ ard_total_n.survey.design <- function(data, ...) {
     ) |>
     dplyr::mutate(context = "total_n") |>
     dplyr::select(-cards::all_ard_variables("levels"))
+}
+
+#' @rdname ard_total_n.survey.design
+#' @export
+#' @examplesIf do.call(asNamespace("cardx")$is_pkg_installed, list(pkg = "survey"))
+#' # replicate-weight designs are also supported
+#' data(api, package = "survey")
+#' rclus1 <-
+#'   survey::svydesign(id = ~dnum, weights = ~pw, data = apiclus1, fpc = ~fpc) |>
+#'   survey::as.svrepdesign()
+#'
+#' ard_total_n(rclus1)
+ard_total_n.svyrep.design <- function(data, ...) {
+  # claim the abort call before delegating, so errors are reported against this
+  # method rather than the `survey.design` method it delegates to
+  set_cli_abort_call()
+  ard_total_n.survey.design(data = data, ...)
 }
