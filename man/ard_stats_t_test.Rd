@@ -36,7 +36,9 @@ Analysis results data for paired and non-paired t-tests.
 }
 \details{
 For the \code{ard_stats_t_test()} function, the data is expected to be one row per subject.
-The data is passed as \code{t.test(data[[variable]] ~ data[[by]], paired = FALSE, ...)}.
+The data is passed as \code{t.test(data[[variable]] ~ data[[by]], ...)}.
+This function follows the defaults in \code{\link[stats:t.test]{stats::t.test()}}. For example, Welch's
+t-test is the default for an unpaired, two-sample comparison.
 
 For the \code{ard_stats_paired_t_test()} function, the data is expected to be one row
 per subject per by level. Before the t-test is calculated, the data are
