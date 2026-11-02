@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* Clarified that `ard_stats_t_test()` follows `stats::t.test()` defaults and uses Welch's t-test for unpaired two-sample comparisons. (#347, @JorAlEs)
+
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
 
 # cardx 0.3.4
