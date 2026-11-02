@@ -33,10 +33,9 @@ Code coverage is suitable for any new functions/features (generally,
 
 Reviewer Checklist (if item does not apply, mark is as complete)
 
-If a bug was fixed, a unit test was added.
-
-Code coverage is suitable for any new functions/features:
-[`devtools::test_coverage()`](https://devtools.r-lib.org/reference/test.html)
+- [ ] If a bug was fixed, a unit test was added.
+- [ ] Code coverage is suitable for any new functions/features:
+  [`devtools::test_coverage()`](https://devtools.r-lib.org/reference/test.html)
 
 When the branch is ready to be merged: - \[ \] Update `NEWS.md` with the
 changes from this pull request under the heading

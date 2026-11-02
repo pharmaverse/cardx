@@ -147,8 +147,8 @@ construct_model(
 #>   effect   group term            estimate std.error statistic p.value
 #>   <chr>    <chr> <chr>              <dbl>     <dbl>     <dbl>   <dbl>
 #> 1 fixed    NA    (Intercept)       -8.70      4.12      -2.11  0.0347
-#> 2 fixed    NA    mpg                0.409     0.199      2.05  0.0403
-#> 3 ran_pars vs    sd__(Intercept)    0.790    NA         NA    NA     
+#> 2 fixed    NA    mpg                0.409     0.199      2.05  0.0401
+#> 3 ran_pars vs    sd__(Intercept)    0.789    NA         NA    NA     
 
 construct_model(
   data = mtcars |> dplyr::rename(`M P G` = mpg),

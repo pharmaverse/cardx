@@ -46,49 +46,39 @@ so rather than editing it.
 
 Checklist for any new or modified exported function:
 
-File is `R/<function_name>.R`, named exactly after the function.
-Function is named `ard_<package>_<function>()`.
-
-**`set_cli_abort_call()` is the first line of the function body.** No
-exceptions.
-
-`check_pkg_installed("<pkg>")` before touching anything from `Suggests`.
-Vector form for several:
-`check_pkg_installed(c("car", "broom.helpers"))`.
-
-Arguments validated with `check_not_missing()`, then
-`check_data_frame()` / `check_class()`, then
-`cards::process_selectors(data, by = {{ by }}, ...)`, then
-post-resolution checks (`check_scalar()`, `check_range()`).
-
-Empty-selection short circuit:
-`if (is_empty(variables)) return(dplyr::tibble() |> cards::as_card(check = FALSE))`.
-
-**Every statistical call is wrapped in
-[`cards::eval_capture_conditions()`](https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html).**
-Errors and warnings belong in the ARD’s `error`/`warning` columns, never
-propagated. Data reshaping that could fail goes *inside* the same block.
-
-Class applied with `cards::as_card(check = FALSE)`. **Never**
-`structure(..., class = "card")` or `class(x) <- "card"`.
-
-Columns ordered with
-[`cards::tidy_ard_column_order()`](https://pharmaverse.github.io/cards/latest-tag/reference/tidy_ard_order.html)
-(plus
-[`cards::tidy_ard_row_order()`](https://pharmaverse.github.io/cards/latest-tag/reference/tidy_ard_order.html)
-where relevant).
-
-Own errors raised as
-`cli::cli_abort("msg", call = get_cli_abort_call())`.
-
-Argument order: `data`, `variables`, `by`, function-specific args,
-`...`.
-
-Native pipe `|>`, two-space indent. Do not introduce `%>%` in package
-code.
-
-Internal helpers are dot-prefixed, in the same file, with
-`@keywords internal`.
+- [ ] File is `R/<function_name>.R`, named exactly after the function.
+  Function is named `ard_<package>_<function>()`.
+- [ ] **`set_cli_abort_call()` is the first line of the function body.**
+  No exceptions.
+- [ ] `check_pkg_installed("<pkg>")` before touching anything from
+  `Suggests`. Vector form for several:
+  `check_pkg_installed(c("car", "broom.helpers"))`.
+- [ ] Arguments validated with `check_not_missing()`, then
+  `check_data_frame()` / `check_class()`, then
+  `cards::process_selectors(data, by = {{ by }}, ...)`, then
+  post-resolution checks (`check_scalar()`, `check_range()`).
+- [ ] Empty-selection short circuit:
+  `if (is_empty(variables)) return(dplyr::tibble() |> cards::as_card(check = FALSE))`.
+- [ ] **Every statistical call is wrapped in
+  [`cards::eval_capture_conditions()`](https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html).**
+  Errors and warnings belong in the ARD’s `error`/`warning` columns,
+  never propagated. Data reshaping that could fail goes *inside* the
+  same block.
+- [ ] Class applied with `cards::as_card(check = FALSE)`. **Never**
+  `structure(..., class = "card")` or `class(x) <- "card"`.
+- [ ] Columns ordered with
+  [`cards::tidy_ard_column_order()`](https://pharmaverse.github.io/cards/latest-tag/reference/tidy_ard_order.html)
+  (plus
+  [`cards::tidy_ard_row_order()`](https://pharmaverse.github.io/cards/latest-tag/reference/tidy_ard_order.html)
+  where relevant).
+- [ ] Own errors raised as
+  `cli::cli_abort("msg", call = get_cli_abort_call())`.
+- [ ] Argument order: `data`, `variables`, `by`, function-specific args,
+  `...`.
+- [ ] Native pipe `|>`, two-space indent. Do not introduce `%>%` in
+  package code.
+- [ ] Internal helpers are dot-prefixed, in the same file, with
+  `@keywords internal`.
 
 ## The ARD contract
 
@@ -156,7 +146,9 @@ and do not add these packages as dependencies:
 - **Examples needing a suggested package must be guarded**, listing
   every suggested package the example touches:
 
-  `#' @examplesIf cardx:::is_pkg_installed("broom")`` ``#' @examplesIf cardx:::is_pkg_installed(c("survival", "broom", "ggsurvfit"))`
+  \
+  `#' @examplesIf cardx:::is_pkg_installed("broom")`\
+  `#' @examplesIf cardx:::is_pkg_installed(c("survival", "broom", "ggsurvfit"))`
 
   Use
   [`cards::ADSL`](https://pharmaverse.github.io/cards/latest-tag/reference/adam.html)
@@ -209,7 +201,12 @@ reporting done:
 
 ## Verification
 
-`styler``::`[`style_pkg`](https://styler.r-lib.org/reference/style_pkg.html)`(``)`` ``devtools``::`[`document`](https://devtools.r-lib.org/reference/document.html)`(``)`` ``devtools``::`[`test`](https://devtools.r-lib.org/reference/test.html)`(``)`` ``spelling``::`[`spell_check_package`](https://docs.ropensci.org/spelling//reference/spell_check_package.html)`(``)`` ``devtools``::`[`check`](https://devtools.r-lib.org/reference/check.html)`(``)`
+\
+`styler``::`[`style_pkg`](https://styler.r-lib.org/reference/style_pkg.html)`(``)`\
+`devtools``::`[`document`](https://devtools.r-lib.org/reference/document.html)`(``)`\
+`devtools``::`[`test`](https://devtools.r-lib.org/reference/test.html)`(``)`\
+`spelling``::`[`spell_check_package`](https://docs.ropensci.org/spelling//reference/spell_check_package.html)`(``)`\
+`devtools``::`[`check`](https://devtools.r-lib.org/reference/check.html)`(``)`
 
 [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
 is the real gate — it runs examples, so a missing or wrong `@examplesIf`

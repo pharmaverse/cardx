@@ -297,7 +297,16 @@ CRAN release: 2024-07-20
   functions names have *not* been deprecated.
   ([\#106](https://github.com/pharmaverse/cardx/issues/106))
 
-`ard_ttest``(``)`` ``->`` `[`ard_stats_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`` ``ard_paired_ttest``(``)`` ``->`` `[`ard_stats_paired_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`` ``ard_wilcoxtest``(``)`` ``->`` `[`ard_stats_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`` ``ard_paired_wilcoxtest``(``)`` ``->`` `[`ard_stats_paired_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`` ``ard_chisqtest``(``)`` ``->`` `[`ard_stats_chisq_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_chisq_test.md)`(``)`` ``ard_fishertest``(``)`` ``->`` `[`ard_stats_fisher_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_fisher_test.md)`(``)`` ``ard_kruskaltest``(``)`` ``->`` `[`ard_stats_kruskal_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_kruskal_test.md)`(``)`` ``ard_mcnemartest``(``)`` ``->`` `[`ard_stats_mcnemar_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mcnemar_test.md)`(``)`` ``ard_moodtest``(``)`` ``->`` `[`ard_stats_mood_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mood_test.md)`(``)`
+\
+`ard_ttest``(``)``             ``->`` `[`ard_stats_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`\
+`ard_paired_ttest``(``)``      ``->`` `[`ard_stats_paired_t_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)`(``)`\
+`ard_wilcoxtest``(``)``        ``->`` `[`ard_stats_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`\
+`ard_paired_wilcoxtest``(``)`` ``->`` `[`ard_stats_paired_wilcox_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_wilcox_test.md)`(``)`\
+`ard_chisqtest``(``)``         ``->`` `[`ard_stats_chisq_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_chisq_test.md)`(``)`\
+`ard_fishertest``(``)``        ``->`` `[`ard_stats_fisher_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_fisher_test.md)`(``)`\
+`ard_kruskaltest``(``)``       ``->`` `[`ard_stats_kruskal_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_kruskal_test.md)`(``)`\
+`ard_mcnemartest``(``)``       ``->`` `[`ard_stats_mcnemar_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mcnemar_test.md)`(``)`\
+`ard_moodtest``(``)``          ``->`` `[`ard_stats_mood_test`](https://pharmaverse.github.io/cardx/reference/ard_stats_mood_test.md)`(``)`
 
 #### New Features
 

@@ -97,8 +97,8 @@ an ARD data frame of class 'card'
 ## Details
 
 The formulas used to calculate the confidence interval for each CI type
-are as follows, where \\x_i\\ and \\t_i\\ represent the number of events
-and follow-up time for subject \\i\\, respectively.
+are as follows, where \\(x_i\\) and \\(t_i\\) represent the number of
+events and follow-up time for subject \\(i\\), respectively.
 
 - `byar`: Byar's approximation of a Poisson CI. A continuity correction
   of 0.5 is included in the calculation.
