@@ -2,6 +2,13 @@
 
 ## cardx (development version)
 
+- Clarified that
+  [`ard_stats_t_test()`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)
+  follows [`stats::t.test()`](https://rdrr.io/r/stats/t.test.html)
+  defaults and uses Welch’s t-test for unpaired two-sample comparisons.
+  ([\#347](https://github.com/pharmaverse/cardx/issues/347),
+  [@JorAlEs](https://github.com/JorAlEs))
+
 - Fixed bug in
   [`ard_summary.survey.design()`](https://pharmaverse.github.io/cardx/reference/ard_summary.survey.design.md)
   for survey designs where the `min` and `max` statistics were computed
