@@ -171,7 +171,7 @@ ard_incidence_rate <- function(data,
 
       dplyr::tibble(
         estimate = rate_est * n_person_time,
-        std.error = rate_se,
+        std.error = rate_se * n_person_time,
         conf.low = conf.low * n_person_time,
         conf.high = conf.high * n_person_time,
         conf.type = conf.type,
