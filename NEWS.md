@@ -1,6 +1,6 @@
 # cardx (development version)
 
-* Fixed bug in `ard_incidence_rate()` where `std.error` was reported per one unit of person-time while `estimate`, `conf.low` and `conf.high` were scaled by `n_person_time`; the standard error is now on the same per-`n_person_time` scale. (@chenyangsu)
+* Fixed bug in `ard_incidence_rate()` where `std.error` was reported per one unit of person-time while `estimate`, `conf.low` and `conf.high` were scaled by `n_person_time`; the standard error is now on the same per-`n_person_time` scale. (#366, @chenyangsu)
 
 * Clarified that `ard_stats_t_test()` follows `stats::t.test()` defaults and uses Welch's t-test for unpaired two-sample comparisons. (#347, @JorAlEs)
 
