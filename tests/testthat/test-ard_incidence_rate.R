@@ -40,6 +40,17 @@ test_that("ard_incidence_rate() works", {
   expect_equal(res$stat_label[1], "Incidence rate per 50 Person-Days")
 })
 
+test_that("ard_incidence_rate() reports std.error per `n_person_time`, like the estimate and CI", {
+  for (n_person_time in c(1, 100)) {
+    res <- adtte |>
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, n_person_time = n_person_time) |>
+      cards::get_ard_statistics()
+    z <- stats::qnorm(0.975)
+    expect_equal(res$conf.low, res$estimate - z * res$std.error)
+    expect_equal(res$conf.high, res$estimate + z * res$std.error)
+  }
+})
+
 test_that("ard_incidence_rate(conf.type) works", {
   # conf.type = "normal-log"
   expect_silent(
