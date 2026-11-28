@@ -560,7 +560,7 @@ Aim for full coverage of new code (generally 100%). Check with
 `styler``::`[`style_pkg`](https://styler.r-lib.org/reference/style_pkg.html)`(``)`\
 `devtools``::`[`document`](https://devtools.r-lib.org/reference/document.html)`(``)`\
 `devtools``::`[`test`](https://devtools.r-lib.org/reference/test.html)`(``)`\
-`spelling``::`[`spell_check_package`](https://docs.ropensci.org/spelling//reference/spell_check_package.html)`(``)`\
+`spelling``::`[`spell_check_package`](https://docs.ropensci.org/spelling/reference/spell_check_package.html)`(``)`\
 `devtools``::`[`check`](https://devtools.r-lib.org/reference/check.html)`(``)`
 
 [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)

@@ -66,7 +66,9 @@ ard_incidence_rate(
 - n_person_time:
 
   (`numeric`)\
-  amount of person-time to estimate incidence rate for. Defaults to 100.
+  amount of person-time to estimate incidence rate for. The `estimate`,
+  `conf.low`, `conf.high`, and `std.error` statistics are all reported
+  per `n_person_time` units of person-time. Defaults to 100.
 
 - unit_label:
 
@@ -136,18 +138,18 @@ data <- data.frame(
 data |>
   ard_incidence_rate(time = AETTE1, count = AETOT1, id = USUBJID, by = TRTA, unit_label = "years")
 #> # An ARD data frame: 27 × 10
-#>    group1 group1_level variable context   stat_name stat_label stat      fmt_fun
-#>    <chr>  <list>       <chr>    <chr>     <chr>     <chr>      <list>    <list> 
-#>  1 TRTA   A            AETTE1   incidenc… estimate  Incidence… 976.3053  1      
-#>  2 TRTA   A            AETTE1   incidenc… std.error Standard … 0.5783134 1      
-#>  3 TRTA   A            AETTE1   incidenc… conf.low  CI Lower … 862.958   1      
-#>  4 TRTA   A            AETTE1   incidenc… conf.high CI Upper … 1089.653  1      
-#>  5 TRTA   A            AETTE1   incidenc… conf.type CI Type    normal    <fn>   
-#>  6 TRTA   A            AETTE1   incidenc… conf.lev… CI Confid… 0.95      1      
-#>  7 TRTA   A            AETTE1   incidenc… tot_pers… Person-Ye… 29.19169  1      
-#>  8 TRTA   A            AETTE1   incidenc… n_events  Number of… 285       0      
-#>  9 TRTA   A            AETTE1   incidenc… N         Number of… 33        0      
-#> 10 TRTA   B            AETTE1   incidenc… estimate  Incidence… 1373.986  1      
+#>    group1 group1_level variable context    stat_name stat_label stat     fmt_fun
+#>    <chr>  <list>       <chr>    <chr>      <chr>     <chr>      <list>   <list> 
+#>  1 TRTA   A            AETTE1   incidence… estimate  Incidence… 976.3053 1      
+#>  2 TRTA   A            AETTE1   incidence… std.error Standard … 57.83134 1      
+#>  3 TRTA   A            AETTE1   incidence… conf.low  CI Lower … 862.958  1      
+#>  4 TRTA   A            AETTE1   incidence… conf.high CI Upper … 1089.653 1      
+#>  5 TRTA   A            AETTE1   incidence… conf.type CI Type    normal   <fn>   
+#>  6 TRTA   A            AETTE1   incidence… conf.lev… CI Confid… 0.95     1      
+#>  7 TRTA   A            AETTE1   incidence… tot_pers… Person-Ye… 29.19169 1      
+#>  8 TRTA   A            AETTE1   incidence… n_events  Number of… 285      0      
+#>  9 TRTA   A            AETTE1   incidence… N         Number of… 33       0      
+#> 10 TRTA   B            AETTE1   incidence… estimate  Incidence… 1373.986 1      
 #> # ℹ 17 more rows
 #> # ℹ 2 more variables: warning <list>, error <list>
 ```

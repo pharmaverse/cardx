@@ -2,6 +2,14 @@
 
 ## cardx (development version)
 
+- Fixed bug in
+  [`ard_incidence_rate()`](https://pharmaverse.github.io/cardx/reference/ard_incidence_rate.md)
+  where `std.error` was reported per one unit of person-time while
+  `estimate`, `conf.low` and `conf.high` were scaled by `n_person_time`;
+  the standard error is now on the same per-`n_person_time` scale.
+  ([\#366](https://github.com/pharmaverse/cardx/issues/366),
+  [@chenyangsu](https://github.com/chenyangsu))
+
 - Clarified that
   [`ard_stats_t_test()`](https://pharmaverse.github.io/cardx/reference/ard_stats_t_test.md)
   follows [`stats::t.test()`](https://rdrr.io/r/stats/t.test.html)
