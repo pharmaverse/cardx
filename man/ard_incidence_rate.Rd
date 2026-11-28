@@ -45,7 +45,9 @@ columns specified.
 Arguments may be used in conjunction with one another.}
 
 \item{n_person_time}{(\code{numeric})\cr
-amount of person-time to estimate incidence rate for. Defaults to 100.}
+amount of person-time to estimate incidence rate for. The \code{estimate}, \code{conf.low},
+\code{conf.high}, and \code{std.error} statistics are all reported per \code{n_person_time} units
+of person-time. Defaults to 100.}
 
 \item{unit_label}{(\code{string})\cr
 label for the unit of values in \code{time} and estimated person-time output (e.g. \code{"years"} for person-years,
