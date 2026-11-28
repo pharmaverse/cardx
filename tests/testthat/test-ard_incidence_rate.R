@@ -6,15 +6,13 @@ adsl_ae <- cards::ADSL |>
   ) |>
   dplyr::mutate(n_ae = dplyr::coalesce(.data$n_ae, 0L))
 
-# CNSR = 1 indicates censoring, so the event indicator is 1 - CNSR
-adtte <- cards::ADTTE |>
-  dplyr::mutate(EVENT = 1 - .data$CNSR)
+adtte <- cards::ADTTE
 
 test_that("ard_incidence_rate() works", {
   # default arguments
   expect_silent(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = "years")
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = "years")
   )
   expect_snapshot(res |> print(columns = "all"))
   expect_equal(res$stat_label[1], "Incidence rate per 100 Person-Years")
@@ -82,7 +80,7 @@ test_that("ard_incidence_rate() reports `n` and `N` correctly", {
 
   # labels
   res <- adtte |>
-    ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID)
+    ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID)
   expect_equal(
     res |> dplyr::filter(.data$stat_name %in% c("n", "N")) |> dplyr::pull("stat_label"),
     c("Number of Subjects with an Event", "Number of Subjects at Risk")
@@ -103,7 +101,7 @@ test_that("ard_incidence_rate(count = NULL) is deprecated", {
 test_that("ard_incidence_rate() reports std.error per `n_person_time`, like the estimate and CI", {
   for (n_person_time in c(1, 100)) {
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, n_person_time = n_person_time) |>
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, n_person_time = n_person_time) |>
       cards::get_ard_statistics()
     z <- stats::qnorm(0.975)
     expect_equal(res$conf.low, res$estimate - z * res$std.error)
@@ -115,21 +113,21 @@ test_that("ard_incidence_rate(conf.type) works", {
   # conf.type = "normal-log"
   expect_silent(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = "years", conf.type = "normal-log")
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = "years", conf.type = "normal-log")
   )
   expect_snapshot(res |> print(columns = "all"))
 
   # conf.type = "exact"
   expect_silent(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = "years", conf.type = "exact")
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = "years", conf.type = "exact")
   )
   expect_snapshot(res |> print(columns = "all"))
 
   # conf.type = "byar"
   expect_silent(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = "years", conf.type = "byar")
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = "years", conf.type = "byar")
   )
   expect_snapshot(res |> print(columns = "all"))
 })
@@ -138,21 +136,21 @@ test_that("ard_incidence_rate() errors are handled correctly", {
   # incorrect time
   expect_snapshot(
     res <- adtte |>
-      ard_incidence_rate(time = SEX, count = EVENT, id = USUBJID),
+      ard_incidence_rate(time = SEX, count = CNSR, id = USUBJID),
     error = TRUE
   )
 
   # incorrect unit_label
   expect_snapshot(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = 10),
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = 10),
     error = TRUE
   )
 
   # incorrect conf.type
   expect_snapshot(
     res <- adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, unit_label = "years", conf.type = "standard"),
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, unit_label = "years", conf.type = "standard"),
     error = TRUE
   )
 })
@@ -160,7 +158,7 @@ test_that("ard_incidence_rate() errors are handled correctly", {
 test_that("ard_incidence_rate() follows ard structure", {
   expect_silent(
     adtte |>
-      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, by = TRTA) |>
+      ard_incidence_rate(time = AVAL, count = CNSR, id = USUBJID, by = TRTA) |>
       cards::check_ard_structure(method = FALSE)
   )
 })
