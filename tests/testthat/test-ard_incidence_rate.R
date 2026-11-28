@@ -25,19 +25,36 @@ test_that("ard_incidence_rate() works", {
   expect_snapshot(res |> print(columns = "all"))
 
   # multiple rows per subject
-  expect_silent(
+  lifecycle::expect_deprecated(
     res <- adae |>
       ard_incidence_rate(time = time, unit_label = "days")
   )
   expect_snapshot(res |> print(columns = "all"))
 
   # custom arguments
-  expect_silent(
+  lifecycle::expect_deprecated(
     res <- adae |>
       ard_incidence_rate(time = time, id = USUBJID, n_person_time = 50, unit_label = "days")
   )
   expect_snapshot(res |> print(columns = "all"))
   expect_equal(res$stat_label[1], "Incidence rate per 50 Person-Days")
+})
+
+test_that("ard_incidence_rate() reports `n` and `N` correctly", {
+  # multiple rows per subject: a subject is counted once in `n` and `N`
+  res <- data.frame(
+    USUBJID = c("a", "a", "b", "b", "c"),
+    time = c(1, 2, 1, 1, 3),
+    count = c(0, 2, 0, 0, NA)
+  ) |>
+    ard_incidence_rate(time = time, count = count, id = USUBJID)
+  expect_equal(
+    res |> dplyr::filter(.data$stat_name %in% c("n", "N")) |> dplyr::pull("stat_label"),
+    c("Number of Subjects with an Event", "Number of Subjects at Risk")
+  )
+  res <- cards::get_ard_statistics(res)
+  expect_equal(res$n, 1L)
+  expect_equal(res$N, 3L)
 })
 
 test_that("ard_incidence_rate() reports std.error per `n_person_time`, like the estimate and CI", {

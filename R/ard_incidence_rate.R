@@ -3,17 +3,17 @@
 #' @description
 #'
 #' Function takes a time at risk variable (`time`) and event count variable (`count`) and calculates the incidence
-#' rate in person-years.
+#' rate per `n_person_time` units of person-time. The person-time unit is that of `time`, as described by `unit_label`.
 #'
 #' Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk
 #'
 #' @param data (`data.frame`)\cr
-#'   a data frame.
+#'   a data frame. Must include every subject at risk, including subjects without any events.
 #' @param time ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name of time at risk variable.
 #' @param count ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
-#'   column name of variable indicating count of events that occurred. If `NULL`, each row in `data` is assumed to
-#'   correspond to a single event occurrence.
+#'   column name of variable indicating count of events that occurred. Subjects with a `count` greater than zero
+#'   are counted as having an event in the `n` statistic.
 #' @param id ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name used to identify unique subjects in `data`. If `NULL`, each row in `data` is assumed to correspond to
 #'   a unique subject.
@@ -55,7 +55,7 @@
 #'
 #' * `exact`: Exact CI for a Poisson mean.
 #'
-#'   \deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
+#'   \deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i}} / {2 \sum{t_i}}}
 #'   \deqn{CI_{upper} = \chi^2_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
 #'
 #' @examples
@@ -91,6 +91,18 @@ ard_incidence_rate <- function(data,
   check_string(unit_label)
   check_scalar(count, allow_empty = TRUE)
   check_scalar(id, allow_empty = TRUE)
+
+  # deprecated `count = NULL` --------------------------------------------------
+  if (is_empty(count)) {
+    lifecycle::deprecate_soft(
+      when = "0.3.5",
+      what = "ard_incidence_rate(count = 'must be specified')",
+      details = paste(
+        "With `count = NULL`, each row of `data` is counted as one event. Because `data` must include",
+        "every subject at risk, this treats every subject as having an event, which is not meaningful."
+      )
+    )
+  }
   check_scalar_range(conf.level, c(0, 1))
   check_numeric(n_person_time)
   check_scalar(n_person_time)
@@ -136,14 +148,22 @@ ard_incidence_rate <- function(data,
 .calc_incidence_rate <- function(data, time, count, id, by, strata, n_person_time, unit_label, conf.level, conf.type) {
   cards::as_cards_fn(
     \(x, data, ...) {
-      # calculate number of unique IDs with >=1 event
+      # calculate number of unique subject IDs (with or without events)
       N <- if (!is_empty(id)) {
         sum(!is.na(unique(data[[id]])))
       } else {
         nrow(data)
       }
 
-      # calculate total person-years
+      # calculate number of unique subjects with >=1 event
+      n <- if (!is_empty(count)) {
+        has_event <- !is.na(data[[count]]) & data[[count]] > 0
+        if (!is_empty(id)) sum(!is.na(unique(data[[id]][has_event]))) else sum(has_event)
+      } else {
+        N
+      }
+
+      # calculate total person-time
       tot_person_time <- sum(x, na.rm = TRUE)
 
       # calculate total number of events
@@ -180,12 +200,13 @@ ard_incidence_rate <- function(data,
         conf.level = conf.level,
         tot_person_time = tot_person_time,
         n_events = n_events,
+        n = n,
         N = N
       )
     },
     stat_names = c(
       "estimate", "std.error", "conf.low", "conf.high", "conf.type", "conf.level",
-      "tot_person_time", "n_events", "N"
+      "tot_person_time", "n_events", "n", "N"
     )
   )
 }
@@ -203,6 +224,7 @@ ard_incidence_rate <- function(data,
     "conf.level", "CI Confidence Level",
     "tot_person_time", paste(time_unit, "at Risk"),
     "n_events", "Number of Events Observed",
-    "N", "Number of Subjects Observed"
+    "n", "Number of Subjects with an Event",
+    "N", "Number of Subjects at Risk"
   )
 }
