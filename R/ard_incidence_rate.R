@@ -3,7 +3,7 @@
 #' @description
 #'
 #' Function takes a time at risk variable (`time`) and event count variable (`count`) and calculates the incidence
-#' rate in person-years.
+#' rate per `n_person_time` units of person-time. The person-time unit is that of `time`, as described by `unit_label`.
 #'
 #' Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk
 #'
@@ -53,7 +53,7 @@
 #'
 #' * `exact`: Exact CI for a Poisson mean.
 #'
-#'   \deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
+#'   \deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i}} / {2 \sum{t_i}}}
 #'   \deqn{CI_{upper} = \chi^2_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
 #'
 #' @examples
@@ -134,14 +134,14 @@ ard_incidence_rate <- function(data,
 .calc_incidence_rate <- function(data, time, count, id, by, strata, n_person_time, unit_label, conf.level, conf.type) {
   cards::as_cards_fn(
     \(x, data, ...) {
-      # calculate number of unique IDs with >=1 event
+      # calculate number of unique subject IDs (with or without events)
       N <- if (!is_empty(id)) {
         sum(!is.na(unique(data[[id]])))
       } else {
         nrow(data)
       }
 
-      # calculate total person-years
+      # calculate total person-time
       tot_person_time <- sum(x, na.rm = TRUE)
 
       # calculate total number of events

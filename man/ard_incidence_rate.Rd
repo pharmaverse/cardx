@@ -65,7 +65,7 @@ an ARD data frame of class 'card'
 }
 \description{
 Function takes a time at risk variable (\code{time}) and event count variable (\code{count}) and calculates the incidence
-rate in person-years.
+rate per \code{n_person_time} units of person-time. The person-time unit is that of \code{time}, as described by \code{unit_label}.
 
 Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk
 }
@@ -85,7 +85,7 @@ time for subject \eqn{i}, respectively.
 \deqn{CI = \exp(\log(\sum{x_i} / \sum{t_i}) \pm Z_{1 - \alpha / 2} / \sqrt{\sum{x_i}})}
 \item \code{exact}: Exact CI for a Poisson mean.
 
-\deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
+\deqn{CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i}} / {2 \sum{t_i}}}
 \deqn{CI_{upper} = \chi^2_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}}
 }
 }
