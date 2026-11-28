@@ -22,7 +22,7 @@ BugReports: https://github.com/pharmaverse/cardx/issues
 Depends:
     R (>= 4.2)
 Imports:
-    cards (>= 0.8.0.9000),
+    cards (>= 0.9.0),
     cli (>= 3.6.1),
     dplyr (>= 1.2.0),
     glue (>= 1.6.2),
@@ -46,8 +46,6 @@ Suggests:
     survival (>= 3.6-4),
     testthat (>= 3.2.0),
     withr (>= 2.5.0)
-Remotes: 
-    pharmaverse/cards
 Config/Needs/website: insightsengineering/nesttemplate
 Config/roxygen2/version: 8.1.1
 Config/testthat/edition: 3
