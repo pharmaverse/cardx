@@ -1,4 +1,4 @@
-# cardx (development version)
+# cardx 0.3.5
 
 * Corrected the `ard_incidence_rate()` documentation: the `exact` confidence interval lower bound now shows the degrees of freedom the code uses, and the description no longer states that the rate is always in person-years. (#367)
 
