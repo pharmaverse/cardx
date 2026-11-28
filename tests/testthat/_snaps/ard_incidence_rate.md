@@ -23,18 +23,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context        stat_name stat_label stat      fmt_fun warning error 
-         <chr>    <chr>          <chr>     <chr>      <list>    <list>  <list>  <list>
-       1 TRTDUR   incidence_rate estimate  Incidence~ 4.039068  1       <NULL>  <NULL>
-       2 TRTDUR   incidence_rate std.error Standard ~ 0.1170376 1       <NULL>  <NULL>
-       3 TRTDUR   incidence_rate conf.low  CI Lower ~ 3.809679  1       <NULL>  <NULL>
-       4 TRTDUR   incidence_rate conf.high CI Upper ~ 4.268457  1       <NULL>  <NULL>
-       5 TRTDUR   incidence_rate conf.type CI Type    normal    <fn>    <NULL>  <NULL>
-       6 TRTDUR   incidence_rate conf.lev~ CI Confid~ 0.95      1       <NULL>  <NULL>
-       7 TRTDUR   incidence_rate tot_pers~ Person-Da~ 29487     1       <NULL>  <NULL>
-       8 TRTDUR   incidence_rate n_events  Number of~ 1191      0       <NULL>  <NULL>
-       9 TRTDUR   incidence_rate n         Number of~ 225       0       <NULL>  <NULL>
-      10 TRTDUR   incidence_rate N         Number of~ 254       0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 time     incidence_ra~ estimate  Incidence~ 2.187109   1       <NULL>  <NULL>
+       2 time     incidence_ra~ std.error Standard ~ 0.06491909 1       <NULL>  <NULL>
+       3 time     incidence_ra~ conf.low  CI Lower ~ 2.05987    1       <NULL>  <NULL>
+       4 time     incidence_ra~ conf.high CI Upper ~ 2.314348   1       <NULL>  <NULL>
+       5 time     incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
+       6 time     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 time     incidence_ra~ tot_pers~ Person-Da~ 51895      1       <NULL>  <NULL>
+       8 time     incidence_ra~ n_events  Number of~ 1135       0       <NULL>  <NULL>
+       9 time     incidence_ra~ n         Number of~ 217        0       <NULL>  <NULL>
+      10 time     incidence_ra~ N         Number of~ 217        0       <NULL>  <NULL>
 
 ---
 
@@ -44,16 +44,35 @@
       # An ARD data frame: 10 x 8
          variable context       stat_name stat_label stat       fmt_fun warning error 
          <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
-       1 TRTDUR   incidence_ra~ estimate  Incidence~ 2.019534   1       <NULL>  <NULL>
-       2 TRTDUR   incidence_ra~ std.error Standard ~ 0.05851878 1       <NULL>  <NULL>
-       3 TRTDUR   incidence_ra~ conf.low  CI Lower ~ 1.904839   1       <NULL>  <NULL>
-       4 TRTDUR   incidence_ra~ conf.high CI Upper ~ 2.134229   1       <NULL>  <NULL>
-       5 TRTDUR   incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
-       6 TRTDUR   incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
-       7 TRTDUR   incidence_ra~ tot_pers~ Person-Da~ 29487      1       <NULL>  <NULL>
-       8 TRTDUR   incidence_ra~ n_events  Number of~ 1191       0       <NULL>  <NULL>
-       9 TRTDUR   incidence_ra~ n         Number of~ 225        0       <NULL>  <NULL>
-      10 TRTDUR   incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
+       1 time     incidence_ra~ estimate  Incidence~ 2.154346   1       <NULL>  <NULL>
+       2 time     incidence_ra~ std.error Standard ~ 0.06271544 1       <NULL>  <NULL>
+       3 time     incidence_ra~ conf.low  CI Lower ~ 2.031426   1       <NULL>  <NULL>
+       4 time     incidence_ra~ conf.high CI Upper ~ 2.277266   1       <NULL>  <NULL>
+       5 time     incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
+       6 time     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 time     incidence_ra~ tot_pers~ Person-Da~ 54773      1       <NULL>  <NULL>
+       8 time     incidence_ra~ n_events  Number of~ 1180       0       <NULL>  <NULL>
+       9 time     incidence_ra~ n         Number of~ 1180       0       <NULL>  <NULL>
+      10 time     incidence_ra~ N         Number of~ 1180       0       <NULL>  <NULL>
+
+---
+
+    Code
+      print(res, columns = "all")
+    Output
+      # An ARD data frame: 10 x 8
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 time     incidence_ra~ estimate  Incidence~ 1.077173   1       <NULL>  <NULL>
+       2 time     incidence_ra~ std.error Standard ~ 0.03135772 1       <NULL>  <NULL>
+       3 time     incidence_ra~ conf.low  CI Lower ~ 1.015713   1       <NULL>  <NULL>
+       4 time     incidence_ra~ conf.high CI Upper ~ 1.138633   1       <NULL>  <NULL>
+       5 time     incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
+       6 time     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 time     incidence_ra~ tot_pers~ Person-Da~ 54773      1       <NULL>  <NULL>
+       8 time     incidence_ra~ n_events  Number of~ 1180       0       <NULL>  <NULL>
+       9 time     incidence_ra~ n         Number of~ 224        0       <NULL>  <NULL>
+      10 time     incidence_ra~ N         Number of~ 224        0       <NULL>  <NULL>
 
 # ard_incidence_rate(conf.type) works
 
