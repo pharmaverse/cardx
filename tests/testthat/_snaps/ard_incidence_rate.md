@@ -4,18 +4,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context     stat_name stat_label stat         fmt_fun warning error 
-         <chr>    <chr>       <chr>     <chr>      <list>       <list>  <list>  <list>
-       1 AVAL     incidence_~ estimate  Incidence~ 0.9019166    1       <NULL>  <NULL>
-       2 AVAL     incidence_~ std.error Standard ~ 0.0007315509 1       <NULL>  <NULL>
-       3 AVAL     incidence_~ conf.low  CI Lower ~ 0.7585352    1       <NULL>  <NULL>
-       4 AVAL     incidence_~ conf.high CI Upper ~ 1.045298     1       <NULL>  <NULL>
-       5 AVAL     incidence_~ conf.type CI Type    normal       <fn>    <NULL>  <NULL>
-       6 AVAL     incidence_~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
-       7 AVAL     incidence_~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
-       8 AVAL     incidence_~ n_events  Number of~ 152          1       <NULL>  <NULL>
-       9 AVAL     incidence_~ n         Number of~ 152          0       <NULL>  <NULL>
-      10 AVAL     incidence_~ N         Number of~ 254          0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 AVAL     incidence_ra~ estimate  Incidence~ 0.9019166  1       <NULL>  <NULL>
+       2 AVAL     incidence_ra~ std.error Standard ~ 0.07315509 1       <NULL>  <NULL>
+       3 AVAL     incidence_ra~ conf.low  CI Lower ~ 0.7585352  1       <NULL>  <NULL>
+       4 AVAL     incidence_ra~ conf.high CI Upper ~ 1.045298   1       <NULL>  <NULL>
+       5 AVAL     incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
+       6 AVAL     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 AVAL     incidence_ra~ tot_pers~ Person-Ye~ 16853      1       <NULL>  <NULL>
+       8 AVAL     incidence_ra~ n_events  Number of~ 152        1       <NULL>  <NULL>
+       9 AVAL     incidence_ra~ n         Number of~ 152        0       <NULL>  <NULL>
+      10 AVAL     incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
 
 ---
 
@@ -23,18 +23,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context      stat_name stat_label stat        fmt_fun warning error 
-         <chr>    <chr>        <chr>     <chr>      <list>      <list>  <list>  <list>
-       1 TRTDUR   incidence_r~ estimate  Incidence~ 4.039068    1       <NULL>  <NULL>
-       2 TRTDUR   incidence_r~ std.error Standard ~ 0.001170376 1       <NULL>  <NULL>
-       3 TRTDUR   incidence_r~ conf.low  CI Lower ~ 3.809679    1       <NULL>  <NULL>
-       4 TRTDUR   incidence_r~ conf.high CI Upper ~ 4.268457    1       <NULL>  <NULL>
-       5 TRTDUR   incidence_r~ conf.type CI Type    normal      <fn>    <NULL>  <NULL>
-       6 TRTDUR   incidence_r~ conf.lev~ CI Confid~ 0.95        1       <NULL>  <NULL>
-       7 TRTDUR   incidence_r~ tot_pers~ Person-Da~ 29487       1       <NULL>  <NULL>
-       8 TRTDUR   incidence_r~ n_events  Number of~ 1191        0       <NULL>  <NULL>
-       9 TRTDUR   incidence_r~ n         Number of~ 225         0       <NULL>  <NULL>
-      10 TRTDUR   incidence_r~ N         Number of~ 254         0       <NULL>  <NULL>
+         variable context        stat_name stat_label stat      fmt_fun warning error 
+         <chr>    <chr>          <chr>     <chr>      <list>    <list>  <list>  <list>
+       1 TRTDUR   incidence_rate estimate  Incidence~ 4.039068  1       <NULL>  <NULL>
+       2 TRTDUR   incidence_rate std.error Standard ~ 0.1170376 1       <NULL>  <NULL>
+       3 TRTDUR   incidence_rate conf.low  CI Lower ~ 3.809679  1       <NULL>  <NULL>
+       4 TRTDUR   incidence_rate conf.high CI Upper ~ 4.268457  1       <NULL>  <NULL>
+       5 TRTDUR   incidence_rate conf.type CI Type    normal    <fn>    <NULL>  <NULL>
+       6 TRTDUR   incidence_rate conf.lev~ CI Confid~ 0.95      1       <NULL>  <NULL>
+       7 TRTDUR   incidence_rate tot_pers~ Person-Da~ 29487     1       <NULL>  <NULL>
+       8 TRTDUR   incidence_rate n_events  Number of~ 1191      0       <NULL>  <NULL>
+       9 TRTDUR   incidence_rate n         Number of~ 225       0       <NULL>  <NULL>
+      10 TRTDUR   incidence_rate N         Number of~ 254       0       <NULL>  <NULL>
 
 ---
 
@@ -42,18 +42,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context      stat_name stat_label stat        fmt_fun warning error 
-         <chr>    <chr>        <chr>     <chr>      <list>      <list>  <list>  <list>
-       1 TRTDUR   incidence_r~ estimate  Incidence~ 2.019534    1       <NULL>  <NULL>
-       2 TRTDUR   incidence_r~ std.error Standard ~ 0.001170376 1       <NULL>  <NULL>
-       3 TRTDUR   incidence_r~ conf.low  CI Lower ~ 1.904839    1       <NULL>  <NULL>
-       4 TRTDUR   incidence_r~ conf.high CI Upper ~ 2.134229    1       <NULL>  <NULL>
-       5 TRTDUR   incidence_r~ conf.type CI Type    normal      <fn>    <NULL>  <NULL>
-       6 TRTDUR   incidence_r~ conf.lev~ CI Confid~ 0.95        1       <NULL>  <NULL>
-       7 TRTDUR   incidence_r~ tot_pers~ Person-Da~ 29487       1       <NULL>  <NULL>
-       8 TRTDUR   incidence_r~ n_events  Number of~ 1191        0       <NULL>  <NULL>
-       9 TRTDUR   incidence_r~ n         Number of~ 225         0       <NULL>  <NULL>
-      10 TRTDUR   incidence_r~ N         Number of~ 254         0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 TRTDUR   incidence_ra~ estimate  Incidence~ 2.019534   1       <NULL>  <NULL>
+       2 TRTDUR   incidence_ra~ std.error Standard ~ 0.05851878 1       <NULL>  <NULL>
+       3 TRTDUR   incidence_ra~ conf.low  CI Lower ~ 1.904839   1       <NULL>  <NULL>
+       4 TRTDUR   incidence_ra~ conf.high CI Upper ~ 2.134229   1       <NULL>  <NULL>
+       5 TRTDUR   incidence_ra~ conf.type CI Type    normal     <fn>    <NULL>  <NULL>
+       6 TRTDUR   incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 TRTDUR   incidence_ra~ tot_pers~ Person-Da~ 29487      1       <NULL>  <NULL>
+       8 TRTDUR   incidence_ra~ n_events  Number of~ 1191       0       <NULL>  <NULL>
+       9 TRTDUR   incidence_ra~ n         Number of~ 225        0       <NULL>  <NULL>
+      10 TRTDUR   incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
 
 # ard_incidence_rate(conf.type) works
 
@@ -61,18 +61,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context     stat_name stat_label stat         fmt_fun warning error 
-         <chr>    <chr>       <chr>     <chr>      <list>       <list>  <list>  <list>
-       1 AVAL     incidence_~ estimate  Incidence~ 0.9019166    1       <NULL>  <NULL>
-       2 AVAL     incidence_~ std.error Standard ~ 0.0007315509 1       <NULL>  <NULL>
-       3 AVAL     incidence_~ conf.low  CI Lower ~ 0.7693515    1       <NULL>  <NULL>
-       4 AVAL     incidence_~ conf.high CI Upper ~ 1.057324     1       <NULL>  <NULL>
-       5 AVAL     incidence_~ conf.type CI Type    normal-log   <fn>    <NULL>  <NULL>
-       6 AVAL     incidence_~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
-       7 AVAL     incidence_~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
-       8 AVAL     incidence_~ n_events  Number of~ 152          1       <NULL>  <NULL>
-       9 AVAL     incidence_~ n         Number of~ 152          0       <NULL>  <NULL>
-      10 AVAL     incidence_~ N         Number of~ 254          0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 AVAL     incidence_ra~ estimate  Incidence~ 0.9019166  1       <NULL>  <NULL>
+       2 AVAL     incidence_ra~ std.error Standard ~ 0.07315509 1       <NULL>  <NULL>
+       3 AVAL     incidence_ra~ conf.low  CI Lower ~ 0.7693515  1       <NULL>  <NULL>
+       4 AVAL     incidence_ra~ conf.high CI Upper ~ 1.057324   1       <NULL>  <NULL>
+       5 AVAL     incidence_ra~ conf.type CI Type    normal-log <fn>    <NULL>  <NULL>
+       6 AVAL     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 AVAL     incidence_ra~ tot_pers~ Person-Ye~ 16853      1       <NULL>  <NULL>
+       8 AVAL     incidence_ra~ n_events  Number of~ 152        1       <NULL>  <NULL>
+       9 AVAL     incidence_ra~ n         Number of~ 152        0       <NULL>  <NULL>
+      10 AVAL     incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
 
 ---
 
@@ -80,18 +80,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context     stat_name stat_label stat         fmt_fun warning error 
-         <chr>    <chr>       <chr>     <chr>      <list>       <list>  <list>  <list>
-       1 AVAL     incidence_~ estimate  Incidence~ 0.9019166    1       <NULL>  <NULL>
-       2 AVAL     incidence_~ std.error Standard ~ 0.0007315509 1       <NULL>  <NULL>
-       3 AVAL     incidence_~ conf.low  CI Lower ~ 0.7642353    1       <NULL>  <NULL>
-       4 AVAL     incidence_~ conf.high CI Upper ~ 1.057238     1       <NULL>  <NULL>
-       5 AVAL     incidence_~ conf.type CI Type    exact        <fn>    <NULL>  <NULL>
-       6 AVAL     incidence_~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
-       7 AVAL     incidence_~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
-       8 AVAL     incidence_~ n_events  Number of~ 152          1       <NULL>  <NULL>
-       9 AVAL     incidence_~ n         Number of~ 152          0       <NULL>  <NULL>
-      10 AVAL     incidence_~ N         Number of~ 254          0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 AVAL     incidence_ra~ estimate  Incidence~ 0.9019166  1       <NULL>  <NULL>
+       2 AVAL     incidence_ra~ std.error Standard ~ 0.07315509 1       <NULL>  <NULL>
+       3 AVAL     incidence_ra~ conf.low  CI Lower ~ 0.7642353  1       <NULL>  <NULL>
+       4 AVAL     incidence_ra~ conf.high CI Upper ~ 1.057238   1       <NULL>  <NULL>
+       5 AVAL     incidence_ra~ conf.type CI Type    exact      <fn>    <NULL>  <NULL>
+       6 AVAL     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 AVAL     incidence_ra~ tot_pers~ Person-Ye~ 16853      1       <NULL>  <NULL>
+       8 AVAL     incidence_ra~ n_events  Number of~ 152        1       <NULL>  <NULL>
+       9 AVAL     incidence_ra~ n         Number of~ 152        0       <NULL>  <NULL>
+      10 AVAL     incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
 
 ---
 
@@ -99,18 +99,18 @@
       print(res, columns = "all")
     Output
       # An ARD data frame: 10 x 8
-         variable context     stat_name stat_label stat         fmt_fun warning error 
-         <chr>    <chr>       <chr>     <chr>      <list>       <list>  <list>  <list>
-       1 AVAL     incidence_~ estimate  Incidence~ 0.9019166    1       <NULL>  <NULL>
-       2 AVAL     incidence_~ std.error Standard ~ 0.0007315509 1       <NULL>  <NULL>
-       3 AVAL     incidence_~ conf.low  CI Lower ~ 0.7669576    1       <NULL>  <NULL>
-       4 AVAL     incidence_~ conf.high CI Upper ~ 1.054041     1       <NULL>  <NULL>
-       5 AVAL     incidence_~ conf.type CI Type    byar         <fn>    <NULL>  <NULL>
-       6 AVAL     incidence_~ conf.lev~ CI Confid~ 0.95         1       <NULL>  <NULL>
-       7 AVAL     incidence_~ tot_pers~ Person-Ye~ 16853        1       <NULL>  <NULL>
-       8 AVAL     incidence_~ n_events  Number of~ 152          1       <NULL>  <NULL>
-       9 AVAL     incidence_~ n         Number of~ 152          0       <NULL>  <NULL>
-      10 AVAL     incidence_~ N         Number of~ 254          0       <NULL>  <NULL>
+         variable context       stat_name stat_label stat       fmt_fun warning error 
+         <chr>    <chr>         <chr>     <chr>      <list>     <list>  <list>  <list>
+       1 AVAL     incidence_ra~ estimate  Incidence~ 0.9019166  1       <NULL>  <NULL>
+       2 AVAL     incidence_ra~ std.error Standard ~ 0.07315509 1       <NULL>  <NULL>
+       3 AVAL     incidence_ra~ conf.low  CI Lower ~ 0.7669576  1       <NULL>  <NULL>
+       4 AVAL     incidence_ra~ conf.high CI Upper ~ 1.054041   1       <NULL>  <NULL>
+       5 AVAL     incidence_ra~ conf.type CI Type    byar       <fn>    <NULL>  <NULL>
+       6 AVAL     incidence_ra~ conf.lev~ CI Confid~ 0.95       1       <NULL>  <NULL>
+       7 AVAL     incidence_ra~ tot_pers~ Person-Ye~ 16853      1       <NULL>  <NULL>
+       8 AVAL     incidence_ra~ n_events  Number of~ 152        1       <NULL>  <NULL>
+       9 AVAL     incidence_ra~ n         Number of~ 152        0       <NULL>  <NULL>
+      10 AVAL     incidence_ra~ N         Number of~ 254        0       <NULL>  <NULL>
 
 # ard_incidence_rate() errors are handled correctly
 

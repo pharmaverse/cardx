@@ -100,6 +100,17 @@ test_that("ard_incidence_rate(count = NULL) is deprecated", {
   expect_equal(res$n, res$N)
 })
 
+test_that("ard_incidence_rate() reports std.error per `n_person_time`, like the estimate and CI", {
+  for (n_person_time in c(1, 100)) {
+    res <- adtte |>
+      ard_incidence_rate(time = AVAL, count = EVENT, id = USUBJID, n_person_time = n_person_time) |>
+      cards::get_ard_statistics()
+    z <- stats::qnorm(0.975)
+    expect_equal(res$conf.low, res$estimate - z * res$std.error)
+    expect_equal(res$conf.high, res$estimate + z * res$std.error)
+  }
+})
+
 test_that("ard_incidence_rate(conf.type) works", {
   # conf.type = "normal-log"
   expect_silent(

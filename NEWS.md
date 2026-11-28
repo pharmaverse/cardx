@@ -6,6 +6,8 @@
 
 * Soft-deprecated `ard_incidence_rate(count = NULL)`. Because `data` must include every subject at risk, counting each row as one event treats every subject as having an event, which is not meaningful. The `count` argument should always be specified. (#367)
 
+* Fixed bug in `ard_incidence_rate()` where `std.error` was reported per one unit of person-time while `estimate`, `conf.low` and `conf.high` were scaled by `n_person_time`; the standard error is now on the same per-`n_person_time` scale. (#366, @chenyangsu)
+
 * Clarified that `ard_stats_t_test()` follows `stats::t.test()` defaults and uses Welch's t-test for unpaired two-sample comparisons. (#347, @JorAlEs)
 
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)

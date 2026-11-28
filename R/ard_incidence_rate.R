@@ -22,7 +22,9 @@
 #'   column name used to identify unique subjects in `data`. If `NULL`, each row in `data` is assumed to correspond to
 #'   a unique subject.
 #' @param n_person_time (`numeric`)\cr
-#'   amount of person-time to estimate incidence rate for. Defaults to 100.
+#'   amount of person-time to estimate incidence rate for. The `estimate`, `conf.low`,
+#'   `conf.high`, and `std.error` statistics are all reported per `n_person_time` units
+#'   of person-time. Defaults to 100.
 #' @param unit_label (`string`)\cr
 #'   label for the unit of values in `time` and estimated person-time output (e.g. `"years"` for person-years,
 #'   `"days"` for person-days, etc.). If the desired person-time estimate unit does not match the current `time` unit,
@@ -195,7 +197,7 @@ ard_incidence_rate <- function(data,
 
       dplyr::tibble(
         estimate = rate_est * n_person_time,
-        std.error = rate_se,
+        std.error = rate_se * n_person_time,
         conf.low = conf.low * n_person_time,
         conf.high = conf.high * n_person_time,
         conf.type = conf.type,
