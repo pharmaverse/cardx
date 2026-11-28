@@ -14,10 +14,6 @@
 #' @param count ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name of variable indicating count of events that occurred. Subjects with a `count` greater than zero
 #'   are counted as having an event in the `n` statistic.
-#'
-#'   `r lifecycle::badge("deprecated")` `count = NULL` is soft-deprecated and `count` should always be specified.
-#'   With `count = NULL`, each row in `data` is counted as a single event occurrence. Because `data` must include
-#'   every subject at risk, this treats every subject as having an event, which is not meaningful.
 #' @param id ([`tidy-select`][dplyr::dplyr_tidy_select])\cr
 #'   column name used to identify unique subjects in `data`. If `NULL`, each row in `data` is assumed to correspond to
 #'   a unique subject.
