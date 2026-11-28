@@ -1,5 +1,7 @@
 # cardx (development version)
 
+* Corrected the `ard_incidence_rate()` documentation: the `exact` confidence interval lower bound now shows the degrees of freedom the code uses, and the description no longer states that the rate is always in person-years. (#367)
+
 * Clarified that `ard_stats_t_test()` follows `stats::t.test()` defaults and uses Welch's t-test for unpaired two-sample comparisons. (#347, @JorAlEs)
 
 * Fixed bug in `ard_summary.survey.design()` for survey designs where the `min` and `max` statistics were computed on the raw data column, bypassing the design: an observation with weight 0---which enters no point estimate---could set the reported extremes. The extremes are now computed over rows with positive weight. (#352, @amaltawfik)
