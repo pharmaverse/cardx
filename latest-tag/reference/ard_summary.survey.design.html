@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD Continuous Survey Statistics — ard_summary.survey.design">
 <meta name="description" content="Returns an ARD of weighted statistics using the {survey} package.">
 <meta property="og:description" content="Returns an ARD of weighted statistics using the {survey} package.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Continuous Survey Statistics</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_continuous.survey.design.R" class="external-link"><code>R/ard_continuous.survey.design.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_summary.survey.design.R" class="external-link"><code>R/ard_summary.survey.design.R</code></a></small>
       <div class="d-none name"><code>ard_summary.survey.design.Rd</code></div>
     </div>
 
@@ -94,7 +95,7 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for class 'survey.design'</span></span>
-<span><span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/ard_summary.html" class="external-link">ard_summary</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/ard_summary.html" class="external-link">ard_summary</a></span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  <span class="va">variables</span>,</span>
 <span>  by <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -133,7 +134,7 @@ including unobserved combinations and unobserved factor levels.</p></dd>
 
 <dt id="arg-statistic">statistic<a class="anchor" aria-label="anchor" href="#arg-statistic"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas,
 or a single formula where the list element is a character vector of
 statistic names to include. See below for options.</p></dd>
@@ -141,7 +142,7 @@ statistic names to include. See below for options.</p></dd>
 
 <dt id="arg-fmt-fun">fmt_fun<a class="anchor" aria-label="anchor" href="#arg-fmt-fun"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas,
 or a single formula where the list element is a named list of functions
 (or the RHS of a formula),
@@ -150,7 +151,7 @@ e.g. <code>list(mpg = list(mean = \(x) round(x, digits = 2) |&gt; as.character))
 
 <dt id="arg-stat-label">stat_label<a class="anchor" aria-label="anchor" href="#arg-stat-label"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas, or a single formula where
 the list element is either a named list or a list of formulas defining the
 statistic labels, e.g. <code>everything() ~ list(mean = "Mean", sd = "SD")</code> or
@@ -191,23 +192,24 @@ where 'p##' is are the percentiles and <code>##</code> is an integer between 0 a
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">api</span>, package <span class="op">=</span> <span class="st">"survey"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">dclus1</span> <span class="op">&lt;-</span> <span class="fu">survey</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html" class="external-link">svydesign</a></span><span class="op">(</span>id <span class="op">=</span> <span class="op">~</span><span class="va">dnum</span>, weights <span class="op">=</span> <span class="op">~</span><span class="va">pw</span>, data <span class="op">=</span> <span class="va">apiclus1</span>, fpc <span class="op">=</span> <span class="op">~</span><span class="va">fpc</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/ard_summary.html" class="external-link">ard_summary</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/ard_summary.html" class="external-link">ard_summary</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  data <span class="op">=</span> <span class="va">dclus1</span>,</span></span>
 <span class="r-in"><span>  variables <span class="op">=</span> <span class="va">api00</span>,</span></span>
 <span class="r-in"><span>  by <span class="op">=</span> <span class="va">stype</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 9 x 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 group1_level variable stat_name stat_label stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  stype            E    api00    median     Median  652</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  stype            H    api00    median     Median  608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  stype            M    api00    median     Median  642</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  stype            E    api00       p25  25% Perc…  553</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  stype            H    api00       p25  25% Perc…  529</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  stype            M    api00       p25  25% Perc…  547</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  stype            E    api00       p75  75% Perc…  729</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  stype            H    api00       p75  75% Perc…  703</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  stype            M    api00       p75  75% Perc…  699</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">4 more variables: context, fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 9 × 10</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 group1_level variable context    stat_name stat_label      stat fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> stype  E            api00    continuous median    Median           652       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> stype  H            api00    continuous median    Median           608       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> stype  M            api00    continuous median    Median           642       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> stype  E            api00    continuous p25       25% Percentile   553       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> stype  H            api00    continuous p25       25% Percentile   529       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> stype  M            api00    continuous p25       25% Percentile   547       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> stype  E            api00    continuous p75       75% Percentile   729       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> stype  H            api00    continuous p75       75% Percentile   703       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> stype  M            api00    continuous p75       75% Percentile   699       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;list&gt;, error &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

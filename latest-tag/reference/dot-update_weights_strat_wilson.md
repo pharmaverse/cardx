@@ -64,7 +64,7 @@ A `list` of 3 elements: `n_it`, `weights`, and `diff_v`.
 ## See also
 
 For references and details see
-[`proportion_ci_strat_wilson()`](https://insightsengineering.github.io/cardx/reference/proportion_ci.md).
+[`proportion_ci_strat_wilson()`](https://pharmaverse.github.io/cardx/reference/proportion_ci.md).
 
 ## Examples
 

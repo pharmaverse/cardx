@@ -27,7 +27,7 @@
 results from survival::survfit().">
 <meta property="og:description" content="Calculate differences in the Kaplan-Meier estimator of survival using the
 results from survival::survfit().">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -39,7 +39,7 @@ results from survival::survfit().">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,6 +55,7 @@ results from survival::survfit().">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -74,7 +75,7 @@ results from survival::survfit().">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -84,7 +85,7 @@ results from survival::survfit().">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Survival Differences</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_survival_survfit_diff.R" class="external-link"><code>R/ard_survival_survfit_diff.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_survival_survfit_diff.R" class="external-link"><code>R/ard_survival_survfit_diff.R</code></a></small>
       <div class="d-none name"><code>ard_survival_survfit_diff.Rd</code></div>
     </div>
 
@@ -136,34 +137,24 @@ confidence level for confidence interval. Default is <code>0.95</code>.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/pharmaverse/ggsurvfit" class="external-link">ggsurvfit</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/Surv_CNSR.html" class="external-link">Surv_CNSR</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="va">TRTA</span>, data <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADTTE</a></span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="http://www.danieldsjoberg.com/ggsurvfit/reference/Surv_CNSR.html" class="external-link">Surv_CNSR</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="va">TRTA</span>, data <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADTTE</a></span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_survival_survfit_diff</span><span class="op">(</span>times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">50</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 32 x 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable variable_level       stat_name stat_label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    TRTA    Xanomeli…     time             25 reference_level  referenc…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    TRTA    Xanomeli…     time             25          method     method</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    TRTA    Xanomeli…     time             25        estimate  Survival…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    TRTA    Xanomeli…     time             25       std.error  Survival…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    TRTA    Xanomeli…     time             25       statistic  z statis…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    TRTA    Xanomeli…     time             25        conf.low  CI Lower…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    TRTA    Xanomeli…     time             25       conf.high  CI Upper…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    TRTA    Xanomeli…     time             25         p.value    p-value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    TRTA    Xanomeli…     time             50 reference_level  referenc…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   TRTA    Xanomeli…     time             50          method     method</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Placebo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  Survival…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      0.293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      0.067</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      4.392</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6      0.162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      0.424</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    Placebo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Survival…</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">22 more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">Use `print(n = ...)` to see more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">4 more variables: context, fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 32 × 11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level         variable variable_level stat_name      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> TRTA   Xanomeline High Dose time                 25 reference_level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> TRTA   Xanomeline High Dose time                 25 method         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> TRTA   Xanomeline High Dose time                 25 estimate       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> TRTA   Xanomeline High Dose time                 25 std.error      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> TRTA   Xanomeline High Dose time                 25 statistic      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> TRTA   Xanomeline High Dose time                 25 conf.low       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> TRTA   Xanomeline High Dose time                 25 conf.high      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> TRTA   Xanomeline High Dose time                 25 p.value        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> TRTA   Xanomeline High Dose time                 50 reference_level</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> TRTA   Xanomeline High Dose time                 50 method         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: context &lt;chr&gt;, stat_label &lt;chr&gt;, stat &lt;list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fmt_fun &lt;list&gt;, warning &lt;list&gt;, error &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

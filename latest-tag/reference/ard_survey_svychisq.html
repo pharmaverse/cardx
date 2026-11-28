@@ -27,7 +27,7 @@
 Only two-way comparisons are supported.">
 <meta property="og:description" content="Analysis results data for survey Chi-Square test using survey::svychisq().
 Only two-way comparisons are supported.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -39,7 +39,7 @@ Only two-way comparisons are supported.">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,6 +55,7 @@ Only two-way comparisons are supported.">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -74,7 +75,7 @@ Only two-way comparisons are supported.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -84,7 +85,7 @@ Only two-way comparisons are supported.">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Survey Chi-Square Test</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_survey_svychisq.R" class="external-link"><code>R/ard_survey_svychisq.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_survey_svychisq.R" class="external-link"><code>R/ard_survey_svychisq.R</code></a></small>
       <div class="d-none name"><code>ard_survey_svychisq.Rd</code></div>
     </div>
 
@@ -151,14 +152,16 @@ for available statistics options.</p></dd>
 <span class="r-in"><span><span class="va">dclus1</span> <span class="op">&lt;-</span> <span class="fu">survey</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html" class="external-link">svydesign</a></span><span class="op">(</span>id <span class="op">=</span> <span class="op">~</span><span class="va">dnum</span>, weights <span class="op">=</span> <span class="op">~</span><span class="va">pw</span>, data <span class="op">=</span> <span class="va">apiclus1</span>, fpc <span class="op">=</span> <span class="op">~</span><span class="va">fpc</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ard_survey_svychisq</span><span class="op">(</span><span class="va">dclus1</span>, variables <span class="op">=</span> <span class="va">sch.wide</span>, by <span class="op">=</span> <span class="va">comp.imp</span>, statistic <span class="op">=</span> <span class="st">"F"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 5 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     group1 variable   context stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 comp.imp sch.wide survey_s…       ndf  Nominato…         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 comp.imp sch.wide survey_s…       ddf  Denomina…        14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 comp.imp sch.wide survey_s… statistic  Statistic   236.895</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 comp.imp sch.wide survey_s…   p.value    p-value         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 comp.imp sch.wide survey_s…    method     method Pearson'…</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 5 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1   variable context      stat_name stat                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> comp.imp sch.wide survey_svyc… ndf       1                                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> comp.imp sch.wide survey_svyc… ddf       14                                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> comp.imp sch.wide survey_svyc… statistic 236.8947                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> comp.imp sch.wide survey_svyc… p.value   3.617927e-10                         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> comp.imp sch.wide survey_svyc… method    Pearson's X^2: Rao &amp; Scott adjustment</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: stat_label &lt;chr&gt;, fmt_fun &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

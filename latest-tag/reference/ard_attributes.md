@@ -57,11 +57,11 @@ ard_attributes(
   variables = c(sname, dname),
   label = list(sname = "School Name", dname = "District Name")
 )
-#> {cards} data frame: 4 x 8
-#>   variable   context stat_name stat_label      stat fmt_fun
-#> 1    sname attribut…     label  Variable… School N…    <fn>
-#> 2    sname attribut…     class  Variable… character    NULL
-#> 3    dname attribut…     label  Variable… District…    <fn>
-#> 4    dname attribut…     class  Variable… character    NULL
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 4 × 8
+#>   variable context    stat_name stat_label     stat       fmt_fun warning error 
+#> * <chr>    <chr>      <chr>     <chr>          <list>     <list>  <list>  <list>
+#> 1 sname    attributes label     Variable Label School Na… <fn>    <NULL>  <NULL>
+#> 2 sname    attributes class     Variable Class character  <NULL>  <NULL>  <NULL>
+#> 3 dname    attributes label     Variable Label District … <fn>    <NULL>  <NULL>
+#> 4 dname    attributes class     Variable Class character  <NULL>  <NULL>  <NULL>
 ```

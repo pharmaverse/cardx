@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD Dichotomous Survey Statistics — ard_tabulate_value.survey.design">
 <meta name="description" content="Compute Analysis Results Data (ARD) for dichotomous summary statistics.">
 <meta property="og:description" content="Compute Analysis Results Data (ARD) for dichotomous summary statistics.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Dichotomous Survey Statistics</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_tabulate_value.survey.design.R" class="external-link"><code>R/ard_tabulate_value.survey.design.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_tabulate_value.survey.design.R" class="external-link"><code>R/ard_tabulate_value.survey.design.R</code></a></small>
       <div class="d-none name"><code>ard_tabulate_value.survey.design.Rd</code></div>
     </div>
 
@@ -94,11 +95,11 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for class 'survey.design'</span></span>
-<span><span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate_value.html" class="external-link">ard_tabulate_value</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate_value.html" class="external-link">ard_tabulate_value</a></span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  <span class="va">variables</span>,</span>
 <span>  by <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  value <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/maximum_variable_value.html" class="external-link">maximum_variable_value</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">variables</span><span class="op">[</span><span class="va">variables</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>  value <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/maximum_variable_value.html" class="external-link">maximum_variable_value</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">variables</span><span class="op">[</span><span class="va">variables</span><span class="op">]</span><span class="op">)</span>,</span>
 <span>  statistic <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html" class="external-link">everything</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"n"</span>, <span class="st">"N"</span>, <span class="st">"p"</span>, <span class="st">"p.std.error"</span>, <span class="st">"n_unweighted"</span>,</span>
 <span>    <span class="st">"N_unweighted"</span>, <span class="st">"p_unweighted"</span><span class="op">)</span>,</span>
 <span>  denominator <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"column"</span>, <span class="st">"row"</span>, <span class="st">"cell"</span><span class="op">)</span>,</span>
@@ -146,7 +147,7 @@ which returns the largest/last value after a sort.</p></dd>
 
 <dt id="arg-statistic">statistic<a class="anchor" aria-label="anchor" href="#arg-statistic"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas,
 or a single formula where the list element is a character vector of
 statistic names to include. See default value for options.</p></dd>
@@ -161,7 +162,7 @@ a string indicating the type proportions to calculate. Must be one of
 
 <dt id="arg-fmt-fun">fmt_fun<a class="anchor" aria-label="anchor" href="#arg-fmt-fun"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas,
 or a single formula where the list element is a named list of functions
 (or the RHS of a formula),
@@ -170,7 +171,7 @@ e.g. <code>list(mpg = list(mean = \(x) round(x, digits = 2) |&gt; as.character()
 
 <dt id="arg-stat-label">stat_label<a class="anchor" aria-label="anchor" href="#arg-stat-label"></a>
 </dt>
-<dd><p>(<code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
+<dd><p>(<code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html" class="external-link">formula-list-selector</a></code>)<br>
 a named list, a list of formulas, or a single formula where
 the list element is either a named list or a list of formulas defining the
 statistic labels, e.g. <code>everything() ~ list(mean = "Mean", sd = "SD")</code> or
@@ -198,22 +199,23 @@ statistic labels, e.g. <code>everything() ~ list(mean = "Mean", sd = "SD")</code
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">survey</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html" class="external-link">svydesign</a></span><span class="op">(</span>ids <span class="op">=</span> <span class="op">~</span><span class="fl">1</span>, data <span class="op">=</span> <span class="va">mtcars</span>, weights <span class="op">=</span> <span class="op">~</span><span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate_value.html" class="external-link">ard_tabulate_value</a></span><span class="op">(</span>by <span class="op">=</span> <span class="va">vs</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cyl</span>, <span class="va">am</span><span class="op">)</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 28 x 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable variable_level    stat_name stat_label  stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      vs            0      cyl              4            n          n     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      vs            0      cyl              4            N          N    18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      vs            0      cyl              4            p          % 0.056</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      vs            0      cyl              4  p.std.error      SE(%) 0.055</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      vs            0       am              1            n          n     6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6      vs            0       am              1            N          N    18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      vs            0       am              1            p          % 0.333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8      vs            0       am              1  p.std.error      SE(%) 0.113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9      vs            0      cyl              4 n_unweighted  Unweight…     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10     vs            0      cyl              4 N_unweighted  Unweight…    18</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">18 more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">Use `print(n = ...)` to see more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">4 more variables: context, fmt_fun, warning, error</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate_value.html" class="external-link">ard_tabulate_value</a></span><span class="op">(</span>by <span class="op">=</span> <span class="va">vs</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">cyl</span>, <span class="va">am</span><span class="op">)</span>, value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 28 × 11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable variable_level context     stat_name       stat</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> vs                0 cyl                   4 dichotomous n             1     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> vs                0 cyl                   4 dichotomous N            18     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> vs                0 cyl                   4 dichotomous p             0.055<span style="text-decoration: underline;">6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> vs                0 cyl                   4 dichotomous p.std.error   0.054<span style="text-decoration: underline;">9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> vs                0 am                    1 dichotomous n             6     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> vs                0 am                    1 dichotomous N            18     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> vs                0 am                    1 dichotomous p             0.333 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> vs                0 am                    1 dichotomous p.std.error   0.113 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> vs                0 cyl                   4 dichotomous n_unweighted  1     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> vs                0 cyl                   4 dichotomous N_unweighted 18     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: stat_label &lt;chr&gt;, fmt_fun &lt;list&gt;, warning &lt;list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

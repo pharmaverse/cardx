@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD 2-sample proportion test — ard_stats_prop_test">
 <meta name="description" content="Analysis results data for a 2-sample test or proportions using stats::prop.test().">
 <meta property="og:description" content="Analysis results data for a 2-sample test or proportions using stats::prop.test().">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD 2-sample proportion test</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_stats_prop_test.R" class="external-link"><code>R/ard_stats_prop_test.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_stats_prop_test.R" class="external-link"><code>R/ard_stats_prop_test.R</code></a></small>
       <div class="d-none name"><code>ard_stats_prop_test.Rd</code></div>
     </div>
 
@@ -144,22 +145,24 @@ confidence level for confidence interval. Default is <code>0.95</code>.</p></dd>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">mtcars</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_stats_prop_test</span><span class="op">(</span>by <span class="op">=</span> <span class="va">vs</span>, variables <span class="op">=</span> <span class="va">am</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 13 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1      vs       am stats_pr…    estimate  Rate Dif…    -0.167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      vs       am stats_pr…   estimate1  Group 1 …     0.333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      vs       am stats_pr…   estimate2  Group 2 …       0.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      vs       am stats_pr…   statistic  X-square…     0.348</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      vs       am stats_pr…     p.value    p-value     0.556</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6      vs       am stats_pr…   parameter  Degrees …         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      vs       am stats_pr…    conf.low  CI Lower…    -0.571</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8      vs       am stats_pr…   conf.high  CI Upper…     0.237</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9      vs       am stats_pr…      method     method 2-sample…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10     vs       am stats_pr… alternative  alternat… two.sided</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11     vs       am stats_pr…           p          p          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12     vs       am stats_pr…  conf.level  CI Confi…      0.95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13     vs       am stats_pr…     correct  Yates' c…      TRUE</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 13 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable stat_name  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> vs     am       estimate   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> vs     am       estimate1  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> vs     am       estimate2  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> vs     am       statistic  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> vs     am       p.value    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> vs     am       parameter  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> vs     am       conf.low   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> vs     am       conf.high  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> vs     am       method     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> vs     am       alternative</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> vs     am       p          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> vs     am       conf.level </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> vs     am       correct    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: context &lt;chr&gt;, stat_label &lt;chr&gt;, stat &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fmt_fun &lt;named list&gt;, warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

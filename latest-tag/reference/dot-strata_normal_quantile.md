@@ -30,7 +30,7 @@ Stratified quantile.
 
 ## See also
 
-[`proportion_ci_strat_wilson()`](https://insightsengineering.github.io/cardx/reference/proportion_ci.md)
+[`proportion_ci_strat_wilson()`](https://pharmaverse.github.io/cardx/reference/proportion_ci.md)
 
 ## Examples
 

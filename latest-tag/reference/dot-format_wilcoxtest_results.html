@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Convert Wilcoxon test to ARD — .format_wilcoxtest_results">
 <meta name="description" content="Convert Wilcoxon test to ARD">
 <meta property="og:description" content="Convert Wilcoxon test to ARD">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Convert Wilcoxon test to ARD</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_stats_wilcox_test.R" class="external-link"><code>R/ard_stats_wilcox_test.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_stats_wilcox_test.R" class="external-link"><code>R/ard_stats_wilcox_test.R</code></a></small>
       <div class="d-none name"><code>dot-format_wilcoxtest_results.Rd</code></div>
     </div>
 
@@ -115,7 +116,7 @@
 <dt id="arg-lst-tidy">lst_tidy<a class="anchor" aria-label="anchor" href="#arg-lst-tidy"></a>
 </dt>
 <dd><p>(named <code>list</code>)<br>
-list of tidied results constructed with <code><a href="https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html" class="external-link">eval_capture_conditions()</a></code>,
+list of tidied results constructed with <code><a href="https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html" class="external-link">eval_capture_conditions()</a></code>,
 e.g. <code>eval_capture_conditions(t.test(mtcars$mpg ~ mtcars$am) |&gt; broom::tidy())</code>.</p></dd>
 
 
@@ -140,7 +141,7 @@ e.g. <code>eval_capture_conditions(t.test(mtcars$mpg ~ mtcars$am) |&gt; broom::t
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Pre-processing ADSL to have grouping factor (ARM here) with 2 levels</span></span></span>
-<span class="r-in"><span><span class="va">ADSL</span> <span class="op">&lt;-</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span><span class="va">ADSL</span> <span class="op">&lt;-</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">ARM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="ard_stats_wilcox_test.html">ard_stats_wilcox_test</a></span><span class="op">(</span>by <span class="op">=</span> <span class="st">"ARM"</span>, variables <span class="op">=</span> <span class="st">"AGE"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
@@ -149,26 +150,26 @@ e.g. <code>eval_capture_conditions(t.test(mtcars$mpg ~ mtcars$am) |&gt; broom::t
 <span class="r-in"><span>  variable <span class="op">=</span> <span class="st">"AGE"</span>,</span></span>
 <span class="r-in"><span>  paired <span class="op">=</span> <span class="cn">FALSE</span>,</span></span>
 <span class="r-in"><span>  lst_tidy <span class="op">=</span></span></span>
-<span class="r-in"><span>    <span class="fu">cards</span><span class="fu">::</span><span class="fu"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html" class="external-link">eval_capture_conditions</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu">cards</span><span class="fu">::</span><span class="fu"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html" class="external-link">eval_capture_conditions</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>      <span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html" class="external-link">wilcox.test</a></span><span class="op">(</span><span class="va">ADSL</span><span class="op">[[</span><span class="st">"AGE"</span><span class="op">]</span><span class="op">]</span> <span class="op">~</span> <span class="va">ADSL</span><span class="op">[[</span><span class="st">"ARM"</span><span class="op">]</span><span class="op">]</span>, paired <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>        <span class="fu">broom</span><span class="fu">::</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 12 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable   stat_name stat_label  stat     error</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     ARM      AGE   statistic  X-square…       cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     ARM      AGE     p.value    p-value       cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     ARM      AGE      method     method       cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     ARM      AGE alternative  alternat…       cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     ARM      AGE          mu         mu     0 cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     ARM      AGE      paired  Paired t… FALSE cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     ARM      AGE       exact      exact       cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     ARM      AGE     correct    correct  TRUE cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     ARM      AGE    conf.int   conf.int FALSE cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    ARM      AGE  conf.level  CI Confi…  0.95 cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    ARM      AGE    tol.root   tol.root     0 cannot u…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12    ARM      AGE digits.rank  digits.r…   Inf cannot u…</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: context, fmt_fun, warning</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 12 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable context     stat_name stat_label stat   fmt_fun warning error</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;name&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span> <span style="color: #949494; font-style: italic;">&lt;nam&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ARM    AGE      stats_wilc… statistic X-squared… <span style="color: #949494;">&lt;NULL&gt;</span> <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ARM    AGE      stats_wilc… p.value   p-value    <span style="color: #949494;">&lt;NULL&gt;</span> <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ARM    AGE      stats_wilc… method    method     <span style="color: #949494;">&lt;NULL&gt;</span> <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ARM    AGE      stats_wilc… alternat… alternati… <span style="color: #949494;">&lt;NULL&gt;</span> <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> ARM    AGE      stats_wilc… mu        mu         0      1       <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> ARM    AGE      stats_wilc… paired    Paired te… FALSE  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ARM    AGE      stats_wilc… exact     exact      <span style="color: #949494;">&lt;NULL&gt;</span> <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ARM    AGE      stats_wilc… correct   correct    TRUE   <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ARM    AGE      stats_wilc… conf.int  conf.int   FALSE  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ARM    AGE      stats_wilc… conf.lev… CI Confid… 0.95   1       <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> ARM    AGE      stats_wilc… tol.root  tol.root   1e-04  1       <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> ARM    AGE      stats_wilc… digits.r… digits.ra… Inf    1       <span style="color: #949494;">&lt;NULL&gt;</span>  cann…</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

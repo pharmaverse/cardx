@@ -27,7 +27,7 @@
 using effectsize::hedges_g().">
 <meta property="og:description" content="Analysis results data for paired and non-paired Hedge's G Effect Size Test
 using effectsize::hedges_g().">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -39,7 +39,7 @@ using effectsize::hedges_g().">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,6 +55,7 @@ using effectsize::hedges_g().">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -74,7 +75,7 @@ using effectsize::hedges_g().">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -84,7 +85,7 @@ using effectsize::hedges_g().">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Hedge's G Test</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_effectsize_hedges_g.R" class="external-link"><code>R/ard_effectsize_hedges_g.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_effectsize_hedges_g.R" class="external-link"><code>R/ard_effectsize_hedges_g.R</code></a></small>
       <div class="d-none name"><code>ard_effectsize_hedges_g.Rd</code></div>
     </div>
 
@@ -164,43 +165,44 @@ The data are then passed as
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">ARM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_effectsize_hedges_g</span><span class="op">(</span>by <span class="op">=</span> <span class="va">ARM</span>, variables <span class="op">=</span> <span class="va">AGE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 9 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    ARM      AGE effectsi…    estimate  Effect S…       0.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    ARM      AGE effectsi…  conf.level  CI Confi…      0.95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    ARM      AGE effectsi…    conf.low  CI Lower…      -0.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    ARM      AGE effectsi…   conf.high  CI Upper…     0.399</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    ARM      AGE effectsi…      method     method Hedge's G</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    ARM      AGE effectsi…          mu    H0 Mean         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    ARM      AGE effectsi…      paired  Paired t…     FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    ARM      AGE effectsi…   pooled_sd  Pooled S…      TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    ARM      AGE effectsi… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 9 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context stat_name stat_label stat       fmt_fun warning error </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named li&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span> <span style="color: #949494; font-style: italic;">&lt;name&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ARM    AGE      effect… estimate  Effect Si… 0.09995903 1       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> ARM    AGE      effect… conf.lev… CI Confid… 0.95       1       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ARM    AGE      effect… conf.low  CI Lower … -0.1997009 1       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> ARM    AGE      effect… conf.high CI Upper … 0.399322   1       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> ARM    AGE      effect… method    method     Hedge's G  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> ARM    AGE      effect… mu        H0 Mean    0          1       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> ARM    AGE      effect… paired    Paired te… FALSE      <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> ARM    AGE      effect… pooled_sd Pooled St… TRUE       <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> ARM    AGE      effect… alternat… Alternati… two.sided  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span>  <span style="color: #949494;">&lt;NULL&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># constructing a paired data set,</span></span></span>
 <span class="r-in"><span><span class="co"># where patients receive both treatments</span></span></span>
-<span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ARM"</span>, <span class="st">"AGE"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ARM"</span>, <span class="st">"AGE"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">ARM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>.by <span class="op">=</span> <span class="va">ARM</span>, USUBJID <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/row_number.html" class="external-link">row_number</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">ARM</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">USUBJID</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_effectsize_paired_hedges_g</span><span class="op">(</span>by <span class="op">=</span> <span class="va">ARM</span>, variables <span class="op">=</span> <span class="va">AGE</span>, id <span class="op">=</span> <span class="va">USUBJID</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 9 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    ARM      AGE effectsi…    estimate  Effect S…     0.068</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    ARM      AGE effectsi…  conf.level  CI Confi…      0.95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    ARM      AGE effectsi…    conf.low  CI Lower…    -0.144</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    ARM      AGE effectsi…   conf.high  CI Upper…      0.28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    ARM      AGE effectsi…      method     method Paired H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    ARM      AGE effectsi…          mu    H0 Mean         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    ARM      AGE effectsi…      paired  Paired t…      TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    ARM      AGE effectsi…   pooled_sd  Pooled S…      TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    ARM      AGE effectsi… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 9 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context          stat_name stat_label stat             fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> ARM    AGE      effectsize_hedg… estimate  Effect Si… 0.06795119       1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> ARM    AGE      effectsize_hedg… conf.lev… CI Confid… 0.95             1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ARM    AGE      effectsize_hedg… conf.low  CI Lower … -0.1444143       1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> ARM    AGE      effectsize_hedg… conf.high CI Upper … 0.2799087        1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> ARM    AGE      effectsize_hedg… method    method     Paired Hedge's G <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> ARM    AGE      effectsize_hedg… mu        H0 Mean    0                1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> ARM    AGE      effectsize_hedg… paired    Paired te… TRUE             <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> ARM    AGE      effectsize_hedg… pooled_sd Pooled St… TRUE             <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> ARM    AGE      effectsize_hedg… alternat… Alternati… two.sided        <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

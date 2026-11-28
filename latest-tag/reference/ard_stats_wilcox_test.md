@@ -64,21 +64,23 @@ data are then passed as
 cards::ADSL |>
   dplyr::filter(ARM %in% c("Placebo", "Xanomeline High Dose")) |>
   ard_stats_wilcox_test(by = "ARM", variables = "AGE")
-#> {cards} data frame: 12 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1     ARM      AGE stats_wi…   statistic  X-square…    3862.5
-#> 2     ARM      AGE stats_wi…     p.value    p-value     0.435
-#> 3     ARM      AGE stats_wi…      method     method Wilcoxon…
-#> 4     ARM      AGE stats_wi… alternative  alternat… two.sided
-#> 5     ARM      AGE stats_wi…          mu         mu         0
-#> 6     ARM      AGE stats_wi…      paired  Paired t…     FALSE
-#> 7     ARM      AGE stats_wi…       exact      exact          
-#> 8     ARM      AGE stats_wi…     correct    correct      TRUE
-#> 9     ARM      AGE stats_wi…    conf.int   conf.int     FALSE
-#> 10    ARM      AGE stats_wi…  conf.level  CI Confi…      0.95
-#> 11    ARM      AGE stats_wi…    tol.root   tol.root         0
-#> 12    ARM      AGE stats_wi… digits.rank  digits.r…       Inf
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    group1 variable stat_name   stat                                             
+#>    <chr>  <chr>    <chr>       <named list>                                     
+#>  1 ARM    AGE      statistic   3862.5                                           
+#>  2 ARM    AGE      p.value     0.4354637                                        
+#>  3 ARM    AGE      method      Wilcoxon rank sum test with continuity correction
+#>  4 ARM    AGE      alternative two.sided                                        
+#>  5 ARM    AGE      mu          0                                                
+#>  6 ARM    AGE      paired      FALSE                                            
+#>  7 ARM    AGE      exact       <NULL>                                           
+#>  8 ARM    AGE      correct     TRUE                                             
+#>  9 ARM    AGE      conf.int    FALSE                                            
+#> 10 ARM    AGE      conf.level  0.95                                             
+#> 11 ARM    AGE      tol.root    1e-04                                            
+#> 12 ARM    AGE      digits.rank Inf                                              
+#> # ℹ 5 more variables: context <chr>, stat_label <chr>, fmt_fun <named list>,
+#> #   warning <named list>, error <named list>
 
 # constructing a paired data set,
 # where patients receive both treatments
@@ -87,19 +89,21 @@ cards::ADSL[c("ARM", "AGE")] |>
   dplyr::mutate(.by = ARM, USUBJID = dplyr::row_number()) |>
   dplyr::arrange(USUBJID, ARM) |>
   ard_stats_paired_wilcox_test(by = ARM, variables = AGE, id = USUBJID)
-#> {cards} data frame: 12 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1     ARM      AGE stats_wi…   statistic  X-square…      1754
-#> 2     ARM      AGE stats_wi…     p.value    p-value     0.522
-#> 3     ARM      AGE stats_wi…      method     method Wilcoxon…
-#> 4     ARM      AGE stats_wi… alternative  alternat… two.sided
-#> 5     ARM      AGE stats_wi…          mu         mu         0
-#> 6     ARM      AGE stats_wi…      paired  Paired t…      TRUE
-#> 7     ARM      AGE stats_wi…       exact      exact          
-#> 8     ARM      AGE stats_wi…     correct    correct      TRUE
-#> 9     ARM      AGE stats_wi…    conf.int   conf.int     FALSE
-#> 10    ARM      AGE stats_wi…  conf.level  CI Confi…      0.95
-#> 11    ARM      AGE stats_wi…    tol.root   tol.root         0
-#> 12    ARM      AGE stats_wi… digits.rank  digits.r…       Inf
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    group1 variable stat_name  
+#>    <chr>  <chr>    <chr>      
+#>  1 ARM    AGE      statistic  
+#>  2 ARM    AGE      p.value    
+#>  3 ARM    AGE      method     
+#>  4 ARM    AGE      alternative
+#>  5 ARM    AGE      mu         
+#>  6 ARM    AGE      paired     
+#>  7 ARM    AGE      exact      
+#>  8 ARM    AGE      correct    
+#>  9 ARM    AGE      conf.int   
+#> 10 ARM    AGE      conf.level 
+#> 11 ARM    AGE      tol.root   
+#> 12 ARM    AGE      digits.rank
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <named list>,
+#> #   fmt_fun <named list>, warning <named list>, error <named list>
 ```

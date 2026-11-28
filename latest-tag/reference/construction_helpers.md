@@ -147,8 +147,8 @@ construct_model(
 #>   effect   group term            estimate std.error statistic p.value
 #>   <chr>    <chr> <chr>              <dbl>     <dbl>     <dbl>   <dbl>
 #> 1 fixed    NA    (Intercept)       -8.70      4.12      -2.11  0.0347
-#> 2 fixed    NA    mpg                0.409     0.199      2.05  0.0403
-#> 3 ran_pars vs    sd__(Intercept)    0.790    NA         NA    NA     
+#> 2 fixed    NA    mpg                0.409     0.199      2.05  0.0401
+#> 3 ran_pars vs    sd__(Intercept)    0.789    NA         NA    NA     
 
 construct_model(
   data = mtcars |> dplyr::rename(`M P G` = mpg),
@@ -157,13 +157,13 @@ construct_model(
 ) |>
   ard_regression() |>
   dplyr::filter(stat_name %in% c("term", "estimate", "p.value"))
-#> {cards} data frame: 6 x 8
-#>   variable   context stat_name stat_label    stat fmt_fun
-#> 1    M P G regressi…      term       term `M P G`    NULL
-#> 2    M P G regressi…  estimate  Coeffici…  -2.775       1
-#> 3    M P G regressi…   p.value    p-value   0.213       1
-#> 4      cyl regressi…      term       term     cyl    NULL
-#> 5      cyl regressi…  estimate  Coeffici…  23.979       1
-#> 6      cyl regressi…   p.value    p-value   0.003       1
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 6 × 8
+#>   variable context    stat_name stat_label  stat         fmt_fun  warning error 
+#>   <chr>    <chr>      <chr>     <chr>       <named list> <named > <named> <name>
+#> 1 M P G    regression term      term        `M P G`      <NULL>   <NULL>  <NULL>
+#> 2 M P G    regression estimate  Coefficient -2.774769    1        <NULL>  <NULL>
+#> 3 M P G    regression p.value   p-value     0.2125285    1        <NULL>  <NULL>
+#> 4 cyl      regression term      term        cyl          <NULL>   <NULL>  <NULL>
+#> 5 cyl      regression estimate  Coefficient 23.97863     1        <NULL>  <NULL>
+#> 6 cyl      regression p.value   p-value     0.002814958  1        <NULL>  <NULL>
 ```

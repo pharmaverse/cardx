@@ -24,7 +24,7 @@ Convert mood test results to ARD
 
   (named `list`)\
   list of tidied results constructed with
-  [`eval_capture_conditions()`](https://insightsengineering.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
+  [`eval_capture_conditions()`](https://pharmaverse.github.io/cards/latest-tag/reference/eval_capture_conditions.html),
   e.g.
   `eval_capture_conditions(t.test(mtcars$mpg ~ mtcars$am) |> broom::tidy())`.
 
@@ -48,11 +48,11 @@ cardx:::.format_moodtest_results(
         broom::tidy()
     )
 )
-#> {cards} data frame: 4 x 9
-#>   group1 variable   stat_name stat_label stat     error
-#> 1    SEX      AGE   statistic  Z-Statis…      object '…
-#> 2    SEX      AGE     p.value    p-value      object '…
-#> 3    SEX      AGE      method     method      object '…
-#> 4    SEX      AGE alternative  Alternat…      object '…
-#> ℹ 3 more variables: context, fmt_fun, warning
+#> # An ARD data frame: 4 × 9
+#>   group1 variable context      stat_name stat_label stat   fmt_fun warning error
+#>   <chr>  <chr>    <chr>        <chr>     <chr>      <name> <named> <named> <nam>
+#> 1 SEX    AGE      stats_mood_… statistic Z-Statist… <NULL> <NULL>  <NULL>  obje…
+#> 2 SEX    AGE      stats_mood_… p.value   p-value    <NULL> <NULL>  <NULL>  obje…
+#> 3 SEX    AGE      stats_mood_… method    method     <NULL> <NULL>  <NULL>  obje…
+#> 4 SEX    AGE      stats_mood_… alternat… Alternati… <NULL> <NULL>  <NULL>  obje…
 ```

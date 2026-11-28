@@ -24,12 +24,12 @@
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD Incidence Rate — ard_incidence_rate">
 <meta name="description" content="Function takes a time at risk variable (time) and event count variable (count) and calculates the incidence
-rate in person-years.
+rate per n_person_time units of person-time. The person-time unit is that of time, as described by unit_label.
 Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk">
 <meta property="og:description" content="Function takes a time at risk variable (time) and event count variable (count) and calculates the incidence
-rate in person-years.
+rate per n_person_time units of person-time. The person-time unit is that of time, as described by unit_label.
 Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -41,7 +41,7 @@ Incidence rate is calculated as: Total number of events that occurred / Total pe
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +57,7 @@ Incidence rate is calculated as: Total number of events that occurred / Total pe
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -76,7 +77,7 @@ Incidence rate is calculated as: Total number of events that occurred / Total pe
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -86,13 +87,13 @@ Incidence rate is calculated as: Total number of events that occurred / Total pe
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Incidence Rate</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_incidence_rate.R" class="external-link"><code>R/ard_incidence_rate.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_incidence_rate.R" class="external-link"><code>R/ard_incidence_rate.R</code></a></small>
       <div class="d-none name"><code>ard_incidence_rate.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
     <p>Function takes a time at risk variable (<code>time</code>) and event count variable (<code>count</code>) and calculates the incidence
-rate in person-years.</p>
+rate per <code>n_person_time</code> units of person-time. The person-time unit is that of <code>time</code>, as described by <code>unit_label</code>.</p>
 <p>Incidence rate is calculated as: Total number of events that occurred / Total person-time at risk</p>
     </div>
 
@@ -122,7 +123,7 @@ rate in person-years.</p>
 <dt id="arg-data">data<a class="anchor" aria-label="anchor" href="#arg-data"></a>
 </dt>
 <dd><p>(<code>data.frame</code>)<br>
-a data frame.</p></dd>
+a data frame. Must include every subject at risk, including subjects without any events.</p></dd>
 
 
 <dt id="arg-time">time<a class="anchor" aria-label="anchor" href="#arg-time"></a>
@@ -134,8 +135,8 @@ column name of time at risk variable.</p></dd>
 <dt id="arg-count">count<a class="anchor" aria-label="anchor" href="#arg-count"></a>
 </dt>
 <dd><p>(<code><a href="https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html" class="external-link">tidy-select</a></code>)<br>
-column name of variable indicating count of events that occurred. If <code>NULL</code>, each row in <code>data</code> is assumed to
-correspond to a single event occurrence.</p></dd>
+column name of variable indicating count of events that occurred. Subjects with a <code>count</code> greater than zero
+are counted as having an event in the <code>n</code> statistic.</p></dd>
 
 
 <dt id="arg-id">id<a class="anchor" aria-label="anchor" href="#arg-id"></a>
@@ -162,7 +163,9 @@ columns specified.</p>
 <dt id="arg-n-person-time">n_person_time<a class="anchor" aria-label="anchor" href="#arg-n-person-time"></a>
 </dt>
 <dd><p>(<code>numeric</code>)<br>
-amount of person-time to estimate incidence rate for. Defaults to 100.</p></dd>
+amount of person-time to estimate incidence rate for. The <code>estimate</code>, <code>conf.low</code>,
+<code>conf.high</code>, and <code>std.error</code> statistics are all reported per <code>n_person_time</code> units
+of person-time. Defaults to 100.</p></dd>
 
 
 <dt id="arg-unit-label">unit_label<a class="anchor" aria-label="anchor" href="#arg-unit-label"></a>
@@ -215,7 +218,7 @@ time for subject \(i\), respectively.</p>
 </li>
 <li>
 <p><code>exact</code>: Exact CI for a Poisson mean.</p>
-<p>$$CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}$$
+<p>$$CI_{lower} = \chi^2_{\alpha / 2, 2\sum{x_i}} / {2 \sum{t_i}}$$
 $$CI_{upper} = \chi^2_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}$$</p>
 </li>
 </ul>
@@ -234,21 +237,21 @@ $$CI_{upper} = \chi^2_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2 \sum{t_i}}$$</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">data</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_incidence_rate</span><span class="op">(</span>time <span class="op">=</span> <span class="va">AETTE1</span>, count <span class="op">=</span> <span class="va">AETOT1</span>, id <span class="op">=</span> <span class="va">USUBJID</span>, by <span class="op">=</span> <span class="va">TRTA</span>, unit_label <span class="op">=</span> <span class="st">"years"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 27 x 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable       stat_name stat_label     stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    TRTA            A   AETTE1        estimate  Incidenc…  976.305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    TRTA            A   AETTE1       std.error  Standard…    0.578</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    TRTA            A   AETTE1        conf.low  CI Lower…  862.958</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    TRTA            A   AETTE1       conf.high  CI Upper… 1089.653</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    TRTA            A   AETTE1       conf.type    CI Type   normal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    TRTA            A   AETTE1      conf.level  CI Confi…     0.95</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    TRTA            A   AETTE1 tot_person_time  Person-Y…   29.192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    TRTA            A   AETTE1        n_events  Number o…      285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    TRTA            A   AETTE1               N  Number o…       33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   TRTA            B   AETTE1        estimate  Incidenc… 1373.986</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">17 more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">Use `print(n = ...)` to see more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">4 more variables: context, fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 30 × 10</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable context    stat_name stat_label stat     fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> TRTA   A            AETTE1   incidence… estimate  Incidence… 976.3053 1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> TRTA   A            AETTE1   incidence… std.error Standard … 57.83134 1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> TRTA   A            AETTE1   incidence… conf.low  CI Lower … 862.958  1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> TRTA   A            AETTE1   incidence… conf.high CI Upper … 1089.653 1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> TRTA   A            AETTE1   incidence… conf.type CI Type    normal   <span style="color: #949494;">&lt;fn&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> TRTA   A            AETTE1   incidence… conf.lev… CI Confid… 0.95     1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> TRTA   A            AETTE1   incidence… tot_pers… Person-Ye… 29.19169 1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> TRTA   A            AETTE1   incidence… n_events  Number of… 285      0      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> TRTA   A            AETTE1   incidence… n         Number of… 31       0      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> TRTA   A            AETTE1   incidence… N         Number of… 33       0      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;list&gt;, error &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

@@ -12,7 +12,7 @@ The design effect (`"deff"`) is calculated only when requested in the
 `statistic` argument.
 
 The unweighted statistics are calculated with
-[`cards::ard_tabulate.data.frame()`](https://insightsengineering.github.io/cards/latest-tag/reference/ard_tabulate.html).
+[`cards::ard_tabulate.data.frame()`](https://pharmaverse.github.io/cards/latest-tag/reference/ard_tabulate.html).
 
 ## Usage
 
@@ -55,7 +55,7 @@ ard_tabulate(
 
 - statistic:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a character vector of statistic names to include. See
   default value for options.
@@ -68,14 +68,14 @@ ard_tabulate(
 
 - fmt_fun:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is a named list of functions (or the RHS of a formula), e.g.
   `list(mpg = list(mean = \(x) round(x, digits = 2) |> as.character()))`.
 
 - stat_label:
 
-  ([`formula-list-selector`](https://insightsengineering.github.io/cards/latest-tag/reference/syntax.html))\
+  ([`formula-list-selector`](https://pharmaverse.github.io/cards/latest-tag/reference/syntax.html))\
   a named list, a list of formulas, or a single formula where the list
   element is either a named list or a list of formulas defining the
   statistic labels, e.g. `everything() ~ list(mean = "Mean", sd = "SD")`
@@ -99,19 +99,20 @@ an ARD data frame of class 'card'
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_tabulate(svy_titanic, variables = c(Class, Age), by = Survived)
-#> {cards} data frame: 84 x 11
-#>      group1 group1_level variable variable_level   stat_name stat_label  stat
-#> 1  Survived           No    Class            1st           n          n   122
-#> 2  Survived           No    Class            1st           N          N  1490
-#> 3  Survived           No    Class            1st           p          % 0.082
-#> 4  Survived           No    Class            1st p.std.error      SE(%) 0.086
-#> 5  Survived           No    Class            2nd           n          n   167
-#> 6  Survived           No    Class            2nd           N          N  1490
-#> 7  Survived           No    Class            2nd           p          % 0.112
-#> 8  Survived           No    Class            2nd p.std.error      SE(%) 0.111
-#> 9  Survived           No    Class            3rd           n          n   528
-#> 10 Survived           No    Class            3rd           N          N  1490
-#> ℹ 74 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 84 × 11
+#>    group1   group1_level variable variable_level context     stat_name      stat
+#>    <chr>    <list>       <chr>    <list>         <chr>       <chr>        <list>
+#>  1 Survived No           Class    1st            categorical n           1.22e+2
+#>  2 Survived No           Class    1st            categorical N           1.49e+3
+#>  3 Survived No           Class    1st            categorical p           8.19e-2
+#>  4 Survived No           Class    1st            categorical p.std.error 8.62e-2
+#>  5 Survived No           Class    2nd            categorical n           1.67e+2
+#>  6 Survived No           Class    2nd            categorical N           1.49e+3
+#>  7 Survived No           Class    2nd            categorical p           1.12e-1
+#>  8 Survived No           Class    2nd            categorical p.std.error 1.11e-1
+#>  9 Survived No           Class    3rd            categorical n           5.28e+2
+#> 10 Survived No           Class    3rd            categorical N           1.49e+3
+#> # ℹ 74 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

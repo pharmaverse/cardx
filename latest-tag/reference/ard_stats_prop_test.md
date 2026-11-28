@@ -46,20 +46,22 @@ ARD data frame
 ``` r
 mtcars |>
   ard_stats_prop_test(by = vs, variables = am)
-#> {cards} data frame: 13 x 9
-#>    group1 variable   context   stat_name stat_label      stat
-#> 1      vs       am stats_pr…    estimate  Rate Dif…    -0.167
-#> 2      vs       am stats_pr…   estimate1  Group 1 …     0.333
-#> 3      vs       am stats_pr…   estimate2  Group 2 …       0.5
-#> 4      vs       am stats_pr…   statistic  X-square…     0.348
-#> 5      vs       am stats_pr…     p.value    p-value     0.556
-#> 6      vs       am stats_pr…   parameter  Degrees …         1
-#> 7      vs       am stats_pr…    conf.low  CI Lower…    -0.571
-#> 8      vs       am stats_pr…   conf.high  CI Upper…     0.237
-#> 9      vs       am stats_pr…      method     method 2-sample…
-#> 10     vs       am stats_pr… alternative  alternat… two.sided
-#> 11     vs       am stats_pr…           p          p          
-#> 12     vs       am stats_pr…  conf.level  CI Confi…      0.95
-#> 13     vs       am stats_pr…     correct  Yates' c…      TRUE
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 13 × 9
+#>    group1 variable stat_name  
+#>    <chr>  <chr>    <chr>      
+#>  1 vs     am       estimate   
+#>  2 vs     am       estimate1  
+#>  3 vs     am       estimate2  
+#>  4 vs     am       statistic  
+#>  5 vs     am       p.value    
+#>  6 vs     am       parameter  
+#>  7 vs     am       conf.low   
+#>  8 vs     am       conf.high  
+#>  9 vs     am       method     
+#> 10 vs     am       alternative
+#> 11 vs     am       p          
+#> 12 vs     am       conf.level 
+#> 13 vs     am       correct    
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <named list>,
+#> #   fmt_fun <named list>, warning <named list>, error <named list>
 ```

@@ -32,12 +32,12 @@ ARD data frame
 
 ``` r
 ard_stats_aov(AGE ~ ARM, data = cards::ADSL)
-#> {cards} data frame: 5 x 8
-#>   variable   context stat_name stat_label   stat fmt_fun
-#> 1      ARM stats_aov     sumsq  Sum of S… 71.386       1
-#> 2      ARM stats_aov        df  Degrees …      2       1
-#> 3      ARM stats_aov    meansq  Mean of … 35.693       1
-#> 4      ARM stats_aov statistic  Statistic  0.523       1
-#> 5      ARM stats_aov   p.value    p-value  0.593       1
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 5 × 8
+#>   variable context   stat_name stat_label            stat fmt_fun warning error 
+#>   <chr>    <chr>     <chr>     <chr>               <list>  <list> <named> <name>
+#> 1 ARM      stats_aov sumsq     Sum of Squares      71.4         1 <NULL>  <NULL>
+#> 2 ARM      stats_aov df        Degrees of Freedom   2           1 <NULL>  <NULL>
+#> 3 ARM      stats_aov meansq    Mean of Sum of Squ… 35.7         1 <NULL>  <NULL>
+#> 4 ARM      stats_aov statistic Statistic            0.523       1 <NULL>  <NULL>
+#> 5 ARM      stats_aov p.value   p-value              0.593       1 <NULL>  <NULL>
 ```

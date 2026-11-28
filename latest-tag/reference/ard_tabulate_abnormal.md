@@ -109,25 +109,27 @@ adlb |>
   )
 #> Abnormality "Low" created by merging levels: "LOW", "LOW LOW"
 #> Abnormality "High" created by merging levels: "HIGH", "HIGH HIGH"
-#> {cards} data frame: 18 x 11
-#>    group1 group1_level variable variable_level stat_name stat_label  stat
-#> 1    TRTA      Placebo  LBNRIND            Low         n          n     2
-#> 2    TRTA      Placebo  LBNRIND            Low         N          N     7
-#> 3    TRTA      Placebo  LBNRIND            Low         p          % 0.286
-#> 4    TRTA      Placebo  LBNRIND           High         n          n     3
-#> 5    TRTA      Placebo  LBNRIND           High         N          N     7
-#> 6    TRTA      Placebo  LBNRIND           High         p          % 0.429
-#> 7    TRTA    Xanomeli…  LBNRIND            Low         n          n     4
-#> 8    TRTA    Xanomeli…  LBNRIND            Low         N          N     7
-#> 9    TRTA    Xanomeli…  LBNRIND            Low         p          % 0.571
-#> 10   TRTA    Xanomeli…  LBNRIND           High         n          n     3
-#> 11   TRTA    Xanomeli…  LBNRIND           High         N          N     7
-#> 12   TRTA    Xanomeli…  LBNRIND           High         p          % 0.429
-#> 13   TRTA    Xanomeli…  LBNRIND            Low         n          n     4
-#> 14   TRTA    Xanomeli…  LBNRIND            Low         N          N     6
-#> 15   TRTA    Xanomeli…  LBNRIND            Low         p          % 0.667
-#> 16   TRTA    Xanomeli…  LBNRIND           High         n          n     3
-#> 17   TRTA    Xanomeli…  LBNRIND           High         N          N     6
-#> 18   TRTA    Xanomeli…  LBNRIND           High         p          %   0.5
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 18 × 11
+#>    group1 group1_level         variable variable_level context   stat_name  stat
+#>    <chr>  <list>               <chr>    <list>         <chr>     <chr>     <lis>
+#>  1 TRTA   Placebo              LBNRIND  Low            categori… n         2    
+#>  2 TRTA   Placebo              LBNRIND  Low            categori… N         7    
+#>  3 TRTA   Placebo              LBNRIND  Low            categori… p         0.286
+#>  4 TRTA   Placebo              LBNRIND  High           categori… n         3    
+#>  5 TRTA   Placebo              LBNRIND  High           categori… N         7    
+#>  6 TRTA   Placebo              LBNRIND  High           categori… p         0.429
+#>  7 TRTA   Xanomeline High Dose LBNRIND  Low            categori… n         4    
+#>  8 TRTA   Xanomeline High Dose LBNRIND  Low            categori… N         7    
+#>  9 TRTA   Xanomeline High Dose LBNRIND  Low            categori… p         0.571
+#> 10 TRTA   Xanomeline High Dose LBNRIND  High           categori… n         3    
+#> 11 TRTA   Xanomeline High Dose LBNRIND  High           categori… N         7    
+#> 12 TRTA   Xanomeline High Dose LBNRIND  High           categori… p         0.429
+#> 13 TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… n         4    
+#> 14 TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… N         6    
+#> 15 TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… p         0.667
+#> 16 TRTA   Xanomeline Low Dose  LBNRIND  High           categori… n         3    
+#> 17 TRTA   Xanomeline Low Dose  LBNRIND  High           categori… N         6    
+#> 18 TRTA   Xanomeline Low Dose  LBNRIND  High           categori… p         0.5  
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

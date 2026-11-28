@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD Survey rank test — ard_survey_svyranktest">
 <meta name="description" content="Analysis results data for survey wilcox test using survey::svyranktest().">
 <meta property="og:description" content="Analysis results data for survey wilcox test using survey::svyranktest().">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Survey rank test</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_survey_svyranktest.R" class="external-link"><code>R/ard_survey_svyranktest.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_survey_svyranktest.R" class="external-link"><code>R/ard_survey_svyranktest.R</code></a></small>
       <div class="d-none name"><code>ard_survey_svyranktest.Rd</code></div>
     </div>
 
@@ -146,45 +147,52 @@ a string to denote which rank test to use:
 <span class="r-in"><span><span class="va">dclus2</span> <span class="op">&lt;-</span> <span class="fu">survey</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survey/man/svydesign.html" class="external-link">svydesign</a></span><span class="op">(</span>id <span class="op">=</span> <span class="op">~</span> <span class="va">dnum</span> <span class="op">+</span> <span class="va">snum</span>, fpc <span class="op">=</span> <span class="op">~</span> <span class="va">fpc1</span> <span class="op">+</span> <span class="va">fpc2</span>, data <span class="op">=</span> <span class="va">apiclus2</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ard_survey_svyranktest</span><span class="op">(</span><span class="va">dclus2</span>, variables <span class="op">=</span> <span class="va">enroll</span>, by <span class="op">=</span> <span class="va">comp.imp</span>, test <span class="op">=</span> <span class="st">"wilcoxon"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 comp.imp   enroll survey_s…     p.value    p-value     0.094</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 comp.imp   enroll survey_s…      method     method Design-b…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1   variable context stat_name stat_label stat                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> comp.imp enroll   survey… estimate  Median of… -0.1060602                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> comp.imp enroll   survey… statistic Statistic  -1.718689                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> comp.imp enroll   survey… p.value   p-value    0.09426084                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> comp.imp enroll   survey… parameter Degrees o… 36                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> comp.imp enroll   survey… method    method     Design-based KruskalWallis test</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> comp.imp enroll   survey… alternat… Alternati… two.sided                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;named list&gt;, warning &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;named list&gt;</span></span>
 <span class="r-in"><span><span class="fu">ard_survey_svyranktest</span><span class="op">(</span><span class="va">dclus2</span>, variables <span class="op">=</span> <span class="va">enroll</span>, by <span class="op">=</span> <span class="va">comp.imp</span>, test <span class="op">=</span> <span class="st">"vanderWaerden"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.379</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.584</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 comp.imp   enroll survey_s…     p.value    p-value     0.122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 comp.imp   enroll survey_s…      method     method Design-b…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1   variable context stat_name stat_label stat                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> comp.imp enroll   survey… estimate  Median of… -0.3791163                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> comp.imp enroll   survey… statistic Statistic  -1.583859                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> comp.imp enroll   survey… p.value   p-value    0.1219723                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> comp.imp enroll   survey… parameter Degrees o… 36                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> comp.imp enroll   survey… method    method     Design-based vanderWaerden test</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> comp.imp enroll   survey… alternat… Alternati… two.sided                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;named list&gt;, warning &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;named list&gt;</span></span>
 <span class="r-in"><span><span class="fu">ard_survey_svyranktest</span><span class="op">(</span><span class="va">dclus2</span>, variables <span class="op">=</span> <span class="va">enroll</span>, by <span class="op">=</span> <span class="va">comp.imp</span>, test <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 comp.imp   enroll survey_s…   statistic  Statistic    -0.914</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 comp.imp   enroll survey_s…     p.value    p-value     0.367</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 comp.imp   enroll survey_s…      method     method Design-b…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1  variable context stat_name stat_label stat                     fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> comp.i… enroll   survey… estimate  Median of… -0.1240709               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> comp.i… enroll   survey… statistic Statistic  -0.9139828               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> comp.i… enroll   survey… p.value   p-value    0.3668071                1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> comp.i… enroll   survey… parameter Degrees o… 36                       1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> comp.i… enroll   survey… method    method     Design-based median test <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> comp.i… enroll   survey… alternat… Alternati… two.sided                <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 <span class="r-in"><span><span class="fu">ard_survey_svyranktest</span><span class="op">(</span><span class="va">dclus2</span>, variables <span class="op">=</span> <span class="va">enroll</span>, by <span class="op">=</span> <span class="va">comp.imp</span>, test <span class="op">=</span> <span class="st">"KruskalWallis"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.106</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 comp.imp   enroll survey_s…     p.value    p-value     0.094</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 comp.imp   enroll survey_s…      method     method Design-b…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1   variable context stat_name stat_label stat                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> comp.imp enroll   survey… estimate  Median of… -0.1060602                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> comp.imp enroll   survey… statistic Statistic  -1.718689                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> comp.imp enroll   survey… p.value   p-value    0.09426084                     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> comp.imp enroll   survey… parameter Degrees o… 36                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> comp.imp enroll   survey… method    method     Design-based KruskalWallis test</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> comp.imp enroll   survey… alternat… Alternati… two.sided                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;named list&gt;, warning &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

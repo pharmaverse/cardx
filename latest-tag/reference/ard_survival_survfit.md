@@ -139,68 +139,60 @@ library(ggsurvfit)
 
 survfit(Surv_CNSR(AVAL, CNSR) ~ TRTA, data = cards::ADTTE) |>
   ard_survival_survfit(times = c(60, 180))
-#> {cards} data frame: 32 x 11
-#>    group1 group1_level variable variable_level stat_name stat_label  stat
-#> 1    TRTA      Placebo     time             60    n.risk  Number o…    59
-#> 2    TRTA      Placebo     time             60  estimate  Survival… 0.768
-#> 3    TRTA      Placebo     time             60 std.error  Standard… 0.047
-#> 4    TRTA      Placebo     time             60 conf.high  CI Upper… 0.866
-#> 5    TRTA      Placebo     time             60  conf.low  CI Lower… 0.682
-#> 6    TRTA      Placebo     time            180    n.risk  Number o…    35
-#> 7    TRTA      Placebo     time            180  estimate  Survival… 0.626
-#> 8    TRTA      Placebo     time            180 std.error  Standard… 0.056
-#> 9    TRTA      Placebo     time            180 conf.high  CI Upper… 0.746
-#> 10   TRTA      Placebo     time            180  conf.low  CI Lower… 0.526
-#> ℹ 22 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 32 × 11
+#>    group1 group1_level variable variable_level context  stat_name    stat
+#>    <chr>  <list>       <chr>            <list> <chr>    <chr>      <list>
+#>  1 TRTA   Placebo      time                 60 survival n.risk    59     
+#>  2 TRTA   Placebo      time                 60 survival estimate   0.768 
+#>  3 TRTA   Placebo      time                 60 survival std.error  0.0467
+#>  4 TRTA   Placebo      time                 60 survival conf.high  0.866 
+#>  5 TRTA   Placebo      time                 60 survival conf.low   0.682 
+#>  6 TRTA   Placebo      time                180 survival n.risk    35     
+#>  7 TRTA   Placebo      time                180 survival estimate   0.626 
+#>  8 TRTA   Placebo      time                180 survival std.error  0.0559
+#>  9 TRTA   Placebo      time                180 survival conf.high  0.746 
+#> 10 TRTA   Placebo      time                180 survival conf.low   0.526 
+#> # ℹ 22 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 
 survfit(Surv_CNSR(AVAL, CNSR) ~ TRTA, data = cards::ADTTE, conf.int = 0.90) |>
   ard_survival_survfit(probs = c(0.25, 0.5, 0.75))
-#> {cards} data frame: 29 x 11
-#>    group1 group1_level variable variable_level stat_name stat_label stat
-#> 1    TRTA      Placebo     prob           0.25  estimate  Survival…   70
-#> 2    TRTA      Placebo     prob           0.25 conf.high  CI Upper…  110
-#> 3    TRTA      Placebo     prob           0.25  conf.low  CI Lower…   42
-#> 4    TRTA      Placebo     prob            0.5  estimate  Survival…   NA
-#> 5    TRTA      Placebo     prob            0.5 conf.high  CI Upper…   NA
-#> 6    TRTA      Placebo     prob            0.5  conf.low  CI Lower…   NA
-#> 7    TRTA      Placebo     prob           0.75  estimate  Survival…   NA
-#> 8    TRTA      Placebo     prob           0.75 conf.high  CI Upper…   NA
-#> 9    TRTA      Placebo     prob           0.75  conf.low  CI Lower…   NA
-#> 10   TRTA    Xanomeli…     prob           0.25  estimate  Survival…   14
-#> ℹ 19 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 29 × 11
+#>    group1 group1_level         variable variable_level context   stat_name  stat
+#>    <chr>  <list>               <chr>            <list> <chr>     <chr>     <lis>
+#>  1 TRTA   Placebo              prob               0.25 survival… estimate     70
+#>  2 TRTA   Placebo              prob               0.25 survival… conf.high   110
+#>  3 TRTA   Placebo              prob               0.25 survival… conf.low     42
+#>  4 TRTA   Placebo              prob               0.5  survival… estimate     NA
+#>  5 TRTA   Placebo              prob               0.5  survival… conf.high    NA
+#>  6 TRTA   Placebo              prob               0.5  survival… conf.low     NA
+#>  7 TRTA   Placebo              prob               0.75 survival… estimate     NA
+#>  8 TRTA   Placebo              prob               0.75 survival… conf.high    NA
+#>  9 TRTA   Placebo              prob               0.75 survival… conf.low     NA
+#> 10 TRTA   Xanomeline High Dose prob               0.25 survival… estimate     14
+#> # ℹ 19 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 
 cards::ADTTE |>
   ard_survival_survfit(y = Surv_CNSR(AVAL, CNSR), variables = c("TRTA", "SEX"), times = 90)
-#> {cards} data frame: 32 x 13
+#> # An ARD data frame: 32 × 13
 #>    group1 group1_level group2 group2_level variable variable_level stat_name
-#> 1    TRTA      Placebo    SEX            F     time             90    n.risk
-#> 2    TRTA      Placebo    SEX            F     time             90  estimate
-#> 3    TRTA      Placebo    SEX            F     time             90 std.error
-#> 4    TRTA      Placebo    SEX            F     time             90 conf.high
-#> 5    TRTA      Placebo    SEX            F     time             90  conf.low
-#> 6    TRTA      Placebo    SEX            M     time             90    n.risk
-#> 7    TRTA      Placebo    SEX            M     time             90  estimate
-#> 8    TRTA      Placebo    SEX            M     time             90 std.error
-#> 9    TRTA      Placebo    SEX            M     time             90 conf.high
-#> 10   TRTA      Placebo    SEX            M     time             90  conf.low
-#>    stat_label  stat
-#> 1   Number o…    27
-#> 2   Survival… 0.619
-#> 3   Standard… 0.072
-#> 4   CI Upper… 0.777
-#> 5   CI Lower… 0.493
-#> 6   Number o…    22
-#> 7   Survival… 0.748
-#> 8   Standard… 0.077
-#> 9   CI Upper… 0.916
-#> 10  CI Lower… 0.611
-#> ℹ 22 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#>    <chr>  <list>       <chr>  <list>       <chr>            <list> <chr>    
+#>  1 TRTA   Placebo      SEX    F            time                 90 n.risk   
+#>  2 TRTA   Placebo      SEX    F            time                 90 estimate 
+#>  3 TRTA   Placebo      SEX    F            time                 90 std.error
+#>  4 TRTA   Placebo      SEX    F            time                 90 conf.high
+#>  5 TRTA   Placebo      SEX    F            time                 90 conf.low 
+#>  6 TRTA   Placebo      SEX    M            time                 90 n.risk   
+#>  7 TRTA   Placebo      SEX    M            time                 90 estimate 
+#>  8 TRTA   Placebo      SEX    M            time                 90 std.error
+#>  9 TRTA   Placebo      SEX    M            time                 90 conf.high
+#> 10 TRTA   Placebo      SEX    M            time                 90 conf.low 
+#> # ℹ 22 more rows
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 
 # Competing Risks Example ---------------------------
 set.seed(1)
@@ -217,19 +209,20 @@ survfit(Surv(AVAL, CNSR) ~ TRTA, data = ADTTE_MS) %>%
   ard_survival_survfit(times = c(60, 180))
 #> Multi-state model detected. Showing probabilities into state 'death from
 #> cancer'.
-#> {cards} data frame: 32 x 11
-#>    group1 group1_level variable variable_level stat_name stat_label  stat
-#> 1    TRTA      Placebo     time             60    n.risk  Number o…    59
-#> 2    TRTA      Placebo     time             60  estimate  Survival… 0.054
-#> 3    TRTA      Placebo     time             60 std.error  Standard… 0.026
-#> 4    TRTA      Placebo     time             60 conf.high  CI Upper…  0.14
-#> 5    TRTA      Placebo     time             60  conf.low  CI Lower… 0.021
-#> 6    TRTA      Placebo     time            180    n.risk  Number o…    35
-#> 7    TRTA      Placebo     time            180  estimate  Survival… 0.226
-#> 8    TRTA      Placebo     time            180 std.error  Standard… 0.054
-#> 9    TRTA      Placebo     time            180 conf.high  CI Upper… 0.361
-#> 10   TRTA      Placebo     time            180  conf.low  CI Lower… 0.142
-#> ℹ 22 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 32 × 11
+#>    group1 group1_level variable variable_level context  stat_name    stat
+#>    <chr>  <list>       <chr>            <list> <chr>    <chr>      <list>
+#>  1 TRTA   Placebo      time                 60 survival n.risk    59     
+#>  2 TRTA   Placebo      time                 60 survival estimate   0.0538
+#>  3 TRTA   Placebo      time                 60 survival std.error  0.0263
+#>  4 TRTA   Placebo      time                 60 survival conf.high  0.140 
+#>  5 TRTA   Placebo      time                 60 survival conf.low   0.0206
+#>  6 TRTA   Placebo      time                180 survival n.risk    35     
+#>  7 TRTA   Placebo      time                180 survival estimate   0.226 
+#>  8 TRTA   Placebo      time                180 survival std.error  0.0540
+#>  9 TRTA   Placebo      time                180 survival conf.high  0.361 
+#> 10 TRTA   Placebo      time                180 survival conf.low   0.142 
+#> # ℹ 22 more rows
+#> # ℹ 4 more variables: stat_label <chr>, fmt_fun <list>, warning <list>,
+#> #   error <list>
 ```

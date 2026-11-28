@@ -25,7 +25,7 @@
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ARD t-test — ard_stats_t_test">
 <meta name="description" content="Analysis results data for paired and non-paired t-tests.">
 <meta property="og:description" content="Analysis results data for paired and non-paired t-tests.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -37,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +53,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -72,7 +73,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -82,7 +83,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD t-test</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_stats_t_test.R" class="external-link"><code>R/ard_stats_t_test.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_stats_t_test.R" class="external-link"><code>R/ard_stats_t_test.R</code></a></small>
       <div class="d-none name"><code>ard_stats_t_test.Rd</code></div>
     </div>
 
@@ -150,7 +151,9 @@ column name of the subject or participant ID</p></dd>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a>
 </h2>
     <p>For the <code>ard_stats_t_test()</code> function, the data is expected to be one row per subject.
-The data is passed as <code>t.test(data[[variable]] ~ data[[by]], paired = FALSE, ...)</code>.</p>
+The data is passed as <code>t.test(data[[variable]] ~ data[[by]], ...)</code>.
+This function follows the defaults in <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">stats::t.test()</a></code>. For example, Welch's
+t-test is the default for an unpaired, two-sample comparison.</p>
 <p>For the <code>ard_stats_paired_t_test()</code> function, the data is expected to be one row
 per subject per by level. Before the t-test is calculated, the data are
 reshaped to a wide format to be one row per subject.
@@ -161,47 +164,48 @@ The data are then passed as
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">ARM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_stats_t_test</span><span class="op">(</span>by <span class="op">=</span> <span class="va">ARM</span>, variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">AGE</span>, <span class="va">BMIBL</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 28 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     ARM      AGE stats_t_…    estimate  Mean Dif…     0.828</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     ARM      AGE stats_t_…   estimate1  Group 1 …    75.209</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     ARM      AGE stats_t_…   estimate2  Group 2 …    74.381</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     ARM      AGE stats_t_…   statistic  t Statis…     0.655</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     ARM      AGE stats_t_…     p.value    p-value     0.513</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     ARM      AGE stats_t_…   parameter  Degrees …   167.362</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     ARM      AGE stats_t_…    conf.low  CI Lower…    -1.668</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     ARM      AGE stats_t_…   conf.high  CI Upper…     3.324</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     ARM      AGE stats_t_…      method     method Welch Tw…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    ARM      AGE stats_t_… alternative  alternat… two.sided</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">18 more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">Use `print(n = ...)` to see more rows</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 28 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable context  stat_name stat_label stat                    fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ARM    AGE      stats_t… estimate  Mean Diff… 0.8283499               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ARM    AGE      stats_t… estimate1 Group 1 M… 75.2093                 1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ARM    AGE      stats_t… estimate2 Group 2 M… 74.38095                1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ARM    AGE      stats_t… statistic t Statist… 0.6551964               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> ARM    AGE      stats_t… p.value   p-value    0.5132409               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> ARM    AGE      stats_t… parameter Degrees o… 167.3625                1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ARM    AGE      stats_t… conf.low  CI Lower … -1.667637               1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ARM    AGE      stats_t… conf.high CI Upper … 3.324337                1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ARM    AGE      stats_t… method    method     Welch Two Sample t-test <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ARM    AGE      stats_t… alternat… alternati… two.sided               <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 18 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># constructing a paired data set,</span></span></span>
 <span class="r-in"><span><span class="co"># where patients receive both treatments</span></span></span>
-<span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ARM"</span>, <span class="st">"AGE"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ARM"</span>, <span class="st">"AGE"</span><span class="op">)</span><span class="op">]</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">ARM</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Placebo"</span>, <span class="st">"Xanomeline High Dose"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>.by <span class="op">=</span> <span class="va">ARM</span>, USUBJID <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/row_number.html" class="external-link">row_number</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="va">USUBJID</span>, <span class="va">ARM</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_stats_paired_t_test</span><span class="op">(</span>by <span class="op">=</span> <span class="va">ARM</span>, variables <span class="op">=</span> <span class="va">AGE</span>, id <span class="op">=</span> <span class="va">USUBJID</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 12 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable   context   stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     ARM      AGE stats_t_…    estimate  Mean Dif…     0.798</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2     ARM      AGE stats_t_…   statistic  t Statis…     0.628</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     ARM      AGE stats_t_…     p.value    p-value     0.531</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     ARM      AGE stats_t_…   parameter  Degrees …        83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5     ARM      AGE stats_t_…    conf.low  CI Lower…    -1.727</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     ARM      AGE stats_t_…   conf.high  CI Upper…     3.322</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7     ARM      AGE stats_t_…      method     method Paired t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8     ARM      AGE stats_t_… alternative  alternat… two.sided</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9     ARM      AGE stats_t_…          mu    H0 Mean         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10    ARM      AGE stats_t_…      paired  Paired t…      TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11    ARM      AGE stats_t_…   var.equal  Equal Va…     FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12    ARM      AGE stats_t_…  conf.level  CI Confi…      0.95</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 12 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 variable context      stat_name   stat_label     stat          fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ARM    AGE      stats_t_test estimate    Mean Differen… 0.797619      1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ARM    AGE      stats_t_test statistic   t Statistic    0.628482      1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ARM    AGE      stats_t_test p.value     p-value        0.5314139     1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ARM    AGE      stats_t_test parameter   Degrees of Fr… 83            1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> ARM    AGE      stats_t_test conf.low    CI Lower Bound -1.726609     1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> ARM    AGE      stats_t_test conf.high   CI Upper Bound 3.321848      1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ARM    AGE      stats_t_test method      method         Paired t-test <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ARM    AGE      stats_t_test alternative alternative    two.sided     <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ARM    AGE      stats_t_test mu          H0 Mean        0             1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ARM    AGE      stats_t_test paired      Paired t-test  TRUE          <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> ARM    AGE      stats_t_test var.equal   Equal Varianc… FALSE         <span style="color: #949494;">&lt;NULL&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> ARM    AGE      stats_t_test conf.level  CI Confidence… 0.95          1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

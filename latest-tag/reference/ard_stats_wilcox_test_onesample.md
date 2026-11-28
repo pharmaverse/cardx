@@ -51,19 +51,20 @@ ARD data frame
 ``` r
 cards::ADSL |>
   ard_stats_wilcox_test_onesample(by = ARM, variables = AGE)
-#> {cards} data frame: 27 x 10
-#>    group1 group1_level variable   stat_name stat_label      stat
-#> 1     ARM      Placebo      AGE   statistic  t Statis…      3741
-#> 2     ARM      Placebo      AGE     p.value    p-value         0
-#> 3     ARM      Placebo      AGE      method     method Wilcoxon…
-#> 4     ARM      Placebo      AGE alternative  alternat… two.sided
-#> 5     ARM      Placebo      AGE          mu    H0 Mean         0
-#> 6     ARM      Placebo      AGE    conf.int   conf.int     FALSE
-#> 7     ARM      Placebo      AGE    tol.root   tol.root         0
-#> 8     ARM      Placebo      AGE digits.rank  digits.r…       Inf
-#> 9     ARM      Placebo      AGE  conf.level  CI Confi…      0.95
-#> 10    ARM    Xanomeli…      AGE   statistic  t Statis…      3570
-#> ℹ 17 more rows
-#> ℹ Use `print(n = ...)` to see more rows
-#> ℹ 4 more variables: context, fmt_fun, warning, error
+#> # An ARD data frame: 27 × 10
+#>    group1 group1_level         variable stat_name  
+#>    <chr>  <list>               <chr>    <chr>      
+#>  1 ARM    Placebo              AGE      statistic  
+#>  2 ARM    Placebo              AGE      p.value    
+#>  3 ARM    Placebo              AGE      method     
+#>  4 ARM    Placebo              AGE      alternative
+#>  5 ARM    Placebo              AGE      mu         
+#>  6 ARM    Placebo              AGE      conf.int   
+#>  7 ARM    Placebo              AGE      tol.root   
+#>  8 ARM    Placebo              AGE      digits.rank
+#>  9 ARM    Placebo              AGE      conf.level 
+#> 10 ARM    Xanomeline High Dose AGE      statistic  
+#> # ℹ 17 more rows
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <list>,
+#> #   fmt_fun <list>, warning <list>, error <list>
 ```

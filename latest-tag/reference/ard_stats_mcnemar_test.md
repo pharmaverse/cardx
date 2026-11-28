@@ -60,14 +60,16 @@ contingency table.
 ``` r
 cards::ADSL |>
   ard_stats_mcnemar_test(by = "SEX", variables = "EFFFL")
-#> {cards} data frame: 5 x 9
-#>   group1 variable   context stat_name stat_label      stat
-#> 1    SEX    EFFFL stats_mc… statistic  X-square…    111.91
-#> 2    SEX    EFFFL stats_mc…   p.value    p-value         0
-#> 3    SEX    EFFFL stats_mc… parameter  Degrees …         1
-#> 4    SEX    EFFFL stats_mc…    method     method McNemar'…
-#> 5    SEX    EFFFL stats_mc…   correct    correct      TRUE
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 5 × 9
+#>   group1 variable stat_name
+#>   <chr>  <chr>    <chr>    
+#> 1 SEX    EFFFL    statistic
+#> 2 SEX    EFFFL    p.value  
+#> 3 SEX    EFFFL    parameter
+#> 4 SEX    EFFFL    method   
+#> 5 SEX    EFFFL    correct  
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <named list>,
+#> #   fmt_fun <named list>, warning <named list>, error <named list>
 
 set.seed(1234)
 cards::ADSL[c("USUBJID", "TRT01P")] |>
@@ -79,12 +81,14 @@ cards::ADSL[c("USUBJID", "TRT01P")] |>
     variable = TRT01,
     id = USUBJID
   )
-#> {cards} data frame: 5 x 9
-#>   group1 variable   context stat_name stat_label      stat
-#> 1   TYPE    TRT01 stats_mc… statistic  X-square…     1.353
-#> 2   TYPE    TRT01 stats_mc…   p.value    p-value     0.717
-#> 3   TYPE    TRT01 stats_mc… parameter  Degrees …         3
-#> 4   TYPE    TRT01 stats_mc…    method     method McNemar'…
-#> 5   TYPE    TRT01 stats_mc…   correct    correct      TRUE
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 5 × 9
+#>   group1 variable context        stat_name stat_label stat                      
+#>   <chr>  <chr>    <chr>          <chr>     <chr>      <named list>              
+#> 1 TYPE   TRT01    stats_mcnemar… statistic X-squared… 1.352521                  
+#> 2 TYPE   TRT01    stats_mcnemar… p.value   p-value    0.7167007                 
+#> 3 TYPE   TRT01    stats_mcnemar… parameter Degrees o… 3                         
+#> 4 TYPE   TRT01    stats_mcnemar… method    method     McNemar's Chi-squared test
+#> 5 TYPE   TRT01    stats_mcnemar… correct   correct    TRUE                      
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ```

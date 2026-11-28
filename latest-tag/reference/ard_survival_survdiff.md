@@ -44,11 +44,11 @@ library(ggsurvfit)
 #> Loading required package: ggplot2
 
 ard_survival_survdiff(Surv_CNSR(AVAL, CNSR) ~ TRTA, data = cards::ADTTE)
-#> {cards} data frame: 4 x 8
-#>   variable   context stat_name stat_label      stat fmt_fun
-#> 1     TRTA survival… statistic  X^2 Stat…     60.27       1
-#> 2     TRTA survival…        df  Degrees …         2       1
-#> 3     TRTA survival…   p.value    p-value         0       1
-#> 4     TRTA survival…    method     method Log-rank…    NULL
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 4 × 8
+#>   variable context     stat_name stat_label stat          fmt_fun warning error 
+#>   <chr>    <chr>       <chr>     <chr>      <list>        <list>  <named> <name>
+#> 1 TRTA     survival_s… statistic X^2 Stati… 60.26956      1       <NULL>  <NULL>
+#> 2 TRTA     survival_s… df        Degrees o… 2             1       <NULL>  <NULL>
+#> 3 TRTA     survival_s… p.value   p-value    8.182344e-14  1       <NULL>  <NULL>
+#> 4 TRTA     survival_s… method    method     Log-rank test <NULL>  <NULL>  <NULL>
 ```

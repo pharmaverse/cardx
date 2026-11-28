@@ -50,43 +50,50 @@ data(api, package = "survey")
 dclus2 <- survey::svydesign(id = ~ dnum + snum, fpc = ~ fpc1 + fpc2, data = apiclus2)
 
 ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "wilcoxon")
-#> {cards} data frame: 6 x 9
-#>     group1 variable   context   stat_name stat_label      stat
-#> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.106
-#> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.719
-#> 3 comp.imp   enroll survey_s…     p.value    p-value     0.094
-#> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36
-#> 5 comp.imp   enroll survey_s…      method     method Design-b…
-#> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1   variable context stat_name stat_label stat                           
+#>   <chr>    <chr>    <chr>   <chr>     <chr>      <named list>                   
+#> 1 comp.imp enroll   survey… estimate  Median of… -0.1060602                     
+#> 2 comp.imp enroll   survey… statistic Statistic  -1.718689                      
+#> 3 comp.imp enroll   survey… p.value   p-value    0.09426084                     
+#> 4 comp.imp enroll   survey… parameter Degrees o… 36                             
+#> 5 comp.imp enroll   survey… method    method     Design-based KruskalWallis test
+#> 6 comp.imp enroll   survey… alternat… Alternati… two.sided                      
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "vanderWaerden")
-#> {cards} data frame: 6 x 9
-#>     group1 variable   context   stat_name stat_label      stat
-#> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.379
-#> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.584
-#> 3 comp.imp   enroll survey_s…     p.value    p-value     0.122
-#> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36
-#> 5 comp.imp   enroll survey_s…      method     method Design-b…
-#> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1   variable context stat_name stat_label stat                           
+#>   <chr>    <chr>    <chr>   <chr>     <chr>      <named list>                   
+#> 1 comp.imp enroll   survey… estimate  Median of… -0.3791163                     
+#> 2 comp.imp enroll   survey… statistic Statistic  -1.583859                      
+#> 3 comp.imp enroll   survey… p.value   p-value    0.1219723                      
+#> 4 comp.imp enroll   survey… parameter Degrees o… 36                             
+#> 5 comp.imp enroll   survey… method    method     Design-based vanderWaerden test
+#> 6 comp.imp enroll   survey… alternat… Alternati… two.sided                      
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "median")
-#> {cards} data frame: 6 x 9
-#>     group1 variable   context   stat_name stat_label      stat
-#> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.124
-#> 2 comp.imp   enroll survey_s…   statistic  Statistic    -0.914
-#> 3 comp.imp   enroll survey_s…     p.value    p-value     0.367
-#> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36
-#> 5 comp.imp   enroll survey_s…      method     method Design-b…
-#> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1  variable context stat_name stat_label stat                     fmt_fun
+#>   <chr>   <chr>    <chr>   <chr>     <chr>      <named list>             <named>
+#> 1 comp.i… enroll   survey… estimate  Median of… -0.1240709               1      
+#> 2 comp.i… enroll   survey… statistic Statistic  -0.9139828               1      
+#> 3 comp.i… enroll   survey… p.value   p-value    0.3668071                1      
+#> 4 comp.i… enroll   survey… parameter Degrees o… 36                       1      
+#> 5 comp.i… enroll   survey… method    method     Design-based median test <NULL> 
+#> 6 comp.i… enroll   survey… alternat… Alternati… two.sided                <NULL> 
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ard_survey_svyranktest(dclus2, variables = enroll, by = comp.imp, test = "KruskalWallis")
-#> {cards} data frame: 6 x 9
-#>     group1 variable   context   stat_name stat_label      stat
-#> 1 comp.imp   enroll survey_s…    estimate  Median o…    -0.106
-#> 2 comp.imp   enroll survey_s…   statistic  Statistic    -1.719
-#> 3 comp.imp   enroll survey_s…     p.value    p-value     0.094
-#> 4 comp.imp   enroll survey_s…   parameter  Degrees …        36
-#> 5 comp.imp   enroll survey_s…      method     method Design-b…
-#> 6 comp.imp   enroll survey_s… alternative  Alternat… two.sided
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1   variable context stat_name stat_label stat                           
+#>   <chr>    <chr>    <chr>   <chr>     <chr>      <named list>                   
+#> 1 comp.imp enroll   survey… estimate  Median of… -0.1060602                     
+#> 2 comp.imp enroll   survey… statistic Statistic  -1.718689                      
+#> 3 comp.imp enroll   survey… p.value   p-value    0.09426084                     
+#> 4 comp.imp enroll   survey… parameter Degrees o… 36                             
+#> 5 comp.imp enroll   survey… method    method     Design-based KruskalWallis test
+#> 6 comp.imp enroll   survey… alternat… Alternati… two.sided                      
+#> # ℹ 3 more variables: fmt_fun <named list>, warning <named list>,
+#> #   error <named list>
 ```

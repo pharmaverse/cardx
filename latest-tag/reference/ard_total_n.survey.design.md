@@ -32,9 +32,9 @@ an ARD data frame of class 'card'
 svy_titanic <- survey::svydesign(~1, data = as.data.frame(Titanic), weights = ~Freq)
 
 ard_total_n(svy_titanic)
-#> {cards} data frame: 2 x 8
-#>          variable context    stat_name stat_label stat fmt_fun
-#> 1 ..ard_total_n.. total_n            N          N 2201    <fn>
-#> 2 ..ard_total_n.. total_n N_unweighted  Unweight…   32    <fn>
-#> ℹ 2 more variables: warning, error
+#> # An ARD data frame: 2 × 8
+#>   variable        context stat_name    stat_label    stat fmt_fun warning error 
+#>   <chr>           <chr>   <chr>        <chr>        <lis> <list>  <list>  <list>
+#> 1 ..ard_total_n.. total_n N            N             2201 <fn>    <NULL>  <NULL>
+#> 2 ..ard_total_n.. total_n N_unweighted Unweighted N    32 <fn>    <NULL>  <NULL>
 ```

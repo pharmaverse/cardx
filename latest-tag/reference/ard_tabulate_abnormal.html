@@ -35,7 +35,7 @@ calculated as the number of patients with this abnormality recorded, and statist
 the total number of patients with at least one post-baseline assessment. p is calculated as
 n / N. If excl_baseline_abn=TRUE then participants with abnormality at baseline are excluded
 from all statistic calculations.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -47,7 +47,7 @@ from all statistic calculations.">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,6 +63,7 @@ from all statistic calculations.">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -82,7 +83,7 @@ from all statistic calculations.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -92,7 +93,7 @@ from all statistic calculations.">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Abnormality Counts</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_tabulate_abnormal.R" class="external-link"><code>R/ard_tabulate_abnormal.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_tabulate_abnormal.R" class="external-link"><code>R/ard_tabulate_abnormal.R</code></a></small>
       <div class="d-none name"><code>ard_tabulate_abnormal.Rd</code></div>
     </div>
 
@@ -198,7 +199,7 @@ logical indicating whether to suppress additional messaging. Default is <code>FA
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Load Data -------------------</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">adlb</span> <span class="op">&lt;-</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADLB</a></span></span></span>
+<span class="r-in"><span><span class="va">adlb</span> <span class="op">&lt;-</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADLB</a></span></span></span>
 <span class="r-in"><span><span class="va">adlb</span><span class="op">$</span><span class="va">BNRIND</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="va">adlb</span><span class="op">$</span><span class="va">BNRIND</span> <span class="op">!=</span> <span class="st">"N"</span>,</span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LOW"</span>, <span class="st">"LOW LOW"</span>, <span class="st">"HIGH"</span>, <span class="st">"HIGH HIGH"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">adlb</span><span class="op">)</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span></span>
@@ -213,27 +214,29 @@ logical indicating whether to suppress additional messaging. Default is <code>FA
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Abnormality <span style="color: #0000BB;">"Low"</span> created by merging levels: <span style="color: #0000BB;">"LOW"</span>, <span style="color: #0000BB;">"LOW LOW"</span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Abnormality <span style="color: #0000BB;">"High"</span> created by merging levels: <span style="color: #0000BB;">"HIGH"</span>, <span style="color: #0000BB;">"HIGH HIGH"</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 18 x 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level variable variable_level stat_name stat_label  stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    TRTA      Placebo  LBNRIND            Low         n          n     2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    TRTA      Placebo  LBNRIND            Low         N          N     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    TRTA      Placebo  LBNRIND            Low         p          % 0.286</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    TRTA      Placebo  LBNRIND           High         n          n     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    TRTA      Placebo  LBNRIND           High         N          N     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    TRTA      Placebo  LBNRIND           High         p          % 0.429</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7    TRTA    Xanomeli…  LBNRIND            Low         n          n     4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    TRTA    Xanomeli…  LBNRIND            Low         N          N     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9    TRTA    Xanomeli…  LBNRIND            Low         p          % 0.571</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   TRTA    Xanomeli…  LBNRIND           High         n          n     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11   TRTA    Xanomeli…  LBNRIND           High         N          N     7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12   TRTA    Xanomeli…  LBNRIND           High         p          % 0.429</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13   TRTA    Xanomeli…  LBNRIND            Low         n          n     4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14   TRTA    Xanomeli…  LBNRIND            Low         N          N     6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15   TRTA    Xanomeli…  LBNRIND            Low         p          % 0.667</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16   TRTA    Xanomeli…  LBNRIND           High         n          n     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17   TRTA    Xanomeli…  LBNRIND           High         N          N     6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18   TRTA    Xanomeli…  LBNRIND           High         p          %   0.5</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">4 more variables: context, fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 18 × 11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    group1 group1_level         variable variable_level context   stat_name  stat</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lis&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> TRTA   Placebo              LBNRIND  Low            categori… n         2    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> TRTA   Placebo              LBNRIND  Low            categori… N         7    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> TRTA   Placebo              LBNRIND  Low            categori… p         0.286</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> TRTA   Placebo              LBNRIND  High           categori… n         3    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> TRTA   Placebo              LBNRIND  High           categori… N         7    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> TRTA   Placebo              LBNRIND  High           categori… p         0.429</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> TRTA   Xanomeline High Dose LBNRIND  Low            categori… n         4    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> TRTA   Xanomeline High Dose LBNRIND  Low            categori… N         7    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> TRTA   Xanomeline High Dose LBNRIND  Low            categori… p         0.571</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> TRTA   Xanomeline High Dose LBNRIND  High           categori… n         3    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> TRTA   Xanomeline High Dose LBNRIND  High           categori… N         7    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> TRTA   Xanomeline High Dose LBNRIND  High           categori… p         0.429</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… n         4    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… N         6    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> TRTA   Xanomeline Low Dose  LBNRIND  Low            categori… p         0.667</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> TRTA   Xanomeline Low Dose  LBNRIND  High           categori… n         3    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> TRTA   Xanomeline Low Dose  LBNRIND  High           categori… N         6    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> TRTA   Xanomeline Low Dose  LBNRIND  High           categori… p         0.5  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: stat_label &lt;chr&gt;, fmt_fun &lt;list&gt;, warning &lt;list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

@@ -49,7 +49,7 @@ broom.helpers::tidy_plus_plus(
   intercept = FALSE
 )
 ">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -61,7 +61,7 @@ broom.helpers::tidy_plus_plus(
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,6 +77,7 @@ broom.helpers::tidy_plus_plus(
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -96,7 +97,7 @@ broom.helpers::tidy_plus_plus(
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -106,7 +107,7 @@ broom.helpers::tidy_plus_plus(
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Basic Regression ARD</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_regression_basic.R" class="external-link"><code>R/ard_regression_basic.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_regression_basic.R" class="external-link"><code>R/ard_regression_basic.R</code></a></small>
       <div class="d-none name"><code>ard_regression_basic.Rd</code></div>
     </div>
 
@@ -230,44 +231,46 @@ specified in <code>method</code> is executed.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">AGE</span> <span class="op">~</span> <span class="va">ARM</span>, data <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">AGE</span> <span class="op">~</span> <span class="va">ARM</span>, data <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_regression_basic</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 12 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    variable variable_level   context stat_name stat_label   stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       ARM      Xanomeli… regressi…  estimate  Coeffici… -0.828</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       ARM      Xanomeli… regressi… std.error  Standard…  1.267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       ARM      Xanomeli… regressi… statistic  statistic -0.654</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       ARM      Xanomeli… regressi…   p.value    p-value  0.514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       ARM      Xanomeli… regressi…  conf.low  CI Lower… -3.324</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       ARM      Xanomeli… regressi… conf.high  CI Upper…  1.668</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       ARM      Xanomeli… regressi…  estimate  Coeffici…  0.457</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8       ARM      Xanomeli… regressi… std.error  Standard…  1.267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       ARM      Xanomeli… regressi… statistic  statistic  0.361</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10      ARM      Xanomeli… regressi…   p.value    p-value  0.719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11      ARM      Xanomeli… regressi…  conf.low  CI Lower… -2.039</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12      ARM      Xanomeli… regressi… conf.high  CI Upper…  2.953</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 12 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    variable variable_level       context    stat_name stat_label    stat fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;name&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ARM      Xanomeline High Dose regression estimate  Coefficient -<span style="color: #BB0000;">0.828</span>       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ARM      Xanomeline High Dose regression std.error Standard E…  1.27        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ARM      Xanomeline High Dose regression statistic statistic   -<span style="color: #BB0000;">0.654</span>       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ARM      Xanomeline High Dose regression p.value   p-value      0.514       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> ARM      Xanomeline High Dose regression conf.low  CI Lower B… -<span style="color: #BB0000;">3.32</span>        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> ARM      Xanomeline High Dose regression conf.high CI Upper B…  1.67        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ARM      Xanomeline Low Dose  regression estimate  Coefficient  0.457       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ARM      Xanomeline Low Dose  regression std.error Standard E…  1.27        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ARM      Xanomeline Low Dose  regression statistic statistic    0.361       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ARM      Xanomeline Low Dose  regression p.value   p-value      0.719       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> ARM      Xanomeline Low Dose  regression conf.low  CI Lower B… -<span style="color: #BB0000;">2.04</span>        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> ARM      Xanomeline Low Dose  regression conf.high CI Upper B…  2.95        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ard_regression_basic</span><span class="op">(</span></span></span>
-<span class="r-in"><span>  x <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>,</span></span>
+<span class="r-in"><span>  x <span class="op">=</span> <span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>,</span></span>
 <span class="r-in"><span>  formula <span class="op">=</span> <span class="va">AGE</span> <span class="op">~</span> <span class="va">ARM</span>,</span></span>
 <span class="r-in"><span>  method <span class="op">=</span> <span class="st">"lm"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 12 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    variable variable_level   context stat_name stat_label   stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       ARM      Xanomeli… regressi…  estimate  Coeffici… -0.828</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       ARM      Xanomeli… regressi… std.error  Standard…  1.267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       ARM      Xanomeli… regressi… statistic  statistic -0.654</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       ARM      Xanomeli… regressi…   p.value    p-value  0.514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5       ARM      Xanomeli… regressi…  conf.low  CI Lower… -3.324</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       ARM      Xanomeli… regressi… conf.high  CI Upper…  1.668</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       ARM      Xanomeli… regressi…  estimate  Coeffici…  0.457</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8       ARM      Xanomeli… regressi… std.error  Standard…  1.267</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9       ARM      Xanomeli… regressi… statistic  statistic  0.361</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10      ARM      Xanomeli… regressi…   p.value    p-value  0.719</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11      ARM      Xanomeli… regressi…  conf.low  CI Lower… -2.039</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12      ARM      Xanomeli… regressi… conf.high  CI Upper…  2.953</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 12 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    variable variable_level       context    stat_name stat_label    stat fmt_fun</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;name&gt;</span> <span style="color: #949494; font-style: italic;">&lt;named&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> ARM      Xanomeline High Dose regression estimate  Coefficient -<span style="color: #BB0000;">0.828</span>       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> ARM      Xanomeline High Dose regression std.error Standard E…  1.27        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ARM      Xanomeline High Dose regression statistic statistic   -<span style="color: #BB0000;">0.654</span>       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ARM      Xanomeline High Dose regression p.value   p-value      0.514       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> ARM      Xanomeline High Dose regression conf.low  CI Lower B… -<span style="color: #BB0000;">3.32</span>        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> ARM      Xanomeline High Dose regression conf.high CI Upper B…  1.67        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ARM      Xanomeline Low Dose  regression estimate  Coefficient  0.457       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ARM      Xanomeline Low Dose  regression std.error Standard E…  1.27        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ARM      Xanomeline Low Dose  regression statistic statistic    0.361       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ARM      Xanomeline Low Dose  regression p.value   p-value      0.719       1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> ARM      Xanomeline Low Dose  regression conf.low  CI Lower B… -<span style="color: #BB0000;">2.04</span>        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> ARM      Xanomeline Low Dose  regression conf.high CI Upper B…  2.95        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

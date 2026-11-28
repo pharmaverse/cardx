@@ -2,7 +2,7 @@
 
 A function that takes a regression model and provides basic statistics
 in an ARD structure. The default output is simpler than
-[`ard_regression()`](https://insightsengineering.github.io/cardx/reference/ard_regression.md).
+[`ard_regression()`](https://pharmaverse.github.io/cardx/reference/ard_regression.md).
 The function primarily matches regression terms to underlying variable
 names and levels. The default arguments used are
 
@@ -102,40 +102,42 @@ data frame
 ``` r
 lm(AGE ~ ARM, data = cards::ADSL) |>
   ard_regression_basic()
-#> {cards} data frame: 12 x 9
-#>    variable variable_level   context stat_name stat_label   stat
-#> 1       ARM      Xanomeli… regressi…  estimate  Coeffici… -0.828
-#> 2       ARM      Xanomeli… regressi… std.error  Standard…  1.267
-#> 3       ARM      Xanomeli… regressi… statistic  statistic -0.654
-#> 4       ARM      Xanomeli… regressi…   p.value    p-value  0.514
-#> 5       ARM      Xanomeli… regressi…  conf.low  CI Lower… -3.324
-#> 6       ARM      Xanomeli… regressi… conf.high  CI Upper…  1.668
-#> 7       ARM      Xanomeli… regressi…  estimate  Coeffici…  0.457
-#> 8       ARM      Xanomeli… regressi… std.error  Standard…  1.267
-#> 9       ARM      Xanomeli… regressi… statistic  statistic  0.361
-#> 10      ARM      Xanomeli… regressi…   p.value    p-value  0.719
-#> 11      ARM      Xanomeli… regressi…  conf.low  CI Lower… -2.039
-#> 12      ARM      Xanomeli… regressi… conf.high  CI Upper…  2.953
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    variable variable_level       context    stat_name stat_label    stat fmt_fun
+#>    <chr>    <named list>         <chr>      <chr>     <chr>       <name> <named>
+#>  1 ARM      Xanomeline High Dose regression estimate  Coefficient -0.828       1
+#>  2 ARM      Xanomeline High Dose regression std.error Standard E…  1.27        1
+#>  3 ARM      Xanomeline High Dose regression statistic statistic   -0.654       1
+#>  4 ARM      Xanomeline High Dose regression p.value   p-value      0.514       1
+#>  5 ARM      Xanomeline High Dose regression conf.low  CI Lower B… -3.32        1
+#>  6 ARM      Xanomeline High Dose regression conf.high CI Upper B…  1.67        1
+#>  7 ARM      Xanomeline Low Dose  regression estimate  Coefficient  0.457       1
+#>  8 ARM      Xanomeline Low Dose  regression std.error Standard E…  1.27        1
+#>  9 ARM      Xanomeline Low Dose  regression statistic statistic    0.361       1
+#> 10 ARM      Xanomeline Low Dose  regression p.value   p-value      0.719       1
+#> 11 ARM      Xanomeline Low Dose  regression conf.low  CI Lower B… -2.04        1
+#> 12 ARM      Xanomeline Low Dose  regression conf.high CI Upper B…  2.95        1
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 
 ard_regression_basic(
   x = cards::ADSL,
   formula = AGE ~ ARM,
   method = "lm"
 )
-#> {cards} data frame: 12 x 9
-#>    variable variable_level   context stat_name stat_label   stat
-#> 1       ARM      Xanomeli… regressi…  estimate  Coeffici… -0.828
-#> 2       ARM      Xanomeli… regressi… std.error  Standard…  1.267
-#> 3       ARM      Xanomeli… regressi… statistic  statistic -0.654
-#> 4       ARM      Xanomeli… regressi…   p.value    p-value  0.514
-#> 5       ARM      Xanomeli… regressi…  conf.low  CI Lower… -3.324
-#> 6       ARM      Xanomeli… regressi… conf.high  CI Upper…  1.668
-#> 7       ARM      Xanomeli… regressi…  estimate  Coeffici…  0.457
-#> 8       ARM      Xanomeli… regressi… std.error  Standard…  1.267
-#> 9       ARM      Xanomeli… regressi… statistic  statistic  0.361
-#> 10      ARM      Xanomeli… regressi…   p.value    p-value  0.719
-#> 11      ARM      Xanomeli… regressi…  conf.low  CI Lower… -2.039
-#> 12      ARM      Xanomeli… regressi… conf.high  CI Upper…  2.953
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 12 × 9
+#>    variable variable_level       context    stat_name stat_label    stat fmt_fun
+#>    <chr>    <named list>         <chr>      <chr>     <chr>       <name> <named>
+#>  1 ARM      Xanomeline High Dose regression estimate  Coefficient -0.828       1
+#>  2 ARM      Xanomeline High Dose regression std.error Standard E…  1.27        1
+#>  3 ARM      Xanomeline High Dose regression statistic statistic   -0.654       1
+#>  4 ARM      Xanomeline High Dose regression p.value   p-value      0.514       1
+#>  5 ARM      Xanomeline High Dose regression conf.low  CI Lower B… -3.32        1
+#>  6 ARM      Xanomeline High Dose regression conf.high CI Upper B…  1.67        1
+#>  7 ARM      Xanomeline Low Dose  regression estimate  Coefficient  0.457       1
+#>  8 ARM      Xanomeline Low Dose  regression std.error Standard E…  1.27        1
+#>  9 ARM      Xanomeline Low Dose  regression statistic statistic    0.361       1
+#> 10 ARM      Xanomeline Low Dose  regression p.value   p-value      0.719       1
+#> 11 ARM      Xanomeline Low Dose  regression conf.low  CI Lower B… -2.04        1
+#> 12 ARM      Xanomeline Low Dose  regression conf.high CI Upper B…  2.95        1
+#> # ℹ 2 more variables: warning <named list>, error <named list>
 ```

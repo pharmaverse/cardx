@@ -36,13 +36,15 @@ ARD data frame
 
 ``` r
 ard_stats_oneway_test(AGE ~ ARM, data = cards::ADSL)
-#> {cards} data frame: 6 x 9
-#>   group1 variable   context stat_name stat_label      stat
-#> 1    ARM      AGE stats_on…    num.df  Degrees …         2
-#> 2    ARM      AGE stats_on…    den.df  Denomina…   167.237
-#> 3    ARM      AGE stats_on… statistic  F Statis…     0.547
-#> 4    ARM      AGE stats_on…   p.value    p-value      0.58
-#> 5    ARM      AGE stats_on…    method     Method One-way …
-#> 6    ARM      AGE stats_on… var.equal  var.equal     FALSE
-#> ℹ 3 more variables: fmt_fun, warning, error
+#> # An ARD data frame: 6 × 9
+#>   group1 variable stat_name
+#>   <chr>  <chr>    <chr>    
+#> 1 ARM    AGE      num.df   
+#> 2 ARM    AGE      den.df   
+#> 3 ARM    AGE      statistic
+#> 4 ARM    AGE      p.value  
+#> 5 ARM    AGE      method   
+#> 6 ARM    AGE      var.equal
+#> # ℹ 6 more variables: context <chr>, stat_label <chr>, stat <named list>,
+#> #   fmt_fun <named list>, warning <named list>, error <named list>
 ```

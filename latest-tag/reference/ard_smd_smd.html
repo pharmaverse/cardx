@@ -29,7 +29,7 @@ std.error=TRUE, which the original smd::smd() does not include.">
 <meta property="og:description" content="Standardized mean difference calculated via smd::smd() with na.rm = TRUE.
 Additionally, this function add a confidence interval to the SMD when
 std.error=TRUE, which the original smd::smd() does not include.">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -41,7 +41,7 @@ std.error=TRUE, which the original smd::smd() does not include.">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +57,7 @@ std.error=TRUE, which the original smd::smd() does not include.">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -76,7 +77,7 @@ std.error=TRUE, which the original smd::smd() does not include.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -86,7 +87,7 @@ std.error=TRUE, which the original smd::smd() does not include.">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD Standardized Mean Difference</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_smd_smd.R" class="external-link"><code>R/ard_smd_smd.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_smd_smd.R" class="external-link"><code>R/ard_smd_smd.R</code></a></small>
       <div class="d-none name"><code>ard_smd_smd.Rd</code></div>
     </div>
 
@@ -156,26 +157,30 @@ confidence level for confidence interval. Default is <code>0.95</code>.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">ard_smd_smd</span><span class="op">(</span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>, by <span class="op">=</span> <span class="va">SEX</span>, variables <span class="op">=</span> <span class="va">AGE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    SEX      AGE smd_smd  estimate  Standard…     0.157</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    SEX      AGE smd_smd std.error  Standard…     0.127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    SEX      AGE smd_smd  conf.low   conf.low    -0.091</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    SEX      AGE smd_smd conf.high  conf.high     0.405</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    SEX      AGE smd_smd    method     method Standard…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    SEX      AGE smd_smd      gref  Integer …         1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
-<span class="r-in"><span><span class="fu">ard_smd_smd</span><span class="op">(</span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://insightsengineering.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>, by <span class="op">=</span> <span class="va">SEX</span>, variables <span class="op">=</span> <span class="va">AGEGR1</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 6 x 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context stat_name stat_label      stat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    SEX   AGEGR1 smd_smd  estimate  Standard…     0.103</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    SEX   AGEGR1 smd_smd std.error  Standard…     0.127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    SEX   AGEGR1 smd_smd  conf.low   conf.low    -0.145</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    SEX   AGEGR1 smd_smd conf.high  conf.high     0.351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    SEX   AGEGR1 smd_smd    method     method Standard…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    SEX   AGEGR1 smd_smd      gref  Integer …         1</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">3 more variables: fmt_fun, warning, error</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">ard_smd_smd</span><span class="op">(</span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>, by <span class="op">=</span> <span class="va">SEX</span>, variables <span class="op">=</span> <span class="va">AGE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context stat_name stat_label      stat                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> SEX    AGE      smd_smd estimate  Standardized M… 0.1571071                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> SEX    AGE      smd_smd std.error Standard Error  0.126691                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> SEX    AGE      smd_smd conf.low  conf.low        -0.09120262                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> SEX    AGE      smd_smd conf.high conf.high       0.4054169                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> SEX    AGE      smd_smd method    method          Standardized Mean Difference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> SEX    AGE      smd_smd gref      Integer Refere… 1                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;named list&gt;, warning &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;named list&gt;</span></span>
+<span class="r-in"><span><span class="fu">ard_smd_smd</span><span class="op">(</span><span class="fu">cards</span><span class="fu">::</span><span class="va"><a href="https://pharmaverse.github.io/cards/latest-tag/reference/adam.html" class="external-link">ADSL</a></span>, by <span class="op">=</span> <span class="va">SEX</span>, variables <span class="op">=</span> <span class="va">AGEGR1</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 6 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   group1 variable context stat_name stat_label      stat                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;named list&gt;</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> SEX    AGEGR1   smd_smd estimate  Standardized M… 0.1029458                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> SEX    AGEGR1   smd_smd std.error Standard Error  0.1265815                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> SEX    AGEGR1   smd_smd conf.low  conf.low        -0.1451494                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> SEX    AGEGR1   smd_smd conf.high conf.high       0.351041                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> SEX    AGEGR1   smd_smd method    method          Standardized Mean Difference</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> SEX    AGEGR1   smd_smd gref      Integer Refere… 1                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;named list&gt;, warning &lt;named list&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

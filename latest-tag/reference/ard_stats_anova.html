@@ -31,7 +31,7 @@ information passed and models will be passed to stats::anova().">
 Users may pass a pre-calculated stats::anova() object or a list of
 formulas. In the latter case, the models will be constructed using the
 information passed and models will be passed to stats::anova().">
-<meta property="og:image" content="https://insightsengineering.github.io/cardx/logo.png">
+<meta property="og:image" content="https://pharmaverse.github.io/cardx/logo.png">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -43,7 +43,7 @@ information passed and models will be passed to stats::anova().">
 
     <a class="navbar-brand me-2" href="../index.html">cardx</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4.9008</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,7 @@ information passed and models will be passed to stats::anova().">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.5">v0.3.5</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.4">v0.3.4</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.3">v0.3.3</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://pharmaverse.github.io/cardx/v0.3.2">v0.3.2</a>
@@ -78,7 +79,7 @@ information passed and models will be passed to stats::anova().">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/cardx/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -88,7 +89,7 @@ information passed and models will be passed to stats::anova().">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ARD ANOVA</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/cardx/blob/v0.3.4/R/ard_stats_anova.R" class="external-link"><code>R/ard_stats_anova.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/cardx/blob/v0.3.5/R/ard_stats_anova.R" class="external-link"><code>R/ard_stats_anova.R</code></a></small>
       <div class="d-none name"><code>ard_stats_anova.Rd</code></div>
     </div>
 
@@ -211,20 +212,21 @@ See example below.</p>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">am</span> <span class="op">+</span> <span class="va">hp</span>, <span class="va">mtcars</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>  <span class="fu">ard_stats_anova</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 11 x 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    variable   context   stat_name stat_label      stat fmt_fun</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   model_1 stats_an…        term       term  mpg ~ am    NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   model_1 stats_an… df.residual  df for r…        30       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   model_1 stats_an…         rss  Residual…   720.897       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   model_2 stats_an…        term       term mpg ~ am…    NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   model_2 stats_an… df.residual  df for r…        29       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   model_2 stats_an…         rss  Residual…   245.439       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   model_2 stats_an…          df  Degrees …         1       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   model_2 stats_an…       sumsq  Sum of S…   475.457       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   model_2 stats_an…   statistic  statistic    56.178       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  model_2 stats_an…     p.value    p-value         0       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  model_2 stats_an…      method     method ANOVA re…    NULL</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">2 more variables: warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 11 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    variable context     stat_name stat_label stat                               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> model_1  stats_anova term      term       mpg ~ am                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> model_1  stats_anova df.resid… df for re… 30                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> model_1  stats_anova rss       Residual … 720.8966                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> model_2  stats_anova term      term       mpg ~ am + hp                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> model_2  stats_anova df.resid… df for re… 29                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> model_2  stats_anova rss       Residual … 245.4393                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> model_2  stats_anova df        Degrees o… 1                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> model_2  stats_anova sumsq     Sum of Sq… 475.4573                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> model_2  stats_anova statistic statistic  56.17789                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> model_2  stats_anova p.value   p-value    2.920375e-08                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> model_2  stats_anova method    method     ANOVA results from `stats::anova()`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;list&gt;, warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ard_stats_anova</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  x <span class="op">=</span> <span class="va">mtcars</span>,</span></span>
@@ -232,19 +234,20 @@ See example below.</p>
 <span class="r-in"><span>  method <span class="op">=</span> <span class="st">"glm"</span>,</span></span>
 <span class="r-in"><span>  method.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 10 x 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    variable   context         stat_name stat_label      stat fmt_fun</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   model_1 stats_an…              term       term  am ~ mpg    NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   model_1 stats_an…       df.residual  df for r…        30       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   model_1 stats_an… residual.deviance  residual…    29.675       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   model_2 stats_an…              term       term am ~ mpg…    NULL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   model_2 stats_an…       df.residual  df for r…        29       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   model_2 stats_an… residual.deviance  residual…    19.233       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   model_2 stats_an…                df  Degrees …         1       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   model_2 stats_an…          deviance   deviance    10.443       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   model_2 stats_an…           p.value    p-value     0.001       1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  model_2 stats_an…            method     method ANOVA re…    NULL</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">2 more variables: warning, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 10 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    variable context     stat_name stat_label stat                               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> model_1  stats_anova term      term       am ~ mpg                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> model_1  stats_anova df.resid… df for re… 30                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> model_1  stats_anova residual… residual.… 29.67517                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> model_2  stats_anova term      term       am ~ mpg + hp                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> model_2  stats_anova df.resid… df for re… 29                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> model_2  stats_anova residual… residual.… 19.23255                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> model_2  stats_anova df        Degrees o… 1                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> model_2  stats_anova deviance  deviance   10.44261                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> model_2  stats_anova p.value   p-value    0.001231408                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> model_2  stats_anova method    method     ANOVA results from `stats::anova()`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: fmt_fun &lt;list&gt;, warning &lt;named list&gt;, error &lt;named list&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">ard_stats_anova</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  x <span class="op">=</span> <span class="va">mtcars</span>,</span></span>
@@ -253,25 +256,26 @@ See example below.</p>
 <span class="r-in"><span>  method.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  package <span class="op">=</span> <span class="st">"lme4"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #555555;">{cards} data frame: 16 x 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    variable   context  stat_name stat_label      stat   warning</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   model_1 stats_an…       term       term    MODEL1 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   model_1 stats_an…       npar       npar         2 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   model_1 stats_an…        AIC        AIC     47.23 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   model_1 stats_an…        BIC        BIC    50.161 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   model_1 stats_an…     logLik     logLik   -21.615 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   model_1 stats_an… minus2logL  minus2lo…     43.23 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   model_2 stats_an…       term       term    MODEL2 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8   model_2 stats_an…       npar       npar         3 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   model_2 stats_an…        AIC        AIC     35.25 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  model_2 stats_an…        BIC        BIC    39.647 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11  model_2 stats_an…     logLik     logLik   -14.625 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12  model_2 stats_an… minus2logL  minus2lo…     29.25 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13  model_2 stats_an…  statistic  statistic    13.979 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14  model_2 stats_an…         df  Degrees …         1 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15  model_2 stats_an…    p.value    p-value         0 failed t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16  model_2 stats_an…     method     method ANOVA re… failed t…</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> <span style="color: #555555;">2 more variables: fmt_fun, error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># An ARD data frame: 16 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    variable context     stat_name  stat                                warning  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>                              <span style="color: #949494; font-style: italic;">&lt;named l&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> model_1  stats_anova term       MODEL1                              failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> model_1  stats_anova npar       2                                   failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> model_1  stats_anova AIC        47.22973                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> model_1  stats_anova BIC        50.16121                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> model_1  stats_anova logLik     -21.61487                           failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> model_1  stats_anova minus2logL 43.22973                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> model_2  stats_anova term       MODEL2                              failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> model_2  stats_anova npar       3                                   failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> model_2  stats_anova AIC        35.25023                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> model_2  stats_anova BIC        39.64744                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> model_2  stats_anova logLik     -14.62512                           failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> model_2  stats_anova minus2logL 29.25023                            failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> model_2  stats_anova statistic  13.9795                             failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> model_2  stats_anova df         1                                   failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> model_2  stats_anova p.value    0.0001848148                        failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> model_2  stats_anova method     ANOVA results from `stats::anova()` failed t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: stat_label &lt;chr&gt;, fmt_fun &lt;list&gt;, error &lt;named list&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
