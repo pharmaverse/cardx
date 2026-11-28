@@ -1,7 +1,9 @@
 # ARD Incidence Rate
 
 Function takes a time at risk variable (`time`) and event count variable
-(`count`) and calculates the incidence rate in person-years.
+(`count`) and calculates the incidence rate per `n_person_time` units of
+person-time. The person-time unit is that of `time`, as described by
+`unit_label`.
 
 Incidence rate is calculated as: Total number of events that occurred /
 Total person-time at risk
@@ -28,7 +30,8 @@ ard_incidence_rate(
 - data:
 
   (`data.frame`)\
-  a data frame.
+  a data frame. Must include every subject at risk, including subjects
+  without any events.
 
 - time:
 
@@ -38,9 +41,9 @@ ard_incidence_rate(
 - count:
 
   ([`tidy-select`](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html))\
-  column name of variable indicating count of events that occurred. If
-  `NULL`, each row in `data` is assumed to correspond to a single event
-  occurrence.
+  column name of variable indicating count of events that occurred.
+  Subjects with a `count` greater than zero are counted as having an
+  event in the `n` statistic.
 
 - id:
 
@@ -120,9 +123,9 @@ events and follow-up time for subject \\(i\\), respectively.
 
 - `exact`: Exact CI for a Poisson mean.
 
-  \$\$CI\_{lower} = \chi^2\_{\alpha / 2, 2\sum{x_i} + 2} / {2
-  \sum{t_i}}\$\$ \$\$CI\_{upper} = \chi^2\_{1 - \alpha / 2, 2\sum{x_i} +
-  2} / {2 \sum{t_i}}\$\$
+  \$\$CI\_{lower} = \chi^2\_{\alpha / 2, 2\sum{x_i}} / {2 \sum{t_i}}\$\$
+  \$\$CI\_{upper} = \chi^2\_{1 - \alpha / 2, 2\sum{x_i} + 2} / {2
+  \sum{t_i}}\$\$
 
 ## Examples
 
@@ -137,7 +140,7 @@ data <- data.frame(
 
 data |>
   ard_incidence_rate(time = AETTE1, count = AETOT1, id = USUBJID, by = TRTA, unit_label = "years")
-#> # An ARD data frame: 27 × 10
+#> # An ARD data frame: 30 × 10
 #>    group1 group1_level variable context    stat_name stat_label stat     fmt_fun
 #>    <chr>  <list>       <chr>    <chr>      <chr>     <chr>      <list>   <list> 
 #>  1 TRTA   A            AETTE1   incidence… estimate  Incidence… 976.3053 1      
@@ -148,8 +151,8 @@ data |>
 #>  6 TRTA   A            AETTE1   incidence… conf.lev… CI Confid… 0.95     1      
 #>  7 TRTA   A            AETTE1   incidence… tot_pers… Person-Ye… 29.19169 1      
 #>  8 TRTA   A            AETTE1   incidence… n_events  Number of… 285      0      
-#>  9 TRTA   A            AETTE1   incidence… N         Number of… 33       0      
-#> 10 TRTA   B            AETTE1   incidence… estimate  Incidence… 1373.986 1      
-#> # ℹ 17 more rows
+#>  9 TRTA   A            AETTE1   incidence… n         Number of… 31       0      
+#> 10 TRTA   A            AETTE1   incidence… N         Number of… 33       0      
+#> # ℹ 20 more rows
 #> # ℹ 2 more variables: warning <list>, error <list>
 ```
