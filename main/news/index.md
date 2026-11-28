@@ -1,6 +1,6 @@
 # Changelog
 
-## cardx 0.3.5.9000
+## cardx 0.3.5
 
 - Corrected the
   [`ard_incidence_rate()`](https://pharmaverse.github.io/cardx/reference/ard_incidence_rate.md)
