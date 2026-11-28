@@ -19,14 +19,18 @@ ard_incidence_rate(
 }
 \arguments{
 \item{data}{(\code{data.frame})\cr
-a data frame.}
+a data frame. Must include every subject at risk, including subjects without any events.}
 
 \item{time}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 column name of time at risk variable.}
 
 \item{count}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
-column name of variable indicating count of events that occurred. If \code{NULL}, each row in \code{data} is assumed to
-correspond to a single event occurrence.}
+column name of variable indicating count of events that occurred. Subjects with a \code{count} greater than zero
+are counted as having an event in the \code{n} statistic.
+
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} \code{count = NULL} is soft-deprecated and \code{count} should always be specified.
+With \code{count = NULL}, each row in \code{data} is counted as a single event occurrence. Because \code{data} must include
+every subject at risk, this treats every subject as having an event, which is not meaningful.}
 
 \item{id}{(\code{\link[dplyr:dplyr_tidy_select]{tidy-select}})\cr
 column name used to identify unique subjects in \code{data}. If \code{NULL}, each row in \code{data} is assumed to correspond to
